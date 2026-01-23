@@ -1,0 +1,6 @@
+package com.mycompany.acquawayweb
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
