@@ -17,7 +17,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(js|css|wasm|woff|woff2|ttf|otf))",
+      "source": "/(.*\\.(js|css|wasm|woff|woff2|ttf|otf|png|jpg|jpeg|gif|svg|ico|json))",
       "headers": [
         {
           "key": "Cache-Control",
@@ -28,7 +28,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!assets/).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
