@@ -3,10 +3,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'pp_criar_novo_aviso_model.dart';
 export 'pp_criar_novo_aviso_model.dart';
 
@@ -81,18 +79,17 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                   Text(
                     'Novo aviso',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
-                          fontSize: 16.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w500,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
+                      font: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                      fontSize: 16.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                   ),
                   FlutterFlowIconButton(
                     borderRadius: 8.0,
@@ -115,21 +112,18 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                   Text(
                     'DADOS GERAIS',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
+                      font: GoogleFonts.inter(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
@@ -138,19 +132,19 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                       Text(
                         'Título do aviso',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          fontSize: 16.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                       SizedBox(
                         width: double.infinity,
@@ -162,46 +156,54 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             isDense: true,
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontStyle,
-                                ),
+                            labelStyle: FlutterFlowTheme.of(
+                              context,
+                            ).labelMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontStyle,
+                              ),
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontStyle,
+                            ),
                             hintText: 'Insira o título',
-                            hintStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
-                                  color: const Color(0xFFB1B3B4),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontStyle,
-                                ),
+                            hintStyle: FlutterFlowTheme.of(
+                              context,
+                            ).labelMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontStyle,
+                              ),
+                              color: const Color(0xFFB1B3B4),
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontStyle,
+                            ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
                                 color: Color(0xFFE5E6E6),
@@ -232,24 +234,29 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                             ),
                             filled: true,
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(
+                            context,
+                          ).bodyMedium.override(
+                            font: GoogleFonts.inter(
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
                           enableInteractiveSelection: true,
                           validator: _model.txtTituloTextControllerValidator
@@ -265,19 +272,19 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                       Text(
                         'Descrição',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          fontSize: 16.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                       SizedBox(
                         width: double.infinity,
@@ -289,46 +296,54 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             isDense: true,
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontStyle,
-                                ),
+                            labelStyle: FlutterFlowTheme.of(
+                              context,
+                            ).labelMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontStyle,
+                              ),
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontStyle,
+                            ),
                             hintText: 'Insira uma descrição para o aviso',
-                            hintStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
-                                  color: const Color(0xFFB1B3B4),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontStyle,
-                                ),
+                            hintStyle: FlutterFlowTheme.of(
+                              context,
+                            ).labelMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.fontStyle,
+                              ),
+                              color: const Color(0xFFB1B3B4),
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).labelMedium.fontStyle,
+                            ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
                                 color: Color(0xFFE5E6E6),
@@ -359,24 +374,29 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                             ),
                             filled: true,
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(
+                            context,
+                          ).bodyMedium.override(
+                            font: GoogleFonts.inter(
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
                           maxLines: null,
                           minLines: 5,
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -398,22 +418,24 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                           children: [
                             Text(
                               'Duração',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                fontSize: 16.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                             ),
                             TextFormField(
                               controller: _model.txDuracaoTextController,
@@ -423,46 +445,54 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                labelStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 hintText: 'Horas',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      color: const Color(0xFFB1B3B4),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                hintStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  color: const Color(0xFFB1B3B4),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
                                     color: Color(0xFFE5E6E6),
@@ -493,25 +523,29 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                                 ),
                                 filled: true,
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               enableInteractiveSelection: true,
@@ -534,22 +568,24 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                           children: [
                             Text(
                               'Raio de cobertura',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                fontSize: 16.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                             ),
                             TextFormField(
                               controller: _model.txRaioTextController,
@@ -559,46 +595,54 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                labelStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 hintText: 'Milhas Náuticas',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      color: const Color(0xFFB1B3B4),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                hintStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  color: const Color(0xFFB1B3B4),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
                                     color: Color(0xFFE5E6E6),
@@ -629,25 +673,29 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                                 ),
                                 filled: true,
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               enableInteractiveSelection: true,
@@ -669,22 +717,24 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                           children: [
                             Text(
                               'Latitude',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                fontSize: 16.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                             ),
                             TextFormField(
                               controller: _model.txLatTextController,
@@ -694,46 +744,54 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                labelStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 hintText: 'Insira a latitude',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      color: const Color(0xFFB1B3B4),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                hintStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  color: const Color(0xFFB1B3B4),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
                                     color: Color(0xFFE5E6E6),
@@ -764,25 +822,29 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                                 ),
                                 filled: true,
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               enableInteractiveSelection: true,
@@ -799,22 +861,24 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                           children: [
                             Text(
                               'Longitude',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                fontSize: 16.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                             ),
                             TextFormField(
                               controller: _model.txLonTextController,
@@ -824,46 +888,54 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                labelStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 hintText: 'Insira a longitude',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                      color: const Color(0xFFB1B3B4),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                hintStyle: FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.fontStyle,
+                                  ),
+                                  color: const Color(0xFFB1B3B4),
+                                  letterSpacing: 0.0,
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.fontStyle,
+                                ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
                                     color: Color(0xFFE5E6E6),
@@ -894,25 +966,29 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                                 ),
                                 filled: true,
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               enableInteractiveSelection: true,
@@ -936,30 +1012,43 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 0.0),
+                            16.0,
+                            0.0,
+                            16.0,
+                            0.0,
+                          ),
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                          ),
                           iconColor: const Color(0xFF252627),
                           color: const Color(0x00007191),
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                    color: const Color(0xFF252627),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
+                          textStyle: FlutterFlowTheme.of(
+                            context,
+                          ).titleSmall.override(
+                            font: GoogleFonts.interTight(
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
+                            color: const Color(0xFF252627),
+                            letterSpacing: 0.0,
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontStyle,
+                          ),
                           elevation: 0.0,
                           borderSide: const BorderSide(
                             color: Color(0xFF007191),
@@ -973,13 +1062,15 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                           await AvisosTable().insert({
                             'aviso': _model.txDescricaoTextController.text,
                             'duracao': double.tryParse(
-                                _model.txDuracaoTextController.text),
+                              _model.txDuracaoTextController.text,
+                            ),
                             'status': 'Ativo',
                             'titulo_aviso': '',
                             'lat': _model.txLatTextController.text,
                             'lon': _model.txLonTextController.text,
                             'milhas': double.tryParse(
-                                _model.txRaioTextController.text),
+                              _model.txRaioTextController.text,
+                            ),
                           });
                           Navigator.pop(context);
                         },
@@ -987,29 +1078,42 @@ class _PpCriarNovoAvisoWidgetState extends State<PpCriarNovoAvisoWidget> {
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 0.0),
+                            16.0,
+                            0.0,
+                            16.0,
+                            0.0,
+                          ),
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                          ),
                           color: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
+                          textStyle: FlutterFlowTheme.of(
+                            context,
+                          ).titleSmall.override(
+                            font: GoogleFonts.interTight(
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
+                            color: Colors.white,
+                            letterSpacing: 0.0,
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontStyle,
+                          ),
                           elevation: 0.0,
                           borderRadius: BorderRadius.circular(12.0),
                         ),

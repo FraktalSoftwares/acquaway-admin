@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -58,20 +57,24 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
           elevation: 0,
           insetPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
-          alignment: const AlignmentDirectional(0.0, 0.0)
-              .resolve(Directionality.of(context)),
+          alignment: const AlignmentDirectional(
+            0.0,
+            0.0,
+          ).resolve(Directionality.of(context)),
           child: WebViewAware(
             child: Container(
-              constraints: const BoxConstraints(
-                maxWidth: 400.0,
-              ),
+              constraints: const BoxConstraints(maxWidth: 400.0),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(
-                    16.0, 16.0, 16.0, 24.0),
+                  16.0,
+                  16.0,
+                  16.0,
+                  24.0,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,23 +86,25 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         Expanded(
                           child: Text(
                             'Alterar Senha',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color: const Color(0xFF323334),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style: FlutterFlowTheme.of(
+                              context,
+                            ).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
+                              color: const Color(0xFF323334),
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
                           ),
                         ),
                         FlutterFlowIconButton(
@@ -120,39 +125,35 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                       'Esqueceu sua senha?',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF323334),
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF323334),
+                        fontSize: 20.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                     Text(
                       'Não se preocupe! Enviaremos um link para recuperar sua senha para o email cadastrado na sua conta',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF646768),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.normal,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.normal,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF646768),
+                        fontSize: 14.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.normal,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -166,30 +167,42 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
+                              16.0,
+                              0.0,
+                              16.0,
+                              0.0,
+                            ),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
+                              0.0,
+                              0.0,
+                              0.0,
+                              0.0,
+                            ),
                             color: const Color(0x00007191),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                            textStyle: FlutterFlowTheme.of(
+                              context,
+                            ).titleSmall.override(
+                              font: GoogleFonts.interTight(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontStyle,
+                              ),
+                              color: FlutterFlowTheme.of(context).primary,
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
                             elevation: 0.0,
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).primary,
@@ -202,9 +215,7 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                             if (currentUserEmail.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content: Text(
-                                    'E-mail é obrigatório!',
-                                  ),
+                                  content: Text('E-mail é obrigatório!'),
                                 ),
                               );
                               return;
@@ -221,30 +232,42 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
+                              16.0,
+                              0.0,
+                              16.0,
+                              0.0,
+                            ),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
+                              0.0,
+                              0.0,
+                              0.0,
+                              0.0,
+                            ),
                             color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                            textStyle: FlutterFlowTheme.of(
+                              context,
+                            ).titleSmall.override(
+                              font: GoogleFonts.interTight(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontStyle,
+                              ),
+                              color: Colors.white,
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
                             elevation: 0.0,
                             borderRadius: BorderRadius.circular(12.0),
                           ),
@@ -269,20 +292,24 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
           elevation: 0,
           insetPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
-          alignment: const AlignmentDirectional(0.0, 0.0)
-              .resolve(Directionality.of(context)),
+          alignment: const AlignmentDirectional(
+            0.0,
+            0.0,
+          ).resolve(Directionality.of(context)),
           child: WebViewAware(
             child: Container(
-              constraints: const BoxConstraints(
-                maxWidth: 400.0,
-              ),
+              constraints: const BoxConstraints(maxWidth: 400.0),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(
-                    16.0, 16.0, 16.0, 24.0),
+                  16.0,
+                  16.0,
+                  16.0,
+                  24.0,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -294,23 +321,25 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         Expanded(
                           child: Text(
                             'Alterar Senha',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color: const Color(0xFF323334),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style: FlutterFlowTheme.of(
+                              context,
+                            ).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
+                              color: const Color(0xFF323334),
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
                           ),
                         ),
                         FlutterFlowIconButton(
@@ -348,20 +377,18 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                       'Email enviado',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF323334),
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF323334),
+                        fontSize: 20.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                     FFButtonWidget(
                       onPressed: () async {
@@ -372,30 +399,40 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         width: double.infinity,
                         height: 40.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
+                          16.0,
+                          0.0,
+                          16.0,
+                          0.0,
+                        ),
                         iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 0.0, 0.0, 0.0),
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                        ),
                         color: FlutterFlowTheme.of(context).primary,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .titleSmall
-                            .override(
-                              font: GoogleFonts.interTight(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
-                              color: Colors.white,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontStyle,
-                            ),
+                        textStyle: FlutterFlowTheme.of(
+                          context,
+                        ).titleSmall.override(
+                          font: GoogleFonts.interTight(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontStyle,
+                          ),
+                          color: Colors.white,
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleSmall.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
                         elevation: 0.0,
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -415,9 +452,7 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
-        constraints: const BoxConstraints(
-          maxWidth: 400.0,
-        ),
+        constraints: const BoxConstraints(maxWidth: 400.0),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.circular(8.0),
@@ -435,20 +470,18 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                     child: Text(
                       'Alterar Senha',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF323334),
-                            fontSize: 16.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF323334),
+                        fontSize: 16.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                   ),
                   FlutterFlowIconButton(
@@ -474,23 +507,21 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                     children: [
                       Text(
                         'Senha atual',
-                        style: FlutterFlowTheme.of(context)
-                            .bodyMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              color: const Color(0xFF323334),
-                              fontSize: 14.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          color: const Color(0xFF323334),
+                          fontSize: 14.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                       const SizedBox(width: 4.0),
                       const Text(
@@ -513,10 +544,12 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                       decoration: InputDecoration(
                         isDense: true,
                         suffixIcon: InkWell(
-                          onTap: () => setState(
-                            () => _model.txSenhaAtualVisibility =
-                                !_model.txSenhaAtualVisibility!,
-                          ),
+                          onTap:
+                              () => setState(
+                                () =>
+                                    _model.txSenhaAtualVisibility =
+                                        !_model.txSenhaAtualVisibility!,
+                              ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
                             _model.txSenhaAtualVisibility!
@@ -526,46 +559,54 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                             size: 20.0,
                           ),
                         ),
-                        labelStyle: FlutterFlowTheme.of(context)
-                            .labelMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
+                        labelStyle: FlutterFlowTheme.of(
+                          context,
+                        ).labelMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontStyle,
+                          ),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontStyle,
+                        ),
                         hintText: 'Digite sua senha atual',
-                        hintStyle: FlutterFlowTheme.of(context)
-                            .labelMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              color: const Color(0xFFB1B3B4),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
+                        hintStyle: FlutterFlowTheme.of(
+                          context,
+                        ).labelMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontStyle,
+                          ),
+                          color: const Color(0xFFB1B3B4),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontStyle,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
                             color: Color(0xFFE5E6E6),
@@ -598,22 +639,20 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         fillColor: Colors.white,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       cursorColor: FlutterFlowTheme.of(context).primaryText,
                       validator: _model.txSenhaAtualTextControllerValidator
                           .asValidator(context),
@@ -630,20 +669,18 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                     child: Text(
                       'Esqueci minha senha',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF007191),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF007191),
+                        fontSize: 14.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                   ),
                 ].divide(const SizedBox(height: 8.0)),
@@ -657,23 +694,21 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                     children: [
                       Text(
                         'Nova senha',
-                        style: FlutterFlowTheme.of(context)
-                            .bodyMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              color: const Color(0xFF323334),
-                              fontSize: 14.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          color: const Color(0xFF323334),
+                          fontSize: 14.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                       const SizedBox(width: 4.0),
                       const Text(
@@ -696,10 +731,12 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                       decoration: InputDecoration(
                         isDense: true,
                         suffixIcon: InkWell(
-                          onTap: () => setState(
-                            () => _model.txNovaSenhaVisibility =
-                                !_model.txNovaSenhaVisibility!,
-                          ),
+                          onTap:
+                              () => setState(
+                                () =>
+                                    _model.txNovaSenhaVisibility =
+                                        !_model.txNovaSenhaVisibility!,
+                              ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
                             _model.txNovaSenhaVisibility!
@@ -709,46 +746,54 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                             size: 20.0,
                           ),
                         ),
-                        labelStyle: FlutterFlowTheme.of(context)
-                            .labelMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
+                        labelStyle: FlutterFlowTheme.of(
+                          context,
+                        ).labelMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontStyle,
+                          ),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontStyle,
+                        ),
                         hintText: 'Digite sua nova senha',
-                        hintStyle: FlutterFlowTheme.of(context)
-                            .labelMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              color: const Color(0xFFB1B3B4),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
+                        hintStyle: FlutterFlowTheme.of(
+                          context,
+                        ).labelMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontStyle,
+                          ),
+                          color: const Color(0xFFB1B3B4),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontStyle,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
                             color: Color(0xFFE5E6E6),
@@ -781,22 +826,20 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         fillColor: Colors.white,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       cursorColor: FlutterFlowTheme.of(context).primaryText,
                       validator: _model.txNovaSenhaTextControllerValidator
                           .asValidator(context),
@@ -813,23 +856,21 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                     children: [
                       Text(
                         'Confirme a nova senha',
-                        style: FlutterFlowTheme.of(context)
-                            .bodyMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              color: const Color(0xFF323334),
-                              fontSize: 14.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          color: const Color(0xFF323334),
+                          fontSize: 14.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                       const SizedBox(width: 4.0),
                       const Text(
@@ -852,10 +893,12 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                       decoration: InputDecoration(
                         isDense: true,
                         suffixIcon: InkWell(
-                          onTap: () => setState(
-                            () => _model.txConfirmarSenhaVisibility =
-                                !_model.txConfirmarSenhaVisibility!,
-                          ),
+                          onTap:
+                              () => setState(
+                                () =>
+                                    _model.txConfirmarSenhaVisibility =
+                                        !_model.txConfirmarSenhaVisibility!,
+                              ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
                             _model.txConfirmarSenhaVisibility!
@@ -865,46 +908,54 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                             size: 20.0,
                           ),
                         ),
-                        labelStyle: FlutterFlowTheme.of(context)
-                            .labelMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
+                        labelStyle: FlutterFlowTheme.of(
+                          context,
+                        ).labelMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontStyle,
+                          ),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontStyle,
+                        ),
                         hintText: 'Confirme sua nova senha',
-                        hintStyle: FlutterFlowTheme.of(context)
-                            .labelMedium
-                            .override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              color: const Color(0xFFB1B3B4),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
+                        hintStyle: FlutterFlowTheme.of(
+                          context,
+                        ).labelMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).labelMedium.fontStyle,
+                          ),
+                          color: const Color(0xFFB1B3B4),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).labelMedium.fontStyle,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
                             color: Color(0xFFE5E6E6),
@@ -937,22 +988,20 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         fillColor: Colors.white,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       cursorColor: FlutterFlowTheme.of(context).primaryText,
                       validator: _model.txConfirmarSenhaTextControllerValidator
                           .asValidator(context),
@@ -972,30 +1021,36 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 0.0),
+                        16.0,
+                        0.0,
+                        16.0,
+                        0.0,
+                      ),
                       iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                      ),
                       color: const Color(0x00007191),
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleSmall
-                          .override(
-                            font: GoogleFonts.interTight(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontStyle,
-                            ),
-                            color: FlutterFlowTheme.of(context).primary,
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
+                      textStyle: FlutterFlowTheme.of(
+                        context,
+                      ).titleSmall.override(
+                        font: GoogleFonts.interTight(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleSmall.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).primary,
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
                       elevation: 0.0,
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).primary,
@@ -1030,7 +1085,8 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
-                                'A nova senha deve ter pelo menos 6 caracteres'),
+                              'A nova senha deve ter pelo menos 6 caracteres',
+                            ),
                           ),
                         );
                         return;
@@ -1040,8 +1096,7 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                           true) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                            content:
-                                Text('Por favor, confirme sua nova senha'),
+                            content: Text('Por favor, confirme sua nova senha'),
                           ),
                         );
                         return;
@@ -1052,7 +1107,8 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
-                                'As senhas não coincidem. Por favor, verifique.'),
+                              'As senhas não coincidem. Por favor, verifique.',
+                            ),
                           ),
                         );
                         return;
@@ -1071,7 +1127,8 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text(
-                                  'Senha atual incorreta. Por favor, verifique.'),
+                                'Senha atual incorreta. Por favor, verifique.',
+                              ),
                               backgroundColor: Colors.red,
                             ),
                           );
@@ -1093,8 +1150,11 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         );
                       } catch (e) {
                         // Captura erros de autenticação
-                        String errorMessage = 'Erro ao alterar senha. Tente novamente.';
-                        if (e.toString().contains('Invalid login credentials') ||
+                        String errorMessage =
+                            'Erro ao alterar senha. Tente novamente.';
+                        if (e.toString().contains(
+                              'Invalid login credentials',
+                            ) ||
                             e.toString().contains('Email not confirmed') ||
                             e.toString().contains('Invalid password')) {
                           errorMessage =
@@ -1112,30 +1172,36 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 0.0),
+                        16.0,
+                        0.0,
+                        16.0,
+                        0.0,
+                      ),
                       iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                      ),
                       color: FlutterFlowTheme.of(context).primary,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleSmall
-                          .override(
-                            font: GoogleFonts.interTight(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontStyle,
-                            ),
-                            color: Colors.white,
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
+                      textStyle: FlutterFlowTheme.of(
+                        context,
+                      ).titleSmall.override(
+                        font: GoogleFonts.interTight(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleSmall.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
+                        color: Colors.white,
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
                       elevation: 0.0,
                       borderRadius: BorderRadius.circular(12.0),
                     ),

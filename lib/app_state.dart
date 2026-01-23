@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
-import 'backend/supabase/supabase.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';
@@ -138,5 +137,7 @@ extension FlutterSecureStorageExtensions on FlutterSecureStorage {
       });
   Future<void> setStringList(String key, List<String> value) async =>
       await writeSync(
-          key: key, value: const ListToCsvConverter().convert([value]));
+        key: key,
+        value: const ListToCsvConverter().convert([value]),
+      );
 }

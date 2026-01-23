@@ -16,10 +16,7 @@ import 'pp_detalhes_user_model.dart';
 export 'pp_detalhes_user_model.dart';
 
 class PpDetalhesUserWidget extends StatefulWidget {
-  const PpDetalhesUserWidget({
-    super.key,
-    required this.user,
-  });
+  const PpDetalhesUserWidget({super.key, required this.user});
 
   final UsersRow user;
 
@@ -48,21 +45,24 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
 
-    _model.txNomeTextController ??=
-        TextEditingController(text: widget.user.nome ?? '');
+    _model.txNomeTextController ??= TextEditingController(
+      text: widget.user.nome ?? '',
+    );
     _model.txNomeFocusNode ??= FocusNode();
     _model.txNomeTextControllerValidator ??=
         (context, value) => Validators.required(value, 'Nome');
 
-    _model.txEmailTextController ??=
-        TextEditingController(text: widget.user.email ?? '');
+    _model.txEmailTextController ??= TextEditingController(
+      text: widget.user.email ?? '',
+    );
     _model.txEmailFocusNode ??= FocusNode();
     _model.txEmailTextControllerValidator ??=
         (context, value) => Validators.email(value);
 
     _model.ddNivelAcessoValue = widget.user.tipoUser ?? 'Moderador';
-    _model.ddNivelAcessoValueController ??=
-        FormFieldController<String>(_model.ddNivelAcessoValue);
+    _model.ddNivelAcessoValueController ??= FormFieldController<String>(
+      _model.ddNivelAcessoValue,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -81,20 +81,24 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
           elevation: 0,
           insetPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
-          alignment: const AlignmentDirectional(0.0, 0.0)
-              .resolve(Directionality.of(context)),
+          alignment: const AlignmentDirectional(
+            0.0,
+            0.0,
+          ).resolve(Directionality.of(context)),
           child: WebViewAware(
             child: Container(
-              constraints: const BoxConstraints(
-                maxWidth: 400.0,
-              ),
+              constraints: const BoxConstraints(maxWidth: 400.0),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(
-                    16.0, 16.0, 16.0, 24.0),
+                  16.0,
+                  16.0,
+                  16.0,
+                  24.0,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,23 +110,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                         Expanded(
                           child: Text(
                             'Redefinição de senha',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color: const Color(0xFF323334),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style: FlutterFlowTheme.of(
+                              context,
+                            ).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
+                              color: const Color(0xFF323334),
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
                           ),
                         ),
                         FlutterFlowIconButton(
@@ -160,39 +166,35 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                       'E-mail enviado',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF323334),
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF323334),
+                        fontSize: 20.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                     Text(
                       'Enviamos um e-mail para ${widget.user.email ?? 'nome@email.com'} com um link para redefinição de senha.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF646768),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.normal,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.normal,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF646768),
+                        fontSize: 14.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.normal,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                     FFButtonWidget(
                       onPressed: () async {
@@ -203,30 +205,40 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                         width: double.infinity,
                         height: 40.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
+                          16.0,
+                          0.0,
+                          16.0,
+                          0.0,
+                        ),
                         iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 0.0, 0.0, 0.0),
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                        ),
                         color: FlutterFlowTheme.of(context).primary,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .titleSmall
-                            .override(
-                              font: GoogleFonts.interTight(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
-                              color: Colors.white,
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .fontStyle,
-                            ),
+                        textStyle: FlutterFlowTheme.of(
+                          context,
+                        ).titleSmall.override(
+                          font: GoogleFonts.interTight(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontStyle,
+                          ),
+                          color: Colors.white,
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleSmall.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
                         elevation: 0.0,
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -249,20 +261,24 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
           elevation: 0,
           insetPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
-          alignment: const AlignmentDirectional(0.0, 0.0)
-              .resolve(Directionality.of(context)),
+          alignment: const AlignmentDirectional(
+            0.0,
+            0.0,
+          ).resolve(Directionality.of(context)),
           child: WebViewAware(
             child: Container(
-              constraints: const BoxConstraints(
-                maxWidth: 400.0,
-              ),
+              constraints: const BoxConstraints(maxWidth: 400.0),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(
-                    16.0, 16.0, 16.0, 24.0),
+                  16.0,
+                  16.0,
+                  16.0,
+                  24.0,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -274,23 +290,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                         Expanded(
                           child: Text(
                             'Excluir usuário',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color: const Color(0xFF323334),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style: FlutterFlowTheme.of(
+                              context,
+                            ).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
+                              color: const Color(0xFF323334),
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
                           ),
                         ),
                         FlutterFlowIconButton(
@@ -313,10 +331,7 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.red,
-                          width: 2.0,
-                        ),
+                        border: Border.all(color: Colors.red, width: 2.0),
                       ),
                       child: const Icon(
                         Icons.warning_rounded,
@@ -328,39 +343,35 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                       'Deseja excluir este usuário?',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF323334),
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF323334),
+                        fontSize: 20.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                     Text(
                       'Esta ação é irreversível. Ao prosseguir, o usuário não terá mais acesso ao painel administrativo.',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF646768),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.normal,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.normal,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF646768),
+                        fontSize: 14.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.normal,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -374,30 +385,42 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
+                              16.0,
+                              0.0,
+                              16.0,
+                              0.0,
+                            ),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
+                              0.0,
+                              0.0,
+                              0.0,
+                              0.0,
+                            ),
                             color: const Color(0x00007191),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                            textStyle: FlutterFlowTheme.of(
+                              context,
+                            ).titleSmall.override(
+                              font: GoogleFonts.interTight(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontStyle,
+                              ),
+                              color: FlutterFlowTheme.of(context).primary,
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
                             elevation: 0.0,
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).primary,
@@ -410,23 +433,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                             try {
                               // Excluir da tabela users
                               await UsersTable().delete(
-                                matchingRows: (rows) =>
-                                    rows.eq('id', widget.user.id),
+                                matchingRows:
+                                    (rows) => rows.eq('id', widget.user.id),
                               );
 
                               // Excluir do Auth (usando Admin API seria necessário, mas por enquanto apenas marcamos como inativo)
                               // Nota: A exclusão do Auth requer Admin API, então vamos apenas marcar como inativo
                               await UsersTable().update(
                                 data: {'ativo': false},
-                                matchingRows: (rows) =>
-                                    rows.eq('id', widget.user.id),
+                                matchingRows:
+                                    (rows) => rows.eq('id', widget.user.id),
                               );
 
                               Navigator.pop(dialogContext);
                               Navigator.pop(context);
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content: Text('Usuário excluído com sucesso!'),
+                                  content: Text(
+                                    'Usuário excluído com sucesso!',
+                                  ),
                                   backgroundColor: Color(0xFF90C74F),
                                 ),
                               );
@@ -434,7 +459,8 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
-                                      'Erro ao excluir usuário: ${e.toString()}'),
+                                    'Erro ao excluir usuário: ${e.toString()}',
+                                  ),
                                   backgroundColor: Colors.red,
                                 ),
                               );
@@ -444,30 +470,42 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
+                              16.0,
+                              0.0,
+                              16.0,
+                              0.0,
+                            ),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
+                              0.0,
+                              0.0,
+                              0.0,
+                              0.0,
+                            ),
                             color: Colors.red,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                            textStyle: FlutterFlowTheme.of(
+                              context,
+                            ).titleSmall.override(
+                              font: GoogleFonts.interTight(
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontStyle,
+                              ),
+                              color: Colors.white,
+                              letterSpacing: 0.0,
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
                             elevation: 0.0,
                             borderRadius: BorderRadius.circular(12.0),
                           ),
@@ -489,10 +527,7 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
-        constraints: const BoxConstraints(
-          maxWidth: 800.0,
-          maxHeight: 700.0,
-        ),
+        constraints: const BoxConstraints(maxWidth: 800.0, maxHeight: 700.0),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.circular(8.0),
@@ -510,20 +545,18 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                     child: Text(
                       'Detalhes do usuário',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF323334),
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF323334),
+                        fontSize: 20.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                   ),
                   FlutterFlowIconButton(
@@ -547,46 +580,42 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                   labelColor: const Color(0xFF323234),
                   unselectedLabelColor: const Color(0xFF323234),
                   labelPadding: const EdgeInsetsDirectional.fromSTEB(
-                      24.0, 0.0, 24.0, 0.0),
-                  labelStyle:
-                      FlutterFlowTheme.of(context).titleMedium.override(
-                            font: GoogleFonts.interTight(
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontStyle,
-                            ),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.normal,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .fontStyle,
-                          ),
-                  unselectedLabelStyle:
-                      FlutterFlowTheme.of(context).titleMedium.override(
-                            font: GoogleFonts.interTight(
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .fontStyle,
-                            ),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.normal,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .fontStyle,
-                          ),
+                    24.0,
+                    0.0,
+                    24.0,
+                    0.0,
+                  ),
+                  labelStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                    font: GoogleFonts.interTight(
+                      fontWeight: FontWeight.normal,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                    ),
+                    fontSize: 14.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.normal,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                  ),
+                  unselectedLabelStyle: FlutterFlowTheme.of(
+                    context,
+                  ).titleMedium.override(
+                    font: GoogleFonts.interTight(
+                      fontWeight: FontWeight.normal,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                    ),
+                    fontSize: 14.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.normal,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                  ),
                   indicatorColor: const Color(0xFF90C74F),
                   indicatorWeight: 2.0,
                   tabs: const [
-                    Tab(
-                      text: 'Informações gerais',
-                    ),
-                    Tab(
-                      text: 'Histórico de atividades',
-                    ),
+                    Tab(text: 'Informações gerais'),
+                    Tab(text: 'Histórico de atividades'),
                   ],
                   controller: _model.tabBarController,
                 ),
@@ -599,7 +628,11 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                     SingleChildScrollView(
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 24.0, 0.0, 24.0),
+                          0.0,
+                          24.0,
+                          0.0,
+                          24.0,
+                        ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -633,25 +666,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   children: [
                                     Text(
                                       'Nome',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                            ),
-                                            color: const Color(0xFF323334),
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        color: const Color(0xFF323334),
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                     const SizedBox(width: 4.0),
                                     const Text(
@@ -673,90 +706,98 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                     autofocus: false,
                                     decoration: InputDecoration(
                                       isDense: true,
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                          ),
+                                      labelStyle: FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                      ),
                                       hintText: 'Nome',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: const Color(0xFFB1B3B4),
-                                            letterSpacing: 0.0,
-                                          ),
+                                      hintStyle: FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontStyle,
+                                        ),
+                                        color: const Color(0xFFB1B3B4),
+                                        letterSpacing: 0.0,
+                                      ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFE5E6E6),
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFE5E6E6),
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
+                                          color:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).error,
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
+                                          color:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).error,
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       filled: true,
                                       fillColor: const Color(0xFFFAFAFA),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                        ),
+                                    style: FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                    ),
                                     validator: _model
                                         .txNomeTextControllerValidator
                                         .asValidator(context),
@@ -775,25 +816,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   children: [
                                     Text(
                                       'E-mail',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                            ),
-                                            color: const Color(0xFF323334),
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        color: const Color(0xFF323334),
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                     const SizedBox(width: 4.0),
                                     const Text(
@@ -815,90 +856,98 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                     autofocus: false,
                                     decoration: InputDecoration(
                                       isDense: true,
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                          ),
+                                      labelStyle: FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                      ),
                                       hintText: 'E-mail',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: const Color(0xFFB1B3B4),
-                                            letterSpacing: 0.0,
-                                          ),
+                                      hintStyle: FlutterFlowTheme.of(
+                                        context,
+                                      ).labelMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontStyle,
+                                        ),
+                                        color: const Color(0xFFB1B3B4),
+                                        letterSpacing: 0.0,
+                                      ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFE5E6E6),
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
                                           color: Color(0xFFE5E6E6),
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
+                                          color:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).error,
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
+                                          color:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).error,
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                       filled: true,
                                       fillColor: const Color(0xFFFAFAFA),
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                        ),
+                                    style: FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                    ),
                                     validator: _model
                                         .txEmailTextControllerValidator
                                         .asValidator(context),
@@ -917,25 +966,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   children: [
                                     Text(
                                       'Nível de acesso',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                            ),
-                                            color: const Color(0xFF323334),
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        color: const Color(0xFF323334),
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                     const SizedBox(width: 4.0),
                                     const Text(
@@ -950,34 +999,44 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                 ),
                                 const SizedBox(height: 8.0),
                                 FlutterFlowDropDown<String>(
-                                  controller: _model.ddNivelAcessoValueController ??=
-                                      FormFieldController<String>(
-                                    _model.ddNivelAcessoValue,
-                                  ),
+                                  controller:
+                                      _model.ddNivelAcessoValueController ??=
+                                          FormFieldController<String>(
+                                            _model.ddNivelAcessoValue,
+                                          ),
                                   options: const ['Admin', 'Moderador'],
-                                  optionLabels: const ['Administrador', 'Moderador'],
-                                  onChanged: (val) =>
-                                      safeSetState(() => _model.ddNivelAcessoValue = val),
+                                  optionLabels: const [
+                                    'Administrador',
+                                    'Moderador',
+                                  ],
+                                  onChanged:
+                                      (val) => safeSetState(
+                                        () => _model.ddNivelAcessoValue = val,
+                                      ),
                                   width: double.infinity,
                                   height: 44.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .fontWeight,
-                                          fontStyle: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                      ),
+                                  textStyle: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                  ),
                                   hintText: 'Selecione',
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).secondaryText,
                                     size: 24.0,
                                   ),
                                   fillColor: const Color(0xFFFAFAFA),
@@ -986,7 +1045,11 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   borderWidth: 0.0,
                                   borderRadius: 8.0,
                                   margin: const EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
+                                    12.0,
+                                    0.0,
+                                    12.0,
+                                    0.0,
+                                  ),
                                   hidesUnderline: true,
                                   isOverButton: false,
                                   isSearchable: false,
@@ -1028,8 +1091,8 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   // Enviar email de reset de senha
                                   await SupaFlow.client.auth
                                       .resetPasswordForEmail(
-                                    widget.user.email!.trim(),
-                                  );
+                                        widget.user.email!.trim(),
+                                      );
 
                                   // Fechar loading
                                   if (mounted) {
@@ -1038,7 +1101,7 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
 
                                   // Se chegou aqui, o email foi enviado com sucesso
                                   await _showEmailEnviadoDialog();
-                                } catch (e, stackTrace) {
+                                } catch (e) {
                                   // Fechar loading
                                   if (mounted) {
                                     Navigator.pop(context);
@@ -1047,22 +1110,30 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   // Tratar erro
                                   String errorMessage =
                                       'Erro ao enviar e-mail. Tente novamente.';
-                                  
-                                  final errorString = e.toString().toLowerCase();
-                                  
+
+                                  final errorString =
+                                      e.toString().toLowerCase();
+
                                   if (errorString.contains('user not found') ||
                                       errorString.contains('not found') ||
                                       errorString.contains('does not exist')) {
                                     errorMessage =
                                         'Usuário não encontrado no sistema de autenticação.';
-                                  } else if (errorString.contains('invalid email') ||
+                                  } else if (errorString.contains(
+                                        'invalid email',
+                                      ) ||
                                       errorString.contains('email format')) {
-                                    errorMessage = 'E-mail inválido. Verifique o formato.';
-                                  } else if (errorString.contains('rate limit') ||
+                                    errorMessage =
+                                        'E-mail inválido. Verifique o formato.';
+                                  } else if (errorString.contains(
+                                        'rate limit',
+                                      ) ||
                                       errorString.contains('too many')) {
                                     errorMessage =
                                         'Muitas tentativas. Aguarde alguns minutos e tente novamente.';
-                                  } else if (errorString.contains('email not confirmed')) {
+                                  } else if (errorString.contains(
+                                    'email not confirmed',
+                                  )) {
                                     errorMessage =
                                         'E-mail não confirmado. O usuário precisa confirmar o e-mail primeiro.';
                                   }
@@ -1083,25 +1154,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                 children: [
                                   Text(
                                     'Enviar e-mail de redefinição de senha',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .fontStyle,
-                                          ),
-                                          color: const Color(0xFF90C74F),
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .fontStyle,
-                                        ),
+                                    style: FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
+                                      color: const Color(0xFF90C74F),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1127,25 +1198,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   const SizedBox(width: 8.0),
                                   Text(
                                     'Excluir usuário',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .fontStyle,
-                                          ),
-                                          color: Colors.red,
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .fontStyle,
-                                        ),
+                                    style: FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
+                                      color: Colors.red,
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -1157,12 +1228,16 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   // Validações
-                                  if (_model.txNomeTextController?.text
+                                  if (_model
+                                          .txNomeTextController
+                                          ?.text
                                           .isEmpty ??
                                       true) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
-                                        content: Text('Por favor, preencha o nome'),
+                                        content: Text(
+                                          'Por favor, preencha o nome',
+                                        ),
                                         backgroundColor: Colors.red,
                                       ),
                                     );
@@ -1171,8 +1246,10 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
 
                                   final emailError = _model
                                       .txEmailTextControllerValidator
-                                      ?.call(context,
-                                          _model.txEmailTextController!.text);
+                                      ?.call(
+                                        context,
+                                        _model.txEmailTextController!.text,
+                                      );
                                   if (emailError != null &&
                                       emailError.isNotEmpty) {
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -1188,19 +1265,23 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                     // Atualizar na tabela users
                                     await UsersTable().update(
                                       data: {
-                                        'nome': _model.txNomeTextController!.text,
-                                        'email': _model.txEmailTextController!.text,
+                                        'nome':
+                                            _model.txNomeTextController!.text,
+                                        'email':
+                                            _model.txEmailTextController!.text,
                                         'tipo_user': _model.ddNivelAcessoValue,
                                       },
-                                      matchingRows: (rows) =>
-                                          rows.eq('id', widget.user.id),
+                                      matchingRows:
+                                          (rows) =>
+                                              rows.eq('id', widget.user.id),
                                     );
 
                                     Navigator.pop(context);
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                         content: Text(
-                                            'Alterações salvas com sucesso!'),
+                                          'Alterações salvas com sucesso!',
+                                        ),
                                         backgroundColor: Color(0xFF90C74F),
                                       ),
                                     );
@@ -1208,7 +1289,8 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                            'Erro ao salvar alterações: ${e.toString()}'),
+                                          'Erro ao salvar alterações: ${e.toString()}',
+                                        ),
                                         backgroundColor: Colors.red,
                                       ),
                                     );
@@ -1218,33 +1300,43 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                 options: FFButtonOptions(
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
+                                    16.0,
+                                    0.0,
+                                    16.0,
+                                    0.0,
+                                  ),
                                   iconPadding:
                                       const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        font: GoogleFonts.interTight(
-                                          fontWeight: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .fontWeight,
-                                          fontStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .fontStyle,
-                                        ),
-                                        color: Colors.white,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0,
                                       ),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.override(
+                                    font: GoogleFonts.interTight(
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).titleSmall.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).titleSmall.fontStyle,
+                                    ),
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).titleSmall.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).titleSmall.fontStyle,
+                                  ),
                                   elevation: 0.0,
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
@@ -1258,7 +1350,11 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                     SingleChildScrollView(
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 24.0, 0.0, 24.0),
+                          0.0,
+                          24.0,
+                          0.0,
+                          24.0,
+                        ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -1271,50 +1367,50 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                   flex: 2,
                                   child: Text(
                                     'Data',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .fontStyle,
-                                          ),
-                                          color: const Color(0xFF323334),
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .fontStyle,
-                                        ),
+                                    style: FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
+                                      color: const Color(0xFF323334),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
                                   ),
                                 ),
                                 Expanded(
                                   flex: 3,
                                   child: Text(
                                     'Atividade',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .fontStyle,
-                                          ),
-                                          color: const Color(0xFF323334),
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .fontStyle,
-                                        ),
+                                    style: FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
+                                      color: const Color(0xFF323334),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -1327,23 +1423,25 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                             // Lista de atividades (placeholder por enquanto)
                             Text(
                               'Nenhuma atividade registrada ainda.',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.normal,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: const Color(0xFF646768),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.normal,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.normal,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                color: const Color(0xFF646768),
+                                fontSize: 14.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.normal,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                             ),
                           ],
                         ),

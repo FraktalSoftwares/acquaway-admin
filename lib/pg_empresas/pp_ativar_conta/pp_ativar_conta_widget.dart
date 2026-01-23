@@ -3,18 +3,13 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'pp_ativar_conta_model.dart';
 export 'pp_ativar_conta_model.dart';
 
 class PpAtivarContaWidget extends StatefulWidget {
-  const PpAtivarContaWidget({
-    super.key,
-    required this.idEmpresa,
-  });
+  const PpAtivarContaWidget({super.key, required this.idEmpresa});
 
   final int? idEmpresa;
 
@@ -52,9 +47,7 @@ class _PpAtivarContaWidgetState extends State<PpAtivarContaWidget> {
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: double.infinity,
-        constraints: const BoxConstraints(
-          maxWidth: 500.0,
-        ),
+        constraints: const BoxConstraints(maxWidth: 500.0),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.circular(8.0),
@@ -78,20 +71,18 @@ class _PpAtivarContaWidgetState extends State<PpAtivarContaWidget> {
                     child: Text(
                       'Ativar conta',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: const Color(0xFF323334),
-                            fontSize: 16.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
+                        color: const Color(0xFF323334),
+                        fontSize: 16.0,
+                        letterSpacing: 0.0,
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                     ),
                   ),
                   FlutterFlowIconButton(
@@ -111,32 +102,30 @@ class _PpAtivarContaWidgetState extends State<PpAtivarContaWidget> {
               Text(
                 'Deseja realmente ativar essa conta?',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w500,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                    ),
+                  font: GoogleFonts.inter(
+                    fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                ),
               ),
               Text(
                 'Ao prosseguir, o acesso do usuário será ativo.',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.normal,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
-                      fontSize: 12.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.normal,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                    ),
+                  font: GoogleFonts.inter(
+                    fontWeight: FontWeight.normal,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
+                  fontSize: 12.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.normal,
+                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                ),
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,
@@ -150,29 +139,36 @@ class _PpAtivarContaWidgetState extends State<PpAtivarContaWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 0.0),
+                        16.0,
+                        0.0,
+                        16.0,
+                        0.0,
+                      ),
                       iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                      ),
                       color: const Color(0x00007191),
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
+                      textStyle: FlutterFlowTheme.of(
+                        context,
+                      ).titleSmall.override(
+                        font: GoogleFonts.interTight(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleSmall.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
                       elevation: 0.0,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -203,29 +199,36 @@ class _PpAtivarContaWidgetState extends State<PpAtivarContaWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 0.0),
+                        16.0,
+                        0.0,
+                        16.0,
+                        0.0,
+                      ),
                       iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                      ),
                       color: FlutterFlowTheme.of(context).primary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                                color: Colors.white,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
+                      textStyle: FlutterFlowTheme.of(
+                        context,
+                      ).titleSmall.override(
+                        font: GoogleFonts.interTight(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleSmall.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
+                        color: Colors.white,
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
                       elevation: 0.0,
                       borderRadius: BorderRadius.circular(12.0),
                     ),

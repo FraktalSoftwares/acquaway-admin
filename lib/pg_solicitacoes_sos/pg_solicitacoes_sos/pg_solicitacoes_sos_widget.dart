@@ -3,13 +3,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pg_solicitacoes_sos/pp_detalhe_viagem_sos/pp_detalhe_viagem_sos_widget.dart';
-import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'pg_solicitacoes_sos_model.dart';
 export 'pg_solicitacoes_sos_model.dart';
@@ -64,9 +62,7 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(
-              color: Color(0xFFFAFAFA),
-            ),
+            decoration: const BoxDecoration(color: Color(0xFFFAFAFA)),
             child: Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
@@ -78,26 +74,30 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                       Text(
                         'Solicitações de SOS',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              fontSize: 24.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          fontSize: 24.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                     ],
                   ),
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 0.0),
+                        0.0,
+                        24.0,
+                        0.0,
+                        0.0,
+                      ),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -111,63 +111,64 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                   controller:
                                       _model.txBuscaEmpresaTextController,
                                   focusNode: _model.txBuscaEmpresaFocusNode,
-                                  onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.txBuscaEmpresaTextController',
-                                    const Duration(milliseconds: 500),
-                                    () => safeSetState(() {}),
-                                  ),
+                                  onChanged:
+                                      (_) => EasyDebounce.debounce(
+                                        '_model.txBuscaEmpresaTextController',
+                                        const Duration(milliseconds: 500),
+                                        () => safeSetState(() {}),
+                                      ),
                                   autofocus: false,
                                   enabled: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
+                                    labelStyle: FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontStyle,
+                                    ),
                                     hintText: 'Buscar solicitações de SOS',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
+                                    hintStyle: FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontStyle,
+                                    ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
                                         color: Color(0xFFE5E6E6),
@@ -206,27 +207,29 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                       size: 24.0,
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   enableInteractiveSelection: true,
@@ -240,7 +243,11 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                           Flexible(
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 24.0, 0.0, 0.0),
+                                0.0,
+                                24.0,
+                                0.0,
+                                0.0,
+                              ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -248,19 +255,20 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                     child: Container(
                                       decoration: const BoxDecoration(),
                                       child: FutureBuilder<
-                                          List<ViewSosCompletoRow>>(
-                                        future:
-                                            ViewSosCompletoTable().queryRows(
+                                        List<ViewSosCompletoRow>
+                                      >(
+                                        future: ViewSosCompletoTable().queryRows(
                                           queryFn: (q) {
                                             var query = q.eqOrNull(
                                               'resolvida',
                                               false,
                                             );
                                             // Só aplicar filtro ilike se houver texto na busca
-                                            final buscaTexto = _model
-                                                .txBuscaEmpresaTextController
-                                                .text
-                                                .trim();
+                                            final buscaTexto =
+                                                _model
+                                                    .txBuscaEmpresaTextController
+                                                    .text
+                                                    .trim();
                                             if (buscaTexto.isNotEmpty) {
                                               query = query.ilike(
                                                 'tipo',
@@ -277,65 +285,72 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
+                                                child: CircularProgressIndicator(
                                                   valueColor:
                                                       AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
+                                                        Color
+                                                      >(
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).primary,
+                                                      ),
                                                 ),
                                               ),
                                             );
                                           }
                                           List<ViewSosCompletoRow>
-                                              gridViewViewSosCompletoRowList =
+                                          gridViewViewSosCompletoRowList =
                                               snapshot.data!;
 
                                           return GridView.builder(
                                             padding: EdgeInsets.zero,
                                             gridDelegate:
                                                 const SliverGridDelegateWithFixedCrossAxisCount(
-                                              crossAxisCount: 2,
-                                              crossAxisSpacing: 12.0,
-                                              mainAxisSpacing: 12.0,
-                                              childAspectRatio: 4.0,
-                                            ),
+                                                  crossAxisCount: 2,
+                                                  crossAxisSpacing: 12.0,
+                                                  mainAxisSpacing: 12.0,
+                                                  childAspectRatio: 4.0,
+                                                ),
                                             shrinkWrap: true,
                                             scrollDirection: Axis.vertical,
                                             itemCount:
                                                 gridViewViewSosCompletoRowList
                                                     .length,
-                                            itemBuilder:
-                                                (context, gridViewIndex) {
+                                            itemBuilder: (
+                                              context,
+                                              gridViewIndex,
+                                            ) {
                                               final gridViewViewSosCompletoRow =
-                                                  gridViewViewSosCompletoRowList[
-                                                      gridViewIndex];
+                                                  gridViewViewSosCompletoRowList[gridViewIndex];
                                               return Material(
                                                 color: Colors.transparent,
                                                 elevation: 1.0,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          12.0),
+                                                        12.0,
+                                                      ),
                                                 ),
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          12.0),
+                                                        12.0,
+                                                      ),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 100.0,
                                                     decoration: BoxDecoration(
                                                       color: const Color(
-                                                          0xFFFAFAFA),
+                                                        0xFFFAFAFA,
+                                                      ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                            12.0,
+                                                          ),
                                                       border: Border.all(
                                                         color: const Color(
-                                                            0xFFE5E6E6),
+                                                          0xFFE5E6E6,
+                                                        ),
                                                       ),
                                                     ),
                                                     child: Row(
@@ -346,19 +361,21 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                                           width: 12.0,
                                                           height:
                                                               double.infinity,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color:
-                                                                valueOrDefault<
-                                                                    Color>(
+                                                          decoration: BoxDecoration(
+                                                            color: valueOrDefault<
+                                                              Color
+                                                            >(
                                                               gridViewViewSosCompletoRow
                                                                       .resolvida!
                                                                   ? const Color(
-                                                                      0xFF1EAE3E)
+                                                                    0xFF1EAE3E,
+                                                                  )
                                                                   : const Color(
-                                                                      0xFFAE1E1E),
+                                                                    0xFFAE1E1E,
+                                                                  ),
                                                               const Color(
-                                                                  0xFFAE1E1E),
+                                                                0xFFAE1E1E,
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
@@ -371,9 +388,9 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                                               Expanded(
                                                                 child: Padding(
                                                                   padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          20.0),
+                                                                      const EdgeInsets.all(
+                                                                        20.0,
+                                                                      ),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -392,36 +409,67 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                                                             MainAxisAlignment.spaceBetween,
                                                                         children: [
                                                                           Text(
-                                                                            valueOrDefault<String>(
+                                                                            valueOrDefault<
+                                                                              String
+                                                                            >(
                                                                               gridViewViewSosCompletoRow.tipo,
                                                                               'Tipo',
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.inter(
-                                                                                    fontWeight: FontWeight.w500,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
-                                                                                  fontSize: 16.0,
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FontWeight.w500,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                            style: FlutterFlowTheme.of(
+                                                                              context,
+                                                                            ).bodyMedium.override(
+                                                                              font: GoogleFonts.inter(
+                                                                                fontWeight:
+                                                                                    FontWeight.w500,
+                                                                                fontStyle:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontStyle,
+                                                                              ),
+                                                                              fontSize:
+                                                                                  16.0,
+                                                                              letterSpacing:
+                                                                                  0.0,
+                                                                              fontWeight:
+                                                                                  FontWeight.w500,
+                                                                              fontStyle:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontStyle,
+                                                                            ),
                                                                           ),
                                                                           Text(
-                                                                            valueOrDefault<String>(
-                                                                              functions.latLogGraus(gridViewViewSosCompletoRow.lat!, gridViewViewSosCompletoRow.long!),
+                                                                            valueOrDefault<
+                                                                              String
+                                                                            >(
+                                                                              functions.latLogGraus(
+                                                                                gridViewViewSosCompletoRow.lat!,
+                                                                                gridViewViewSosCompletoRow.long!,
+                                                                              ),
                                                                               '0° 0\' 0.00\" S 0° 0\' 0.00\" W',
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.inter(
-                                                                                    fontWeight: FontWeight.w500,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
-                                                                                  fontSize: 16.0,
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FontWeight.w500,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                            style: FlutterFlowTheme.of(
+                                                                              context,
+                                                                            ).bodyMedium.override(
+                                                                              font: GoogleFonts.inter(
+                                                                                fontWeight:
+                                                                                    FontWeight.w500,
+                                                                                fontStyle:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontStyle,
+                                                                              ),
+                                                                              fontSize:
+                                                                                  16.0,
+                                                                              letterSpacing:
+                                                                                  0.0,
+                                                                              fontWeight:
+                                                                                  FontWeight.w500,
+                                                                              fontStyle:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontStyle,
+                                                                            ),
                                                                           ),
                                                                         ],
                                                                       ),
@@ -432,115 +480,204 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                                                             CrossAxisAlignment.start,
                                                                         children: [
                                                                           Text(
-                                                                            valueOrDefault<String>(
+                                                                            valueOrDefault<
+                                                                              String
+                                                                            >(
                                                                               'Viagem: ${gridViewViewSosCompletoRow.viagemId?.toString()}',
                                                                               'Nome piloto',
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.inter(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                            style: FlutterFlowTheme.of(
+                                                                              context,
+                                                                            ).bodyMedium.override(
+                                                                              font: GoogleFonts.inter(
+                                                                                fontWeight:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontWeight,
+                                                                                fontStyle:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontStyle,
+                                                                              ),
+                                                                              letterSpacing:
+                                                                                  0.0,
+                                                                              fontWeight:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontWeight,
+                                                                              fontStyle:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontStyle,
+                                                                            ),
                                                                           ),
                                                                           Text(
-                                                                            valueOrDefault<String>(
+                                                                            valueOrDefault<
+                                                                              String
+                                                                            >(
                                                                               'Piloto: ${gridViewViewSosCompletoRow.nomePiloto}',
                                                                               'Nome piloto',
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.inter(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                            style: FlutterFlowTheme.of(
+                                                                              context,
+                                                                            ).bodyMedium.override(
+                                                                              font: GoogleFonts.inter(
+                                                                                fontWeight:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontWeight,
+                                                                                fontStyle:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontStyle,
+                                                                              ),
+                                                                              letterSpacing:
+                                                                                  0.0,
+                                                                              fontWeight:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontWeight,
+                                                                              fontStyle:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontStyle,
+                                                                            ),
                                                                           ),
                                                                           Text(
-                                                                            valueOrDefault<String>(
+                                                                            valueOrDefault<
+                                                                              String
+                                                                            >(
                                                                               dateTimeFormat(
                                                                                 "dd MMM\'.\' yyyy h:mm",
                                                                                 gridViewViewSosCompletoRow.createdAt,
-                                                                                locale: FFLocalizations.of(context).languageCode,
+                                                                                locale:
+                                                                                    FFLocalizations.of(
+                                                                                      context,
+                                                                                    ).languageCode,
                                                                               ),
                                                                               '00/00/0000',
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.inter(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                            style: FlutterFlowTheme.of(
+                                                                              context,
+                                                                            ).bodyMedium.override(
+                                                                              font: GoogleFonts.inter(
+                                                                                fontWeight:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontWeight,
+                                                                                fontStyle:
+                                                                                    FlutterFlowTheme.of(
+                                                                                      context,
+                                                                                    ).bodyMedium.fontStyle,
+                                                                              ),
+                                                                              letterSpacing:
+                                                                                  0.0,
+                                                                              fontWeight:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontWeight,
+                                                                              fontStyle:
+                                                                                  FlutterFlowTheme.of(
+                                                                                    context,
+                                                                                  ).bodyMedium.fontStyle,
+                                                                            ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                       Builder(
                                                                         builder:
-                                                                            (context) =>
-                                                                                FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await showDialog(
-                                                                              context: context,
-                                                                              builder: (dialogContext) {
-                                                                                return Dialog(
-                                                                                  elevation: 0,
-                                                                                  insetPadding: EdgeInsets.zero,
-                                                                                  backgroundColor: Colors.transparent,
-                                                                                  alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                  child: WebViewAware(
-                                                                                    child: PpDetalheViagemSosWidget(
-                                                                                      idViagem: gridViewViewSosCompletoRow.viagemId!,
-                                                                                      idSos: gridViewViewSosCompletoRow.sosId!,
-                                                                                      tipoSos: gridViewViewSosCompletoRow.tipo!,
-                                                                                    ),
-                                                                                  ),
+                                                                            (
+                                                                              context,
+                                                                            ) => FFButtonWidget(
+                                                                              onPressed: () async {
+                                                                                await showDialog(
+                                                                                  context:
+                                                                                      context,
+                                                                                  builder: (
+                                                                                    dialogContext,
+                                                                                  ) {
+                                                                                    return Dialog(
+                                                                                      elevation:
+                                                                                          0,
+                                                                                      insetPadding:
+                                                                                          EdgeInsets.zero,
+                                                                                      backgroundColor:
+                                                                                          Colors.transparent,
+                                                                                      alignment: const AlignmentDirectional(
+                                                                                        0.0,
+                                                                                        0.0,
+                                                                                      ).resolve(
+                                                                                        Directionality.of(
+                                                                                          context,
+                                                                                        ),
+                                                                                      ),
+                                                                                      child: WebViewAware(
+                                                                                        child: PpDetalheViagemSosWidget(
+                                                                                          idViagem:
+                                                                                              gridViewViewSosCompletoRow.viagemId!,
+                                                                                          idSos:
+                                                                                              gridViewViewSosCompletoRow.sosId!,
+                                                                                          tipoSos:
+                                                                                              gridViewViewSosCompletoRow.tipo!,
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  },
                                                                                 );
                                                                               },
-                                                                            );
-                                                                          },
-                                                                          text:
-                                                                              'Acompanhar viagem',
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                16.0,
-                                                                                0.0,
-                                                                                16.0,
-                                                                                0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                const Color(0xFFAE1E1E),
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: GoogleFonts.interTight(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                  ),
-                                                                                  color: Colors.white,
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                              text:
+                                                                                  'Acompanhar viagem',
+                                                                              options: FFButtonOptions(
+                                                                                height:
+                                                                                    40.0,
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                  16.0,
+                                                                                  0.0,
+                                                                                  16.0,
+                                                                                  0.0,
                                                                                 ),
-                                                                            elevation:
-                                                                                0.0,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                        ),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                  0.0,
+                                                                                  0.0,
+                                                                                  0.0,
+                                                                                  0.0,
+                                                                                ),
+                                                                                color: const Color(
+                                                                                  0xFFAE1E1E,
+                                                                                ),
+                                                                                textStyle: FlutterFlowTheme.of(
+                                                                                  context,
+                                                                                ).titleSmall.override(
+                                                                                  font: GoogleFonts.interTight(
+                                                                                    fontWeight:
+                                                                                        FlutterFlowTheme.of(
+                                                                                          context,
+                                                                                        ).titleSmall.fontWeight,
+                                                                                    fontStyle:
+                                                                                        FlutterFlowTheme.of(
+                                                                                          context,
+                                                                                        ).titleSmall.fontStyle,
+                                                                                  ),
+                                                                                  color:
+                                                                                      Colors.white,
+                                                                                  letterSpacing:
+                                                                                      0.0,
+                                                                                  fontWeight:
+                                                                                      FlutterFlowTheme.of(
+                                                                                        context,
+                                                                                      ).titleSmall.fontWeight,
+                                                                                  fontStyle:
+                                                                                      FlutterFlowTheme.of(
+                                                                                        context,
+                                                                                      ).titleSmall.fontStyle,
+                                                                                ),
+                                                                                elevation:
+                                                                                    0.0,
+                                                                                borderRadius: BorderRadius.circular(
+                                                                                  8.0,
+                                                                                ),
+                                                                              ),
+                                                                            ),
                                                                       ),
                                                                     ],
                                                                   ),

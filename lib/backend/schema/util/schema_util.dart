@@ -35,8 +35,14 @@ dynamic deserializeStructParam<T>(
       return null;
     }
     return paramValues
-        .map<T>((e) => deserializeStructParam<T>(e, paramType, false,
-            structBuilder: structBuilder))
+        .map<T>(
+          (e) => deserializeStructParam<T>(
+            e,
+            paramType,
+            false,
+            structBuilder: structBuilder,
+          ),
+        )
         .toList();
   } else if (param is Map<String, dynamic>) {
     return structBuilder(param);
@@ -50,20 +56,18 @@ dynamic deserializeStructParam<T>(
   }
 }
 
-List<T>? getStructList<T>(
-  dynamic value,
-  StructBuilder<T> structBuilder,
-) =>
+List<T>? getStructList<T>(dynamic value, StructBuilder<T> structBuilder) =>
     value is! List
         ? null
         : value
             .whereType<Map<String, dynamic>>()
-            .map((e) => structBuilder(e as Map<String, dynamic>))
+            .map((e) => structBuilder(e))
             .toList();
 
-Color? getSchemaColor(dynamic value) => value is String
-    ? fromCssColor(value)
-    : value is Color
+Color? getSchemaColor(dynamic value) =>
+    value is String
+        ? fromCssColor(value)
+        : value is Color
         ? value
         : null;
 

@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pg_viagens/calendar_wid/calendar_wid_widget.dart';
-import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_dialog/aligned_dialog.dart';
@@ -75,9 +74,7 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(
-              color: Color(0xFFFAFAFA),
-            ),
+            decoration: const BoxDecoration(color: Color(0xFFFAFAFA)),
             child: Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
@@ -89,26 +86,30 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                       Text(
                         'Embarcações',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              fontSize: 24.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          fontSize: 24.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                     ],
                   ),
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 0.0),
+                        0.0,
+                        24.0,
+                        0.0,
+                        0.0,
+                      ),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -122,63 +123,64 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                   controller:
                                       _model.txBuscaEmbarcacoesTextController,
                                   focusNode: _model.txBuscaEmbarcacoesFocusNode,
-                                  onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.txBuscaEmbarcacoesTextController',
-                                    const Duration(milliseconds: 500),
-                                    () => safeSetState(() {}),
-                                  ),
+                                  onChanged:
+                                      (_) => EasyDebounce.debounce(
+                                        '_model.txBuscaEmbarcacoesTextController',
+                                        const Duration(milliseconds: 500),
+                                        () => safeSetState(() {}),
+                                      ),
                                   autofocus: false,
                                   enabled: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
+                                    labelStyle: FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontStyle,
+                                    ),
                                     hintText: 'Buscar embarcação',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
+                                    hintStyle: FlutterFlowTheme.of(
+                                      context,
+                                    ).labelMedium.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).labelMedium.fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).labelMedium.fontStyle,
+                                    ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
                                         color: Color(0xFFE5E6E6),
@@ -217,27 +219,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                       size: 24.0,
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   enableInteractiveSelection: true,
@@ -261,41 +265,44 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                       options: const [
                                         'Todas',
                                         'Ativas',
-                                        'Inativas'
+                                        'Inativas',
                                       ],
-                                      onChanged: (val) => safeSetState(() {
-                                        _model.filtroStatus = val;
-                                      }),
+                                      onChanged:
+                                          (val) => safeSetState(() {
+                                            _model.filtroStatus = val;
+                                          }),
                                       width: double.infinity,
                                       height: 40.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                      textStyle: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                       hintText: 'Status',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).secondaryText,
                                         size: 24.0,
                                       ),
                                       elevation: 2.0,
@@ -304,7 +311,11 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                       borderRadius: 8.0,
                                       margin:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 4.0, 12.0, 4.0),
+                                            12.0,
+                                            4.0,
+                                            12.0,
+                                            4.0,
+                                          ),
                                       hidesUnderline: true,
                                       isSearchable: false,
                                     ),
@@ -312,7 +323,11 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                   Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 0.0, 0.0),
+                                          16.0,
+                                          0.0,
+                                          0.0,
+                                          0.0,
+                                        ),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         bool? filtroAtivo;
@@ -324,8 +339,9 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                         } else {
                                           filtroAtivo = null;
                                         }
-                                        await actions
-                                            .exportEmbarcacoesCSV(filtroAtivo);
+                                        await actions.exportEmbarcacoesCSV(
+                                          filtroAtivo,
+                                        );
                                       },
                                       text: 'Baixar relatório',
                                       icon: const Icon(
@@ -334,42 +350,53 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                       ),
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                        iconPadding: const EdgeInsetsDirectional
-                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0x00007191),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              font: GoogleFonts.interTight(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
-                                              color: const Color(0xFF252627),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
+                                        padding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                              16.0,
+                                              0.0,
+                                              16.0,
+                                              0.0,
                                             ),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                              0.0,
+                                              0.0,
+                                              0.0,
+                                              0.0,
+                                            ),
+                                        color: const Color(0x00007191),
+                                        textStyle: FlutterFlowTheme.of(
+                                          context,
+                                        ).titleSmall.override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).titleSmall.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).titleSmall.fontStyle,
+                                          ),
+                                          color: const Color(0xFF252627),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).titleSmall.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).titleSmall.fontStyle,
+                                        ),
                                         elevation: 0.0,
                                         borderSide: const BorderSide(
                                           color: Color(0xFF007191),
                                           width: 1.0,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -386,32 +413,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                 height: 48.0,
                                 decoration: const BoxDecoration(),
                                 child: Align(
-                                  alignment:
-                                      const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(
+                                    -1.0,
+                                    0.0,
+                                  ),
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                          12.0,
+                                          0.0,
+                                          12.0,
+                                          0.0,
+                                        ),
                                     child: Text(
                                       'ID\n',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -421,32 +454,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                 height: 48.0,
                                 decoration: const BoxDecoration(),
                                 child: Align(
-                                  alignment:
-                                      const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(
+                                    -1.0,
+                                    0.0,
+                                  ),
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                          12.0,
+                                          0.0,
+                                          12.0,
+                                          0.0,
+                                        ),
                                     child: Text(
                                       'Embarcação',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -456,32 +495,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                 height: 48.0,
                                 decoration: const BoxDecoration(),
                                 child: Align(
-                                  alignment:
-                                      const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(
+                                    -1.0,
+                                    0.0,
+                                  ),
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                          12.0,
+                                          0.0,
+                                          12.0,
+                                          0.0,
+                                        ),
                                     child: Text(
                                       'TIE/TIEM',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -491,32 +536,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                 height: 48.0,
                                 decoration: const BoxDecoration(),
                                 child: Align(
-                                  alignment:
-                                      const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(
+                                    -1.0,
+                                    0.0,
+                                  ),
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                          12.0,
+                                          0.0,
+                                          12.0,
+                                          0.0,
+                                        ),
                                     child: Text(
                                       'Status',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -526,32 +577,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                 height: 48.0,
                                 decoration: const BoxDecoration(),
                                 child: Align(
-                                  alignment:
-                                      const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(
+                                    -1.0,
+                                    0.0,
+                                  ),
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                          12.0,
+                                          0.0,
+                                          12.0,
+                                          0.0,
+                                        ),
                                     child: Text(
                                       'Data de cadastro',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -565,8 +622,10 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                 future: EmbarcacoesTable().queryRows(
                                   queryFn: (q) {
                                     var query = q;
-                                    if (_model.txBuscaEmbarcacoesTextController
-                                        .text.isNotEmpty) {
+                                    if (_model
+                                        .txBuscaEmbarcacoesTextController
+                                        .text
+                                        .isNotEmpty) {
                                       query = query.ilike(
                                         'nome_embarcacoes',
                                         '%${_model.txBuscaEmbarcacoesTextController.text}%',
@@ -591,15 +650,16 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                         child: CircularProgressIndicator(
                                           valueColor:
                                               AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).primary,
+                                              ),
                                         ),
                                       ),
                                     );
                                   }
                                   List<EmbarcacoesRow>
-                                      lvHistoricoEmbarcacoesRowList =
+                                  lvHistoricoEmbarcacoesRowList =
                                       snapshot.data!;
 
                                   return ListView.separated(
@@ -613,12 +673,11 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                     scrollDirection: Axis.vertical,
                                     itemCount:
                                         lvHistoricoEmbarcacoesRowList.length,
-                                    separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 12.0),
+                                    separatorBuilder:
+                                        (_, __) => const SizedBox(height: 12.0),
                                     itemBuilder: (context, lvHistoricoIndex) {
                                       final lvHistoricoEmbarcacoesRow =
-                                          lvHistoricoEmbarcacoesRowList[
-                                              lvHistoricoIndex];
+                                          lvHistoricoEmbarcacoesRowList[lvHistoricoIndex];
                                       return InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -652,55 +711,61 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
-                                                                -1.0, 0.0),
+                                                              -1.0,
+                                                              0.0,
+                                                            ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0),
+                                                              const EdgeInsetsDirectional.fromSTEB(
+                                                                12.0,
+                                                                0.0,
+                                                                12.0,
+                                                                0.0,
+                                                              ),
                                                           child: Text(
                                                             valueOrDefault<
-                                                                String>(
+                                                              String
+                                                            >(
                                                               lvHistoricoEmbarcacoesRow
                                                                   .id
                                                                   .toString(),
                                                               '0000',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              fontSize: 14.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .normal,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
-                                                    ].divide(const SizedBox(
-                                                        height: 2.0)),
+                                                    ].divide(
+                                                      const SizedBox(
+                                                        height: 2.0,
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
                                                 Container(
@@ -718,89 +783,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                       Align(
                                                         alignment:
                                                             const AlignmentDirectional(
-                                                                -1.0, 0.0),
+                                                              -1.0,
+                                                              0.0,
+                                                            ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0),
+                                                              const EdgeInsetsDirectional.fromSTEB(
+                                                                12.0,
+                                                                0.0,
+                                                                12.0,
+                                                                0.0,
+                                                              ),
                                                           child: Text(
                                                             valueOrDefault<
-                                                                String>(
+                                                              String
+                                                            >(
                                                               lvHistoricoEmbarcacoesRow
                                                                   .nomeEmbarcacoes,
                                                               'Nome',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ].divide(const SizedBox(
-                                                        height: 2.0)),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 200.0,
-                                                  height: 48.0,
-                                                  decoration:
-                                                      const BoxDecoration(),
-                                                  child: Align(
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                            -1.0, 0.0),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(12.0,
-                                                              0.0, 12.0, 0.0),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          lvHistoricoEmbarcacoesRow
-                                                              .tieTiem,
-                                                          '00000',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .inter(
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                               ),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -810,10 +824,17 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                                       .normal,
                                                               fontStyle:
                                                                   FlutterFlowTheme.of(
-                                                                          context)
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
                                                             ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ].divide(
+                                                      const SizedBox(
+                                                        height: 2.0,
                                                       ),
                                                     ),
                                                   ),
@@ -826,49 +847,109 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   child: Align(
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                            -1.0, 0.0),
+                                                          -1.0,
+                                                          0.0,
+                                                        ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(12.0,
-                                                              0.0, 12.0, 0.0),
+                                                          const EdgeInsetsDirectional.fromSTEB(
+                                                            12.0,
+                                                            0.0,
+                                                            12.0,
+                                                            0.0,
+                                                          ),
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          lvHistoricoEmbarcacoesRow
+                                                              .tieTiem,
+                                                          '00000',
+                                                        ),
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: 200.0,
+                                                  height: 48.0,
+                                                  decoration:
+                                                      const BoxDecoration(),
+                                                  child: Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                          -1.0,
+                                                          0.0,
+                                                        ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional.fromSTEB(
+                                                            12.0,
+                                                            0.0,
+                                                            12.0,
+                                                            0.0,
+                                                          ),
                                                       child: Text(
                                                         lvHistoricoEmbarcacoesRow
                                                                 .ativo!
                                                             ? 'Embarcação ativa'
                                                             : 'Embarcação inativa',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .inter(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
-                                                              color: lvHistoricoEmbarcacoesRow
+                                                          ),
+                                                          color:
+                                                              lvHistoricoEmbarcacoesRow
                                                                       .ativo!
                                                                   ? const Color(
-                                                                      0xFF1EAE3E)
+                                                                    0xFF1EAE3E,
+                                                                  )
                                                                   : const Color(
-                                                                      0xFFAE1E1E),
-                                                              fontSize: 14.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                            ),
+                                                                    0xFFAE1E1E,
+                                                                  ),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -881,61 +962,65 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   child: Align(
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                            -1.0, 0.0),
+                                                          -1.0,
+                                                          0.0,
+                                                        ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(12.0,
-                                                              0.0, 12.0, 0.0),
+                                                          const EdgeInsetsDirectional.fromSTEB(
+                                                            12.0,
+                                                            0.0,
+                                                            12.0,
+                                                            0.0,
+                                                          ),
                                                       child: Text(
                                                         valueOrDefault<String>(
                                                           dateTimeFormat(
                                                             "dd/MM/yyyy",
                                                             lvHistoricoEmbarcacoesRow
                                                                 .createdAt,
-                                                            locale: FFLocalizations
-                                                                    .of(context)
-                                                                .languageCode,
+                                                            locale:
+                                                                FFLocalizations.of(
+                                                                  context,
+                                                                ).languageCode,
                                                           ),
                                                           '00/00/0000',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      14.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          color:
+                                                              FlutterFlowTheme.of(
+                                                                context,
+                                                              ).primaryText,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(width: 12.0)),
+                                                const SizedBox(width: 12.0),
+                                              ),
                                             ),
                                             const Divider(
                                               height: 1.0,
@@ -943,7 +1028,8 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                               color: Color(0xFFE5E6E6),
                                             ),
                                           ].divide(
-                                              const SizedBox(height: 12.0)),
+                                            const SizedBox(height: 12.0),
+                                          ),
                                         ),
                                       );
                                     },
@@ -964,9 +1050,7 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(
-              color: Color(0xFFFAFAFA),
-            ),
+            decoration: const BoxDecoration(color: Color(0xFFFAFAFA)),
             child: Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
@@ -992,49 +1076,59 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                         ),
                         Text(
                           'Voltar',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: const Color(0xFF646768),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(
+                            context,
+                          ).bodyMedium.override(
+                            font: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
+                            color: const Color(0xFF646768),
+                            fontSize: 14.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
                         ),
                       ].divide(const SizedBox(width: 5.0)),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(
-                        0.0, 0.0, 0.0, 24.0),
+                      0.0,
+                      0.0,
+                      0.0,
+                      24.0,
+                    ),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
                           'Detalhes da embarcação',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 24.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(
+                            context,
+                          ).bodyMedium.override(
+                            font: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
+                            fontSize: 24.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
                         ),
                       ],
                     ),
@@ -1056,25 +1150,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                           children: [
                             Text(
                               'Geral',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                             ),
                             Container(
                               width: 100.0,
@@ -1106,25 +1204,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                           children: [
                             Text(
                               'Histórico de viagens',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              style: FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.override(
+                                font: GoogleFonts.inter(
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
                             ),
                             Container(
                               width: 150.0,
@@ -1147,13 +1249,18 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                   if (_model.stage == 'Geral')
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 24.0),
+                        0.0,
+                        24.0,
+                        0.0,
+                        24.0,
+                      ),
                       child: FutureBuilder<List<EmbarcacoesRow>>(
                         future: EmbarcacoesTable().querySingleRow(
-                          queryFn: (q) => q.eqOrNull(
-                            'id',
-                            _model.embarcacaoSelecionada,
-                          ),
+                          queryFn:
+                              (q) => q.eqOrNull(
+                                'id',
+                                _model.embarcacaoSelecionada,
+                              ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -1171,8 +1278,7 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                             );
                           }
                           List<EmbarcacoesRow>
-                              pgBarcoDetalhesEmbarcacoesRowList =
-                              snapshot.data!;
+                          pgBarcoDetalhesEmbarcacoesRowList = snapshot.data!;
 
                           // Return an empty Container when the item does not exist.
                           if (snapshot.data!.isEmpty) {
@@ -1203,10 +1309,13 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                       width: 240.0,
                                       height: 253.0,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
+                                        color:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).primaryBackground,
+                                        borderRadius: BorderRadius.circular(
+                                          16.0,
+                                        ),
                                         border: Border.all(
                                           color: const Color(0xFF00BDF2),
                                         ),
@@ -1229,41 +1338,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 24.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    24.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Text(
                                                 'Membro desde',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontStyle,
+                                                  ),
+                                                  fontSize: 12.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontStyle,
+                                                ),
                                               ),
                                             ),
                                             Text(
@@ -1272,41 +1378,37 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   "dd/MM/yyyy",
                                                   pgBarcoDetalhesEmbarcacoesRow
                                                       ?.createdAt,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
+                                                  locale:
+                                                      FFLocalizations.of(
+                                                        context,
+                                                      ).languageCode,
                                                 ),
                                                 'dd/MM/yyyy',
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.override(
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontStyle,
+                                                ),
+                                                fontSize: 12.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).bodyMedium.fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).bodyMedium.fontStyle,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -1332,29 +1434,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   Text(
                                                     'ID',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                   Container(
                                                     decoration:
@@ -1364,65 +1466,79 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                     height: 44.0,
                                                     decoration: BoxDecoration(
                                                       color: const Color(
-                                                          0xFFE5E6E6),
+                                                        0xFFE5E6E6,
+                                                      ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                            8.0,
+                                                          ),
                                                       border: Border.all(
                                                         color: const Color(
-                                                            0xFFE5E6E6),
+                                                          0xFFE5E6E6,
+                                                        ),
                                                       ),
                                                     ),
                                                     child: Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              -1.0, 0.0),
+                                                            -1.0,
+                                                            0.0,
+                                                          ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(24.0,
-                                                                0.0, 24.0, 0.0),
+                                                            const EdgeInsetsDirectional.fromSTEB(
+                                                              24.0,
+                                                              0.0,
+                                                              24.0,
+                                                              0.0,
+                                                            ),
                                                         child: Text(
                                                           valueOrDefault<
-                                                              String>(
+                                                            String
+                                                          >(
                                                             pgBarcoDetalhesEmbarcacoesRow
                                                                 ?.id
                                                                 .toString(),
                                                             '0000',
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(
-                                                    height: 8.0)),
+                                                ].divide(
+                                                  const SizedBox(height: 8.0),
+                                                ),
                                               ),
                                             ),
                                             Expanded(
@@ -1435,29 +1551,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   Text(
                                                     'Nome',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                   Container(
                                                     decoration:
@@ -1467,64 +1583,78 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                     height: 44.0,
                                                     decoration: BoxDecoration(
                                                       color: const Color(
-                                                          0xFFE5E6E6),
+                                                        0xFFE5E6E6,
+                                                      ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                            8.0,
+                                                          ),
                                                       border: Border.all(
                                                         color: const Color(
-                                                            0xFFE5E6E6),
+                                                          0xFFE5E6E6,
+                                                        ),
                                                       ),
                                                     ),
                                                     child: Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              -1.0, 0.0),
+                                                            -1.0,
+                                                            0.0,
+                                                          ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(24.0,
-                                                                0.0, 24.0, 0.0),
+                                                            const EdgeInsetsDirectional.fromSTEB(
+                                                              24.0,
+                                                              0.0,
+                                                              24.0,
+                                                              0.0,
+                                                            ),
                                                         child: Text(
                                                           valueOrDefault<
-                                                              String>(
+                                                            String
+                                                          >(
                                                             pgBarcoDetalhesEmbarcacoesRow
                                                                 ?.nomeEmbarcacoes,
                                                             'Marine Transportes',
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(
-                                                    height: 8.0)),
+                                                ].divide(
+                                                  const SizedBox(height: 8.0),
+                                                ),
                                               ),
                                             ),
                                           ].divide(const SizedBox(width: 24.0)),
@@ -1536,29 +1666,24 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                           children: [
                                             Text(
                                               'TIE/TIEM',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.override(
+                                                font: GoogleFonts.inter(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontStyle,
+                                                ),
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).bodyMedium.fontStyle,
+                                              ),
                                             ),
                                             Container(
                                               height: 44.0,
@@ -1567,19 +1692,25 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 border: Border.all(
-                                                  color:
-                                                      const Color(0xFFE5E6E6),
+                                                  color: const Color(
+                                                    0xFFE5E6E6,
+                                                  ),
                                                 ),
                                               ),
                                               child: Align(
                                                 alignment:
                                                     const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                      -1.0,
+                                                      0.0,
+                                                    ),
                                                 child: Padding(
                                                   padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          24.0, 0.0, 24.0, 0.0),
+                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                        24.0,
+                                                        0.0,
+                                                        24.0,
+                                                        0.0,
+                                                      ),
                                                   child: Text(
                                                     valueOrDefault<String>(
                                                       pgBarcoDetalhesEmbarcacoesRow
@@ -1587,34 +1718,36 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                       'TIE/TIEM',
                                                     ),
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -1633,29 +1766,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   Text(
                                                     'Largura/Boca',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                   Container(
                                                     decoration:
@@ -1665,65 +1798,79 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                     height: 44.0,
                                                     decoration: BoxDecoration(
                                                       color: const Color(
-                                                          0xFFE5E6E6),
+                                                        0xFFE5E6E6,
+                                                      ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                            8.0,
+                                                          ),
                                                       border: Border.all(
                                                         color: const Color(
-                                                            0xFFE5E6E6),
+                                                          0xFFE5E6E6,
+                                                        ),
                                                       ),
                                                     ),
                                                     child: Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              -1.0, 0.0),
+                                                            -1.0,
+                                                            0.0,
+                                                          ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(24.0,
-                                                                0.0, 24.0, 0.0),
+                                                            const EdgeInsetsDirectional.fromSTEB(
+                                                              24.0,
+                                                              0.0,
+                                                              24.0,
+                                                              0.0,
+                                                            ),
                                                         child: Text(
                                                           valueOrDefault<
-                                                              String>(
+                                                            String
+                                                          >(
                                                             pgBarcoDetalhesEmbarcacoesRow
                                                                 ?.largura
                                                                 ?.toString(),
                                                             '0000',
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(
-                                                    height: 8.0)),
+                                                ].divide(
+                                                  const SizedBox(height: 8.0),
+                                                ),
                                               ),
                                             ),
                                             Expanded(
@@ -1735,29 +1882,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   Text(
                                                     'Calado',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                   Container(
                                                     decoration:
@@ -1767,65 +1914,79 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                     height: 44.0,
                                                     decoration: BoxDecoration(
                                                       color: const Color(
-                                                          0xFFE5E6E6),
+                                                        0xFFE5E6E6,
+                                                      ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                            8.0,
+                                                          ),
                                                       border: Border.all(
                                                         color: const Color(
-                                                            0xFFE5E6E6),
+                                                          0xFFE5E6E6,
+                                                        ),
                                                       ),
                                                     ),
                                                     child: Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              -1.0, 0.0),
+                                                            -1.0,
+                                                            0.0,
+                                                          ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(24.0,
-                                                                0.0, 24.0, 0.0),
+                                                            const EdgeInsetsDirectional.fromSTEB(
+                                                              24.0,
+                                                              0.0,
+                                                              24.0,
+                                                              0.0,
+                                                            ),
                                                         child: Text(
                                                           valueOrDefault<
-                                                              String>(
+                                                            String
+                                                          >(
                                                             pgBarcoDetalhesEmbarcacoesRow
                                                                 ?.calado
                                                                 ?.toString(),
                                                             '0000',
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(
-                                                    height: 8.0)),
+                                                ].divide(
+                                                  const SizedBox(height: 8.0),
+                                                ),
                                               ),
                                             ),
                                             Expanded(
@@ -1837,29 +1998,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                   Text(
                                                     'Comprimento',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                   Container(
                                                     decoration:
@@ -1869,65 +2030,79 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                     height: 44.0,
                                                     decoration: BoxDecoration(
                                                       color: const Color(
-                                                          0xFFE5E6E6),
+                                                        0xFFE5E6E6,
+                                                      ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                            8.0,
+                                                          ),
                                                       border: Border.all(
                                                         color: const Color(
-                                                            0xFFE5E6E6),
+                                                          0xFFE5E6E6,
+                                                        ),
                                                       ),
                                                     ),
                                                     child: Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              -1.0, 0.0),
+                                                            -1.0,
+                                                            0.0,
+                                                          ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(24.0,
-                                                                0.0, 24.0, 0.0),
+                                                            const EdgeInsetsDirectional.fromSTEB(
+                                                              24.0,
+                                                              0.0,
+                                                              24.0,
+                                                              0.0,
+                                                            ),
                                                         child: Text(
                                                           valueOrDefault<
-                                                              String>(
+                                                            String
+                                                          >(
                                                             pgBarcoDetalhesEmbarcacoesRow
                                                                 ?.comprimento
                                                                 ?.toString(),
                                                             'Marine Transportes',
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(
-                                                    height: 8.0)),
+                                                ].divide(
+                                                  const SizedBox(height: 8.0),
+                                                ),
                                               ),
                                             ),
                                           ].divide(const SizedBox(width: 24.0)),
@@ -1945,7 +2120,11 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                   if (_model.stage == 'Histórico de viagens')
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 24.0),
+                        0.0,
+                        24.0,
+                        0.0,
+                        24.0,
+                      ),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
@@ -1955,7 +2134,11 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                           children: [
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 24.0, 0.0, 0.0),
+                                0.0,
+                                24.0,
+                                0.0,
+                                0.0,
+                              ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -1967,96 +2150,105 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                       controller:
                                           _model.txBuscaEmpresaTextController,
                                       focusNode: _model.txBuscaEmpresaFocusNode,
-                                      onChanged: (_) => EasyDebounce.debounce(
-                                        '_model.txBuscaEmpresaTextController',
-                                        const Duration(milliseconds: 500),
-                                        () => safeSetState(() {}),
-                                      ),
+                                      onChanged:
+                                          (_) => EasyDebounce.debounce(
+                                            '_model.txBuscaEmpresaTextController',
+                                            const Duration(milliseconds: 500),
+                                            () => safeSetState(() {}),
+                                          ),
                                       autofocus: false,
                                       enabled: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
+                                        labelStyle: FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).labelMedium.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).labelMedium.fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontStyle,
+                                        ),
                                         hintText: 'Buscar viagem',
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
+                                        hintStyle: FlutterFlowTheme.of(
+                                          context,
+                                        ).labelMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).labelMedium.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).labelMedium.fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).labelMedium.fontStyle,
+                                        ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: const BorderSide(
                                             color: Color(0xFFE5E6E6),
                                             width: 1.0,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          borderRadius: BorderRadius.circular(
+                                            8.0,
+                                          ),
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: const BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          borderRadius: BorderRadius.circular(
+                                            8.0,
+                                          ),
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
+                                            color:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).error,
                                             width: 1.0,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          borderRadius: BorderRadius.circular(
+                                            8.0,
+                                          ),
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
+                                            color:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).error,
                                             width: 1.0,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          borderRadius: BorderRadius.circular(
+                                            8.0,
+                                          ),
                                         ),
                                         filled: true,
                                         fillColor: Colors.transparent,
@@ -2066,31 +2258,33 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                           size: 24.0,
                                         ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                      cursorColor: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      style: FlutterFlowTheme.of(
+                                        context,
+                                      ).bodyMedium.override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontWeight,
+                                        fontStyle:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).bodyMedium.fontStyle,
+                                      ),
+                                      cursorColor:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).primaryText,
                                       enableInteractiveSelection: true,
                                       validator: _model
                                           .txBuscaEmpresaTextControllerValidator
@@ -2106,49 +2300,32 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                           children: [
                                             Text(
                                               valueOrDefault<String>(
-                                                '${dateTimeFormat(
-                                                  "d/M/y",
-                                                  _model.dataInicio,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                )} - ${dateTimeFormat(
-                                                  "d/M/y",
-                                                  _model.dataFim,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                )}',
+                                                '${dateTimeFormat("d/M/y", _model.dataInicio, locale: FFLocalizations.of(context).languageCode)} - ${dateTimeFormat("d/M/y", _model.dataFim, locale: FFLocalizations.of(context).languageCode)}',
                                                 '00/00/0000 - 00/00/0000',
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.override(
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).bodyMedium.fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).bodyMedium.fontStyle,
+                                              ),
                                             ),
                                             FlutterFlowIconButton(
                                               borderRadius: 8.0,
@@ -2156,8 +2333,9 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                               icon: Icon(
                                                 Icons.close_rounded,
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).primaryText,
                                                 size: 24.0,
                                               ),
                                               onPressed: () async {
@@ -2169,104 +2347,121 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                           ].divide(const SizedBox(width: 12.0)),
                                         ),
                                       Builder(
-                                        builder: (context) => FFButtonWidget(
-                                          onPressed: () async {
-                                            await showAlignedDialog(
-                                              barrierColor: Colors.transparent,
-                                              context: context,
-                                              isGlobal: false,
-                                              avoidOverflow: true,
-                                              targetAnchor:
-                                                  const AlignmentDirectional(
-                                                          1.0, 1.0)
-                                                      .resolve(
-                                                          Directionality.of(
-                                                              context)),
-                                              followerAnchor:
-                                                  const AlignmentDirectional(
-                                                          1.0, -1.0)
-                                                      .resolve(
-                                                          Directionality.of(
-                                                              context)),
-                                              builder: (dialogContext) {
-                                                return Material(
-                                                  color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: CalendarWidWidget(
-                                                      actionRetorn: (dataInicio,
-                                                          dataFim) async {
-                                                        _model.dataInicio =
-                                                            dataInicio;
-                                                        _model.dataFim =
-                                                            dataFim;
-                                                        safeSetState(() {});
-                                                      },
-                                                    ),
-                                                  ),
+                                        builder:
+                                            (context) => FFButtonWidget(
+                                              onPressed: () async {
+                                                await showAlignedDialog(
+                                                  barrierColor:
+                                                      Colors.transparent,
+                                                  context: context,
+                                                  isGlobal: false,
+                                                  avoidOverflow: true,
+                                                  targetAnchor:
+                                                      const AlignmentDirectional(
+                                                        1.0,
+                                                        1.0,
+                                                      ).resolve(
+                                                        Directionality.of(
+                                                          context,
+                                                        ),
+                                                      ),
+                                                  followerAnchor:
+                                                      const AlignmentDirectional(
+                                                        1.0,
+                                                        -1.0,
+                                                      ).resolve(
+                                                        Directionality.of(
+                                                          context,
+                                                        ),
+                                                      ),
+                                                  builder: (dialogContext) {
+                                                    return Material(
+                                                      color: Colors.transparent,
+                                                      child: WebViewAware(
+                                                        child: CalendarWidWidget(
+                                                          actionRetorn: (
+                                                            dataInicio,
+                                                            dataFim,
+                                                          ) async {
+                                                            _model.dataInicio =
+                                                                dataInicio;
+                                                            _model.dataFim =
+                                                                dataFim;
+                                                            safeSetState(() {});
+                                                          },
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
                                                 );
                                               },
-                                            );
-                                          },
-                                          text: 'Período',
-                                          icon: const Icon(
-                                            Icons.keyboard_arrow_down_outlined,
-                                            size: 15.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 40.0,
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                            iconAlignment: IconAlignment.end,
-                                            iconPadding:
-                                                const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: const Color(0x00007191),
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .titleSmall
-                                                .override(
+                                              text: 'Período',
+                                              icon: const Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_outlined,
+                                                size: 15.0,
+                                              ),
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding:
+                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                      16.0,
+                                                      0.0,
+                                                      16.0,
+                                                      0.0,
+                                                    ),
+                                                iconAlignment:
+                                                    IconAlignment.end,
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                      0.0,
+                                                      0.0,
+                                                      0.0,
+                                                      0.0,
+                                                    ),
+                                                color: const Color(0x00007191),
+                                                textStyle: FlutterFlowTheme.of(
+                                                  context,
+                                                ).titleSmall.override(
                                                   font: GoogleFonts.interTight(
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontWeight,
+                                                          context,
+                                                        ).titleSmall.fontWeight,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
+                                                          context,
+                                                        ).titleSmall.fontStyle,
                                                   ),
-                                                  color:
-                                                      const Color(0xFF252627),
+                                                  color: const Color(
+                                                    0xFF252627,
+                                                  ),
                                                   letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontWeight,
+                                                        context,
+                                                      ).titleSmall.fontWeight,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontStyle,
+                                                        context,
+                                                      ).titleSmall.fontStyle,
                                                 ),
-                                            elevation: 0.0,
-                                            borderSide: const BorderSide(
-                                              color: Color(0x00007191),
-                                              width: 1.0,
+                                                elevation: 0.0,
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00007191),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
                                       ),
                                       FFButtonWidget(
                                         onPressed: () async {
                                           await actions.exportViagensExcel(
                                             functions.noventaDiasAtras(
-                                                getCurrentTimestamp),
+                                              getCurrentTimestamp,
+                                            ),
                                             getCurrentTimestamp,
                                           );
                                         },
@@ -2277,46 +2472,53 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                         ),
                                         options: FFButtonOptions(
                                           height: 40.0,
-                                          padding: const EdgeInsetsDirectional
-                                              .fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                16.0,
+                                                0.0,
+                                                16.0,
+                                                0.0,
+                                              ),
                                           iconPadding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                0.0,
+                                                0.0,
+                                                0.0,
+                                                0.0,
+                                              ),
                                           color: const Color(0x00007191),
                                           textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                font: GoogleFonts.interTight(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontStyle,
-                                                ),
-                                                color: const Color(0xFF252627),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
+                                            context,
+                                          ).titleSmall.override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(
+                                                    context,
+                                                  ).titleSmall.fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(
+                                                    context,
+                                                  ).titleSmall.fontStyle,
+                                            ),
+                                            color: const Color(0xFF252627),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).titleSmall.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).titleSmall.fontStyle,
+                                          ),
                                           elevation: 0.0,
                                           borderSide: const BorderSide(
                                             color: Color(0xFF007191),
                                             width: 1.0,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          borderRadius: BorderRadius.circular(
+                                            8.0,
+                                          ),
                                         ),
                                       ),
                                     ].divide(const SizedBox(width: 24.0)),
@@ -2333,32 +2535,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                   height: 48.0,
                                   decoration: const BoxDecoration(),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 0.0, 12.0, 0.0),
+                                            12.0,
+                                            0.0,
+                                            12.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         'ID\n',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -2368,32 +2576,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                   height: 48.0,
                                   decoration: const BoxDecoration(),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 0.0, 12.0, 0.0),
+                                            12.0,
+                                            0.0,
+                                            12.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         'Embarcação',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -2403,32 +2617,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                   height: 48.0,
                                   decoration: const BoxDecoration(),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 0.0, 12.0, 0.0),
+                                            12.0,
+                                            0.0,
+                                            12.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         'Distância',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -2438,32 +2658,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                   height: 48.0,
                                   decoration: const BoxDecoration(),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 0.0, 12.0, 0.0),
+                                            12.0,
+                                            0.0,
+                                            12.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         'Duração',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -2473,32 +2699,38 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                   height: 48.0,
                                   decoration: const BoxDecoration(),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 0.0, 12.0, 0.0),
+                                            12.0,
+                                            0.0,
+                                            12.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         'Data',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.w500,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -2509,24 +2741,28 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                               decoration: const BoxDecoration(),
                               child: FutureBuilder<List<VwViagensResumoRow>>(
                                 future: VwViagensResumoTable().queryRows(
-                                  queryFn: (q) => q
-                                      .eqOrNull(
-                                        'id_viagem',
-                                        _model.embarcacaoSelecionada,
-                                      )
-                                      .ilike(
-                                        'nome_barco',
-                                        '%${_model.txBuscaEmbarcacoesTextController.text}%',
-                                      )
-                                      .gteOrNull(
-                                        'data_viagem',
-                                        supaSerialize<DateTime>(
-                                            _model.dataInicio),
-                                      )
-                                      .lteOrNull(
-                                        'data_viagem',
-                                        supaSerialize<DateTime>(_model.dataFim),
-                                      ),
+                                  queryFn:
+                                      (q) => q
+                                          .eqOrNull(
+                                            'id_viagem',
+                                            _model.embarcacaoSelecionada,
+                                          )
+                                          .ilike(
+                                            'nome_barco',
+                                            '%${_model.txBuscaEmbarcacoesTextController.text}%',
+                                          )
+                                          .gteOrNull(
+                                            'data_viagem',
+                                            supaSerialize<DateTime>(
+                                              _model.dataInicio,
+                                            ),
+                                          )
+                                          .lteOrNull(
+                                            'data_viagem',
+                                            supaSerialize<DateTime>(
+                                              _model.dataFim,
+                                            ),
+                                          ),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -2538,15 +2774,16 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                         child: CircularProgressIndicator(
                                           valueColor:
                                               AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).primary,
+                                              ),
                                         ),
                                       ),
                                     );
                                   }
                                   List<VwViagensResumoRow>
-                                      lvHistoricoVwViagensResumoRowList =
+                                  lvHistoricoVwViagensResumoRowList =
                                       snapshot.data!;
 
                                   return ListView.separated(
@@ -2558,221 +2795,358 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                     ),
                                     shrinkWrap: true,
                                     scrollDirection: Axis.vertical,
-                                    itemCount: lvHistoricoVwViagensResumoRowList
-                                        .length,
-                                    separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 12.0),
+                                    itemCount:
+                                        lvHistoricoVwViagensResumoRowList
+                                            .length,
+                                    separatorBuilder:
+                                        (_, __) => const SizedBox(height: 12.0),
                                     itemBuilder: (context, lvHistoricoIndex) {
                                       final lvHistoricoVwViagensResumoRow =
-                                          lvHistoricoVwViagensResumoRowList[
-                                              lvHistoricoIndex];
+                                          lvHistoricoVwViagensResumoRowList[lvHistoricoIndex];
                                       return Builder(
-                                        builder: (context) => InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (dialogContext) {
-                                                return Dialog(
-                                                  elevation: 0,
-                                                  insetPadding: EdgeInsets.zero,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                              0.0, 0.0)
-                                                          .resolve(
-                                                              Directionality.of(
-                                                                  context)),
-                                                  child: WebViewAware(
-                                                    child:
-                                                        PpDetalheViagemWidget(
-                                                      idViagem:
-                                                          lvHistoricoVwViagensResumoRow
-                                                              .idViagem!,
-                                                    ),
-                                                  ),
+                                        builder:
+                                            (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder: (dialogContext) {
+                                                    return Dialog(
+                                                      elevation: 0,
+                                                      insetPadding:
+                                                          EdgeInsets.zero,
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                            0.0,
+                                                            0.0,
+                                                          ).resolve(
+                                                            Directionality.of(
+                                                              context,
+                                                            ),
+                                                          ),
+                                                      child: WebViewAware(
+                                                        child: PpDetalheViagemWidget(
+                                                          idViagem:
+                                                              lvHistoricoVwViagensResumoRow
+                                                                  .idViagem!,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
                                                 );
                                               },
-                                            );
-                                          },
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Row(
+                                              child: Column(
                                                 mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
                                                 children: [
-                                                  Container(
-                                                    width: 100.0,
-                                                    height: 48.0,
-                                                    decoration:
-                                                        const BoxDecoration(),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Align(
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Container(
+                                                        width: 100.0,
+                                                        height: 48.0,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                    -1.0,
+                                                                    0.0,
+                                                                  ),
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                                      12.0,
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0,
+                                                                    ),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                    String
+                                                                  >(
+                                                                    lvHistoricoVwViagensResumoRow
+                                                                        .idViagem
+                                                                        ?.toString(),
+                                                                    '0000',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                    context,
+                                                                  ).bodyMedium.override(
+                                                                    font: GoogleFonts.inter(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .normal,
+                                                                      fontStyle:
+                                                                          FlutterFlowTheme.of(
+                                                                            context,
+                                                                          ).bodyMedium.fontStyle,
+                                                                    ),
+                                                                    fontSize:
+                                                                        14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontStyle:
+                                                                        FlutterFlowTheme.of(
+                                                                          context,
+                                                                        ).bodyMedium.fontStyle,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ].divide(
+                                                            const SizedBox(
+                                                              height: 2.0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        width: 300.0,
+                                                        height: 48.0,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Align(
+                                                              alignment:
+                                                                  const AlignmentDirectional(
+                                                                    -1.0,
+                                                                    0.0,
+                                                                  ),
+                                                              child: Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                                      12.0,
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0,
+                                                                    ),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                    String
+                                                                  >(
+                                                                    lvHistoricoVwViagensResumoRow
+                                                                        .nomeBarco,
+                                                                    'Nome Barco',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                    context,
+                                                                  ).bodyMedium.override(
+                                                                    font: GoogleFonts.inter(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .normal,
+                                                                      fontStyle:
+                                                                          FlutterFlowTheme.of(
+                                                                            context,
+                                                                          ).bodyMedium.fontStyle,
+                                                                    ),
+                                                                    fontSize:
+                                                                        14.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontStyle:
+                                                                        FlutterFlowTheme.of(
+                                                                          context,
+                                                                        ).bodyMedium.fontStyle,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ].divide(
+                                                            const SizedBox(
+                                                              height: 2.0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        width: 100.0,
+                                                        height: 48.0,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child: Align(
                                                           alignment:
                                                               const AlignmentDirectional(
-                                                                  -1.0, 0.0),
+                                                                -1.0,
+                                                                0.0,
+                                                              ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0,
+                                                                ),
                                                             child: Text(
                                                               valueOrDefault<
-                                                                  String>(
+                                                                String
+                                                              >(
                                                                 lvHistoricoVwViagensResumoRow
-                                                                    .idViagem
+                                                                    .kmTotais
                                                                     ?.toString(),
-                                                                '0000',
+                                                                '00Km',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .inter(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .normal,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
+                                                                ),
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 2.0)),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: 300.0,
-                                                    height: 48.0,
-                                                    decoration:
-                                                        const BoxDecoration(),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Align(
+                                                      ),
+                                                      Container(
+                                                        width: 100.0,
+                                                        height: 48.0,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child: Align(
                                                           alignment:
                                                               const AlignmentDirectional(
-                                                                  -1.0, 0.0),
+                                                                -1.0,
+                                                                0.0,
+                                                              ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0,
+                                                                ),
                                                             child: Text(
                                                               valueOrDefault<
-                                                                  String>(
+                                                                String
+                                                              >(
                                                                 lvHistoricoVwViagensResumoRow
-                                                                    .nomeBarco,
-                                                                'Nome Barco',
+                                                                    .duracaoMinutos
+                                                                    ?.toString(),
+                                                                '00h',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .inter(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .normal,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
+                                                                ),
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 2.0)),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: 100.0,
-                                                    height: 48.0,
-                                                    decoration:
-                                                        const BoxDecoration(),
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(12.0,
-                                                                0.0, 12.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            lvHistoricoVwViagensResumoRow
-                                                                .kmTotais
-                                                                ?.toString(),
-                                                            '00Km',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
+                                                      ),
+                                                      Container(
+                                                        width: 115.0,
+                                                        height: 48.0,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child: Align(
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                -1.0,
+                                                                0.0,
+                                                              ),
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0,
+                                                                ),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                String
+                                                              >(
+                                                                dateTimeFormat(
+                                                                  "dd/MM/yyyy",
+                                                                  lvHistoricoVwViagensResumoRow
+                                                                      .dataViagem,
+                                                                  locale:
+                                                                      FFLocalizations.of(
+                                                                        context,
+                                                                      ).languageCode,
+                                                                ),
+                                                                '00/00/0000',
+                                                              ),
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .normal,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
                                                                 ),
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
@@ -2780,135 +3154,29 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                               ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: 100.0,
-                                                    height: 48.0,
-                                                    decoration:
-                                                        const BoxDecoration(),
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(12.0,
-                                                                0.0, 12.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            lvHistoricoVwViagensResumoRow
-                                                                .duracaoMinutos
-                                                                ?.toString(),
-                                                            '00h',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 14.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: 115.0,
-                                                    height: 48.0,
-                                                    decoration:
-                                                        const BoxDecoration(),
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(12.0,
-                                                                0.0, 12.0, 0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            dateTimeFormat(
-                                                              "dd/MM/yyyy",
-                                                              lvHistoricoVwViagensResumoRow
-                                                                  .dataViagem,
-                                                              locale: FFLocalizations
-                                                                      .of(context)
-                                                                  .languageCode,
                                                             ),
-                                                            '00/00/0000',
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 14.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
                                                         ),
                                                       ),
-                                                    ),
+                                                    ],
                                                   ),
-                                                ],
+                                                  const Divider(
+                                                    height: 1.0,
+                                                    thickness: 2.0,
+                                                    color: Color(0xFFE5E6E6),
+                                                  ),
+                                                ].divide(
+                                                  const SizedBox(height: 12.0),
+                                                ),
                                               ),
-                                              const Divider(
-                                                height: 1.0,
-                                                thickness: 2.0,
-                                                color: Color(0xFFE5E6E6),
-                                              ),
-                                            ].divide(
-                                                const SizedBox(height: 12.0)),
-                                          ),
-                                        ),
+                                            ),
                                       );
                                     },
                                   );

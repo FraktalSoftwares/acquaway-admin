@@ -13,7 +13,6 @@ import '/pg_usuarios/pg_usuarios/pg_usuarios_widget.dart';
 import '/pg_viagens/pg_viagens/pg_viagens_widget.dart';
 import '/actions/actions.dart' as action_blocks;
 import '/auth/supabase_auth/auth_util.dart';
-import '/flutter_flow/nav/nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';

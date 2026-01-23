@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pg_viagens/calendar_wid/calendar_wid_widget.dart';
 import '/pg_dashboard/pp_download_relatorio/pp_download_relatorio_widget.dart';
-import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
@@ -57,9 +56,7 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: const BoxDecoration(
-        color: Color(0xFFFAFAFA),
-      ),
+      decoration: const BoxDecoration(color: Color(0xFFFAFAFA)),
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -71,17 +68,17 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                 Text(
                   'Dashboard',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FontWeight.w500,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
-                        fontSize: 24.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
+                    font: GoogleFonts.inter(
+                      fontWeight: FontWeight.w500,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
+                    fontSize: 24.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
                 ),
               ],
             ),
@@ -90,131 +87,165 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Builder(
-                  builder: (context) => FFButtonWidget(
-                    onPressed: () async {
-                      await showAlignedDialog(
-                        barrierColor: Colors.transparent,
-                        context: context,
-                        isGlobal: false,
-                        avoidOverflow: true,
-                        targetAnchor: const AlignmentDirectional(1.0, 1.0)
-                            .resolve(Directionality.of(context)),
-                        followerAnchor: const AlignmentDirectional(1.0, -1.0)
-                            .resolve(Directionality.of(context)),
-                        builder: (dialogContext) {
-                          return Material(
-                            color: Colors.transparent,
-                            child: WebViewAware(
-                              child: CalendarWidWidget(
-                                actionRetorn: (dataInicio, dataFim) async {
-                                  _model.dataInicio = dataInicio;
-                                  _model.dataFim = dataFim;
-                                  safeSetState(() {});
-                                },
-                              ),
-                            ),
+                  builder:
+                      (context) => FFButtonWidget(
+                        onPressed: () async {
+                          await showAlignedDialog(
+                            barrierColor: Colors.transparent,
+                            context: context,
+                            isGlobal: false,
+                            avoidOverflow: true,
+                            targetAnchor: const AlignmentDirectional(
+                              1.0,
+                              1.0,
+                            ).resolve(Directionality.of(context)),
+                            followerAnchor: const AlignmentDirectional(
+                              1.0,
+                              -1.0,
+                            ).resolve(Directionality.of(context)),
+                            builder: (dialogContext) {
+                              return Material(
+                                color: Colors.transparent,
+                                child: WebViewAware(
+                                  child: CalendarWidWidget(
+                                    actionRetorn: (dataInicio, dataFim) async {
+                                      _model.dataInicio = dataInicio;
+                                      _model.dataFim = dataFim;
+                                      safeSetState(() {});
+                                    },
+                                  ),
+                                ),
+                              );
+                            },
                           );
                         },
-                      );
-                    },
-                    text: 'Período',
-                    icon: const Icon(
-                      Icons.keyboard_arrow_down_outlined,
-                      size: 15.0,
-                    ),
-                    options: FFButtonOptions(
-                      height: 40.0,
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 0.0),
-                      iconAlignment: IconAlignment.end,
-                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0x00007191),
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                                color: const Color(0xFF252627),
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
-                      elevation: 0.0,
-                      borderSide: const BorderSide(
-                        color: Color(0x00007191),
-                        width: 1.0,
+                        text: 'Período',
+                        icon: const Icon(
+                          Icons.keyboard_arrow_down_outlined,
+                          size: 15.0,
+                        ),
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0,
+                            0.0,
+                            16.0,
+                            0.0,
+                          ),
+                          iconAlignment: IconAlignment.end,
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                          ),
+                          color: const Color(0x00007191),
+                          textStyle: FlutterFlowTheme.of(
+                            context,
+                          ).titleSmall.override(
+                            font: GoogleFonts.interTight(
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
+                            color: const Color(0xFF252627),
+                            letterSpacing: 0.0,
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontStyle,
+                          ),
+                          elevation: 0.0,
+                          borderSide: const BorderSide(
+                            color: Color(0x00007191),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
                 ),
                 Builder(
-                  builder: (context) => FFButtonWidget(
-                    onPressed: () async {
-                      await showDialog(
-                        context: context,
-                        builder: (dialogContext) {
-                          return Dialog(
-                            elevation: 0,
-                            insetPadding: EdgeInsets.zero,
-                            backgroundColor: Colors.transparent,
-                            alignment: const AlignmentDirectional(0.0, 0.0)
-                                .resolve(Directionality.of(context)),
-                            child: WebViewAware(
-                              child: PpDownloadRelatorioWidget(
-                                dataInicio: _model.dataInicio,
-                                dataFim: _model.dataFim,
-                              ),
-                            ),
+                  builder:
+                      (context) => FFButtonWidget(
+                        onPressed: () async {
+                          await showDialog(
+                            context: context,
+                            builder: (dialogContext) {
+                              return Dialog(
+                                elevation: 0,
+                                insetPadding: EdgeInsets.zero,
+                                backgroundColor: Colors.transparent,
+                                alignment: const AlignmentDirectional(
+                                  0.0,
+                                  0.0,
+                                ).resolve(Directionality.of(context)),
+                                child: WebViewAware(
+                                  child: PpDownloadRelatorioWidget(
+                                    dataInicio: _model.dataInicio,
+                                    dataFim: _model.dataFim,
+                                  ),
+                                ),
+                              );
+                            },
                           );
                         },
-                      );
-                    },
-                    text: 'Baixar relatório',
-                    icon: const Icon(
-                      Icons.file_download_outlined,
-                      size: 15.0,
-                    ),
-                    options: FFButtonOptions(
-                      height: 40.0,
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 0.0),
-                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFF007191),
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                                color: Colors.white,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
-                              ),
-                      elevation: 0.0,
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
+                        text: 'Baixar relatório',
+                        icon: const Icon(
+                          Icons.file_download_outlined,
+                          size: 15.0,
+                        ),
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0,
+                            0.0,
+                            16.0,
+                            0.0,
+                          ),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0,
+                          ),
+                          color: const Color(0xFF007191),
+                          textStyle: FlutterFlowTheme.of(
+                            context,
+                          ).titleSmall.override(
+                            font: GoogleFonts.interTight(
+                              fontWeight:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontWeight,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).titleSmall.fontStyle,
+                            ),
+                            color: Colors.white,
+                            letterSpacing: 0.0,
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).titleSmall.fontStyle,
+                          ),
+                          elevation: 0.0,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
                 ),
               ].divide(const SizedBox(width: 24.0)),
             ),
@@ -228,53 +259,49 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                       labelColor: FlutterFlowTheme.of(context).primaryText,
                       unselectedLabelColor:
                           FlutterFlowTheme.of(context).secondaryText,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).titleMedium.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .fontStyle,
-                                ),
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontStyle,
-                              ),
-                      unselectedLabelStyle:
-                          FlutterFlowTheme.of(context).titleMedium.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .fontStyle,
-                                ),
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .fontStyle,
-                              ),
+                      labelStyle: FlutterFlowTheme.of(
+                        context,
+                      ).titleMedium.override(
+                        font: GoogleFonts.interTight(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleMedium.fontStyle,
+                        ),
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                      ),
+                      unselectedLabelStyle: FlutterFlowTheme.of(
+                        context,
+                      ).titleMedium.override(
+                        font: GoogleFonts.interTight(
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).titleMedium.fontStyle,
+                        ),
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                      ),
                       indicatorColor: const Color(0xFF90C74F),
                       tabs: const [
-                        Tab(
-                          text: 'Financeiro',
-                        ),
-                        Tab(
-                          text: 'Usuários',
-                        ),
-                        Tab(
-                          text: 'Viagens',
-                        ),
+                        Tab(text: 'Financeiro'),
+                        Tab(text: 'Usuários'),
+                        Tab(text: 'Viagens'),
                       ],
                       controller: _model.tabBarController,
                       onTap: (i) async {
@@ -288,7 +315,11 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                       children: [
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 24.0, 0.0, 0.0),
+                            0.0,
+                            24.0,
+                            0.0,
+                            0.0,
+                          ),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -301,19 +332,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                       future: SupabaseEdgeGroup
                                           .dadosDoDashboardCall
                                           .call(
-                                        dataInicio: dateTimeFormat(
-                                          "yyyy-MM-dd",
-                                          _model.dataInicio,
-                                          locale: FFLocalizations.of(context)
-                                              .languageCode,
-                                        ),
-                                        dataFim: dateTimeFormat(
-                                          "yyyy-MM-dd",
-                                          _model.dataFim,
-                                          locale: FFLocalizations.of(context)
-                                              .languageCode,
-                                        ),
-                                      ),
+                                            dataInicio: dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              _model.dataInicio,
+                                              locale:
+                                                  FFLocalizations.of(
+                                                    context,
+                                                  ).languageCode,
+                                            ),
+                                            dataFim: dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              _model.dataFim,
+                                              locale:
+                                                  FFLocalizations.of(
+                                                    context,
+                                                  ).languageCode,
+                                            ),
+                                          ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -324,10 +359,12 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               child: CircularProgressIndicator(
                                                 valueColor:
                                                     AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
+                                                      Color
+                                                    >(
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).primary,
+                                                    ),
                                               ),
                                             ),
                                           );
@@ -343,18 +380,21 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               height: 117.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 border: Border.all(
-                                                  color:
-                                                      const Color(0xFFE5E6E6),
+                                                  color: const Color(
+                                                    0xFFE5E6E6,
+                                                  ),
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(
+                                                  16.0,
+                                                ),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -375,11 +415,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                           height: 40.0,
                                                           decoration:
                                                               const BoxDecoration(
-                                                            color: Color(
-                                                                0xFF00BDF2),
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
+                                                                color: Color(
+                                                                  0xFF00BDF2,
+                                                                ),
+                                                                shape:
+                                                                    BoxShape
+                                                                        .circle,
+                                                              ),
                                                           child: const Icon(
                                                             Icons
                                                                 .payments_rounded,
@@ -389,37 +431,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         ),
                                                         Text(
                                                           'Número de assinaturas por plano',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                fontSize: 16.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          width: 16.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          width: 16.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                     Column(
                                                       mainAxisSize:
@@ -430,22 +479,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                  56.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                              const EdgeInsetsDirectional.fromSTEB(
+                                                                56.0,
+                                                                0.0,
+                                                                0.0,
+                                                                0.0,
+                                                              ),
                                                           child: Text(
                                                             valueOrDefault<
-                                                                String>(
+                                                              String
+                                                            >(
                                                               formatNumber(
                                                                 SupabaseEdgeGroup
                                                                     .dadosDoDashboardCall
                                                                     .totalgeral(
-                                                                  columnDadosDoDashboardResponse
-                                                                      .jsonBody,
-                                                                ),
+                                                                      columnDadosDoDashboardResponse
+                                                                          .jsonBody,
+                                                                    ),
                                                                 formatType:
                                                                     FormatType
                                                                         .decimal,
@@ -456,40 +506,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                               ),
                                                               'R\$0,00',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              color:
+                                                                  FlutterFlowTheme.of(
+                                                                    context,
+                                                                  ).primaryText,
+                                                              fontSize: 24.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 8.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          height: 8.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -500,18 +554,21 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               height: 117.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 border: Border.all(
-                                                  color:
-                                                      const Color(0xFFE5E6E6),
+                                                  color: const Color(
+                                                    0xFFE5E6E6,
+                                                  ),
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(
+                                                  16.0,
+                                                ),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -532,11 +589,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                           height: 40.0,
                                                           decoration:
                                                               const BoxDecoration(
-                                                            color: Color(
-                                                                0xFF00BDF2),
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
+                                                                color: Color(
+                                                                  0xFF00BDF2,
+                                                                ),
+                                                                shape:
+                                                                    BoxShape
+                                                                        .circle,
+                                                              ),
                                                           child: const Icon(
                                                             Icons
                                                                 .business_center_rounded,
@@ -546,37 +605,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         ),
                                                         Text(
                                                           'Faturamento recebido',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                fontSize: 16.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          width: 16.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          width: 16.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                     Column(
                                                       mainAxisSize:
@@ -587,22 +653,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                  56.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                              const EdgeInsetsDirectional.fromSTEB(
+                                                                56.0,
+                                                                0.0,
+                                                                0.0,
+                                                                0.0,
+                                                              ),
                                                           child: Text(
                                                             valueOrDefault<
-                                                                String>(
+                                                              String
+                                                            >(
                                                               formatNumber(
                                                                 SupabaseEdgeGroup
                                                                     .dadosDoDashboardCall
                                                                     .recebido(
-                                                                  columnDadosDoDashboardResponse
-                                                                      .jsonBody,
-                                                                ),
+                                                                      columnDadosDoDashboardResponse
+                                                                          .jsonBody,
+                                                                    ),
                                                                 formatType:
                                                                     FormatType
                                                                         .decimal,
@@ -613,40 +680,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                               ),
                                                               'R\$0,00',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              color:
+                                                                  FlutterFlowTheme.of(
+                                                                    context,
+                                                                  ).primaryText,
+                                                              fontSize: 24.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 8.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          height: 8.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -657,18 +728,21 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               height: 117.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 border: Border.all(
-                                                  color:
-                                                      const Color(0xFFE5E6E6),
+                                                  color: const Color(
+                                                    0xFFE5E6E6,
+                                                  ),
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(
+                                                  16.0,
+                                                ),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -689,11 +763,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                           height: 40.0,
                                                           decoration:
                                                               const BoxDecoration(
-                                                            color: Color(
-                                                                0xFF00BDF2),
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
+                                                                color: Color(
+                                                                  0xFF00BDF2,
+                                                                ),
+                                                                shape:
+                                                                    BoxShape
+                                                                        .circle,
+                                                              ),
                                                           child: const Icon(
                                                             Icons.announcement,
                                                             color: Colors.white,
@@ -702,37 +778,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         ),
                                                         Text(
                                                           'Valores pendentes/Inadimplentes',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                fontSize: 16.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          width: 16.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          width: 16.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                     Column(
                                                       mainAxisSize:
@@ -743,22 +826,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                  56.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                              const EdgeInsetsDirectional.fromSTEB(
+                                                                56.0,
+                                                                0.0,
+                                                                0.0,
+                                                                0.0,
+                                                              ),
                                                           child: Text(
                                                             valueOrDefault<
-                                                                String>(
+                                                              String
+                                                            >(
                                                               formatNumber(
                                                                 SupabaseEdgeGroup
                                                                     .dadosDoDashboardCall
                                                                     .pendente(
-                                                                  columnDadosDoDashboardResponse
-                                                                      .jsonBody,
-                                                                ),
+                                                                      columnDadosDoDashboardResponse
+                                                                          .jsonBody,
+                                                                    ),
                                                                 formatType:
                                                                     FormatType
                                                                         .decimal,
@@ -769,40 +853,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                               ),
                                                               'R\$0,00',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              color:
+                                                                  FlutterFlowTheme.of(
+                                                                    context,
+                                                                  ).primaryText,
+                                                              fontSize: 24.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 8.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          height: 8.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -813,18 +901,21 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               height: 117.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 border: Border.all(
-                                                  color:
-                                                      const Color(0xFFE5E6E6),
+                                                  color: const Color(
+                                                    0xFFE5E6E6,
+                                                  ),
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(16.0),
+                                                padding: const EdgeInsets.all(
+                                                  16.0,
+                                                ),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -845,11 +936,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                           height: 40.0,
                                                           decoration:
                                                               const BoxDecoration(
-                                                            color: Color(
-                                                                0xFF00BDF2),
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
+                                                                color: Color(
+                                                                  0xFF00BDF2,
+                                                                ),
+                                                                shape:
+                                                                    BoxShape
+                                                                        .circle,
+                                                              ),
                                                           child: const Icon(
                                                             Icons
                                                                 .warning_rounded,
@@ -859,37 +952,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         ),
                                                         Text(
                                                           'Taxa de inadimplência',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                fontSize: 16.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            fontSize: 16.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          width: 16.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          width: 16.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                     Column(
                                                       mainAxisSize:
@@ -900,64 +1000,70 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                  56.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                              const EdgeInsetsDirectional.fromSTEB(
+                                                                56.0,
+                                                                0.0,
+                                                                0.0,
+                                                                0.0,
+                                                              ),
                                                           child: Text(
                                                             valueOrDefault<
-                                                                String>(
+                                                              String
+                                                            >(
                                                               SupabaseEdgeGroup
                                                                   .dadosDoDashboardCall
                                                                   .taxainadimplencia(
-                                                                columnDadosDoDashboardResponse
-                                                                    .jsonBody,
-                                                              ),
+                                                                    columnDadosDoDashboardResponse
+                                                                        .jsonBody,
+                                                                  ),
                                                               '0%',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              color:
+                                                                  FlutterFlowTheme.of(
+                                                                    context,
+                                                                  ).primaryText,
+                                                              fontSize: 24.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 8.0)),
+                                                      ].divide(
+                                                        const SizedBox(
+                                                          height: 8.0,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
                                               ),
                                             ),
                                           ].divide(
-                                              const SizedBox(height: 16.0)),
+                                            const SizedBox(height: 16.0),
+                                          ),
                                         );
                                       },
                                     ),
@@ -965,10 +1071,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                       child: Container(
                                         height: 517.0,
                                         decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          color:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).secondaryBackground,
+                                          borderRadius: BorderRadius.circular(
+                                            8.0,
+                                          ),
                                           border: Border.all(
                                             color: const Color(0xFFE5E6E6),
                                           ),
@@ -995,11 +1104,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         height: 40.0,
                                                         decoration:
                                                             const BoxDecoration(
-                                                          color:
-                                                              Color(0xFF00BDF2),
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
+                                                              color: Color(
+                                                                0xFF00BDF2,
+                                                              ),
+                                                              shape:
+                                                                  BoxShape
+                                                                      .circle,
+                                                            ),
                                                         child: const Icon(
                                                           Icons.star_rounded,
                                                           color: Colors.white,
@@ -1008,38 +1119,44 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       ),
                                                       Text(
                                                         'Número de assinaturas por plano',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .inter(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
-                                                              fontSize: 16.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                            ),
+                                                          ),
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
-                                                    ].divide(const SizedBox(
-                                                        width: 16.0)),
+                                                    ].divide(
+                                                      const SizedBox(
+                                                        width: 16.0,
+                                                      ),
+                                                    ),
                                                   ),
                                                   Column(
                                                     mainAxisSize:
@@ -1050,45 +1167,56 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(56.0,
-                                                                0.0, 0.0, 0.0),
+                                                            const EdgeInsetsDirectional.fromSTEB(
+                                                              56.0,
+                                                              0.0,
+                                                              0.0,
+                                                              0.0,
+                                                            ),
                                                         child: Text(
                                                           'Assinaturas x Plano',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                          style: FlutterFlowTheme.of(
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            font: GoogleFonts.inter(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
-                                                                color: const Color(
-                                                                    0xFF646768),
-                                                                fontSize: 14.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
+                                                            ),
+                                                            color: const Color(
+                                                              0xFF646768,
+                                                            ),
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
                                                                     .bodyMedium
                                                                     .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
                                                       ),
-                                                    ].divide(const SizedBox(
-                                                        height: 8.0)),
+                                                    ].divide(
+                                                      const SizedBox(
+                                                        height: 8.0,
+                                                      ),
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -1096,21 +1224,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 future: SupabaseEdgeGroup
                                                     .buscarDadosDaDashboardGraficosCall
                                                     .call(
-                                                  dataInicio: dateTimeFormat(
-                                                    "yyyy-MM-dd",
-                                                    _model.dataInicio,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                  dataFim: dateTimeFormat(
-                                                    "yyyy-MM-dd",
-                                                    _model.dataFim,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                ),
+                                                      dataInicio: dateTimeFormat(
+                                                        "yyyy-MM-dd",
+                                                        _model.dataInicio,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                              context,
+                                                            ).languageCode,
+                                                      ),
+                                                      dataFim: dateTimeFormat(
+                                                        "yyyy-MM-dd",
+                                                        _model.dataFim,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                              context,
+                                                            ).languageCode,
+                                                      ),
+                                                    ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
@@ -1118,15 +1248,15 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       child: SizedBox(
                                                         width: 50.0,
                                                         height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
+                                                        child: CircularProgressIndicator(
                                                           valueColor:
                                                               AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                          ),
+                                                                Color
+                                                              >(
+                                                                FlutterFlowTheme.of(
+                                                                  context,
+                                                                ).primary,
+                                                              ),
                                                         ),
                                                       ),
                                                     );
@@ -1138,30 +1268,30 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                     width: double.infinity,
                                                     height: 424.67,
                                                     decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                            context,
+                                                          ).secondaryBackground,
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
-                                                              24.0),
+                                                            24.0,
+                                                          ),
                                                       child: SizedBox(
                                                         width: double.infinity,
                                                         height: double.infinity,
-                                                        child: custom_widgets
-                                                            .GraficoNumeroPorTipoPlano(
+                                                        child: custom_widgets.GraficoNumeroPorTipoPlano(
                                                           width:
                                                               double.infinity,
                                                           height:
                                                               double.infinity,
-                                                          dashboardData:
-                                                              SupabaseEdgeGroup
-                                                                  .buscarDadosDaDashboardGraficosCall
-                                                                  .plans(
-                                                            containerBuscarDadosDaDashboardGraficosResponse
-                                                                .jsonBody,
-                                                          ),
+                                                          dashboardData: SupabaseEdgeGroup
+                                                              .buscarDadosDaDashboardGraficosCall
+                                                              .plans(
+                                                                containerBuscarDadosDaDashboardGraficosResponse
+                                                                    .jsonBody,
+                                                              ),
                                                         ),
                                                       ),
                                                     ),
@@ -1178,8 +1308,10 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                 Container(
                                   height: 461.0,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).secondaryBackground,
                                     borderRadius: BorderRadius.circular(8.0),
                                     border: Border.all(
                                       color: const Color(0xFFE5E6E6),
@@ -1205,9 +1337,11 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                   height: 40.0,
                                                   decoration:
                                                       const BoxDecoration(
-                                                    color: Color(0xFF00BDF2),
-                                                    shape: BoxShape.circle,
-                                                  ),
+                                                        color: Color(
+                                                          0xFF00BDF2,
+                                                        ),
+                                                        shape: BoxShape.circle,
+                                                      ),
                                                   child: const Icon(
                                                     Icons.request_quote,
                                                     color: Colors.white,
@@ -1217,37 +1351,37 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 Text(
                                                   'Ticket médio por empresa',
                                                   style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                                    context,
+                                                  ).bodyMedium.override(
+                                                    font: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontStyle,
+                                                  ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(width: 16.0)),
+                                                const SizedBox(width: 16.0),
+                                              ),
                                             ),
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1256,54 +1390,62 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               children: [
                                                 Padding(
                                                   padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          56.0, 0.0, 0.0, 0.0),
+                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                        56.0,
+                                                        0.0,
+                                                        0.0,
+                                                        0.0,
+                                                      ),
                                                   child: Text(
                                                     'Variação do ticket médio e quantidade de assinaturas por empresa.',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: const Color(
-                                                              0xFF646768),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: const Color(
+                                                        0xFF646768,
+                                                      ),
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(height: 8.0)),
+                                                const SizedBox(height: 8.0),
+                                              ),
                                             ),
                                           ],
                                         ),
                                         FutureBuilder<ApiCallResponse>(
-                                          future: SupabaseEdgeGroup
-                                              .buscarMesEvolucaoCall
-                                              .call(),
+                                          future:
+                                              SupabaseEdgeGroup
+                                                  .buscarMesEvolucaoCall
+                                                  .call(),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -1311,15 +1453,15 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
+                                                  child: CircularProgressIndicator(
                                                     valueColor:
                                                         AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
+                                                          Color
+                                                        >(
+                                                          FlutterFlowTheme.of(
+                                                            context,
+                                                          ).primary,
+                                                        ),
                                                   ),
                                                 ),
                                               );
@@ -1332,17 +1474,18 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               height: 359.87,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                               ),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(24.0),
+                                                padding: const EdgeInsets.all(
+                                                  24.0,
+                                                ),
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   height: double.infinity,
-                                                  child: custom_widgets
-                                                      .GraficoEvolucaoMensal(
+                                                  child: custom_widgets.GraficoEvolucaoMensal(
                                                     width: double.infinity,
                                                     height: double.infinity,
                                                     dashboardData:
@@ -1364,14 +1507,18 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 24.0, 0.0, 0.0),
+                            0.0,
+                            24.0,
+                            0.0,
+                            0.0,
+                          ),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               FutureBuilder<ApiCallResponse>(
-                                future: SupabaseEdgeGroup
-                                    .totalDeUserEEmpresasCall
-                                    .call(),
+                                future:
+                                    SupabaseEdgeGroup.totalDeUserEEmpresasCall
+                                        .call(),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
@@ -1382,9 +1529,10 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                         child: CircularProgressIndicator(
                                           valueColor:
                                               AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).primary,
+                                              ),
                                         ),
                                       ),
                                     );
@@ -1400,10 +1548,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                           width: 431.0,
                                           height: 117.0,
                                           decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
+                                            color:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).secondaryBackground,
+                                            borderRadius: BorderRadius.circular(
+                                              8.0,
+                                            ),
                                             border: Border.all(
                                               color: const Color(0xFFE5E6E6),
                                             ),
@@ -1428,10 +1579,12 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       height: 40.0,
                                                       decoration:
                                                           const BoxDecoration(
-                                                        color:
-                                                            Color(0xFF00BDF2),
-                                                        shape: BoxShape.circle,
-                                                      ),
+                                                            color: Color(
+                                                              0xFF00BDF2,
+                                                            ),
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
                                                       child: const Icon(
                                                         Icons.group,
                                                         color: Colors.white,
@@ -1440,38 +1593,42 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                     ),
                                                     Text(
                                                       'Usuários cadastrados',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 16.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                      style: FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                     ),
-                                                  ].divide(const SizedBox(
-                                                      width: 16.0)),
+                                                  ].divide(
+                                                    const SizedBox(width: 16.0),
+                                                  ),
                                                 ),
                                                 Column(
                                                   mainAxisSize:
@@ -1481,9 +1638,12 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(56.0,
-                                                              0.0, 0.0, 0.0),
+                                                          const EdgeInsetsDirectional.fromSTEB(
+                                                            56.0,
+                                                            0.0,
+                                                            0.0,
+                                                            0.0,
+                                                          ),
                                                       child: Text(
                                                         valueOrDefault<String>(
                                                           SupabaseEdgeGroup
@@ -1495,41 +1655,39 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                               ?.toString(),
                                                           '0',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          color:
+                                                              FlutterFlowTheme.of(
+                                                                context,
+                                                              ).primaryText,
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ].divide(const SizedBox(
-                                                      height: 8.0)),
+                                                  ].divide(
+                                                    const SizedBox(height: 8.0),
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -1541,10 +1699,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                           width: 431.0,
                                           height: 117.0,
                                           decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
+                                            color:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).secondaryBackground,
+                                            borderRadius: BorderRadius.circular(
+                                              8.0,
+                                            ),
                                             border: Border.all(
                                               color: const Color(0xFFE5E6E6),
                                             ),
@@ -1569,10 +1730,12 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                       height: 40.0,
                                                       decoration:
                                                           const BoxDecoration(
-                                                        color:
-                                                            Color(0xFF00BDF2),
-                                                        shape: BoxShape.circle,
-                                                      ),
+                                                            color: Color(
+                                                              0xFF00BDF2,
+                                                            ),
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
                                                       child: const Icon(
                                                         Icons
                                                             .business_center_rounded,
@@ -1582,38 +1745,42 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                     ),
                                                     Text(
                                                       'Empresas cadastradas',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 16.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                      style: FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                     ),
-                                                  ].divide(const SizedBox(
-                                                      width: 16.0)),
+                                                  ].divide(
+                                                    const SizedBox(width: 16.0),
+                                                  ),
                                                 ),
                                                 Column(
                                                   mainAxisSize:
@@ -1623,9 +1790,12 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(56.0,
-                                                              0.0, 0.0, 0.0),
+                                                          const EdgeInsetsDirectional.fromSTEB(
+                                                            56.0,
+                                                            0.0,
+                                                            0.0,
+                                                            0.0,
+                                                          ),
                                                       child: Text(
                                                         valueOrDefault<String>(
                                                           SupabaseEdgeGroup
@@ -1637,41 +1807,39 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                               ?.toString(),
                                                           '0',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      24.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          color:
+                                                              FlutterFlowTheme.of(
+                                                                context,
+                                                              ).primaryText,
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ].divide(const SizedBox(
-                                                      height: 8.0)),
+                                                  ].divide(
+                                                    const SizedBox(height: 8.0),
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -1685,8 +1853,10 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                               Expanded(
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).secondaryBackground,
                                     borderRadius: BorderRadius.circular(8.0),
                                     border: Border.all(
                                       color: const Color(0xFFE5E6E6),
@@ -1712,9 +1882,11 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                   height: 40.0,
                                                   decoration:
                                                       const BoxDecoration(
-                                                    color: Color(0xFF00BDF2),
-                                                    shape: BoxShape.circle,
-                                                  ),
+                                                        color: Color(
+                                                          0xFF00BDF2,
+                                                        ),
+                                                        shape: BoxShape.circle,
+                                                      ),
                                                   child: const Icon(
                                                     Icons.star_rounded,
                                                     color: Colors.white,
@@ -1724,37 +1896,37 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 Text(
                                                   'Número de usuários por tipo',
                                                   style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                                    context,
+                                                  ).bodyMedium.override(
+                                                    font: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontStyle,
+                                                  ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(width: 16.0)),
+                                                const SizedBox(width: 16.0),
+                                              ),
                                             ),
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1763,67 +1935,76 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               children: [
                                                 Padding(
                                                   padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          56.0, 0.0, 0.0, 0.0),
+                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                        56.0,
+                                                        0.0,
+                                                        0.0,
+                                                        0.0,
+                                                      ),
                                                   child: Text(
                                                     'Assinaturas x Plano',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: const Color(
-                                                              0xFF646768),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: const Color(
+                                                        0xFF646768,
+                                                      ),
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(height: 8.0)),
+                                                const SizedBox(height: 8.0),
+                                              ),
                                             ),
                                             FutureBuilder<ApiCallResponse>(
                                               future: SupabaseEdgeGroup
                                                   .totalDeUsersPorTipoCall
                                                   .call(
-                                                inicio: dateTimeFormat(
-                                                  "yyyy-MM-dd",
-                                                  _model.dataInicio,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                ),
-                                                fim: dateTimeFormat(
-                                                  "yyyy-MM-dd",
-                                                  _model.dataFim,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                ),
-                                              ),
+                                                    inicio: dateTimeFormat(
+                                                      "yyyy-MM-dd",
+                                                      _model.dataInicio,
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                            context,
+                                                          ).languageCode,
+                                                    ),
+                                                    fim: dateTimeFormat(
+                                                      "yyyy-MM-dd",
+                                                      _model.dataFim,
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                            context,
+                                                          ).languageCode,
+                                                    ),
+                                                  ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
                                                 if (!snapshot.hasData) {
@@ -1831,15 +2012,15 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                     child: SizedBox(
                                                       width: 50.0,
                                                       height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
+                                                      child: CircularProgressIndicator(
                                                         valueColor:
                                                             AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                        ),
+                                                              Color
+                                                            >(
+                                                              FlutterFlowTheme.of(
+                                                                context,
+                                                              ).primary,
+                                                            ),
                                                       ),
                                                     ),
                                                   );
@@ -1851,20 +2032,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                   width: double.infinity,
                                                   height: 465.23,
                                                   decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
+                                                    color:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).secondaryBackground,
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(12.0,
-                                                            12.0, 12.0, 12.0),
+                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                          12.0,
+                                                          12.0,
+                                                          12.0,
+                                                          12.0,
+                                                        ),
                                                     child: SizedBox(
                                                       width: double.infinity,
                                                       height: double.infinity,
-                                                      child: custom_widgets
-                                                          .GraficoNumeroPorTipo(
+                                                      child: custom_widgets.GraficoNumeroPorTipo(
                                                         width: double.infinity,
                                                         height: double.infinity,
                                                         dashboardData:
@@ -1888,27 +2072,35 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 24.0, 0.0, 0.0),
+                            0.0,
+                            24.0,
+                            0.0,
+                            0.0,
+                          ),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FutureBuilder<ApiCallResponse>(
-                                  future:
-                                      SupabaseEdgeGroup.totalViagensCall.call(
-                                    inicio: dateTimeFormat(
-                                      "yyyy-MM-dd",
-                                      _model.dataInicio,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                    fim: dateTimeFormat(
-                                      "yyyy-MM-dd",
-                                      _model.dataFim,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                  ),
+                                  future: SupabaseEdgeGroup.totalViagensCall
+                                      .call(
+                                        inicio: dateTimeFormat(
+                                          "yyyy-MM-dd",
+                                          _model.dataInicio,
+                                          locale:
+                                              FFLocalizations.of(
+                                                context,
+                                              ).languageCode,
+                                        ),
+                                        fim: dateTimeFormat(
+                                          "yyyy-MM-dd",
+                                          _model.dataFim,
+                                          locale:
+                                              FFLocalizations.of(
+                                                context,
+                                              ).languageCode,
+                                        ),
+                                      ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
@@ -1919,9 +2111,10 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                            ),
+                                                  FlutterFlowTheme.of(
+                                                    context,
+                                                  ).primary,
+                                                ),
                                           ),
                                         ),
                                       );
@@ -1940,20 +2133,24 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 width: 431.0,
                                                 height: 117.0,
                                                 decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
+                                                  color:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).secondaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          8.0),
+                                                        8.0,
+                                                      ),
                                                   border: Border.all(
-                                                    color:
-                                                        const Color(0xFFE5E6E6),
+                                                    color: const Color(
+                                                      0xFFE5E6E6,
+                                                    ),
                                                   ),
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
-                                                      16.0),
+                                                    16.0,
+                                                  ),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1976,11 +2173,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                             height: 40.0,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color: Color(
-                                                                  0xFF00BDF2),
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
+                                                                  color: Color(
+                                                                    0xFF00BDF2,
+                                                                  ),
+                                                                  shape:
+                                                                      BoxShape
+                                                                          .circle,
+                                                                ),
                                                             child: const Icon(
                                                               Icons
                                                                   .share_location_rounded,
@@ -1991,38 +2190,45 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                           ),
                                                           Text(
                                                             'Total de viagens realizadas',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            width: 16.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            width: 16.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                       Column(
                                                         mainAxisSize:
@@ -2033,15 +2239,16 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    56.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  56.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                ),
                                                             child: Text(
                                                               valueOrDefault<
-                                                                  String>(
+                                                                String
+                                                              >(
                                                                 SupabaseEdgeGroup
                                                                     .totalViagensCall
                                                                     .totalviagens(
@@ -2051,39 +2258,42 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                                     ?.toString(),
                                                                 '0',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .inter(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        24.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
+                                                                ),
+                                                                color:
+                                                                    FlutterFlowTheme.of(
+                                                                      context,
+                                                                    ).primaryText,
+                                                                fontSize: 24.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            height: 8.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            height: 8.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -2095,20 +2305,24 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 width: 431.0,
                                                 height: 117.0,
                                                 decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
+                                                  color:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).secondaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          8.0),
+                                                        8.0,
+                                                      ),
                                                   border: Border.all(
-                                                    color:
-                                                        const Color(0xFFE5E6E6),
+                                                    color: const Color(
+                                                      0xFFE5E6E6,
+                                                    ),
                                                   ),
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
-                                                      16.0),
+                                                    16.0,
+                                                  ),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2131,11 +2345,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                             height: 40.0,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color: Color(
-                                                                  0xFF00BDF2),
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
+                                                                  color: Color(
+                                                                    0xFF00BDF2,
+                                                                  ),
+                                                                  shape:
+                                                                      BoxShape
+                                                                          .circle,
+                                                                ),
                                                             child: const Icon(
                                                               Icons
                                                                   .directions_boat,
@@ -2146,38 +2362,45 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                           ),
                                                           Text(
                                                             'Total de embarcações cadastradas',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            width: 16.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            width: 16.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                       Column(
                                                         mainAxisSize:
@@ -2188,15 +2411,16 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    56.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  56.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                ),
                                                             child: Text(
                                                               valueOrDefault<
-                                                                  String>(
+                                                                String
+                                                              >(
                                                                 SupabaseEdgeGroup
                                                                     .totalViagensCall
                                                                     .totalembarcacoes(
@@ -2206,39 +2430,42 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                                     ?.toString(),
                                                                 '0',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .inter(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        24.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
+                                                                ),
+                                                                color:
+                                                                    FlutterFlowTheme.of(
+                                                                      context,
+                                                                    ).primaryText,
+                                                                fontSize: 24.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            height: 8.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            height: 8.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -2255,20 +2482,24 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 width: 431.0,
                                                 height: 117.0,
                                                 decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
+                                                  color:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).secondaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          8.0),
+                                                        8.0,
+                                                      ),
                                                   border: Border.all(
-                                                    color:
-                                                        const Color(0xFFE5E6E6),
+                                                    color: const Color(
+                                                      0xFFE5E6E6,
+                                                    ),
                                                   ),
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
-                                                      16.0),
+                                                    16.0,
+                                                  ),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2291,58 +2522,70 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                             height: 40.0,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color: Color(
-                                                                  0xFF00BDF2),
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
+                                                                  color: Color(
+                                                                    0xFF00BDF2,
+                                                                  ),
+                                                                  shape:
+                                                                      BoxShape
+                                                                          .circle,
+                                                                ),
                                                             child: const Align(
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      0.0, 0.0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                  ),
                                                               child: FaIcon(
                                                                 FontAwesomeIcons
                                                                     .idCard,
-                                                                color: Colors
-                                                                    .white,
+                                                                color:
+                                                                    Colors
+                                                                        .white,
                                                                 size: 20.0,
                                                               ),
                                                             ),
                                                           ),
                                                           Text(
                                                             'Média de embarcações por empresa',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            width: 16.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            width: 16.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                       Column(
                                                         mainAxisSize:
@@ -2353,15 +2596,16 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    56.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  56.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                ),
                                                             child: Text(
                                                               valueOrDefault<
-                                                                  String>(
+                                                                String
+                                                              >(
                                                                 SupabaseEdgeGroup
                                                                     .totalViagensCall
                                                                     .mediaembarcacoesporempresa(
@@ -2371,39 +2615,42 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                                     ?.toString(),
                                                                 '0',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .inter(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        24.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
+                                                                ),
+                                                                color:
+                                                                    FlutterFlowTheme.of(
+                                                                      context,
+                                                                    ).primaryText,
+                                                                fontSize: 24.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            height: 8.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            height: 8.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -2415,20 +2662,24 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 width: 431.0,
                                                 height: 117.0,
                                                 decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
+                                                  color:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).secondaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          8.0),
+                                                        8.0,
+                                                      ),
                                                   border: Border.all(
-                                                    color:
-                                                        const Color(0xFFE5E6E6),
+                                                    color: const Color(
+                                                      0xFFE5E6E6,
+                                                    ),
                                                   ),
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
-                                                      16.0),
+                                                    16.0,
+                                                  ),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2451,11 +2702,13 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                             height: 40.0,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color: Color(
-                                                                  0xFF00BDF2),
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
+                                                                  color: Color(
+                                                                    0xFF00BDF2,
+                                                                  ),
+                                                                  shape:
+                                                                      BoxShape
+                                                                          .circle,
+                                                                ),
                                                             child: const Icon(
                                                               Icons
                                                                   .person_pin_circle,
@@ -2466,38 +2719,45 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                           ),
                                                           Text(
                                                             'Média de embarcações por piloto individual',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
+                                                            style: FlutterFlowTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
+                                                              font: GoogleFonts.inter(
+                                                                fontWeight:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
+                                                              ),
+                                                              fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                        context,
+                                                                      )
                                                                       .bodyMedium
                                                                       .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            width: 16.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            width: 16.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                       Column(
                                                         mainAxisSize:
@@ -2508,15 +2768,16 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    56.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  56.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                ),
                                                             child: Text(
                                                               valueOrDefault<
-                                                                  String>(
+                                                                String
+                                                              >(
                                                                 SupabaseEdgeGroup
                                                                     .totalViagensCall
                                                                     .mediaembarcacoesporpiloto(
@@ -2526,39 +2787,42 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                                     ?.toString(),
                                                                 '0',
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .inter(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        24.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
+                                                                ),
+                                                                color:
+                                                                    FlutterFlowTheme.of(
+                                                                      context,
+                                                                    ).primaryText,
+                                                                fontSize: 24.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
                                                                         .bodyMedium
                                                                         .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            height: 8.0)),
+                                                        ].divide(
+                                                          const SizedBox(
+                                                            height: 8.0,
+                                                          ),
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -2574,8 +2838,10 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                 Container(
                                   height: 538.0,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).secondaryBackground,
                                     borderRadius: BorderRadius.circular(8.0),
                                     border: Border.all(
                                       color: const Color(0xFFE5E6E6),
@@ -2601,9 +2867,11 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                   height: 40.0,
                                                   decoration:
                                                       const BoxDecoration(
-                                                    color: Color(0xFF00BDF2),
-                                                    shape: BoxShape.circle,
-                                                  ),
+                                                        color: Color(
+                                                          0xFF00BDF2,
+                                                        ),
+                                                        shape: BoxShape.circle,
+                                                      ),
                                                   child: const Icon(
                                                     Icons.announcement,
                                                     color: Colors.white,
@@ -2613,37 +2881,37 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 Text(
                                                   'SOS emitidos por tipo',
                                                   style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                                    context,
+                                                  ).bodyMedium.override(
+                                                    font: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontStyle,
+                                                  ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(width: 16.0)),
+                                                const SizedBox(width: 16.0),
+                                              ),
                                             ),
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -2652,47 +2920,54 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               children: [
                                                 Padding(
                                                   padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          56.0, 0.0, 0.0, 0.0),
+                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                        56.0,
+                                                        0.0,
+                                                        0.0,
+                                                        0.0,
+                                                      ),
                                                   child: Text(
                                                     'Todos os alertas de SOS emitidos por tipo',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: const Color(
-                                                              0xFF646768),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: const Color(
+                                                        0xFF646768,
+                                                      ),
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(height: 8.0)),
+                                                const SizedBox(height: 8.0),
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -2700,21 +2975,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                           future: SupabaseEdgeGroup
                                               .totalDeSOSCall
                                               .call(
-                                            inicio: dateTimeFormat(
-                                              "yyyy-MM-dd",
-                                              _model.dataInicio,
-                                              locale:
-                                                  FFLocalizations.of(context)
-                                                      .languageCode,
-                                            ),
-                                            fim: dateTimeFormat(
-                                              "yyyy-MM-dd",
-                                              _model.dataFim,
-                                              locale:
-                                                  FFLocalizations.of(context)
-                                                      .languageCode,
-                                            ),
-                                          ),
+                                                inicio: dateTimeFormat(
+                                                  "yyyy-MM-dd",
+                                                  _model.dataInicio,
+                                                  locale:
+                                                      FFLocalizations.of(
+                                                        context,
+                                                      ).languageCode,
+                                                ),
+                                                fim: dateTimeFormat(
+                                                  "yyyy-MM-dd",
+                                                  _model.dataFim,
+                                                  locale:
+                                                      FFLocalizations.of(
+                                                        context,
+                                                      ).languageCode,
+                                                ),
+                                              ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -2722,15 +2999,15 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
+                                                  child: CircularProgressIndicator(
                                                     valueColor:
                                                         AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
+                                                          Color
+                                                        >(
+                                                          FlutterFlowTheme.of(
+                                                            context,
+                                                          ).primary,
+                                                        ),
                                                   ),
                                                 ),
                                               );
@@ -2743,19 +3020,22 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               height: 441.9,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                               ),
                                               child: Padding(
                                                 padding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        12.0, 12.0, 12.0, 12.0),
+                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                      12.0,
+                                                      12.0,
+                                                      12.0,
+                                                      12.0,
+                                                    ),
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   height: double.infinity,
-                                                  child: custom_widgets
-                                                      .GraficoSosPorTipo(
+                                                  child: custom_widgets.GraficoSosPorTipo(
                                                     width: double.infinity,
                                                     height: double.infinity,
                                                     dashboardData:
@@ -2774,8 +3054,10 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                 Container(
                                   height: 538.0,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).secondaryBackground,
                                     borderRadius: BorderRadius.circular(8.0),
                                     border: Border.all(
                                       color: const Color(0xFFE5E6E6),
@@ -2801,9 +3083,11 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                   height: 40.0,
                                                   decoration:
                                                       const BoxDecoration(
-                                                    color: Color(0xFF00BDF2),
-                                                    shape: BoxShape.circle,
-                                                  ),
+                                                        color: Color(
+                                                          0xFF00BDF2,
+                                                        ),
+                                                        shape: BoxShape.circle,
+                                                      ),
                                                   child: const Icon(
                                                     Icons.warning_rounded,
                                                     color: Colors.white,
@@ -2813,37 +3097,37 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 Text(
                                                   'Alertas emitidos por tipo',
                                                   style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                                    context,
+                                                  ).bodyMedium.override(
+                                                    font: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontStyle,
+                                                  ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(width: 16.0)),
+                                                const SizedBox(width: 16.0),
+                                              ),
                                             ),
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -2852,47 +3136,54 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               children: [
                                                 Padding(
                                                   padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          56.0, 0.0, 0.0, 0.0),
+                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                        56.0,
+                                                        0.0,
+                                                        0.0,
+                                                        0.0,
+                                                      ),
                                                   child: Text(
                                                     'Todos os alertas de SOS emitidos por tipo',
                                                     style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: const Color(
-                                                              0xFF646768),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: const Color(
+                                                        0xFF646768,
+                                                      ),
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                context,
+                                                              )
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                                   ),
                                                 ),
                                               ].divide(
-                                                  const SizedBox(height: 8.0)),
+                                                const SizedBox(height: 8.0),
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -2900,21 +3191,23 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                           future: SupabaseEdgeGroup
                                               .totalDeAlertasCall
                                               .call(
-                                            inicio: dateTimeFormat(
-                                              "yyyy-MM-dd",
-                                              _model.dataInicio,
-                                              locale:
-                                                  FFLocalizations.of(context)
-                                                      .languageCode,
-                                            ),
-                                            fim: dateTimeFormat(
-                                              "yyyy-MM-dd",
-                                              _model.dataFim,
-                                              locale:
-                                                  FFLocalizations.of(context)
-                                                      .languageCode,
-                                            ),
-                                          ),
+                                                inicio: dateTimeFormat(
+                                                  "yyyy-MM-dd",
+                                                  _model.dataInicio,
+                                                  locale:
+                                                      FFLocalizations.of(
+                                                        context,
+                                                      ).languageCode,
+                                                ),
+                                                fim: dateTimeFormat(
+                                                  "yyyy-MM-dd",
+                                                  _model.dataFim,
+                                                  locale:
+                                                      FFLocalizations.of(
+                                                        context,
+                                                      ).languageCode,
+                                                ),
+                                              ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -2922,15 +3215,15 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
+                                                  child: CircularProgressIndicator(
                                                     valueColor:
                                                         AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
+                                                          Color
+                                                        >(
+                                                          FlutterFlowTheme.of(
+                                                            context,
+                                                          ).primary,
+                                                        ),
                                                   ),
                                                 ),
                                               );
@@ -2943,19 +3236,22 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                                               height: 441.92,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                               ),
                                               child: Padding(
                                                 padding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        12.0, 12.0, 12.0, 12.0),
+                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                      12.0,
+                                                      12.0,
+                                                      12.0,
+                                                      12.0,
+                                                    ),
                                                 child: SizedBox(
                                                   width: double.infinity,
                                                   height: double.infinity,
-                                                  child: custom_widgets
-                                                      .GraficoAlertasPorTipo(
+                                                  child: custom_widgets.GraficoAlertasPorTipo(
                                                     width: double.infinity,
                                                     height: double.infinity,
                                                     dashboardData:

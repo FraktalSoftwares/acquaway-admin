@@ -1,22 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
 
-import '/backend/supabase/supabase.dart';
-
 import '/auth/base_auth_user_provider.dart';
 
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 import '/index.dart';
 
@@ -81,19 +73,23 @@ class AppStateNotifier extends ChangeNotifier {
 }
 
 GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
-      initialLocation: '/',
-      debugLogDiagnostics: true,
-      refreshListenable: appStateNotifier,
-      navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
+  initialLocation: '/',
+  debugLogDiagnostics: true,
+  refreshListenable: appStateNotifier,
+  navigatorKey: appNavigatorKey,
+  errorBuilder:
+      (context, state) =>
           appStateNotifier.loggedIn ? const HomeWidget() : const LoginWidget(),
-      routes: [
+  routes:
+      [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomeWidget()
-              : const LoginWidget(),
+          builder:
+              (context, _) =>
+                  appStateNotifier.loggedIn
+                      ? const HomeWidget()
+                      : const LoginWidget(),
         ),
         FFRoute(
           name: LoginWidget.routeName,
@@ -145,16 +141,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: SimbolosWidget.routeName,
           path: SimbolosWidget.routePath,
           builder: (context, params) => const SimbolosWidget(),
-        )
+        ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
-    );
+);
 
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(
-        entries
-            .where((e) => e.value != null)
-            .map((e) => MapEntry(e.key, e.value!)),
-      );
+    entries.where((e) => e.value != null).map((e) => MapEntry(e.key, e.value!)),
+  );
 }
 
 extension NavigationExtensions on BuildContext {
@@ -169,11 +163,11 @@ extension NavigationExtensions on BuildContext {
       !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
           ? null
           : goNamed(
-              name,
-              pathParameters: pathParameters,
-              queryParameters: queryParameters,
-              extra: extra,
-            );
+            name,
+            pathParameters: pathParameters,
+            queryParameters: queryParameters,
+            extra: extra,
+          );
 
   void pushNamedAuth(
     String name,
@@ -186,11 +180,11 @@ extension NavigationExtensions on BuildContext {
       !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
           ? null
           : pushNamed(
-              name,
-              pathParameters: pathParameters,
-              queryParameters: queryParameters,
-              extra: extra,
-            );
+            name,
+            pathParameters: pathParameters,
+            queryParameters: queryParameters,
+            extra: extra,
+          );
 
   void safePop() {
     // If there is only one route on the stack, navigate to the initial
@@ -219,13 +213,15 @@ extension GoRouterExtensions on GoRouter {
 extension _GoRouterStateExtensions on GoRouterState {
   Map<String, dynamic> get extraMap =>
       extra != null ? extra as Map<String, dynamic> : {};
-  Map<String, dynamic> get allParams => <String, dynamic>{}
-    ..addAll(pathParameters)
-    ..addAll(uri.queryParameters)
-    ..addAll(extraMap);
-  TransitionInfo get transitionInfo => extraMap.containsKey(kTransitionInfoKey)
-      ? extraMap[kTransitionInfoKey] as TransitionInfo
-      : TransitionInfo.appDefault();
+  Map<String, dynamic> get allParams =>
+      <String, dynamic>{}
+        ..addAll(pathParameters)
+        ..addAll(uri.queryParameters)
+        ..addAll(extraMap);
+  TransitionInfo get transitionInfo =>
+      extraMap.containsKey(kTransitionInfoKey)
+          ? extraMap[kTransitionInfoKey] as TransitionInfo
+          : TransitionInfo.appDefault();
 }
 
 class FFParameters {
@@ -246,18 +242,17 @@ class FFParameters {
       asyncParams.containsKey(param.key) && param.value is String;
   bool get hasFutures => state.allParams.entries.any(isAsyncParam);
   Future<bool> completeFutures() => Future.wait(
-        state.allParams.entries.where(isAsyncParam).map(
-          (param) async {
-            final doc = await asyncParams[param.key]!(param.value)
-                .onError((_, __) => null);
-            if (doc != null) {
-              futureParamValues[param.key] = doc;
-              return true;
-            }
-            return false;
-          },
-        ),
-      ).onError((_, __) => [false]).then((v) => v.every((e) => e));
+    state.allParams.entries.where(isAsyncParam).map((param) async {
+      final doc = await asyncParams[param.key]!(param.value).onError(
+        (_, __) => null,
+      );
+      if (doc != null) {
+        futureParamValues[param.key] = doc;
+        return true;
+      }
+      return false;
+    }),
+  ).onError((_, __) => [false]).then((v) => v.every((e) => e));
 
   dynamic getParam<T>(
     String paramName,
@@ -304,67 +299,69 @@ class FFRoute {
   final List<GoRoute> routes;
 
   GoRoute toRoute(AppStateNotifier appStateNotifier) => GoRoute(
-        name: name,
-        path: path,
-        redirect: (context, state) {
-          if (appStateNotifier.shouldRedirect) {
-            final redirectLocation = appStateNotifier.getRedirectLocation();
-            appStateNotifier.clearRedirectLocation();
-            return redirectLocation;
-          }
+    name: name,
+    path: path,
+    redirect: (context, state) {
+      if (appStateNotifier.shouldRedirect) {
+        final redirectLocation = appStateNotifier.getRedirectLocation();
+        appStateNotifier.clearRedirectLocation();
+        return redirectLocation;
+      }
 
-          if (requireAuth && !appStateNotifier.loggedIn) {
-            appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
-          }
-          return null;
-        },
-        pageBuilder: (context, state) {
-          fixStatusBarOniOS16AndBelow(context);
-          final ffParams = FFParameters(state, asyncParams);
-          final page = ffParams.hasFutures
+      if (requireAuth && !appStateNotifier.loggedIn) {
+        appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
+        return '/login';
+      }
+      return null;
+    },
+    pageBuilder: (context, state) {
+      fixStatusBarOniOS16AndBelow(context);
+      final ffParams = FFParameters(state, asyncParams);
+      final page =
+          ffParams.hasFutures
               ? FutureBuilder(
-                  future: ffParams.completeFutures(),
-                  builder: (context, _) => builder(context, ffParams),
-                )
+                future: ffParams.completeFutures(),
+                builder: (context, _) => builder(context, ffParams),
+              )
               : builder(context, ffParams);
-          final child = appStateNotifier.loading
+      final child =
+          appStateNotifier.loading
               ? isWeb
                   ? Container()
                   : Container(
-                      color: FlutterFlowTheme.of(context).primary,
-                      child: Image.asset(
-                        'assets/images/Design_sem_nome.png',
-                        fit: BoxFit.contain,
-                      ),
-                    )
+                    color: FlutterFlowTheme.of(context).primary,
+                    child: Image.asset(
+                      'assets/images/Design_sem_nome.png',
+                      fit: BoxFit.contain,
+                    ),
+                  )
               : page;
 
-          final transitionInfo = state.transitionInfo;
-          return transitionInfo.hasTransition
-              ? CustomTransitionPage(
-                  key: state.pageKey,
-                  child: child,
-                  transitionDuration: transitionInfo.duration,
-                  transitionsBuilder:
-                      (context, animation, secondaryAnimation, child) =>
-                          PageTransition(
-                    type: transitionInfo.transitionType,
-                    duration: transitionInfo.duration,
-                    reverseDuration: transitionInfo.duration,
-                    alignment: transitionInfo.alignment,
-                    child: child,
-                  ).buildTransitions(
-                    context,
-                    animation,
-                    secondaryAnimation,
-                    child,
-                  ),
-                )
-              : MaterialPage(key: state.pageKey, child: child);
-        },
-        routes: routes,
-      );
+      final transitionInfo = state.transitionInfo;
+      return transitionInfo.hasTransition
+          ? CustomTransitionPage(
+            key: state.pageKey,
+            child: child,
+            transitionDuration: transitionInfo.duration,
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) =>
+                    PageTransition(
+                      type: transitionInfo.transitionType,
+                      duration: transitionInfo.duration,
+                      reverseDuration: transitionInfo.duration,
+                      alignment: transitionInfo.alignment,
+                      child: child,
+                    ).buildTransitions(
+                      context,
+                      animation,
+                      secondaryAnimation,
+                      child,
+                    ),
+          )
+          : MaterialPage(key: state.pageKey, child: child);
+    },
+    routes: routes,
+  );
 }
 
 class TransitionInfo {
@@ -398,18 +395,17 @@ class RootPageContext {
         location != rootPageContext?.errorRoute;
   }
 
-  static Widget wrap(Widget child, {String? errorRoute}) => Provider.value(
-        value: RootPageContext(true, errorRoute),
-        child: child,
-      );
+  static Widget wrap(Widget child, {String? errorRoute}) =>
+      Provider.value(value: RootPageContext(true, errorRoute), child: child);
 }
 
 extension GoRouterLocationExtension on GoRouter {
   String getCurrentLocation() {
     final RouteMatch lastMatch = routerDelegate.currentConfiguration.last;
-    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
-        ? lastMatch.matches
-        : routerDelegate.currentConfiguration;
+    final RouteMatchList matchList =
+        lastMatch is ImperativeRouteMatch
+            ? lastMatch.matches
+            : routerDelegate.currentConfiguration;
     return matchList.uri.toString();
   }
 }

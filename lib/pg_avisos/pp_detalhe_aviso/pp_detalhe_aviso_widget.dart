@@ -3,18 +3,13 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'pp_detalhe_aviso_model.dart';
 export 'pp_detalhe_aviso_model.dart';
 
 class PpDetalheAvisoWidget extends StatefulWidget {
-  const PpDetalheAvisoWidget({
-    super.key,
-    required this.idAviso,
-  });
+  const PpDetalheAvisoWidget({super.key, required this.idAviso});
 
   final int? idAviso;
 
@@ -52,10 +47,7 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: FutureBuilder<List<AvisosRow>>(
         future: AvisosTable().querySingleRow(
-          queryFn: (q) => q.eqOrNull(
-            'id',
-            widget.idAviso,
-          ),
+          queryFn: (q) => q.eqOrNull('id', widget.idAviso),
         ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
@@ -74,9 +66,10 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
           }
           List<AvisosRow> containerAvisosRowList = snapshot.data!;
 
-          final containerAvisosRow = containerAvisosRowList.isNotEmpty
-              ? containerAvisosRowList.first
-              : null;
+          final containerAvisosRow =
+              containerAvisosRowList.isNotEmpty
+                  ? containerAvisosRowList.first
+                  : null;
 
           return Container(
             width: 625.0,
@@ -96,19 +89,19 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                       Text(
                         'Detalhes aviso',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w500,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          fontSize: 16.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                       FlutterFlowIconButton(
                         borderRadius: 8.0,
@@ -131,22 +124,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                       Text(
                         'Detalhes da embarcação',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
+                          font: GoogleFonts.inter(
+                            fontWeight:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(
+                                  context,
+                                ).bodyMedium.fontStyle,
+                          ),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(
+                                context,
+                              ).bodyMedium.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                        ),
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
@@ -158,23 +153,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                               children: [
                                 Text(
                                   'ID',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                 ),
                                 Container(
                                   height: 44.0,
@@ -186,40 +182,46 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              24.0, 0.0, 24.0, 0.0),
+                                            24.0,
+                                            0.0,
+                                            24.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         valueOrDefault<String>(
                                           containerAvisosRow?.id.toString(),
                                           'N/A',
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -234,23 +236,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                               children: [
                                 Text(
                                   'Status',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                 ),
                                 Container(
                                   height: 44.0,
@@ -262,40 +265,46 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              24.0, 0.0, 24.0, 0.0),
+                                            24.0,
+                                            0.0,
+                                            24.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         valueOrDefault<String>(
                                           containerAvisosRow?.status,
                                           'N/A',
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -311,22 +320,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                         children: [
                           Text(
                             'Título do aviso',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style: FlutterFlowTheme.of(
+                              context,
+                            ).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
                           ),
                           Container(
                             height: 44.0,
@@ -341,33 +352,39 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                               alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
+                                  24.0,
+                                  0.0,
+                                  24.0,
+                                  0.0,
+                                ),
                                 child: Text(
                                   valueOrDefault<String>(
                                     containerAvisosRow?.tituloAviso,
                                     'N/A',
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                 ),
                               ),
                             ),
@@ -380,22 +397,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                         children: [
                           Text(
                             'Descrição',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style: FlutterFlowTheme.of(
+                              context,
+                            ).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
                           ),
                           Container(
                             height: 147.27,
@@ -410,33 +429,39 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                               alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 24.0, 24.0, 0.0),
+                                  24.0,
+                                  24.0,
+                                  24.0,
+                                  0.0,
+                                ),
                                 child: Text(
                                   valueOrDefault<String>(
                                     containerAvisosRow?.aviso,
                                     'N/A',
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                 ),
                               ),
                             ),
@@ -453,23 +478,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                               children: [
                                 Text(
                                   'Duração',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                 ),
                                 Container(
                                   height: 44.0,
@@ -481,41 +507,47 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              24.0, 0.0, 24.0, 0.0),
+                                            24.0,
+                                            0.0,
+                                            24.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         valueOrDefault<String>(
                                           containerAvisosRow?.duracao
                                               ?.toString(),
                                           '00000000',
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -530,23 +562,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                               children: [
                                 Text(
                                   'Emitido em',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                 ),
                                 Container(
                                   height: 44.0,
@@ -558,45 +591,53 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(
+                                      -1.0,
+                                      0.0,
+                                    ),
                                     child: Padding(
                                       padding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              24.0, 0.0, 24.0, 0.0),
+                                            24.0,
+                                            0.0,
+                                            24.0,
+                                            0.0,
+                                          ),
                                       child: Text(
                                         valueOrDefault<String>(
                                           dateTimeFormat(
                                             "dd/MM/yyyy",
                                             containerAvisosRow?.createdAt,
-                                            locale: FFLocalizations.of(context)
-                                                .languageCode,
+                                            locale:
+                                                FFLocalizations.of(
+                                                  context,
+                                                ).languageCode,
                                           ),
                                           '00/00/0000',
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                        style: FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(
+                                                context,
+                                              ).bodyMedium.fontStyle,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -612,22 +653,24 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                         children: [
                           Text(
                             'Coordenadas',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w500,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style: FlutterFlowTheme.of(
+                              context,
+                            ).bodyMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).bodyMedium.fontStyle,
+                              ),
+                              fontSize: 16.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle:
+                                  FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.fontStyle,
+                            ),
                           ),
                           Container(
                             height: 44.0,
@@ -642,30 +685,36 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                               alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
+                                  24.0,
+                                  0.0,
+                                  24.0,
+                                  0.0,
+                                ),
                                 child: Text(
                                   '${containerAvisosRow?.lat} ${containerAvisosRow?.lon}',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                  style: FlutterFlowTheme.of(
+                                    context,
+                                  ).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontWeight,
+                                      fontStyle:
+                                          FlutterFlowTheme.of(
+                                            context,
+                                          ).bodyMedium.fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontWeight,
+                                    fontStyle:
+                                        FlutterFlowTheme.of(
+                                          context,
+                                        ).bodyMedium.fontStyle,
+                                  ),
                                 ),
                               ),
                             ),
@@ -679,13 +728,10 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                           FFButtonWidget(
                             onPressed: () async {
                               await AvisosTable().update(
-                                data: {
-                                  'status': 'Cancelado',
-                                },
-                                matchingRows: (rows) => rows.eqOrNull(
-                                  'id',
-                                  widget.idAviso,
-                                ),
+                                data: {'status': 'Cancelado'},
+                                matchingRows:
+                                    (rows) =>
+                                        rows.eqOrNull('id', widget.idAviso),
                               );
                               Navigator.pop(context);
                             },
@@ -693,31 +739,43 @@ class _PpDetalheAvisoWidgetState extends State<PpDetalheAvisoWidget> {
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
+                                16.0,
+                                0.0,
+                                16.0,
+                                0.0,
+                              ),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
+                                0.0,
+                                0.0,
+                                0.0,
+                                0.0,
+                              ),
                               iconColor: const Color(0xFF252627),
                               color: const Color(0x00007191),
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context).error,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
+                              textStyle: FlutterFlowTheme.of(
+                                context,
+                              ).titleSmall.override(
+                                font: GoogleFonts.interTight(
+                                  fontWeight:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).titleSmall.fontWeight,
+                                  fontStyle:
+                                      FlutterFlowTheme.of(
+                                        context,
+                                      ).titleSmall.fontStyle,
+                                ),
+                                color: FlutterFlowTheme.of(context).error,
+                                letterSpacing: 0.0,
+                                fontWeight:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontWeight,
+                                fontStyle:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).titleSmall.fontStyle,
+                              ),
                               elevation: 0.0,
                               borderSide: const BorderSide(
                                 color: Colors.transparent,

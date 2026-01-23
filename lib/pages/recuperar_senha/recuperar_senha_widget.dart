@@ -4,11 +4,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/core/validators/validators.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'recuperar_senha_model.dart';
 export 'recuperar_senha_model.dart';
 
@@ -44,8 +42,7 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
 
     _model.txConfirmarSenhaTextController ??= TextEditingController();
     _model.txConfirmarSenhaFocusNode ??= FocusNode();
-    _model.txConfirmarSenhaTextControllerValidator ??=
-        (context, value) {
+    _model.txConfirmarSenhaTextControllerValidator ??= (context, value) {
       if (value == null || value.isEmpty) {
         return 'Confirme a nova senha';
       }
@@ -68,12 +65,13 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
     if (uri.hasFragment) {
       final fragment = uri.fragment;
       // Se houver um token de recuperação, aguardar processamento e mudar para estado de redefinição
-      if (fragment.contains('access_token') && fragment.contains('type=recovery')) {
+      if (fragment.contains('access_token') &&
+          fragment.contains('type=recovery')) {
         try {
           // O Supabase processa o hash fragment automaticamente
           // Aguardar um pouco para garantir que o processamento foi concluído
           await Future.delayed(const Duration(milliseconds: 500));
-          
+
           // Verificar se há uma sessão ativa (indicando que o token foi processado)
           final session = SupaFlow.client.auth.currentSession;
           if (session != null) {
@@ -128,12 +126,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Recuperar senha',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  fontSize: 24.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              fontSize: 24.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
@@ -141,13 +137,11 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Insira o email cadastrado para redefinir sua senha. Você receberá um link de recuperação.',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.normal,
-                  ),
-                  color: const Color(0xFF646768),
-                  fontSize: 14.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.normal),
+              color: const Color(0xFF646768),
+              fontSize: 14.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Column(
@@ -155,16 +149,19 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                24.0,
+                0.0,
+                0.0,
+              ),
               child: Text(
                 'E-mail',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                      ),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
               ),
             ),
             SizedBox(
@@ -178,10 +175,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   isDense: true,
                   hintText: 'E-mail',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(),
-                        color: const Color(0xFFB1B3B4),
-                        letterSpacing: 0.0,
-                      ),
+                    font: GoogleFonts.inter(),
+                    color: const Color(0xFFB1B3B4),
+                    letterSpacing: 0.0,
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       color: Color(0xFFE5E6E6),
@@ -215,11 +212,12 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   prefixIcon: const Icon(Icons.email_outlined),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(),
-                      letterSpacing: 0.0,
-                    ),
-                validator: _model.txEmailTextControllerValidator
-                    .asValidator(context),
+                  font: GoogleFonts.inter(),
+                  letterSpacing: 0.0,
+                ),
+                validator: _model.txEmailTextControllerValidator.asValidator(
+                  context,
+                ),
               ),
             ),
           ],
@@ -230,9 +228,7 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             onPressed: () async {
               if (_model.txEmailTextController?.text.isEmpty ?? true) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Por favor, insira um e-mail'),
-                  ),
+                  const SnackBar(content: Text('Por favor, insira um e-mail')),
                 );
                 return;
               }
@@ -258,16 +254,24 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             options: FFButtonOptions(
               width: double.infinity,
               height: 54.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                16.0,
+                0.0,
+                16.0,
+                0.0,
+              ),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+              ),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    font: GoogleFonts.interTight(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    color: Colors.white,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.interTight(fontWeight: FontWeight.w600),
+                color: Colors.white,
+                letterSpacing: 0.0,
+              ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -286,13 +290,11 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             child: Text(
               'Voltar para o login',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                    ),
-                    color: const Color(0xFF007191),
-                    fontSize: 14.0,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                color: const Color(0xFF007191),
+                fontSize: 14.0,
+                letterSpacing: 0.0,
+              ),
             ),
           ),
         ),
@@ -318,25 +320,25 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Recuperar senha',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  fontSize: 24.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              fontSize: 24.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
           child: Container(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(
+              16.0,
+              12.0,
+              16.0,
+              12.0,
+            ),
             decoration: BoxDecoration(
               color: const Color(0xFFE8F5E9),
               borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(
-                color: const Color(0xFF90C74F),
-                width: 1.0,
-              ),
+              border: Border.all(color: const Color(0xFF90C74F), width: 1.0),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -348,17 +350,20 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                      12.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                    ),
                     child: Text(
                       'Email enviado com sucesso!',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                            ),
-                            color: const Color(0xFF2E7D32),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                          ),
+                        font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                        color: const Color(0xFF2E7D32),
+                        fontSize: 14.0,
+                        letterSpacing: 0.0,
+                      ),
                     ),
                   ),
                 ),
@@ -371,13 +376,11 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Você receberá um link para redefinir sua senha em instantes. Verifique sua caixa de entrada.',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.normal,
-                  ),
-                  color: const Color(0xFF646768),
-                  fontSize: 14.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.normal),
+              color: const Color(0xFF646768),
+              fontSize: 14.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Column(
@@ -385,16 +388,19 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                24.0,
+                0.0,
+                0.0,
+              ),
               child: Text(
                 'E-mail',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                      ),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
               ),
             ),
             SizedBox(
@@ -409,10 +415,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   isDense: true,
                   hintText: 'E-mail',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(),
-                        color: const Color(0xFFB1B3B4),
-                        letterSpacing: 0.0,
-                      ),
+                    font: GoogleFonts.inter(),
+                    color: const Color(0xFFB1B3B4),
+                    letterSpacing: 0.0,
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       color: Color(0xFFE5E6E6),
@@ -446,10 +452,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   prefixIcon: const Icon(Icons.email_outlined),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(),
-                      color: const Color(0xFF646768),
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(),
+                  color: const Color(0xFF646768),
+                  letterSpacing: 0.0,
+                ),
               ),
             ),
           ],
@@ -462,16 +468,24 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             options: FFButtonOptions(
               width: double.infinity,
               height: 54.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                16.0,
+                0.0,
+                16.0,
+                0.0,
+              ),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+              ),
               color: const Color(0xFFE5E6E6),
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    font: GoogleFonts.interTight(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    color: const Color(0xFFB1B3B4),
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.interTight(fontWeight: FontWeight.w600),
+                color: const Color(0xFFB1B3B4),
+                letterSpacing: 0.0,
+              ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -490,13 +504,11 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             child: Text(
               'Voltar para o login',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                    ),
-                    color: const Color(0xFF007191),
-                    fontSize: 14.0,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                color: const Color(0xFF007191),
+                fontSize: 14.0,
+                letterSpacing: 0.0,
+              ),
             ),
           ),
         ),
@@ -522,12 +534,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Recuperar senha',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  fontSize: 24.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              fontSize: 24.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
@@ -535,13 +545,11 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Crie uma nova senha para sua conta.',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.normal,
-                  ),
-                  color: const Color(0xFF646768),
-                  fontSize: 14.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.normal),
+              color: const Color(0xFF646768),
+              fontSize: 14.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Column(
@@ -549,16 +557,19 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                24.0,
+                0.0,
+                0.0,
+              ),
               child: Text(
                 'Nova senha',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                      ),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
               ),
             ),
             SizedBox(
@@ -572,10 +583,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   isDense: true,
                   hintText: 'Nova senha',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(),
-                        color: const Color(0xFFB1B3B4),
-                        letterSpacing: 0.0,
-                      ),
+                    font: GoogleFonts.inter(),
+                    color: const Color(0xFFB1B3B4),
+                    letterSpacing: 0.0,
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       color: Color(0xFFE5E6E6),
@@ -624,9 +635,9 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(),
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(),
+                  letterSpacing: 0.0,
+                ),
                 validator: _model.txNovaSenhaTextControllerValidator
                     .asValidator(context),
               ),
@@ -638,16 +649,19 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                16.0,
+                0.0,
+                0.0,
+              ),
               child: Text(
                 'Confirme a nova senha',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                      ),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
               ),
             ),
             SizedBox(
@@ -661,10 +675,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   isDense: true,
                   hintText: 'Confirme a nova senha',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(),
-                        color: const Color(0xFFB1B3B4),
-                        letterSpacing: 0.0,
-                      ),
+                    font: GoogleFonts.inter(),
+                    color: const Color(0xFFB1B3B4),
+                    letterSpacing: 0.0,
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       color: Color(0xFFE5E6E6),
@@ -713,9 +727,9 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(),
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(),
+                  letterSpacing: 0.0,
+                ),
                 validator: _model.txConfirmarSenhaTextControllerValidator
                     .asValidator(context),
               ),
@@ -738,9 +752,7 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
               if (_model.txConfirmarSenhaTextController?.text !=
                   _model.txNovaSenhaTextController?.text) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('As senhas não coincidem'),
-                  ),
+                  const SnackBar(content: Text('As senhas não coincidem')),
                 );
                 return;
               }
@@ -784,16 +796,24 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             options: FFButtonOptions(
               width: double.infinity,
               height: 54.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                16.0,
+                0.0,
+                16.0,
+                0.0,
+              ),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+              ),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    font: GoogleFonts.interTight(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    color: Colors.white,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.interTight(fontWeight: FontWeight.w600),
+                color: Colors.white,
+                letterSpacing: 0.0,
+              ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -812,13 +832,11 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             child: Text(
               'Voltar para o login',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                    ),
-                    color: const Color(0xFF007191),
-                    fontSize: 14.0,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                color: const Color(0xFF007191),
+                fontSize: 14.0,
+                letterSpacing: 0.0,
+              ),
             ),
           ),
         ),
@@ -844,25 +862,25 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Recuperar senha',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  fontSize: 24.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              fontSize: 24.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
           child: Container(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(
+              16.0,
+              12.0,
+              16.0,
+              12.0,
+            ),
             decoration: BoxDecoration(
               color: const Color(0xFFE8F5E9),
               borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(
-                color: const Color(0xFF90C74F),
-                width: 1.0,
-              ),
+              border: Border.all(color: const Color(0xFF90C74F), width: 1.0),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -874,17 +892,20 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                      12.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                    ),
                     child: Text(
                       'Senha redefinida com sucesso!',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                            ),
-                            color: const Color(0xFF2E7D32),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                          ),
+                        font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                        color: const Color(0xFF2E7D32),
+                        fontSize: 14.0,
+                        letterSpacing: 0.0,
+                      ),
                     ),
                   ),
                 ),
@@ -897,13 +918,11 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
           child: Text(
             'Sua senha foi atualizada. Você já pode fazer login com sua nova senha.',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.normal,
-                  ),
-                  color: const Color(0xFF646768),
-                  fontSize: 14.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.normal),
+              color: const Color(0xFF646768),
+              fontSize: 14.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
@@ -916,16 +935,24 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
             options: FFButtonOptions(
               width: double.infinity,
               height: 54.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                16.0,
+                0.0,
+                16.0,
+                0.0,
+              ),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+              ),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    font: GoogleFonts.interTight(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    color: Colors.white,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.interTight(fontWeight: FontWeight.w600),
+                color: Colors.white,
+                letterSpacing: 0.0,
+              ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -982,8 +1009,10 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
                             child: Container(
                               width: 471.4,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).secondaryBackground,
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
                               child: Padding(

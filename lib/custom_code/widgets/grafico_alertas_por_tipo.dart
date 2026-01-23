@@ -1,12 +1,8 @@
 // Automatic FlutterFlow imports
-import '/backend/schema/structs/index.dart';
-import '/backend/supabase/supabase.dart';
-import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom widgets
-import '/custom_code/actions/index.dart'; // Imports custom actions
-import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+// Imports other custom widgets
+// Imports custom actions
+// Imports custom functions
 import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
@@ -112,11 +108,11 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
               child: Text(
                 '$totalAlertas',
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
-                      fontFamily: 'Outfit',
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  fontFamily: 'Outfit',
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -127,10 +123,10 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
           position: LegendPosition.bottom,
           overflowMode: LegendItemOverflowMode.wrap,
           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Readex Pro',
-                color: FlutterFlowTheme.of(context).secondaryText,
-                fontSize: 10, // Um pouco menor pois podem haver muitos itens
-              ),
+            fontFamily: 'Readex Pro',
+            color: FlutterFlowTheme.of(context).secondaryText,
+            fontSize: 10, // Um pouco menor pois podem haver muitos itens
+          ),
         ),
         series: <CircularSeries>[
           DoughnutSeries<_ChartData, String>(
@@ -155,11 +151,18 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
                 width: 1,
               ),
               // Estilização do texto do label (Nome e valor)
-              builder: (dynamic data, dynamic point, dynamic series,
-                  int pointIndex, int seriesIndex) {
+              builder: (
+                dynamic data,
+                dynamic point,
+                dynamic series,
+                int pointIndex,
+                int seriesIndex,
+              ) {
                 return Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 5,
+                    vertical: 2,
+                  ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -184,7 +187,7 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
                 );
               },
             ),
-          )
+          ),
         ],
       ),
     );

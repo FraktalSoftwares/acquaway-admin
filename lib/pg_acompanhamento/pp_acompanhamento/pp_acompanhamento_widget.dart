@@ -5,21 +5,15 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'pp_acompanhamento_model.dart';
 export 'pp_acompanhamento_model.dart';
 
 class PpAcompanhamentoWidget extends StatefulWidget {
-  const PpAcompanhamentoWidget({
-    super.key,
-    required this.idViagem,
-  });
+  const PpAcompanhamentoWidget({super.key, required this.idViagem});
 
   final int? idViagem;
 
@@ -57,10 +51,7 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
       padding: const EdgeInsets.all(24.0),
       child: FutureBuilder<List<VwViagensResumoRow>>(
         future: VwViagensResumoTable().querySingleRow(
-          queryFn: (q) => q.eqOrNull(
-            'id_viagem',
-            widget.idViagem,
-          ),
+          queryFn: (q) => q.eqOrNull('id_viagem', widget.idViagem),
         ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
@@ -111,7 +102,11 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                     alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          24.0, 24.0, 24.0, 24.0),
+                        24.0,
+                        24.0,
+                        24.0,
+                        24.0,
+                      ),
                       child: FutureBuilder<ApiCallResponse>(
                         future: WeatherNowCall.call(
                           lat: containerVwViagensResumoRow?.destinoLat,
@@ -145,7 +140,11 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 3.0, 0.0, 6.0),
+                                          0.0,
+                                          3.0,
+                                          0.0,
+                                          6.0,
+                                        ),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
                                       child: Row(
@@ -154,51 +153,57 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0,
+                                                  0.0,
+                                                  0.0,
+                                                  6.0,
+                                                ),
                                             child: Container(
                                               height: 29.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
+                                                    offset: Offset(0.0, 2.0),
+                                                  ),
                                                 ],
                                                 borderRadius:
                                                     BorderRadius.circular(
-                                                        100.0),
+                                                      100.0,
+                                                    ),
                                               ),
                                               child: Padding(
                                                 padding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        12.0, 0.0, 12.0, 0.0),
+                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                      12.0,
+                                                      0.0,
+                                                      12.0,
+                                                      0.0,
+                                                    ),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    if (WeatherNowCall
-                                                            .resumohojecondicaogeral(
+                                                    if (WeatherNowCall.resumohojecondicaogeral(
                                                           containerWeatherNowResponse
                                                               .jsonBody,
                                                         ) ==
                                                         'Ensolarado')
                                                       const Icon(
                                                         Icons.flare,
-                                                        color:
-                                                            Color(0xFFD8BB00),
+                                                        color: Color(
+                                                          0xFFD8BB00,
+                                                        ),
                                                         size: 20.0,
                                                       ),
-                                                    if (WeatherNowCall
-                                                            .resumohojecondicaogeral(
+                                                    if (WeatherNowCall.resumohojecondicaogeral(
                                                           containerWeatherNowResponse
                                                               .jsonBody,
                                                         ) ==
@@ -208,139 +213,139 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                                                             .cloudRain,
                                                         color:
                                                             FlutterFlowTheme.of(
-                                                                    context)
-                                                                .success,
+                                                              context,
+                                                            ).success,
                                                         size: 20.0,
                                                       ),
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                            0.0,
+                                                            0.0,
+                                                          ),
                                                       child: Text(
                                                         valueOrDefault<String>(
-                                                          WeatherNowCall
-                                                              .resumohojecondicaogeral(
+                                                          WeatherNowCall.resumohojecondicaogeral(
                                                             containerWeatherNowResponse
                                                                 .jsonBody,
                                                           ),
                                                           'Sol',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ].divide(const SizedBox(
-                                                      width: 6.0)),
+                                                  ].divide(
+                                                    const SizedBox(width: 6.0),
+                                                  ),
                                                 ),
                                               ),
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0,
+                                                  0.0,
+                                                  0.0,
+                                                  6.0,
+                                                ),
                                             child: Container(
                                               width: 87.0,
                                               height: 29.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
+                                                    offset: Offset(0.0, 2.0),
+                                                  ),
                                                 ],
                                                 borderRadius:
                                                     BorderRadius.circular(
-                                                        100.0),
+                                                      100.0,
+                                                    ),
                                               ),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                            9.0, 0.0, 6.0, 0.0),
+                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                          9.0,
+                                                          0.0,
+                                                          6.0,
+                                                          0.0,
+                                                        ),
                                                     child: FaIcon(
                                                       FontAwesomeIcons
                                                           .temperatureLow,
                                                       color:
                                                           FlutterFlowTheme.of(
-                                                                  context)
-                                                              .success,
+                                                            context,
+                                                          ).success,
                                                       size: 20.0,
                                                     ),
                                                   ),
                                                   Align(
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                          0.0,
+                                                          0.0,
+                                                        ),
                                                     child: Text(
                                                       valueOrDefault<String>(
-                                                        '${valueOrDefault<String>(
-                                                          WeatherNowCall
-                                                              .resumohojetemperaturaagoracelsius(
-                                                            containerWeatherNowResponse
-                                                                .jsonBody,
-                                                          )?.toString(),
-                                                          '0',
-                                                        )}°C',
+                                                        '${valueOrDefault<String>(WeatherNowCall.resumohojetemperaturaagoracelsius(containerWeatherNowResponse.jsonBody)?.toString(), '0')}°C',
                                                         '0°C',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            font: GoogleFonts
-                                                                .inter(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                            ),
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
+                                                      style: FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                  context,
+                                                                )
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
@@ -348,33 +353,40 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0,
+                                                  0.0,
+                                                  0.0,
+                                                  6.0,
+                                                ),
                                             child: Container(
                                               height: 29.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
+                                                    offset: Offset(0.0, 2.0),
+                                                  ),
                                                 ],
                                                 borderRadius:
                                                     BorderRadius.circular(
-                                                        100.0),
+                                                      100.0,
+                                                    ),
                                               ),
                                               child: Padding(
                                                 padding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        12.0, 0.0, 12.0, 0.0),
+                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                      12.0,
+                                                      0.0,
+                                                      12.0,
+                                                      0.0,
+                                                    ),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -383,64 +395,52 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(0.0,
-                                                              0.0, 6.0, 0.0),
+                                                          const EdgeInsetsDirectional.fromSTEB(
+                                                            0.0,
+                                                            0.0,
+                                                            6.0,
+                                                            0.0,
+                                                          ),
                                                       child: FaIcon(
                                                         FontAwesomeIcons.wind,
                                                         color:
                                                             FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
+                                                              context,
+                                                            ).secondaryText,
                                                         size: 20.0,
                                                       ),
                                                     ),
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                            0.0,
+                                                            0.0,
+                                                          ),
                                                       child: Text(
-                                                        '${valueOrDefault<String>(
-                                                          WeatherNowCall
-                                                              .ventohojevelocidadekmh(
-                                                            containerWeatherNowResponse
-                                                                .jsonBody,
-                                                          )?.toString(),
-                                                          '0',
-                                                        )}km/h ${valueOrDefault<String>(
-                                                          WeatherNowCall
-                                                              .ventohojedirecaograus(
-                                                            containerWeatherNowResponse
-                                                                .jsonBody,
-                                                          )?.toString(),
-                                                          '0',
-                                                        )}°',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                        '${valueOrDefault<String>(WeatherNowCall.ventohojevelocidadekmh(containerWeatherNowResponse.jsonBody)?.toString(), '0')}km/h ${valueOrDefault<String>(WeatherNowCall.ventohojedirecaograus(containerWeatherNowResponse.jsonBody)?.toString(), '0')}°',
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -449,101 +449,96 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0,
+                                                  0.0,
+                                                  0.0,
+                                                  6.0,
+                                                ),
                                             child: Container(
                                               height: 29.0,
                                               decoration: BoxDecoration(
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                    FlutterFlowTheme.of(
+                                                      context,
+                                                    ).secondaryBackground,
                                                 boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
+                                                    offset: Offset(0.0, 2.0),
+                                                  ),
                                                 ],
                                                 borderRadius:
                                                     BorderRadius.circular(
-                                                        100.0),
+                                                      100.0,
+                                                    ),
                                               ),
                                               child: Padding(
                                                 padding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        12.0, 0.0, 12.0, 0.0),
+                                                    const EdgeInsetsDirectional.fromSTEB(
+                                                      12.0,
+                                                      0.0,
+                                                      12.0,
+                                                      0.0,
+                                                    ),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(0.0,
-                                                              0.0, 6.0, 0.0),
+                                                          const EdgeInsetsDirectional.fromSTEB(
+                                                            0.0,
+                                                            0.0,
+                                                            6.0,
+                                                            0.0,
+                                                          ),
                                                       child: Icon(
                                                         Icons
                                                             .remove_red_eye_sharp,
                                                         color:
                                                             FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
+                                                              context,
+                                                            ).secondaryText,
                                                         size: 20.0,
                                                       ),
                                                     ),
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                            0.0,
+                                                            0.0,
+                                                          ),
                                                       child: Text(
                                                         valueOrDefault<String>(
-                                                          '${valueOrDefault<String>(
-                                                            WeatherNowCall
-                                                                .resumohojevisibilidadedistancia(
-                                                              containerWeatherNowResponse
-                                                                  .jsonBody,
-                                                            )?.toString(),
-                                                            '0',
-                                                          )}${valueOrDefault<String>(
-                                                            WeatherNowCall
-                                                                .resumohojevisibilidadeunidade(
-                                                              containerWeatherNowResponse
-                                                                  .jsonBody,
-                                                            ),
-                                                            'km/h',
-                                                          )}',
+                                                          '${valueOrDefault<String>(WeatherNowCall.resumohojevisibilidadedistancia(containerWeatherNowResponse.jsonBody)?.toString(), '0')}${valueOrDefault<String>(WeatherNowCall.resumohojevisibilidadeunidade(containerWeatherNowResponse.jsonBody), 'km/h')}',
                                                           '0km/h',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                        style: FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
+                                                          font: GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                      context,
+                                                                    )
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                    context,
+                                                                  )
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -551,50 +546,54 @@ class _PpAcompanhamentoWidgetState extends State<PpAcompanhamentoWidget> {
                                               ),
                                             ),
                                           ),
-                                        ]
-                                            .divide(const SizedBox(width: 6.0))
-                                            .addToStart(
-                                                const SizedBox(width: 24.0))
-                                            .addToEnd(
-                                                const SizedBox(width: 24.0)),
+                                        ].divide(const SizedBox(width: 6.0)).addToStart(const SizedBox(width: 24.0)).addToEnd(const SizedBox(width: 24.0)),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Builder(
-                                  builder: (context) => FlutterFlowIconButton(
-                                    borderRadius: 24.0,
-                                    buttonSize: 40.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    icon: Icon(
-                                      Icons.menu_rounded,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () async {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (dialogContext) {
-                                          return Dialog(
-                                            elevation: 0,
-                                            insetPadding: EdgeInsets.zero,
-                                            backgroundColor: Colors.transparent,
-                                            alignment:
-                                                const AlignmentDirectional(
-                                                        0.0, 0.0)
-                                                    .resolve(Directionality.of(
-                                                        context)),
-                                            child: WebViewAware(
-                                              child: PpDetalheViagemWidget(
-                                                idViagem: widget.idViagem!,
-                                              ),
-                                            ),
+                                  builder:
+                                      (context) => FlutterFlowIconButton(
+                                        borderRadius: 24.0,
+                                        buttonSize: 40.0,
+                                        fillColor:
+                                            FlutterFlowTheme.of(
+                                              context,
+                                            ).primary,
+                                        icon: Icon(
+                                          Icons.menu_rounded,
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          size: 24.0,
+                                        ),
+                                        onPressed: () async {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (dialogContext) {
+                                              return Dialog(
+                                                elevation: 0,
+                                                insetPadding: EdgeInsets.zero,
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                alignment:
+                                                    const AlignmentDirectional(
+                                                      0.0,
+                                                      0.0,
+                                                    ).resolve(
+                                                      Directionality.of(
+                                                        context,
+                                                      ),
+                                                    ),
+                                                child: WebViewAware(
+                                                  child: PpDetalheViagemWidget(
+                                                    idViagem: widget.idViagem!,
+                                                  ),
+                                                ),
+                                              );
+                                            },
                                           );
                                         },
-                                      );
-                                    },
-                                  ),
+                                      ),
                                 ),
                               ],
                             ),

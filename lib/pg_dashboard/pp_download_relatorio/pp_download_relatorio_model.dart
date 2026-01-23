@@ -46,16 +46,20 @@ class PpDownloadRelatorioModel
     if (empresasCadastradas) selecionadas.add('empresas_cadastradas');
     if (numeroUsuariosPorTipo) selecionadas.add('numero_usuarios_por_tipo');
     if (totalViagensRealizadas) selecionadas.add('total_viagens_realizadas');
-    if (totalEmbarcacoesCadastradas)
+    if (totalEmbarcacoesCadastradas) {
       selecionadas.add('total_embarcacoes_cadastradas');
-    if (mediaEmbarcacoesPorEmpresa)
+    }
+    if (mediaEmbarcacoesPorEmpresa) {
       selecionadas.add('media_embarcacoes_por_empresa');
-    if (mediaEmbarcacoesPorPiloto)
+    }
+    if (mediaEmbarcacoesPorPiloto) {
       selecionadas.add('media_embarcacoes_por_piloto');
+    }
     if (sosEmitidosPorTipo) selecionadas.add('sos_emitidos_por_tipo');
     if (alertasEmitidosPorTipo) selecionadas.add('alertas_emitidos_por_tipo');
-    if (planejamentoViagensPorTipo)
+    if (planejamentoViagensPorTipo) {
       selecionadas.add('planejamento_viagens_por_tipo');
+    }
     return selecionadas;
   }
 }

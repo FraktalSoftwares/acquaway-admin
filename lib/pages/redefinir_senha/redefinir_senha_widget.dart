@@ -1,14 +1,11 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/core/validators/validators.dart';
-import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'redefinir_senha_model.dart';
 export 'redefinir_senha_model.dart';
 
@@ -39,8 +36,7 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
 
     _model.txConfirmarSenhaTextController ??= TextEditingController();
     _model.txConfirmarSenhaFocusNode ??= FocusNode();
-    _model.txConfirmarSenhaTextControllerValidator ??=
-        (context, value) {
+    _model.txConfirmarSenhaTextControllerValidator ??= (context, value) {
       if (value == null || value.isEmpty) {
         return 'Confirme a nova senha';
       }
@@ -66,13 +62,14 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
       final uri = Uri.base;
       if (uri.hasFragment) {
         final fragment = uri.fragment;
-        
+
         // Se houver um token de recuperação
-        if (fragment.contains('access_token') && fragment.contains('type=recovery')) {
+        if (fragment.contains('access_token') &&
+            fragment.contains('type=recovery')) {
           // O Supabase processa o hash fragment automaticamente
           // Aguardar um pouco para garantir que o processamento foi concluído
           await Future.delayed(const Duration(milliseconds: 1000));
-          
+
           // Verificar se há uma sessão ativa (indicando que o token foi processado)
           final session = SupaFlow.client.auth.currentSession;
           if (session != null) {
@@ -130,9 +127,9 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           child: Text(
             'Processando link de recuperação...',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.inter(),
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(),
+              letterSpacing: 0.0,
+            ),
           ),
         ),
       ],
@@ -157,25 +154,25 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           child: Text(
             'Recuperar senha',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  fontSize: 24.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              fontSize: 24.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
           child: Container(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(
+              16.0,
+              12.0,
+              16.0,
+              12.0,
+            ),
             decoration: BoxDecoration(
               color: const Color(0xFFFFEBEE),
               borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(
-                color: const Color(0xFFE57373),
-                width: 1.0,
-              ),
+              border: Border.all(color: const Color(0xFFE57373), width: 1.0),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -187,17 +184,20 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                      12.0,
+                      0.0,
+                      0.0,
+                      0.0,
+                    ),
                     child: Text(
                       'Link inválido ou expirado',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                            ),
-                            color: const Color(0xFFD32F2F),
-                            fontSize: 14.0,
-                            letterSpacing: 0.0,
-                          ),
+                        font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                        color: const Color(0xFFD32F2F),
+                        fontSize: 14.0,
+                        letterSpacing: 0.0,
+                      ),
                     ),
                   ),
                 ),
@@ -210,13 +210,11 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           child: Text(
             'O link de recuperação de senha é inválido ou já expirou. Por favor, solicite um novo link.',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.normal,
-                  ),
-                  color: const Color(0xFF646768),
-                  fontSize: 14.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.normal),
+              color: const Color(0xFF646768),
+              fontSize: 14.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
@@ -229,16 +227,24 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
             options: FFButtonOptions(
               width: double.infinity,
               height: 54.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                16.0,
+                0.0,
+                16.0,
+                0.0,
+              ),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+              ),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    font: GoogleFonts.interTight(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    color: Colors.white,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.interTight(fontWeight: FontWeight.w600),
+                color: Colors.white,
+                letterSpacing: 0.0,
+              ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -257,13 +263,11 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
             child: Text(
               'Voltar para o login',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                    ),
-                    color: const Color(0xFF007191),
-                    fontSize: 14.0,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                color: const Color(0xFF007191),
+                fontSize: 14.0,
+                letterSpacing: 0.0,
+              ),
             ),
           ),
         ),
@@ -289,12 +293,10 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           child: Text(
             'Recuperar senha',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  fontSize: 24.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              fontSize: 24.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Padding(
@@ -302,13 +304,11 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           child: Text(
             'Crie uma nova senha para sua conta.',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.inter(
-                    fontWeight: FontWeight.normal,
-                  ),
-                  color: const Color(0xFF646768),
-                  fontSize: 14.0,
-                  letterSpacing: 0.0,
-                ),
+              font: GoogleFonts.inter(fontWeight: FontWeight.normal),
+              color: const Color(0xFF646768),
+              fontSize: 14.0,
+              letterSpacing: 0.0,
+            ),
           ),
         ),
         Column(
@@ -316,16 +316,19 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                24.0,
+                0.0,
+                0.0,
+              ),
               child: Text(
                 'Nova senha',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                      ),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
               ),
             ),
             SizedBox(
@@ -339,10 +342,10 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
                   isDense: true,
                   hintText: 'Nova senha',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(),
-                        color: const Color(0xFFB1B3B4),
-                        letterSpacing: 0.0,
-                      ),
+                    font: GoogleFonts.inter(),
+                    color: const Color(0xFFB1B3B4),
+                    letterSpacing: 0.0,
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       color: Color(0xFFE5E6E6),
@@ -391,9 +394,9 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(),
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(),
+                  letterSpacing: 0.0,
+                ),
                 validator: _model.txNovaSenhaTextControllerValidator
                     .asValidator(context),
               ),
@@ -405,16 +408,19 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                16.0,
+                0.0,
+                0.0,
+              ),
               child: Text(
                 'Confirme a nova senha',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                      ),
-                      fontSize: 16.0,
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                  fontSize: 16.0,
+                  letterSpacing: 0.0,
+                ),
               ),
             ),
             SizedBox(
@@ -428,10 +434,10 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
                   isDense: true,
                   hintText: 'Confirme a nova senha',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(),
-                        color: const Color(0xFFB1B3B4),
-                        letterSpacing: 0.0,
-                      ),
+                    font: GoogleFonts.inter(),
+                    color: const Color(0xFFB1B3B4),
+                    letterSpacing: 0.0,
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       color: Color(0xFFE5E6E6),
@@ -480,9 +486,9 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(),
-                      letterSpacing: 0.0,
-                    ),
+                  font: GoogleFonts.inter(),
+                  letterSpacing: 0.0,
+                ),
                 validator: _model.txConfirmarSenhaTextControllerValidator
                     .asValidator(context),
               ),
@@ -492,94 +498,109 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
           child: FFButtonWidget(
-            onPressed: _model.isLoading ? null : () async {
-              if (_model.txNovaSenhaTextController?.text.isEmpty ?? true) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Por favor, insira uma nova senha'),
-                  ),
-                );
-                return;
-              }
+            onPressed:
+                _model.isLoading
+                    ? null
+                    : () async {
+                      if (_model.txNovaSenhaTextController?.text.isEmpty ??
+                          true) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Por favor, insira uma nova senha'),
+                          ),
+                        );
+                        return;
+                      }
 
-              if (_model.txConfirmarSenhaTextController?.text !=
-                  _model.txNovaSenhaTextController?.text) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('As senhas não coincidem'),
-                  ),
-                );
-                return;
-              }
+                      if (_model.txConfirmarSenhaTextController?.text !=
+                          _model.txNovaSenhaTextController?.text) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('As senhas não coincidem'),
+                          ),
+                        );
+                        return;
+                      }
 
-              safeSetState(() {
-                _model.isLoading = true;
-              });
+                      safeSetState(() {
+                        _model.isLoading = true;
+                      });
 
-              try {
-                final newPassword = _model.txNovaSenhaTextController!.text;
+                      try {
+                        final newPassword =
+                            _model.txNovaSenhaTextController!.text;
 
-                // Verificar se ainda há uma sessão ativa (do token de recuperação)
-                final session = SupaFlow.client.auth.currentSession;
-                if (session == null) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text(
-                        'Token de recuperação inválido ou expirado. Por favor, solicite um novo link.',
-                      ),
-                    ),
-                  );
-                  safeSetState(() {
-                    _model.isLoading = false;
-                    _model.tokenValid = false;
-                  });
-                  return;
-                }
+                        // Verificar se ainda há uma sessão ativa (do token de recuperação)
+                        final session = SupaFlow.client.auth.currentSession;
+                        if (session == null) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                'Token de recuperação inválido ou expirado. Por favor, solicite um novo link.',
+                              ),
+                            ),
+                          );
+                          safeSetState(() {
+                            _model.isLoading = false;
+                            _model.tokenValid = false;
+                          });
+                          return;
+                        }
 
-                // Atualizar senha usando o Supabase
-                await SupaFlow.client.auth.updateUser(
-                  UserAttributes(password: newPassword),
-                );
+                        // Atualizar senha usando o Supabase
+                        await SupaFlow.client.auth.updateUser(
+                          UserAttributes(password: newPassword),
+                        );
 
-                // Fazer logout após atualizar a senha (por segurança)
-                await SupaFlow.client.auth.signOut();
+                        // Fazer logout após atualizar a senha (por segurança)
+                        await SupaFlow.client.auth.signOut();
 
-                if (mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Senha redefinida com sucesso!'),
-                      backgroundColor: Color(0xFF90C74F),
-                    ),
-                  );
-                  
-                  // Redirecionar para a página de sucesso ou login
-                  context.goNamed(LoginWidget.routeName);
-                }
-              } catch (e) {
-                safeSetState(() {
-                  _model.isLoading = false;
-                });
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Erro ao redefinir senha: ${e.toString()}'),
-                  ),
-                );
-              }
-            },
+                        if (mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Senha redefinida com sucesso!'),
+                              backgroundColor: Color(0xFF90C74F),
+                            ),
+                          );
+
+                          // Redirecionar para a página de sucesso ou login
+                          context.goNamed(LoginWidget.routeName);
+                        }
+                      } catch (e) {
+                        safeSetState(() {
+                          _model.isLoading = false;
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Erro ao redefinir senha: ${e.toString()}',
+                            ),
+                          ),
+                        );
+                      }
+                    },
             text: 'Redefinir',
             options: FFButtonOptions(
               width: double.infinity,
               height: 54.0,
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                16.0,
+                0.0,
+                16.0,
+                0.0,
+              ),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+              ),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    font: GoogleFonts.interTight(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    color: Colors.white,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.interTight(fontWeight: FontWeight.w600),
+                color: Colors.white,
+                letterSpacing: 0.0,
+              ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(12.0),
             ),
@@ -598,13 +619,11 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
             child: Text(
               'Voltar para o login',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                    ),
-                    color: const Color(0xFF007191),
-                    fontSize: 14.0,
-                    letterSpacing: 0.0,
-                  ),
+                font: GoogleFonts.inter(fontWeight: FontWeight.w500),
+                color: const Color(0xFF007191),
+                fontSize: 14.0,
+                letterSpacing: 0.0,
+              ),
             ),
           ),
         ),
@@ -659,8 +678,10 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
                             child: Container(
                               width: 471.4,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color:
+                                    FlutterFlowTheme.of(
+                                      context,
+                                    ).secondaryBackground,
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
                               child: Padding(
@@ -669,7 +690,8 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
                                   builder: (context) {
                                     if (_model.isLoading) {
                                       return _buildLoadingState();
-                                    } else if (_model.tokenProcessed && !_model.tokenValid) {
+                                    } else if (_model.tokenProcessed &&
+                                        !_model.tokenValid) {
                                       return _buildInvalidTokenState();
                                     } else if (_model.tokenValid) {
                                       return _buildRedefinirSenhaForm();

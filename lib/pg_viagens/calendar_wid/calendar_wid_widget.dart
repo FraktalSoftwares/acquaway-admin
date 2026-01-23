@@ -1,18 +1,12 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'calendar_wid_model.dart';
 export 'calendar_wid_model.dart';
 
 class CalendarWidWidget extends StatefulWidget {
-  const CalendarWidWidget({
-    super.key,
-    this.actionRetorn,
-  });
+  const CalendarWidWidget({super.key, this.actionRetorn});
 
   final Future Function(DateTime? dataInicio, DateTime? dataFim)? actionRetorn;
 
@@ -60,10 +54,7 @@ class _CalendarWidWidgetState extends State<CalendarWidWidget> {
           width: double.infinity,
           height: double.infinity,
           saidas: (dataInicio, dataFim) async {
-            await widget.actionRetorn?.call(
-              dataInicio,
-              dataFim,
-            );
+            await widget.actionRetorn?.call(dataInicio, dataFim);
             Navigator.pop(context);
           },
         ),

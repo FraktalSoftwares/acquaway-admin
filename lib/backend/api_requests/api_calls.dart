@@ -1,8 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
-import '../schema/structs/index.dart';
-
-import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import '/core/utils/logger.dart';
@@ -19,7 +15,7 @@ class SupabaseEdgeGroup {
   static String getBaseUrl() =>
       'https://ljpuzupbogxjdowibfoy.supabase.co/functions/v1/';
   static Map<String, String> headers = {};
-  
+
   /// Gera headers padrão para Edge Functions do Supabase
   /// Inclui apenas apikey obrigatório
   static Map<String, String> getDefaultHeaders() {
@@ -28,7 +24,7 @@ class SupabaseEdgeGroup {
       'Content-Type': 'application/json',
     };
   }
-  
+
   static BuscarViagensAtivasCall buscarViagensAtivasCall =
       BuscarViagensAtivasCall();
   static TotalDeUsersPorTipoCall totalDeUsersPorTipoCall =
@@ -65,90 +61,61 @@ class BuscarViagensAtivasCall {
     );
   }
 
-  List<String>? viagenscoordenadasformatadas(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].coordenadas_formatadas''',
-        true,
-      ) as List?)
+  List<String>? viagenscoordenadasformatadas(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].coordenadas_formatadas''', true)
+              as List?)
           ?.withoutNulls
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  List<int>? viagensqtdalertas(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].qtd_alertas''',
-        true,
-      ) as List?)
+  List<int>? viagensqtdalertas(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].qtd_alertas''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
-  List<bool>? viagenssosemitido(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].sos_emitido''',
-        true,
-      ) as List?)
+  List<bool>? viagenssosemitido(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].sos_emitido''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<bool>(x))
           .withoutNulls
           .toList();
-  List<String>? viagensdestino(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].destino''',
-        true,
-      ) as List?)
+  List<String>? viagensdestino(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].destino''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  List<String>? viagensorigem(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].origem''',
-        true,
-      ) as List?)
+  List<String>? viagensorigem(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].origem''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  List<String>? viagensnomepiloto(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].nome_piloto''',
-        true,
-      ) as List?)
+  List<String>? viagensnomepiloto(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].nome_piloto''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  List<String>? viagensnomebarco(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].nome_barco''',
-        true,
-      ) as List?)
+  List<String>? viagensnomebarco(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].nome_barco''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  List<int>? viagensviagemid(dynamic response) => (getJsonField(
-        response,
-        r'''$.viagens[:].viagem_id''',
-        true,
-      ) as List?)
+  List<int>? viagensviagemid(dynamic response) =>
+      (getJsonField(response, r'''$.viagens[:].viagem_id''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
-  List? viagens(dynamic response) => getJsonField(
-        response,
-        r'''$.viagens''',
-        true,
-      ) as List?;
+  List? viagens(dynamic response) =>
+      getJsonField(response, r'''$.viagens''', true) as List?;
 }
 
 class TotalDeUsersPorTipoCall {
-  Future<ApiCallResponse> call({
-    String? inicio = '',
-    String? fim = '',
-  }) async {
+  Future<ApiCallResponse> call({String? inicio = '', String? fim = ''}) async {
     final baseUrl = SupabaseEdgeGroup.getBaseUrl();
 
     return ApiManager.instance.makeApiCall(
@@ -156,10 +123,7 @@ class TotalDeUsersPorTipoCall {
       apiUrl: '${baseUrl}get-user-stats',
       callType: ApiCallType.GET,
       headers: SupabaseEdgeGroup.getDefaultHeaders(),
-      params: {
-        'inicio': inicio,
-        'fim': fim,
-      },
+      params: {'inicio': inicio, 'fim': fim},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -169,14 +133,9 @@ class TotalDeUsersPorTipoCall {
     );
   }
 
-  int? total(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.total''',
-      ));
-  dynamic user(dynamic response) => getJsonField(
-        response,
-        r'''$.user''',
-      );
+  int? total(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.total'''));
+  dynamic user(dynamic response) => getJsonField(response, r'''$.user''');
 }
 
 class TotalDeUserEEmpresasCall {
@@ -198,25 +157,16 @@ class TotalDeUserEEmpresasCall {
     );
   }
 
-  int? totalusers(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.total_users''',
-      ));
-  int? totalcompanies(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.total_companies''',
-      ));
-  String? timestamp(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.timestamp''',
-      ));
+  int? totalusers(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.total_users'''));
+  int? totalcompanies(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.total_companies'''));
+  String? timestamp(dynamic response) =>
+      castToType<String>(getJsonField(response, r'''$.timestamp'''));
 }
 
 class TotalViagensCall {
-  Future<ApiCallResponse> call({
-    String? inicio = '',
-    String? fim = '',
-  }) async {
+  Future<ApiCallResponse> call({String? inicio = '', String? fim = ''}) async {
     final baseUrl = SupabaseEdgeGroup.getBaseUrl();
 
     return ApiManager.instance.makeApiCall(
@@ -224,10 +174,7 @@ class TotalViagensCall {
       apiUrl: '${baseUrl}get-dashboard-stats',
       callType: ApiCallType.GET,
       headers: SupabaseEdgeGroup.getDefaultHeaders(),
-      params: {
-        'inicio': inicio,
-        'fim': fim,
-      },
+      params: {'inicio': inicio, 'fim': fim},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -237,31 +184,20 @@ class TotalViagensCall {
     );
   }
 
-  double? mediaembarcacoesporpiloto(dynamic response) =>
-      castToType<double>(getJsonField(
-        response,
-        r'''$.media_embarcacoes_por_piloto''',
-      ));
-  double? mediaembarcacoesporempresa(dynamic response) =>
-      castToType<double>(getJsonField(
-        response,
-        r'''$.media_embarcacoes_por_empresa''',
-      ));
-  int? totalembarcacoes(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.total_embarcacoes''',
-      ));
-  int? totalviagens(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.total_viagens''',
-      ));
+  double? mediaembarcacoesporpiloto(dynamic response) => castToType<double>(
+    getJsonField(response, r'''$.media_embarcacoes_por_piloto'''),
+  );
+  double? mediaembarcacoesporempresa(dynamic response) => castToType<double>(
+    getJsonField(response, r'''$.media_embarcacoes_por_empresa'''),
+  );
+  int? totalembarcacoes(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.total_embarcacoes'''));
+  int? totalviagens(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.total_viagens'''));
 }
 
 class TotalDeAlertasCall {
-  Future<ApiCallResponse> call({
-    String? inicio = '',
-    String? fim = '',
-  }) async {
+  Future<ApiCallResponse> call({String? inicio = '', String? fim = ''}) async {
     final baseUrl = SupabaseEdgeGroup.getBaseUrl();
 
     return ApiManager.instance.makeApiCall(
@@ -269,10 +205,7 @@ class TotalDeAlertasCall {
       apiUrl: '${baseUrl}get-alert-counts',
       callType: ApiCallType.GET,
       headers: SupabaseEdgeGroup.getDefaultHeaders(),
-      params: {
-        'inicio': inicio,
-        'fim': fim,
-      },
+      params: {'inicio': inicio, 'fim': fim},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -282,29 +215,17 @@ class TotalDeAlertasCall {
     );
   }
 
-  int? total(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.total''',
-      ));
-  int? alertasFumaa(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.alertas.Fumaça''',
-      ));
-  int? alertasNeblina(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.alertas.Neblina''',
-      ));
-  dynamic alertas(dynamic response) => getJsonField(
-        response,
-        r'''$.alertas''',
-      );
+  int? total(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.total'''));
+  int? alertasFumaa(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.alertas.Fumaça'''));
+  int? alertasNeblina(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.alertas.Neblina'''));
+  dynamic alertas(dynamic response) => getJsonField(response, r'''$.alertas''');
 }
 
 class TotalDeSOSCall {
-  Future<ApiCallResponse> call({
-    String? inicio = '',
-    String? fim = '',
-  }) async {
+  Future<ApiCallResponse> call({String? inicio = '', String? fim = ''}) async {
     final baseUrl = SupabaseEdgeGroup.getBaseUrl();
 
     return ApiManager.instance.makeApiCall(
@@ -312,10 +233,7 @@ class TotalDeSOSCall {
       apiUrl: '${baseUrl}get-sos-stats',
       callType: ApiCallType.GET,
       headers: SupabaseEdgeGroup.getDefaultHeaders(),
-      params: {
-        'inicio': inicio,
-        'fim': fim,
-      },
+      params: {'inicio': inicio, 'fim': fim},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -325,41 +243,23 @@ class TotalDeSOSCall {
     );
   }
 
-  dynamic sos(dynamic response) => getJsonField(
-        response,
-        r'''$.sos''',
-      );
-  int? sosNaufrgio(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.sos.Naufrágio''',
-      ));
-  int? sosIncndio(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.sos.Incêndio''',
-      ));
-  int? sosAbalroamento(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.sos.Abalroamento''',
-      ));
-  int? sosColiso(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.sos.Colisão''',
-      ));
-  int? sosAlagamento(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.sos.Alagamento''',
-      ));
-  int? total(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.total''',
-      ));
+  dynamic sos(dynamic response) => getJsonField(response, r'''$.sos''');
+  int? sosNaufrgio(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.sos.Naufrágio'''));
+  int? sosIncndio(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.sos.Incêndio'''));
+  int? sosAbalroamento(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.sos.Abalroamento'''));
+  int? sosColiso(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.sos.Colisão'''));
+  int? sosAlagamento(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.sos.Alagamento'''));
+  int? total(dynamic response) =>
+      castToType<int>(getJsonField(response, r'''$.total'''));
 }
 
 class AtivarOuInativarEmpresaCall {
-  Future<ApiCallResponse> call({
-    int? companyId,
-    bool? status,
-  }) async {
+  Future<ApiCallResponse> call({int? companyId, bool? status}) async {
     final baseUrl = SupabaseEdgeGroup.getBaseUrl();
 
     final ffApiRequestBody = '''
@@ -384,14 +284,10 @@ class AtivarOuInativarEmpresaCall {
     );
   }
 
-  String? message(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.message''',
-      ));
-  bool? success(dynamic response) => castToType<bool>(getJsonField(
-        response,
-        r'''$.success''',
-      ));
+  String? message(dynamic response) =>
+      castToType<String>(getJsonField(response, r'''$.message'''));
+  bool? success(dynamic response) =>
+      castToType<bool>(getJsonField(response, r'''$.success'''));
 }
 
 class DadosDoDashboardCall {
@@ -406,10 +302,7 @@ class DadosDoDashboardCall {
       apiUrl: '${baseUrl}get-dashboard-metrics',
       callType: ApiCallType.GET,
       headers: SupabaseEdgeGroup.getDefaultHeaders(),
-      params: {
-        'dataInicio': dataInicio,
-        'dataFim': dataFim,
-      },
+      params: {'dataInicio': dataInicio, 'dataFim': dataFim},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -419,28 +312,17 @@ class DadosDoDashboardCall {
     );
   }
 
-  double? totalgeral(dynamic response) => castToType<double>(getJsonField(
-        response,
-        r'''$.total_geral''',
-      ));
-  double? recebido(dynamic response) => castToType<double>(getJsonField(
-        response,
-        r'''$.recebido''',
-      ));
-  double? pendente(dynamic response) => castToType<double>(getJsonField(
-        response,
-        r'''$.pendente''',
-      ));
+  double? totalgeral(dynamic response) =>
+      castToType<double>(getJsonField(response, r'''$.total_geral'''));
+  double? recebido(dynamic response) =>
+      castToType<double>(getJsonField(response, r'''$.recebido'''));
+  double? pendente(dynamic response) =>
+      castToType<double>(getJsonField(response, r'''$.pendente'''));
   String? taxainadimplencia(dynamic response) =>
-      castToType<String>(getJsonField(
-        response,
-        r'''$.taxa_inadimplencia''',
-      ));
-  double? totalassinaturascount(dynamic response) =>
-      castToType<double>(getJsonField(
-        response,
-        r'''$.total_assinaturas_count''',
-      ));
+      castToType<String>(getJsonField(response, r'''$.taxa_inadimplencia'''));
+  double? totalassinaturascount(dynamic response) => castToType<double>(
+    getJsonField(response, r'''$.total_assinaturas_count'''),
+  );
 }
 
 class BuscarDadosDaDashboardGraficosCall {
@@ -455,10 +337,7 @@ class BuscarDadosDaDashboardGraficosCall {
       apiUrl: '${baseUrl}get-subscriptions-by-type',
       callType: ApiCallType.GET,
       headers: SupabaseEdgeGroup.getDefaultHeaders(),
-      params: {
-        'dataInicio': dataInicio,
-        'dataFim': dataFim,
-      },
+      params: {'dataInicio': dataInicio, 'dataFim': dataFim},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -468,18 +347,11 @@ class BuscarDadosDaDashboardGraficosCall {
     );
   }
 
-  dynamic plans(dynamic response) => getJsonField(
-        response,
-        r'''$.plans''',
-      );
-  double? total(dynamic response) => castToType<double>(getJsonField(
-        response,
-        r'''$.total''',
-      ));
-  bool? filtroaplicado(dynamic response) => castToType<bool>(getJsonField(
-        response,
-        r'''$.filtro_aplicado''',
-      ));
+  dynamic plans(dynamic response) => getJsonField(response, r'''$.plans''');
+  double? total(dynamic response) =>
+      castToType<double>(getJsonField(response, r'''$.total'''));
+  bool? filtroaplicado(dynamic response) =>
+      castToType<bool>(getJsonField(response, r'''$.filtro_aplicado'''));
 }
 
 class BuscarMesEvolucaoCall {
@@ -501,39 +373,26 @@ class BuscarMesEvolucaoCall {
     );
   }
 
-  List<double>? ticketMedio(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].ticketMedio''',
-        true,
-      ) as List?)
+  List<double>? ticketMedio(dynamic response) =>
+      (getJsonField(response, r'''$[:].ticketMedio''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
-  List<double>? somaValores(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].somaValores''',
-        true,
-      ) as List?)
+  List<double>? somaValores(dynamic response) =>
+      (getJsonField(response, r'''$[:].somaValores''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
-  List<double>? totalAssinaturas(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].totalAssinaturas''',
-        true,
-      ) as List?)
+  List<double>? totalAssinaturas(dynamic response) =>
+      (getJsonField(response, r'''$[:].totalAssinaturas''', true) as List?)
           ?.withoutNulls
           .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
-  List<String>? mes(dynamic response) => (getJsonField(
-        response,
-        r'''$[:].mes''',
-        true,
-      ) as List?)
-          ?.withoutNulls
+  List<String>? mes(dynamic response) =>
+      (getJsonField(response, r'''$[:].mes''', true) as List?)?.withoutNulls
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
@@ -563,71 +422,52 @@ class WeatherNowCall {
   }
 
   static String? ventohojedirecaocardeal(dynamic response) =>
-      castToType<String>(getJsonField(
-        response,
-        r'''$.vento_hoje.direcao_cardeal''',
-      ));
-  static int? ventohojedirecaograus(dynamic response) =>
-      castToType<int>(getJsonField(
-        response,
-        r'''$.vento_hoje.direcao_graus''',
-      ));
+      castToType<String>(
+        getJsonField(response, r'''$.vento_hoje.direcao_cardeal'''),
+      );
+  static int? ventohojedirecaograus(dynamic response) => castToType<int>(
+    getJsonField(response, r'''$.vento_hoje.direcao_graus'''),
+  );
   static int? ventohojerajadaskmh(dynamic response) =>
-      castToType<int>(getJsonField(
-        response,
-        r'''$.vento_hoje.rajadas_kmh''',
-      ));
-  static int? ventohojevelocidadekmh(dynamic response) =>
-      castToType<int>(getJsonField(
-        response,
-        r'''$.vento_hoje.velocidade_kmh''',
-      ));
-  static dynamic ventohoje(dynamic response) => getJsonField(
-        response,
-        r'''$.vento_hoje''',
-      );
+      castToType<int>(getJsonField(response, r'''$.vento_hoje.rajadas_kmh'''));
+  static int? ventohojevelocidadekmh(dynamic response) => castToType<int>(
+    getJsonField(response, r'''$.vento_hoje.velocidade_kmh'''),
+  );
+  static dynamic ventohoje(dynamic response) =>
+      getJsonField(response, r'''$.vento_hoje''');
   static int? resumohojeprecipitacaoprobabilidadepercentual(dynamic response) =>
-      castToType<int>(getJsonField(
-        response,
-        r'''$.resumo_hoje.precipitacao.probabilidade_percentual''',
-      ));
+      castToType<int>(
+        getJsonField(
+          response,
+          r'''$.resumo_hoje.precipitacao.probabilidade_percentual''',
+        ),
+      );
   static int? resumohojeprecipitacaovolumemm(dynamic response) =>
-      castToType<int>(getJsonField(
-        response,
-        r'''$.resumo_hoje.precipitacao.volume_mm''',
-      ));
-  static dynamic resumohojeprecipitacao(dynamic response) => getJsonField(
-        response,
-        r'''$.resumo_hoje.precipitacao''',
+      castToType<int>(
+        getJsonField(response, r'''$.resumo_hoje.precipitacao.volume_mm'''),
       );
+  static dynamic resumohojeprecipitacao(dynamic response) =>
+      getJsonField(response, r'''$.resumo_hoje.precipitacao''');
   static String? resumohojevisibilidadeunidade(dynamic response) =>
-      castToType<String>(getJsonField(
-        response,
-        r'''$.resumo_hoje.visibilidade.unidade''',
-      ));
+      castToType<String>(
+        getJsonField(response, r'''$.resumo_hoje.visibilidade.unidade'''),
+      );
   static int? resumohojevisibilidadedistancia(dynamic response) =>
-      castToType<int>(getJsonField(
-        response,
-        r'''$.resumo_hoje.visibilidade.distancia''',
-      ));
-  static dynamic resumohojevisibilidade(dynamic response) => getJsonField(
-        response,
-        r'''$.resumo_hoje.visibilidade''',
+      castToType<int>(
+        getJsonField(response, r'''$.resumo_hoje.visibilidade.distancia'''),
       );
+  static dynamic resumohojevisibilidade(dynamic response) =>
+      getJsonField(response, r'''$.resumo_hoje.visibilidade''');
   static String? resumohojecondicaogeral(dynamic response) =>
-      castToType<String>(getJsonField(
-        response,
-        r'''$.resumo_hoje.condicao_geral''',
-      ));
-  static int? resumohojetemperaturaagoracelsius(dynamic response) =>
-      castToType<int>(getJsonField(
-        response,
-        r'''$.resumo_hoje.temperatura_agora_celsius''',
-      ));
-  static dynamic resumohoje(dynamic response) => getJsonField(
-        response,
-        r'''$.resumo_hoje''',
+      castToType<String>(
+        getJsonField(response, r'''$.resumo_hoje.condicao_geral'''),
       );
+  static int? resumohojetemperaturaagoracelsius(dynamic response) =>
+      castToType<int>(
+        getJsonField(response, r'''$.resumo_hoje.temperatura_agora_celsius'''),
+      );
+  static dynamic resumohoje(dynamic response) =>
+      getJsonField(response, r'''$.resumo_hoje''');
 }
 
 class ApiPagingParams {

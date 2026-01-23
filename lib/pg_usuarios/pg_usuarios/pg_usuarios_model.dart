@@ -1,21 +1,9 @@
 import '/backend/supabase/supabase.dart';
-import '/componentes/pp_detalhe_viagem/pp_detalhe_viagem_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pg_usuarios/pp_detalhe_embarcacao/pp_detalhe_embarcacao_widget.dart';
-import 'dart:ui';
-import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'pg_usuarios_widget.dart' show PgUsuariosWidget;
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 
 class PgUsuariosModel extends FlutterFlowModel<PgUsuariosWidget> {
   ///  Local state fields for this component.
@@ -45,23 +33,23 @@ class PgUsuariosModel extends FlutterFlowModel<PgUsuariosWidget> {
   FocusNode? txBuscaAdminEmpresaFocusNode1;
   TextEditingController? txBuscaAdminEmpresaTextController1;
   String? Function(BuildContext, String?)?
-      txBuscaAdminEmpresaTextController1Validator;
+  txBuscaAdminEmpresaTextController1Validator;
   Completer<List<UsersRow>>? requestCompleter;
   // State field(s) for txBuscaPilotosIndi widget.
   FocusNode? txBuscaPilotosIndiFocusNode;
   TextEditingController? txBuscaPilotosIndiTextController;
   String? Function(BuildContext, String?)?
-      txBuscaPilotosIndiTextControllerValidator;
+  txBuscaPilotosIndiTextControllerValidator;
   // State field(s) for txBuscaPilotosEmpresa widget.
   FocusNode? txBuscaPilotosEmpresaFocusNode;
   TextEditingController? txBuscaPilotosEmpresaTextController;
   String? Function(BuildContext, String?)?
-      txBuscaPilotosEmpresaTextControllerValidator;
+  txBuscaPilotosEmpresaTextControllerValidator;
   // State field(s) for txBuscaAdminEmpresa widget.
   FocusNode? txBuscaAdminEmpresaFocusNode2;
   TextEditingController? txBuscaAdminEmpresaTextController2;
   String? Function(BuildContext, String?)?
-      txBuscaAdminEmpresaTextController2Validator;
+  txBuscaAdminEmpresaTextController2Validator;
   // State field(s) for dropdown ordenacao widget.
   FormFieldController<String>? ddOrdenacaoValueController;
 

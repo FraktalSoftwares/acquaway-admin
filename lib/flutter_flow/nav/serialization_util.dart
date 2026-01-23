@@ -21,14 +21,14 @@ String dateTimeRangeToString(DateTimeRange dateTimeRange) {
 }
 
 String placeToString(FFPlace place) => jsonEncode({
-      'latLng': place.latLng.serialize(),
-      'name': place.name,
-      'address': place.address,
-      'city': place.city,
-      'state': place.state,
-      'country': place.country,
-      'zipCode': place.zipCode,
-    });
+  'latLng': place.latLng.serialize(),
+  'name': place.name,
+  'address': place.address,
+  'city': place.city,
+  'state': place.state,
+  'country': place.country,
+  'zipCode': place.zipCode,
+});
 
 String uploadedFileToString(FFUploadedFile uploadedFile) =>
     uploadedFile.serialize();
@@ -43,11 +43,12 @@ String? serializeParam(
       return null;
     }
     if (isList) {
-      final serializedValues = (param as Iterable)
-          .map((p) => serializeParam(p, paramType, isList: false))
-          .where((p) => p != null)
-          .map((p) => p!)
-          .toList();
+      final serializedValues =
+          (param as Iterable)
+              .map((p) => serializeParam(p, paramType, isList: false))
+              .where((p) => p != null)
+              .map((p) => p!)
+              .toList();
       return json.encode(serializedValues);
     }
     String? data;
@@ -120,9 +121,10 @@ LatLng? latLngFromString(String? latLngStr) {
 FFPlace placeFromString(String placeStr) {
   final serializedData = jsonDecode(placeStr) as Map<String, dynamic>;
   final data = {
-    'latLng': serializedData.containsKey('latLng')
-        ? latLngFromString(serializedData['latLng'] as String)
-        : const LatLng(0.0, 0.0),
+    'latLng':
+        serializedData.containsKey('latLng')
+            ? latLngFromString(serializedData['latLng'] as String)
+            : const LatLng(0.0, 0.0),
     'name': serializedData['name'] ?? '',
     'address': serializedData['address'] ?? '',
     'city': serializedData['city'] ?? '',
@@ -178,13 +180,15 @@ dynamic deserializeParam<T>(
       }
       return paramValues
           .whereType<String>()
-          .map((p) => p as String)
-          .map((p) => deserializeParam<T>(
-                p,
-                paramType,
-                false,
-                structBuilder: structBuilder,
-              ))
+          .map((p) => p)
+          .map(
+            (p) => deserializeParam<T>(
+              p,
+              paramType,
+              false,
+              structBuilder: structBuilder,
+            ),
+          )
           .where((p) => p != null)
           .map((p) => p! as T)
           .toList();

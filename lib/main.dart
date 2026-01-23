@@ -33,10 +33,9 @@ void main() async {
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
 
-  runApp(ChangeNotifierProvider(
-    create: (context) => appState,
-    child: MyApp(),
-  ));
+  runApp(
+    ChangeNotifierProvider(create: (context) => appState, child: const MyApp()),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -53,9 +52,9 @@ class MyApp extends StatefulWidget {
 class MyAppScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.mouse,
-      };
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+  };
 }
 
 class _MyAppState extends State<MyApp> {
@@ -68,9 +67,10 @@ class _MyAppState extends State<MyApp> {
   String getRoute([RouteMatch? routeMatch]) {
     final RouteMatch lastMatch =
         routeMatch ?? _router.routerDelegate.currentConfiguration.last;
-    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
-        ? lastMatch.matches
-        : _router.routerDelegate.currentConfiguration;
+    final RouteMatchList matchList =
+        lastMatch is ImperativeRouteMatch
+            ? lastMatch.matches
+            : _router.routerDelegate.currentConfiguration;
     return matchList.uri.toString();
   }
 
@@ -86,10 +86,10 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = acquaWayWebSupabaseUserStream()
-      ..listen((user) {
-        _appStateNotifier.update(user);
-      });
+    userStream =
+        acquaWayWebSupabaseUserStream()..listen((user) {
+          _appStateNotifier.update(user);
+        });
     jwtTokenStream.listen((_) {});
     Future.delayed(
       Duration(milliseconds: isWeb ? 0 : 1000),
@@ -102,8 +102,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {
-        _themeMode = mode;
-      });
+    _themeMode = mode;
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -120,13 +120,8 @@ class _MyAppState extends State<MyApp> {
         FallbackCupertinoLocalizationDelegate(),
       ],
       locale: _locale,
-      supportedLocales: const [
-        Locale('pt'),
-      ],
-      theme: ThemeData(
-        brightness: Brightness.light,
-        useMaterial3: false,
-      ),
+      supportedLocales: const [Locale('pt')],
+      theme: ThemeData(brightness: Brightness.light, useMaterial3: false),
       themeMode: _themeMode,
       routerConfig: _router,
     );

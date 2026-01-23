@@ -1,12 +1,8 @@
 // Automatic FlutterFlow imports
-import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
-import '/actions/actions.dart' as action_blocks;
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'index.dart'; // Imports other custom actions
-import '/flutter_flow/custom_functions.dart'; // Imports custom functions
-import 'package:flutter/material.dart';
+// Imports other custom actions
+// Imports custom functions
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
@@ -38,7 +34,7 @@ Future exportUsers(
 
     AppLogger.i('Buscando dados na Users entre $strInicio e $strFim...');
 
-// Loop para buscar os dados em lotes
+    // Loop para buscar os dados em lotes
     while (hasMoreData) {
       var query = SupaFlow.client.from('users').select();
 
@@ -101,8 +97,12 @@ Future exportUsers(
         final viewKey = template[headerName]!;
         var value = rowData[viewKey];
 
-        var cell = sheet.cell(CellIndex.indexByColumnRow(
-            columnIndex: colIndex, rowIndex: rowIndex + 1));
+        var cell = sheet.cell(
+          CellIndex.indexByColumnRow(
+            columnIndex: colIndex,
+            rowIndex: rowIndex + 1,
+          ),
+        );
 
         if (value == null) {
           cell.value = TextCellValue('');

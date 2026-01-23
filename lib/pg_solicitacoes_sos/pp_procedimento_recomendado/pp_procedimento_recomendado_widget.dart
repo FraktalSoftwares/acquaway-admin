@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'pp_procedimento_recomendado_model.dart';
 export 'pp_procedimento_recomendado_model.dart';
 
@@ -54,9 +51,7 @@ class _PpProcedimentoRecomendadoWidgetState
     return Align(
       alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
-        constraints: const BoxConstraints(
-          maxWidth: 800.0,
-        ),
+        constraints: const BoxConstraints(maxWidth: 800.0),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.circular(8.0),
@@ -73,18 +68,17 @@ class _PpProcedimentoRecomendadoWidgetState
                   Text(
                     'Procedimento recomendado',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
-                          fontSize: 16.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w500,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
+                      font: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                      fontSize: 16.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                   ),
                   FlutterFlowIconButton(
                     borderRadius: 8.0,
@@ -107,36 +101,34 @@ class _PpProcedimentoRecomendadoWidgetState
                   Text(
                     'Tipo de solicitação: ${widget.tipoSos}',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          font: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
-                          fontSize: 16.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w500,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                        ),
+                      font: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                      fontSize: 16.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                   ),
                 ],
               ),
               Text(
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at libero blandit, dictum quam ut, sagittis nunc. Etiam augue nisl, volutpat ut purus sit amet, rhoncus suscipit ex. Integer vel erat felis. Aliquam at suscipit tellus. Ut dapibus sapien leo, ut faucibus tellus vehicula quis. Nulla nulla nisi, interdum at venenatis non, vehicula id diam. Etiam et nisi et turpis ultrices imperdiet vel sed nibh. Ut justo diam, malesuada eu pellentesque ornare, eleifend sed massa. Nullam erat sem, mollis vitae justo euismod, gravida molestie justo.\nPellentesque at semper justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id turpis diam. Sed vehicula velit orci, ac imperdiet elit ultrices a. Sed finibus sed urna id laoreet. Nullam sit amet mollis velit, non ullamcorper velit. Fusce ullamcorper convallis magna sit amet rhoncus. Ut suscipit blandit sapien sagittis blandit. \nInteger congue dictum quam, scelerisque pulvinar lacus aliquet vel.\nInteger congue dictum quam, scelerisque pulvinar lacus aliquet vel.\nInteger congue dictum quam, scelerisque pulvinar lacus aliquet vel.\nInteger congue dictum quam, scelerisque pulvinar lacus aliquet vel.\nInteger congue dictum quam, scelerisque pulvinar lacus aliquet vel.\n\nTelefones de emergência: \nMarinha: (00) 1234-5678\nPolícia: 190 ',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.inter(
-                        fontWeight:
-                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
-                      letterSpacing: 0.0,
-                      fontWeight:
-                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                      fontStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                    ),
+                  font: GoogleFonts.inter(
+                    fontWeight:
+                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
+                  letterSpacing: 0.0,
+                  fontWeight:
+                      FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                ),
               ),
             ].divide(const SizedBox(height: 24.0)),
           ),
