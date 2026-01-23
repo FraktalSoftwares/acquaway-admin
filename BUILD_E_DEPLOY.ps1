@@ -41,6 +41,15 @@ if (-not (Test-Path "build\web\index.html")) {
     exit 1
 }
 
+# 4.5. Copiar vercel.json para build/web (necessário para GitHub Actions)
+Write-Host "[4.5/5] Copiando vercel.json para build/web..." -ForegroundColor Yellow
+if (Test-Path "vercel.json") {
+    Copy-Item "vercel.json" "build\web\vercel.json" -Force
+    Write-Host "   vercel.json copiado com sucesso!" -ForegroundColor Green
+} else {
+    Write-Host "   AVISO: vercel.json nao encontrado na raiz!" -ForegroundColor Yellow
+}
+
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Green
 Write-Host "  BUILD CONCLUIDO!" -ForegroundColor Green
