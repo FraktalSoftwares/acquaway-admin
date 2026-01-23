@@ -1,14 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "echo 'Build ja esta no repositorio'",
-  "outputDirectory": "build/web",
-  "installCommand": "echo 'Nenhuma instalacao necessaria'",
-  "framework": null,
   "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/:path*",
       "headers": [
         {
           "key": "Cache-Control",
@@ -17,7 +13,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(js|css|wasm|woff|woff2|ttf|otf|png|jpg|jpeg|gif|svg|ico|json))",
+      "source": "/(.*)\\.(js|css|wasm|woff|woff2|ttf|otf|png|jpg|jpeg|gif|svg|ico|json)",
       "headers": [
         {
           "key": "Cache-Control",
