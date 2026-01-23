@@ -32,6 +32,17 @@ jobs:
     
     - name: Build web
       run: flutter build web --release
+
+    # === ESTE É O PASSO QUE RESOLVE O ERRO DE HEADERS ===
+    - name: Generate Clean Vercel Config
+      run: |
+        echo '{
+          "version": 2,
+          "rewrites": [
+            { "source": "/(.*)", "destination": "/index.html" }
+          ]
+        }' > build/web/vercel.json
+    # ===================================================
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
