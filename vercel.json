@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "buildCommand": "echo 'Build ja esta no repositorio'",
+  "outputDirectory": "build/web",
+  "installCommand": "echo 'Nenhuma instalacao necessaria'",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
