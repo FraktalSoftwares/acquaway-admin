@@ -24,8 +24,10 @@ test/
 *.iws
 
 # Environment
+.env
 .env.local
 .env.*.local
+build/web/assets/.env
 
 # Documentation
 *.md
