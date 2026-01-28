@@ -236,10 +236,21 @@ class _RecuperarSenhaWidgetState extends State<RecuperarSenhaWidget> {
               final email = _model.txEmailTextController!.text.trim();
 
               try {
+                // Construir URL completa com protocolo para o redirectTo
+                // O Supabase precisa de uma URL completa e válida
+                final currentOrigin = Uri.base.origin;
+                // Garantir que sempre tenha https://
+                final baseUrl = currentOrigin.startsWith('http') 
+                    ? currentOrigin 
+                    : 'https://$currentOrigin';
+                final redirectUrl = '$baseUrl${RedefinirSenhaWidget.routePath}';
+                
+                debugPrint('Redirect URL: $redirectUrl');
+                
                 await authManager.resetPassword(
                   email: email,
                   context: context,
-                  redirectTo: Uri.base.origin + RedefinirSenhaWidget.routePath,
+                  redirectTo: redirectUrl,
                 );
 
                 safeSetState(() {
