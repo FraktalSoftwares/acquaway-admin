@@ -44,7 +44,7 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.userSelecionado = null;
       _model.empresaSelecionada = null;
-      _model.ordenacaoSelecionada = 'Acessos mais recentes';
+      _model.ordenacaoSelecionada = 'Ordem alfabética A-Z';
       _model.updatePage(() {});
     });
 
@@ -67,7 +67,7 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
     _model.txBuscaAdminEmpresaFocusNode2 ??= FocusNode();
 
     _model.ddOrdenacaoValueController ??= FormFieldController<String>(
-      'Acessos mais recentes',
+      'Ordem alfabética A-Z',
     );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -433,7 +433,7 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
                                                                 String
                                                               >(
                                                                 _model.ordenacaoSelecionada ??=
-                                                                    'Acessos mais recentes',
+                                                                    'Ordem alfabética A-Z',
                                                               ),
                                                       options: const [
                                                         'Ordem alfabética A-Z',
@@ -888,51 +888,36 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
                                                   child: FutureBuilder<
                                                     List<UsersRow>
                                                   >(
+                                                    key: ValueKey('admin_empresa_${_model.ordenacaoSelecionada}_${_model.txBuscaAdminEmpresaTextController1.text}'),
                                                     future: UsersTable().queryRows(
                                                       queryFn: (q) {
                                                         var query = q
                                                             .eqOrNull(
                                                               'tipo_user',
                                                               'Admin Empresa',
-                                                            )
-                                                            .ilike(
-                                                              'nome',
-                                                              '%${_model.txBuscaAdminEmpresaTextController1.text}%',
                                                             );
+                                                        
+                                                        // Aplicar filtro de busca apenas se houver texto
+                                                        final buscaTexto = _model.txBuscaAdminEmpresaTextController1.text;
+                                                        if (buscaTexto.isNotEmpty) {
+                                                          query = query.ilike(
+                                                            'nome',
+                                                            '%$buscaTexto%',
+                                                          );
+                                                        }
+                                                        
+                                                        // Ordenação sempre por nome
                                                         final ordenacao =
                                                             _model
                                                                 .ordenacaoSelecionada ??
-                                                            'Acessos mais recentes';
-                                                        // Ordenação: PostgREST usa apenas o nome da coluna para ascendente
-                                                        // Para descendente, precisamos ordenar em memória ou usar método específico
-                                                        if (ordenacao ==
-                                                            'Ordem alfabética A-Z') {
-                                                          return query.order(
-                                                            'nome',
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Ordem alfabética Z-A') {
-                                                          // Ordenar por nome descendente - tentar com order desc
-                                                          return query.order(
-                                                            'nome',
-                                                            ascending: false,
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Acessos mais recentes') {
-                                                          // Ordenar por created_at descendente (mais recentes primeiro)
-                                                          return query.order(
-                                                            'created_at',
-                                                            ascending: false,
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Acessos mais antigos') {
-                                                          return query.order(
-                                                            'created_at',
-                                                          );
-                                                        }
+                                                            'Ordem alfabética A-Z';
+                                                        final ascending = ordenacao == 'Ordem alfabética A-Z' ||
+                                                            ordenacao == 'Acessos mais recentes' ||
+                                                            ordenacao == 'Acessos mais antigos';
+                                                        
                                                         return query.order(
-                                                          'created_at',
-                                                          ascending: false,
+                                                          'nome',
+                                                          ascending: ascending,
                                                         );
                                                       },
                                                     ),
@@ -1633,7 +1618,7 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
                                                                 String
                                                               >(
                                                                 _model.ordenacaoSelecionada ??=
-                                                                    'Acessos mais recentes',
+                                                                    'Ordem alfabética A-Z',
                                                               ),
                                                       options: const [
                                                         'Ordem alfabética A-Z',
@@ -2088,51 +2073,36 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
                                                   child: FutureBuilder<
                                                     List<UsersRow>
                                                   >(
+                                                    key: ValueKey('piloto_individual_${_model.ordenacaoSelecionada}_${_model.txBuscaPilotosIndiTextController.text}'),
                                                     future: UsersTable().queryRows(
                                                       queryFn: (q) {
                                                         var query = q
                                                             .eqOrNull(
                                                               'tipo_user',
                                                               'Piloto Individual',
-                                                            )
-                                                            .ilike(
-                                                              'nome',
-                                                              '%${_model.txBuscaPilotosIndiTextController.text}%',
                                                             );
+                                                        
+                                                        // Aplicar filtro de busca apenas se houver texto
+                                                        final buscaTexto = _model.txBuscaPilotosIndiTextController.text;
+                                                        if (buscaTexto.isNotEmpty) {
+                                                          query = query.ilike(
+                                                            'nome',
+                                                            '%$buscaTexto%',
+                                                          );
+                                                        }
+                                                        
+                                                        // Ordenação sempre por nome
                                                         final ordenacao =
                                                             _model
                                                                 .ordenacaoSelecionada ??
-                                                            'Acessos mais recentes';
-                                                        // Ordenação: PostgREST usa apenas o nome da coluna para ascendente
-                                                        // Para descendente, precisamos ordenar em memória ou usar método específico
-                                                        if (ordenacao ==
-                                                            'Ordem alfabética A-Z') {
-                                                          return query.order(
-                                                            'nome',
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Ordem alfabética Z-A') {
-                                                          // Ordenar por nome descendente - tentar com order desc
-                                                          return query.order(
-                                                            'nome',
-                                                            ascending: false,
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Acessos mais recentes') {
-                                                          // Ordenar por created_at descendente (mais recentes primeiro)
-                                                          return query.order(
-                                                            'created_at',
-                                                            ascending: false,
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Acessos mais antigos') {
-                                                          return query.order(
-                                                            'created_at',
-                                                          );
-                                                        }
+                                                            'Ordem alfabética A-Z';
+                                                        final ascending = ordenacao == 'Ordem alfabética A-Z' ||
+                                                            ordenacao == 'Acessos mais recentes' ||
+                                                            ordenacao == 'Acessos mais antigos';
+                                                        
                                                         return query.order(
-                                                          'created_at',
-                                                          ascending: false,
+                                                          'nome',
+                                                          ascending: ascending,
                                                         );
                                                       },
                                                     ),
@@ -2833,7 +2803,7 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
                                                                 String
                                                               >(
                                                                 _model.ordenacaoSelecionada ??=
-                                                                    'Acessos mais recentes',
+                                                                    'Ordem alfabética A-Z',
                                                               ),
                                                       options: const [
                                                         'Ordem alfabética A-Z',
@@ -3288,51 +3258,36 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
                                                   child: FutureBuilder<
                                                     List<UsersRow>
                                                   >(
+                                                    key: ValueKey('piloto_empresa_${_model.ordenacaoSelecionada}_${_model.txBuscaPilotosEmpresaTextController.text}'),
                                                     future: UsersTable().queryRows(
                                                       queryFn: (q) {
                                                         var query = q
                                                             .eqOrNull(
                                                               'tipo_user',
                                                               'Piloto da Empresa',
-                                                            )
-                                                            .ilike(
-                                                              'nome',
-                                                              '%${_model.txBuscaPilotosEmpresaTextController.text}%',
                                                             );
+                                                        
+                                                        // Aplicar filtro de busca apenas se houver texto
+                                                        final buscaTexto = _model.txBuscaPilotosEmpresaTextController.text;
+                                                        if (buscaTexto.isNotEmpty) {
+                                                          query = query.ilike(
+                                                            'nome',
+                                                            '%$buscaTexto%',
+                                                          );
+                                                        }
+                                                        
+                                                        // Ordenação sempre por nome
                                                         final ordenacao =
                                                             _model
                                                                 .ordenacaoSelecionada ??
-                                                            'Acessos mais recentes';
-                                                        // Ordenação: PostgREST usa apenas o nome da coluna para ascendente
-                                                        // Para descendente, precisamos ordenar em memória ou usar método específico
-                                                        if (ordenacao ==
-                                                            'Ordem alfabética A-Z') {
-                                                          return query.order(
-                                                            'nome',
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Ordem alfabética Z-A') {
-                                                          // Ordenar por nome descendente - tentar com order desc
-                                                          return query.order(
-                                                            'nome',
-                                                            ascending: false,
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Acessos mais recentes') {
-                                                          // Ordenar por created_at descendente (mais recentes primeiro)
-                                                          return query.order(
-                                                            'created_at',
-                                                            ascending: false,
-                                                          );
-                                                        } else if (ordenacao ==
-                                                            'Acessos mais antigos') {
-                                                          return query.order(
-                                                            'created_at',
-                                                          );
-                                                        }
+                                                            'Ordem alfabética A-Z';
+                                                        final ascending = ordenacao == 'Ordem alfabética A-Z' ||
+                                                            ordenacao == 'Acessos mais recentes' ||
+                                                            ordenacao == 'Acessos mais antigos';
+                                                        
                                                         return query.order(
-                                                          'created_at',
-                                                          ascending: false,
+                                                          'nome',
+                                                          ascending: ascending,
                                                         );
                                                       },
                                                     ),
@@ -3812,7 +3767,10 @@ class _PgUsuariosWidgetState extends State<PgUsuariosWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        _model.userSelecionado = null;
+                        safeSetState(() {
+                          _model.userSelecionado = null;
+                          _model.empresaSelecionada = null;
+                        });
                         _model.updatePage(() {});
                       },
                       child: Row(

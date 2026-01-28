@@ -26,6 +26,9 @@ class GraficoNumeroPorTipo extends StatefulWidget {
 }
 
 class _GraficoNumeroPorTipoState extends State<GraficoNumeroPorTipo> {
+  // Conjunto para rastrear quais itens estão ocultos (desativados na legenda)
+  final Set<String> _hiddenItems = {};
+
   @override
   Widget build(BuildContext context) {
     // 1. Tratamento para quando os dados ainda não chegaram (Loading/Null)
@@ -41,7 +44,6 @@ class _GraficoNumeroPorTipoState extends State<GraficoNumeroPorTipo> {
     // 2. Extrair dados do JSON de forma segura
     // Estrutura esperada: { "user": { "Admin Empresa": 10, ... }, "total": 100 }
     final userData = widget.dashboardData['user'] ?? {};
-    final int totalUsers = widget.dashboardData['total'] ?? 0;
 
     // 3. Preparar a lista de dados para o gráfico
     // Mapeando as chaves do banco para o visual desejado e cores da imagem
@@ -68,16 +70,24 @@ class _GraficoNumeroPorTipoState extends State<GraficoNumeroPorTipo> {
         ),
     ];
 
+    // Calcular o total visível (apenas itens não ocultos)
+    int totalVisivel = 0;
+    for (final data in chartData) {
+      if (!_hiddenItems.contains(data.x)) {
+        totalVisivel += data.y;
+      }
+    }
+
     return SizedBox(
       width: widget.width,
       height: widget.height,
       child: SfCircularChart(
-        // Anotação no centro (O número total)
+        // Anotação no centro (O número total visível)
         annotations: <CircularChartAnnotation>[
           CircularChartAnnotation(
             widget: Container(
               child: Text(
-                '$totalUsers',
+                '$totalVisivel',
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -88,11 +98,28 @@ class _GraficoNumeroPorTipoState extends State<GraficoNumeroPorTipo> {
             ),
           ),
         ],
+        // Callback quando um item da legenda é clicado
+        onLegendTapped: (LegendTapArgs args) {
+          final pointIndex = args.pointIndex;
+          if (pointIndex == null ||
+              pointIndex < 0 ||
+              pointIndex >= chartData.length)
+            return;
+          setState(() {
+            final String itemName = chartData[pointIndex].x;
+            if (_hiddenItems.contains(itemName)) {
+              _hiddenItems.remove(itemName);
+            } else {
+              _hiddenItems.add(itemName);
+            }
+          });
+        },
         // Legenda na parte inferior
         legend: Legend(
           isVisible: true,
           position: LegendPosition.bottom,
           overflowMode: LegendItemOverflowMode.wrap,
+          toggleSeriesVisibility: true,
           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
             fontFamily: 'Readex Pro',
             color: FlutterFlowTheme.of(context).secondaryText,

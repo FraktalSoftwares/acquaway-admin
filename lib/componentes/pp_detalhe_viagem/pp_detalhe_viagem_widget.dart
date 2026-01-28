@@ -314,9 +314,11 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                                   child: Text(
                                                     valueOrDefault<String>(
                                                       containerVwViagensResumoRow
-                                                          ?.kmTotais
-                                                          ?.toString(),
-                                                      '000',
+                                                                  ?.kmTotais !=
+                                                              null
+                                                          ? '${containerVwViagensResumoRow!.kmTotais!.toStringAsFixed(2)} km'
+                                                          : '0.00 km',
+                                                      '0.00 km',
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                       context,
@@ -414,10 +416,24 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                                       ),
                                                   child: Text(
                                                     valueOrDefault<String>(
-                                                      containerVwViagensResumoRow
-                                                          ?.duracaoMinutos
-                                                          ?.toString(),
-                                                      '000',
+                                                      (() {
+                                                        final minutos =
+                                                            containerVwViagensResumoRow
+                                                                ?.duracaoMinutos ??
+                                                            0;
+                                                        if (minutos > 0) {
+                                                          final horas =
+                                                              minutos ~/ 60;
+                                                          final mins =
+                                                              minutos % 60;
+                                                          if (horas > 0) {
+                                                            return '${horas}h ${mins}min';
+                                                          }
+                                                          return '${mins}min';
+                                                        }
+                                                        return '0min';
+                                                      })(),
+                                                      '0min',
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                       context,
@@ -515,10 +531,26 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                                       ),
                                                   child: Text(
                                                     valueOrDefault<String>(
-                                                      containerVwViagensResumoRow
-                                                          ?.kmTotais
-                                                          ?.toString(),
-                                                      '000',
+                                                      (() {
+                                                        final kmTotais =
+                                                            containerVwViagensResumoRow
+                                                                ?.kmTotais ??
+                                                            0.0;
+                                                        final duracaoMinutos =
+                                                            containerVwViagensResumoRow
+                                                                ?.duracaoMinutos ??
+                                                            0;
+                                                        if (duracaoMinutos >
+                                                                0 &&
+                                                            kmTotais > 0) {
+                                                          final velocidadeMedia =
+                                                              (kmTotais * 60) /
+                                                              duracaoMinutos;
+                                                          return '${velocidadeMedia.toStringAsFixed(2)} km/h';
+                                                        }
+                                                        return '0.00 km/h';
+                                                      })(),
+                                                      '0.00 km/h',
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                       context,
@@ -720,7 +752,11 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                                         0.0,
                                                       ),
                                                   child: Text(
-                                                    'Nome Piloto',
+                                                    valueOrDefault<String>(
+                                                      containerVwViagensResumoRow
+                                                          ?.nomePiloto,
+                                                      'Não informado',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                       context,
                                                     ).bodyMedium.override(
@@ -1232,10 +1268,15 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                     child: FutureBuilder<List<AlertasRow>>(
                                       future: AlertasTable().queryRows(
                                         queryFn:
-                                            (q) => q.eqOrNull(
-                                              'viagem_id',
-                                              widget.idViagem,
-                                            ),
+                                            (q) => q
+                                                .eqOrNull(
+                                                  'viagem_id',
+                                                  widget.idViagem,
+                                                )
+                                                .order(
+                                                  'created_at',
+                                                  ascending: false,
+                                                ),
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
@@ -1259,6 +1300,40 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                         }
                                         List<AlertasRow>
                                         listViewAlertasRowList = snapshot.data!;
+
+                                        if (listViewAlertasRowList.isEmpty) {
+                                          return Center(
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(
+                                                24.0,
+                                              ),
+                                              child: Text(
+                                                'Nenhum alerta emitido nesta viagem',
+                                                style: FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontStyle,
+                                                  ),
+                                                  color: const Color(
+                                                    0xFF7D8082,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontStyle,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
 
                                         return ListView.separated(
                                           padding: EdgeInsets.zero,
@@ -1392,7 +1467,7 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                                         ),
                                                       ),
                                                       Text(
-                                                        'Hora: ${valueOrDefault<String>(dateTimeFormat("Hm", listViewAlertasRow.hora?.time, locale: FFLocalizations.of(context).languageCode), '00:00')}',
+                                                        'Data: ${valueOrDefault<String>(dateTimeFormat("d/M/y", listViewAlertasRow.createdAt, locale: FFLocalizations.of(context).languageCode), 'N/A')} - Hora: ${valueOrDefault<String>(dateTimeFormat("Hm", listViewAlertasRow.hora?.time, locale: FFLocalizations.of(context).languageCode), '00:00')}',
                                                         style: FlutterFlowTheme.of(
                                                           context,
                                                         ).bodyMedium.override(

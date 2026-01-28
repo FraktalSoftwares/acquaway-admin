@@ -26,6 +26,9 @@ class GraficoSosPorTipo extends StatefulWidget {
 }
 
 class _GraficoSosPorTipoState extends State<GraficoSosPorTipo> {
+  // Conjunto para rastrear quais itens estão ocultos (desativados na legenda)
+  final Set<String> _hiddenItems = {};
+
   @override
   Widget build(BuildContext context) {
     // 1. Tratamento para quando os dados ainda não chegaram (Loading/Null)
@@ -41,7 +44,6 @@ class _GraficoSosPorTipoState extends State<GraficoSosPorTipo> {
     // 2. Extrair dados do JSON da Edge Function
     // Estrutura esperada: { "sos": { "Naufrágio": 1, "Incêndio": 0... }, "total": 90 }
     final sosData = widget.dashboardData['sos'] ?? {};
-    final int totalSos = widget.dashboardData['total'] ?? 0;
 
     // 3. Preparar a lista de dados para o gráfico
     // Mapeando as chaves do ENUM para o visual com cores semânticas
@@ -66,6 +68,14 @@ class _GraficoSosPorTipoState extends State<GraficoSosPorTipo> {
       const Color(0xFFC2185B),
     ); // Rosa/Magenta
 
+    // Calcular o total visível (apenas itens não ocultos)
+    int totalVisivel = 0;
+    for (final data in chartData) {
+      if (!_hiddenItems.contains(data.x)) {
+        totalVisivel += data.y;
+      }
+    }
+
     // Caso não tenha nenhum dado (Total 0), evita erro no gráfico
     if (chartData.isEmpty) {
       return Container(
@@ -83,12 +93,12 @@ class _GraficoSosPorTipoState extends State<GraficoSosPorTipo> {
       width: widget.width,
       height: widget.height,
       child: SfCircularChart(
-        // Anotação no centro (O número total)
+        // Anotação no centro (O número total visível)
         annotations: <CircularChartAnnotation>[
           CircularChartAnnotation(
             widget: Container(
               child: Text(
-                '$totalSos',
+                '$totalVisivel',
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -99,11 +109,28 @@ class _GraficoSosPorTipoState extends State<GraficoSosPorTipo> {
             ),
           ),
         ],
+        // Callback quando um item da legenda é clicado
+        onLegendTapped: (LegendTapArgs args) {
+          final pointIndex = args.pointIndex;
+          if (pointIndex == null ||
+              pointIndex < 0 ||
+              pointIndex >= chartData.length)
+            return;
+          setState(() {
+            final String itemName = chartData[pointIndex].x;
+            if (_hiddenItems.contains(itemName)) {
+              _hiddenItems.remove(itemName);
+            } else {
+              _hiddenItems.add(itemName);
+            }
+          });
+        },
         // Legenda na parte inferior
         legend: Legend(
           isVisible: true,
           position: LegendPosition.bottom,
           overflowMode: LegendItemOverflowMode.wrap,
+          toggleSeriesVisibility: true,
           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
             fontFamily: 'Readex Pro',
             color: FlutterFlowTheme.of(context).secondaryText,

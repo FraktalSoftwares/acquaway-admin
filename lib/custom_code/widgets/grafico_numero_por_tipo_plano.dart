@@ -27,6 +27,9 @@ class GraficoNumeroPorTipoPlano extends StatefulWidget {
 }
 
 class _GraficoNumeroPorTipoPlanoState extends State<GraficoNumeroPorTipoPlano> {
+  // Conjunto para rastrear quais itens estão ocultos (desativados na legenda)
+  final Set<String> _hiddenItems = {};
+
   @override
   Widget build(BuildContext context) {
     if (widget.dashboardData == null) {
@@ -34,7 +37,6 @@ class _GraficoNumeroPorTipoPlanoState extends State<GraficoNumeroPorTipoPlano> {
     }
 
     final planData = widget.dashboardData['plans'] ?? {};
-    final int total = widget.dashboardData['total'] ?? 0;
 
     // Cores mapeadas conforme a identidade visual da imagem
     final Map<String, Color> colorMap = {
@@ -48,12 +50,18 @@ class _GraficoNumeroPorTipoPlanoState extends State<GraficoNumeroPorTipoPlano> {
 
     final List<_ChartData> chartData = [];
     planData.forEach((key, value) {
-      chartData.add(_ChartData(
-        key,
-        value.toInt(),
-        colorMap[key] ?? Colors.grey,
-      ));
+      chartData.add(
+        _ChartData(key, value.toInt(), colorMap[key] ?? Colors.grey),
+      );
     });
+
+    // Calcular o total visível (apenas itens não ocultos)
+    int totalVisivel = 0;
+    for (final data in chartData) {
+      if (!_hiddenItems.contains(data.x)) {
+        totalVisivel += data.y;
+      }
+    }
 
     return SizedBox(
       width: widget.width,
@@ -62,18 +70,35 @@ class _GraficoNumeroPorTipoPlanoState extends State<GraficoNumeroPorTipoPlano> {
         annotations: <CircularChartAnnotation>[
           CircularChartAnnotation(
             widget: Text(
-              '$total',
+              '$totalVisivel',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Outfit',
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontFamily: 'Outfit',
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],
+        // Callback quando um item da legenda é clicado
+        onLegendTapped: (LegendTapArgs args) {
+          final pointIndex = args.pointIndex;
+          if (pointIndex == null ||
+              pointIndex < 0 ||
+              pointIndex >= chartData.length)
+            return;
+          setState(() {
+            final String itemName = chartData[pointIndex].x;
+            if (_hiddenItems.contains(itemName)) {
+              _hiddenItems.remove(itemName);
+            } else {
+              _hiddenItems.add(itemName);
+            }
+          });
+        },
         legend: Legend(
           isVisible: true,
           position: LegendPosition.bottom,
           overflowMode: LegendItemOverflowMode.wrap,
+          toggleSeriesVisibility: true,
           textStyle: FlutterFlowTheme.of(context).bodySmall,
         ),
         series: <CircularSeries>[
@@ -91,8 +116,13 @@ class _GraficoNumeroPorTipoPlanoState extends State<GraficoNumeroPorTipoPlano> {
                 type: ConnectorType.curve,
                 length: '15%',
               ),
-              builder: (dynamic data, dynamic point, dynamic series, int index,
-                  int seriesIndex) {
+              builder: (
+                dynamic data,
+                dynamic point,
+                dynamic series,
+                int index,
+                int seriesIndex,
+              ) {
                 return Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,8 +130,9 @@ class _GraficoNumeroPorTipoPlanoState extends State<GraficoNumeroPorTipoPlano> {
                     Text(
                       data.x,
                       style: TextStyle(
-                          fontSize: 10,
-                          color: FlutterFlowTheme.of(context).secondaryText),
+                        fontSize: 10,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
                     ),
                     Text(
                       data.y.toString(),
@@ -115,7 +146,7 @@ class _GraficoNumeroPorTipoPlanoState extends State<GraficoNumeroPorTipoPlano> {
                 );
               },
             ),
-          )
+          ),
         ],
       ),
     );

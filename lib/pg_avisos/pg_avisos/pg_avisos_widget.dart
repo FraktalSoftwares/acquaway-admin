@@ -485,10 +485,8 @@ class _PgAvisosWidgetState extends State<PgAvisosWidget> {
                               FFButtonWidget(
                                 onPressed: () async {
                                   await actions.exportAvisosExcel(
-                                    functions.trintaDiasAtras(
-                                      getCurrentTimestamp,
-                                    ),
-                                    getCurrentTimestamp,
+                                    _model.dataInicio ?? DateTime(2000, 1, 1),
+                                    _model.dataFim ?? getCurrentTimestamp,
                                   );
                                 },
                                 text: 'Baixar relatório',
@@ -1073,65 +1071,57 @@ class _PgAvisosWidgetState extends State<PgAvisosWidget> {
                                                         height: 48.0,
                                                         decoration:
                                                             const BoxDecoration(),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                    -1.0,
-                                                                    0.0,
-                                                                  ),
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional.fromSTEB(
-                                                                      12.0,
-                                                                      0.0,
-                                                                      12.0,
-                                                                      0.0,
-                                                                    ),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                    String
-                                                                  >(
-                                                                    lvHistoricoAvisosRow
-                                                                        .aviso,
-                                                                    'Aviso',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                    context,
-                                                                  ).bodyMedium.override(
-                                                                    font: GoogleFonts.inter(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .normal,
-                                                                      fontStyle:
-                                                                          FlutterFlowTheme.of(
-                                                                            context,
-                                                                          ).bodyMedium.fontStyle,
-                                                                    ),
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .normal,
-                                                                    fontStyle:
-                                                                        FlutterFlowTheme.of(
-                                                                          context,
-                                                                        ).bodyMedium.fontStyle,
-                                                                  ),
-                                                                ),
+                                                        child: Align(
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                -1.0,
+                                                                0.0,
                                                               ),
-                                                            ),
-                                                          ].divide(
-                                                            const SizedBox(
-                                                              height: 2.0,
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional.fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0,
+                                                                ),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                String
+                                                              >(
+                                                                lvHistoricoAvisosRow
+                                                                    .aviso,
+                                                                'Aviso',
+                                                              ),
+                                                              style: FlutterFlowTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
+                                                                font: GoogleFonts.inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                  fontStyle:
+                                                                      FlutterFlowTheme.of(
+                                                                        context,
+                                                                      ).bodyMedium.fontStyle,
+                                                                ),
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                          context,
+                                                                        )
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                              ),
+                                                              maxLines: 1,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
                                                             ),
                                                           ),
                                                         ),

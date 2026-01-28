@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/core/validators/validators.dart';
+import '/backend/supabase/supabase.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -532,21 +533,84 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           return;
                                         }
 
-                                        context.goNamedAuth(
-                                          HomeWidget.routeName,
-                                          context.mounted,
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey:
-                                                const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration: Duration(
-                                                    milliseconds: 0,
+                                        // Verificar se o usuário tem permissão (Admin ou Moderador)
+                                        try {
+                                          final userRows = await UsersTable().queryRows(
+                                            queryFn: (q) => q.eqOrNull(
+                                              'id',
+                                              currentUserUid,
+                                            ),
+                                          );
+
+                                          if (userRows.isEmpty) {
+                                            // Usuário não encontrado na tabela
+                                            await authManager.signOut();
+                                            GoRouter.of(context).clearRedirectLocation();
+                                            if (context.mounted) {
+                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                const SnackBar(
+                                                  content: Text(
+                                                    'Usuário não encontrado. Entre em contato com o administrador.',
                                                   ),
+                                                  backgroundColor: Colors.red,
                                                 ),
-                                          },
-                                        );
+                                              );
+                                            }
+                                            return;
+                                          }
+
+                                          final tipoUser = userRows.firstOrNull?.tipoUser;
+                                          
+                                          // Verificar se é Admin ou Moderador
+                                          if (tipoUser != 'Admin' && tipoUser != 'Moderador') {
+                                            // Usuário não tem permissão - deslogar
+                                            await authManager.signOut();
+                                            GoRouter.of(context).clearRedirectLocation();
+                                            if (context.mounted) {
+                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                const SnackBar(
+                                                  content: Text(
+                                                    'Você não tem permissão para acessar o sistema. Apenas usuários Admin e Moderador podem acessar.',
+                                                  ),
+                                                  backgroundColor: Colors.red,
+                                                  duration: Duration(seconds: 5),
+                                                ),
+                                              );
+                                            }
+                                            return;
+                                          }
+
+                                          // Usuário tem permissão - permitir acesso
+                                          context.goNamedAuth(
+                                            HomeWidget.routeName,
+                                            context.mounted,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                      milliseconds: 0,
+                                                    ),
+                                                  ),
+                                            },
+                                          );
+                                        } catch (e) {
+                                          // Erro ao buscar dados do usuário
+                                          await authManager.signOut();
+                                          GoRouter.of(context).clearRedirectLocation();
+                                          if (context.mounted) {
+                                            ScaffoldMessenger.of(context).showSnackBar(
+                                              const SnackBar(
+                                                content: Text(
+                                                  'Erro ao verificar permissões. Tente novamente.',
+                                                ),
+                                                backgroundColor: Colors.red,
+                                              ),
+                                            );
+                                          }
+                                        }
                                       },
                                       text: 'Entrar',
                                       options: FFButtonOptions(

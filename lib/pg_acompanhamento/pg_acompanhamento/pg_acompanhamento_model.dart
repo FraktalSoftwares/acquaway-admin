@@ -3,11 +3,8 @@ import 'pg_acompanhamento_widget.dart' show PgAcompanhamentoWidget;
 import 'package:flutter/material.dart';
 
 class PgAcompanhamentoModel extends FlutterFlowModel<PgAcompanhamentoWidget> {
-  ///  Local state fields for this component.
-
-  int? empresaSelecionada;
-
-  String? stage = 'Geral';
+  // Campos removidos (empresaSelecionada, stage) - não estavam sendo utilizados
+  // Podem ser reativados quando filtros forem implementados
 
   @override
   void initState(BuildContext context) {}

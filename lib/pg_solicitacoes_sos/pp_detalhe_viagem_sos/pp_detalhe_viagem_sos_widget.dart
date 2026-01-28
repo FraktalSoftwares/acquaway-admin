@@ -528,10 +528,26 @@ class _PpDetalheViagemSosWidgetState extends State<PpDetalheViagemSosWidget>
                                                       ),
                                                   child: Text(
                                                     valueOrDefault<String>(
-                                                      containerVwViagensResumoRow
-                                                          ?.kmTotais
-                                                          ?.toString(),
-                                                      '000',
+                                                      (() {
+                                                        final kmTotais =
+                                                            containerVwViagensResumoRow
+                                                                ?.kmTotais ??
+                                                            0.0;
+                                                        final duracaoMinutos =
+                                                            containerVwViagensResumoRow
+                                                                ?.duracaoMinutos ??
+                                                            0;
+                                                        if (duracaoMinutos >
+                                                                0 &&
+                                                            kmTotais > 0) {
+                                                          final velocidadeMedia =
+                                                              (kmTotais * 60) /
+                                                              duracaoMinutos;
+                                                          return '${velocidadeMedia.toStringAsFixed(2)} km/h';
+                                                        }
+                                                        return '0.00 km/h';
+                                                      })(),
+                                                      '0.00 km/h',
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                       context,
@@ -733,7 +749,11 @@ class _PpDetalheViagemSosWidgetState extends State<PpDetalheViagemSosWidget>
                                                         0.0,
                                                       ),
                                                   child: Text(
-                                                    'Nome Piloto',
+                                                    valueOrDefault<String>(
+                                                      containerVwViagensResumoRow
+                                                          ?.nomePiloto,
+                                                      'Nome Piloto',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                       context,
                                                     ).bodyMedium.override(

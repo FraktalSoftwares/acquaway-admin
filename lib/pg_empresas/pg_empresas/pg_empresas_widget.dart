@@ -283,6 +283,9 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                       onChanged:
                                           (val) => safeSetState(() {
                                             _model.ordenacaoSelecionada = val;
+                                            _model
+                                                .ddOrdenacaoValueController
+                                                ?.value = val;
                                           }),
                                       width: double.infinity,
                                       height: 40.0,
@@ -734,6 +737,9 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                             child: Container(
                               decoration: const BoxDecoration(),
                               child: FutureBuilder<List<CompaniesRow>>(
+                                key: ValueKey(
+                                  'empresas_${_model.ordenacaoSelecionada ?? 'Ordem alfabética A-Z'}_${_model.txBuscaEmpresaTextController1.text}',
+                                ),
                                 future: CompaniesTable().queryRows(
                                   queryFn: (q) {
                                     var query = q
@@ -744,20 +750,17 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                         .eqOrNull('aprovadas', true)
                                         .eq('ativo', true);
 
-                                    // Aplicar ordenação
+                                    // Aplicar ordenação pelo nome
                                     final ordenacao =
                                         _model.ordenacaoSelecionada ??
                                         'Ordem alfabética A-Z';
-                                    if (ordenacao == 'Ordem alfabética A-Z') {
-                                      return query.order('nome');
-                                    } else if (ordenacao ==
-                                        'Ordem alfabética Z-A') {
-                                      return query.order(
-                                        'nome',
-                                        ascending: false,
-                                      );
-                                    }
-                                    return query.order('nome');
+                                    final ascending =
+                                        ordenacao == 'Ordem alfabética A-Z';
+
+                                    return query.order(
+                                      'nome',
+                                      ascending: ascending,
+                                    );
                                   },
                                 ),
                                 builder: (context, snapshot) {
@@ -1207,7 +1210,7 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                           onTap: () async {
                             _model.empresaSelecionada = null;
                             _model.empresaSelecionadaNaoAprovada = null;
-                            _model.updatePage(() {});
+                            safeSetState(() {});
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -3138,7 +3141,9 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                               builder:
                                                   (context) => FFButtonWidget(
                                                     onPressed: () async {
-                                                      await showDialog(
+                                                      final ativou = await showDialog<
+                                                        bool
+                                                      >(
                                                         context: context,
                                                         builder: (
                                                           dialogContext,
@@ -3169,6 +3174,11 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                                           );
                                                         },
                                                       );
+                                                      if (ativou == true) {
+                                                        _model.empresaSelecionada =
+                                                            null;
+                                                        safeSetState(() {});
+                                                      }
                                                     },
                                                     text: 'Ativar conta',
                                                     options: FFButtonOptions(
@@ -3237,7 +3247,9 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                               builder:
                                                   (context) => FFButtonWidget(
                                                     onPressed: () async {
-                                                      await showDialog(
+                                                      final desativou = await showDialog<
+                                                        bool
+                                                      >(
                                                         context: context,
                                                         builder: (
                                                           dialogContext,
@@ -3268,6 +3280,11 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                                           );
                                                         },
                                                       );
+                                                      if (desativou == true) {
+                                                        _model.empresaSelecionada =
+                                                            null;
+                                                        safeSetState(() {});
+                                                      }
                                                     },
                                                     text: 'Desativar conta',
                                                     options: FFButtonOptions(
@@ -5461,7 +5478,7 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                       _model.empresaSelecionada = null;
                       _model.aprovacoes = false;
                       _model.empresaSelecionadaNaoAprovada = null;
-                      _model.updatePage(() {});
+                      safeSetState(() {});
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -5955,6 +5972,9 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                             child: Container(
                               decoration: const BoxDecoration(),
                               child: FutureBuilder<List<CompaniesRow>>(
+                                key: ValueKey(
+                                  'empresas_nao_aprovadas_${_model.txBuscaEmpresaTextController2.text}',
+                                ),
                                 future: CompaniesTable().queryRows(
                                   queryFn:
                                       (q) => q
@@ -6412,7 +6432,7 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                           onTap: () async {
                             _model.empresaSelecionada = null;
                             _model.empresaSelecionadaNaoAprovada = null;
-                            _model.updatePage(() {});
+                            safeSetState(() {});
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -7054,7 +7074,9 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                             builder:
                                                 (context) => FFButtonWidget(
                                                   onPressed: () async {
-                                                    await showDialog(
+                                                    final ativou = await showDialog<
+                                                      bool
+                                                    >(
                                                       context: context,
                                                       builder: (dialogContext) {
                                                         return Dialog(
@@ -7083,6 +7105,11 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                                         );
                                                       },
                                                     );
+                                                    if (ativou == true) {
+                                                      _model.empresaSelecionadaNaoAprovada =
+                                                          null;
+                                                      safeSetState(() {});
+                                                    }
                                                   },
                                                   text: 'Ativar conta',
                                                   options: FFButtonOptions(
@@ -7152,7 +7179,9 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                             builder:
                                                 (context) => FFButtonWidget(
                                                   onPressed: () async {
-                                                    await showDialog(
+                                                    final desativou = await showDialog<
+                                                      bool
+                                                    >(
                                                       context: context,
                                                       builder: (dialogContext) {
                                                         return Dialog(
@@ -7181,6 +7210,11 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                                         );
                                                       },
                                                     );
+                                                    if (desativou == true) {
+                                                      _model.empresaSelecionadaNaoAprovada =
+                                                          null;
+                                                      safeSetState(() {});
+                                                    }
                                                   },
                                                   text: 'Desativar conta',
                                                   options: FFButtonOptions(

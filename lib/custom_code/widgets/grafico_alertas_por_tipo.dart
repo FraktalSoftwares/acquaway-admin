@@ -26,6 +26,9 @@ class GraficoAlertasPorTipo extends StatefulWidget {
 }
 
 class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
+  // Conjunto para rastrear quais itens estão ocultos (desativados na legenda)
+  final Set<String> _hiddenItems = {};
+
   @override
   Widget build(BuildContext context) {
     // 1. Tratamento para quando os dados ainda não chegaram (Loading/Null)
@@ -41,7 +44,6 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
     // 2. Extrair dados do JSON vindo da Edge Function
     // Estrutura: { "alertas": { "Neblina": 2, ... }, "total": 85 }
     final dynamic alertasMap = widget.dashboardData['alertas'] ?? {};
-    final int totalAlertas = widget.dashboardData['total'] ?? 0;
 
     // 3. Preparar paleta de cores para os diferentes tipos de alerta
     // Como são vários tipos, criamos uma lista para ciclar entre elas
@@ -84,6 +86,14 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
       });
     }
 
+    // Calcular o total visível (apenas itens não ocultos)
+    int totalVisivel = 0;
+    for (final data in chartData) {
+      if (!_hiddenItems.contains(data.x)) {
+        totalVisivel += data.y;
+      }
+    }
+
     // Se não houver dados (total 0), mostrar mensagem ou gráfico vazio
     if (chartData.isEmpty) {
       return Container(
@@ -101,12 +111,12 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
       width: widget.width,
       height: widget.height,
       child: SfCircularChart(
-        // Anotação no centro (O número total)
+        // Anotação no centro (O número total visível)
         annotations: <CircularChartAnnotation>[
           CircularChartAnnotation(
             widget: Container(
               child: Text(
-                '$totalAlertas',
+                '$totalVisivel',
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -117,11 +127,28 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
             ),
           ),
         ],
+        // Callback quando um item da legenda é clicado
+        onLegendTapped: (LegendTapArgs args) {
+          final pointIndex = args.pointIndex;
+          if (pointIndex == null ||
+              pointIndex < 0 ||
+              pointIndex >= chartData.length)
+            return;
+          setState(() {
+            final String itemName = chartData[pointIndex].x;
+            if (_hiddenItems.contains(itemName)) {
+              _hiddenItems.remove(itemName);
+            } else {
+              _hiddenItems.add(itemName);
+            }
+          });
+        },
         // Legenda na parte inferior
         legend: Legend(
           isVisible: true,
           position: LegendPosition.bottom,
           overflowMode: LegendItemOverflowMode.wrap,
+          toggleSeriesVisibility: true,
           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
             fontFamily: 'Readex Pro',
             color: FlutterFlowTheme.of(context).secondaryText,

@@ -3,9 +3,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/core/validators/validators.dart';
+import '/core/config/env_config.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:async';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html show window;
 import 'redefinir_senha_model.dart';
 export 'redefinir_senha_model.dart';
 
@@ -23,6 +28,7 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
   late RedefinirSenhaModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  StreamSubscription<AuthState>? _authStateSubscription;
 
   @override
   void initState() {
@@ -48,7 +54,53 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
 
     // Processar token do Supabase quando a página carregar
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      _setupAuthListener();
       _processToken();
+    });
+  }
+
+  void _setupAuthListener() {
+    // Escutar eventos de autenticação do Supabase
+    // Isso detecta quando o token de recuperação é processado
+    _authStateSubscription = SupaFlow.client.auth.onAuthStateChange.listen((
+      AuthState state,
+    ) {
+      // Prevenir redirecionamentos automáticos durante recuperação de senha
+      // Desabilitar notificações de mudança de auth para evitar redirecionamentos
+      AppStateNotifier.instance.updateNotifyOnAuthChange(false);
+
+      if (state.event == AuthChangeEvent.passwordRecovery) {
+        // Token de recuperação foi processado com sucesso
+        debugPrint('Evento passwordRecovery detectado');
+        safeSetState(() {
+          _model.tokenProcessed = true;
+          _model.tokenValid = true;
+          _model.isLoading = false;
+        });
+      } else if (state.event == AuthChangeEvent.signedIn) {
+        // Quando o usuário é logado automaticamente pelo token de recuperação
+        // Verificar se estamos na página de redefinir senha
+        final session = state.session;
+        if (session != null) {
+          // Verificar se há token de recuperação na URL
+          final uri = Uri.base;
+          final hasRecoveryToken =
+              (uri.hasFragment && uri.fragment.contains('type=recovery')) ||
+              (uri.queryParameters.containsKey('type') &&
+                  uri.queryParameters['type'] == 'recovery');
+
+          if (hasRecoveryToken) {
+            debugPrint(
+              'Usuário logado via token de recuperação - mostrando formulário',
+            );
+            safeSetState(() {
+              _model.tokenProcessed = true;
+              _model.tokenValid = true;
+              _model.isLoading = false;
+            });
+          }
+        }
+      }
     });
   }
 
@@ -58,34 +110,82 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
     });
 
     try {
-      // Verificar se há hash na URL (Supabase usa hash para tokens)
       final uri = Uri.base;
+      bool hasRecoveryToken = false;
+
+      // Verificar se há token no hash fragment (formato padrão do Supabase)
+      // Quando o Supabase redireciona, ele adiciona o token no hash fragment
       if (uri.hasFragment) {
         final fragment = uri.fragment;
-
-        // Se houver um token de recuperação
         if (fragment.contains('access_token') &&
             fragment.contains('type=recovery')) {
-          // O Supabase processa o hash fragment automaticamente
-          // Aguardar um pouco para garantir que o processamento foi concluído
-          await Future.delayed(const Duration(milliseconds: 1000));
+          hasRecoveryToken = true;
+          debugPrint('Token de recuperação encontrado no hash fragment');
+        }
+      }
 
-          // Verificar se há uma sessão ativa (indicando que o token foi processado)
-          final session = SupaFlow.client.auth.currentSession;
-          if (session != null) {
-            safeSetState(() {
-              _model.tokenProcessed = true;
-              _model.tokenValid = true;
-              _model.isLoading = false;
-            });
-          } else {
-            safeSetState(() {
-              _model.tokenProcessed = true;
-              _model.tokenValid = false;
-              _model.isLoading = false;
-            });
-          }
+      // Verificar se há token nos query parameters
+      // Isso pode acontecer se o link do Supabase for aberto diretamente
+      if (uri.queryParameters.containsKey('token') &&
+          uri.queryParameters.containsKey('type') &&
+          uri.queryParameters['type'] == 'recovery') {
+        hasRecoveryToken = true;
+        debugPrint('Token de recuperação encontrado nos query parameters');
+        // Se o token estiver nos query parameters, significa que o link
+        // do Supabase foi aberto diretamente. Nesse caso, precisamos
+        // redirecionar para o Supabase para que ele processe o token
+        // e redirecione de volta com o token no hash fragment.
+        final token = uri.queryParameters['token'];
+        final currentRedirectTo = uri.queryParameters['redirect_to'];
+
+        // Construir URL de redirecionamento completa
+        final redirectTo =
+            currentRedirectTo ??
+            '${uri.scheme}://${uri.host}${uri.hasPort ? ':${uri.port}' : ''}${RedefinirSenhaWidget.routePath}';
+
+        // Construir URL do Supabase para processar o token
+        final supabaseUrl = EnvConfig.supabaseUrl;
+        final verifyUrl =
+            '$supabaseUrl/auth/v1/verify?token=$token&type=recovery&redirect_to=${Uri.encodeComponent(redirectTo)}';
+
+        debugPrint('Redirecionando para Supabase: $verifyUrl');
+
+        // Redirecionar para o Supabase processar o token
+        // O Supabase irá processar o token e redirecionar de volta
+        // com o token no hash fragment
+        if (kIsWeb) {
+          html.window.location.href = verifyUrl;
         } else {
+          // Em outras plataformas, usar url_launcher se necessário
+          // Por enquanto, apenas logar o erro
+          debugPrint('Redirecionamento não suportado nesta plataforma');
+        }
+
+        // Não continuar o processamento, pois estamos redirecionando
+        return;
+      }
+
+      if (hasRecoveryToken) {
+        // O Supabase processa automaticamente tokens de recuperação
+        // através do onAuthStateChange. O listener já foi configurado.
+        // Aguardar um pouco para o Supabase processar o token
+        await Future.delayed(const Duration(milliseconds: 2000));
+
+        // Verificar se há uma sessão ativa (indicando que o token foi processado)
+        final session = SupaFlow.client.auth.currentSession;
+
+        if (session != null) {
+          // Token foi processado e usuário foi logado
+          // Mostrar formulário de redefinição de senha
+          debugPrint('Sessão de recuperação detectada - mostrando formulário');
+          safeSetState(() {
+            _model.tokenProcessed = true;
+            _model.tokenValid = true;
+            _model.isLoading = false;
+          });
+        } else {
+          // Se ainda não houver sessão após aguardar, o token pode ser inválido ou expirado
+          debugPrint('Token de recuperação não resultou em sessão válida');
           safeSetState(() {
             _model.tokenProcessed = true;
             _model.tokenValid = false;
@@ -93,12 +193,27 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
           });
         }
       } else {
-        // Não há hash fragment, token inválido
-        safeSetState(() {
-          _model.tokenProcessed = true;
-          _model.tokenValid = false;
-          _model.isLoading = false;
-        });
+        // Não há token de recuperação na URL
+        // Verificar se já existe uma sessão ativa (pode ter sido processada antes)
+        final session = SupaFlow.client.auth.currentSession;
+        if (session != null) {
+          // Se há sessão mas não há token na URL, pode ser que o token já foi processado
+          // Verificar se estamos na página de redefinir senha
+          debugPrint(
+            'Sessão encontrada sem token na URL - verificando se é recuperação',
+          );
+          safeSetState(() {
+            _model.tokenProcessed = true;
+            _model.tokenValid = true;
+            _model.isLoading = false;
+          });
+        } else {
+          safeSetState(() {
+            _model.tokenProcessed = true;
+            _model.tokenValid = false;
+            _model.isLoading = false;
+          });
+        }
       }
     } catch (e) {
       debugPrint('Erro ao processar token de recuperação: $e');
@@ -112,6 +227,9 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
 
   @override
   void dispose() {
+    _authStateSubscription?.cancel();
+    // Reabilitar notificações de mudança de auth ao sair da página
+    AppStateNotifier.instance.updateNotifyOnAuthChange(true);
     _model.dispose();
     super.dispose();
   }

@@ -180,7 +180,7 @@ class _PpDesativarContaWidgetState extends State<PpDesativarContaWidget> {
                         status: false,
                       );
 
-                      Navigator.pop(context);
+                      Navigator.pop(context, true);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(

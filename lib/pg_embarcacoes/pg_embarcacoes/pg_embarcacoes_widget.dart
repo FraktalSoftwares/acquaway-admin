@@ -1064,7 +1064,7 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       _model.embarcacaoSelecionada = null;
-                      _model.updatePage(() {});
+                      safeSetState(() {});
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -2742,27 +2742,35 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                               child: FutureBuilder<List<VwViagensResumoRow>>(
                                 future: VwViagensResumoTable().queryRows(
                                   queryFn:
-                                      (q) => q
-                                          .eqOrNull(
-                                            'id_viagem',
-                                            _model.embarcacaoSelecionada,
-                                          )
-                                          .ilike(
-                                            'nome_barco',
-                                            '%${_model.txBuscaEmbarcacoesTextController.text}%',
-                                          )
-                                          .gteOrNull(
-                                            'data_viagem',
-                                            supaSerialize<DateTime>(
-                                              _model.dataInicio,
-                                            ),
-                                          )
-                                          .lteOrNull(
-                                            'data_viagem',
-                                            supaSerialize<DateTime>(
-                                              _model.dataFim,
-                                            ),
-                                          ),
+                                      (q) {
+                                    var query = q.eqOrNull(
+                                      'id_embarcacao',
+                                      _model.embarcacaoSelecionada,
+                                    );
+                                    if (_model.txBuscaEmbarcacoesTextController.text.isNotEmpty) {
+                                      query = query.ilike(
+                                        'nome_barco',
+                                        '%${_model.txBuscaEmbarcacoesTextController.text}%',
+                                      );
+                                    }
+                                    if (_model.dataInicio != null) {
+                                      query = query.gteOrNull(
+                                        'data_viagem',
+                                        supaSerialize<DateTime>(
+                                          _model.dataInicio,
+                                        ),
+                                      );
+                                    }
+                                    if (_model.dataFim != null) {
+                                      query = query.lteOrNull(
+                                        'data_viagem',
+                                        supaSerialize<DateTime>(
+                                          _model.dataFim,
+                                        ),
+                                      );
+                                    }
+                                    return query;
+                                  },
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.

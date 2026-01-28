@@ -9,13 +9,15 @@ class PgSolicitacoesSosModel extends FlutterFlowModel<PgSolicitacoesSosWidget> {
 
   String? stage = 'Geral';
 
+  String textoBusca = '';
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for txBuscaEmpresa widget.
   FocusNode? txBuscaEmpresaFocusNode;
   TextEditingController? txBuscaEmpresaTextController;
   String? Function(BuildContext, String?)?
-      txBuscaEmpresaTextControllerValidator;
+  txBuscaEmpresaTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
