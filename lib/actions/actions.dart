@@ -34,32 +34,31 @@ Future auth(BuildContext context) async {
     return;
   }
 
-  if (retornUserLogin.firstOrNull?.verificado != true) {
+  final userRow = retornUserLogin.firstOrNull;
+  final tipoUser = userRow?.tipoUser?.trim();
+
+  // Apenas Admin e Moderador podem acessar o sistema
+  const allowedRoles = ['Admin', 'Moderador'];
+  final isAllowedRole = tipoUser != null && allowedRoles.contains(tipoUser);
+
+  if (!isAllowedRole) {
     GoRouter.of(context).prepareAuthEvent();
     await authManager.signOut();
     GoRouter.of(context).clearRedirectLocation();
-
     navigate =
         () => context.goNamedAuth(LoginWidget.routeName, context.mounted);
+    navigate();
     return;
   }
+
+  // Admin/Moderador não precisam de verificado (evita deslogar ao atualizar a página)
+
   FFAppState().user = UserStruct(
-    nome: retornUserLogin.firstOrNull?.nome,
-    email: retornUserLogin.firstOrNull?.email,
-    tipoUser: retornUserLogin.firstOrNull?.tipoUser,
+    nome: userRow?.nome,
+    email: userRow?.email,
+    tipoUser: userRow?.tipoUser,
   );
   FFAppState().update(() {});
-  if (retornUserLogin.firstOrNull?.tipoUser != 'Admin') {
-    if (retornUserLogin.firstOrNull?.tipoUser != 'Moderador') {
-      GoRouter.of(context).prepareAuthEvent();
-      await authManager.signOut();
-      GoRouter.of(context).clearRedirectLocation();
-
-      navigate =
-          () => context.goNamedAuth(LoginWidget.routeName, context.mounted);
-      return;
-    }
-  }
   FFAppState().nada = 'nada';
   FFAppState().update(() {});
 

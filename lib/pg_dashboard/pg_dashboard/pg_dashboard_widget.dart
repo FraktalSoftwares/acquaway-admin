@@ -173,6 +173,58 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                         ),
                       ),
                 ),
+                if (_model.dataInicio != null || _model.dataFim != null)
+                  Builder(
+                    builder: (context) => FFButtonWidget(
+                      onPressed: () async {
+                        safeSetState(() {
+                          _model.dataInicio = null;
+                          _model.dataFim = null;
+                        });
+                      },
+                      text: 'Limpar período',
+                      icon: const Icon(
+                        Icons.clear_rounded,
+                        size: 15.0,
+                      ),
+                      options: FFButtonOptions(
+                        height: 40.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0,
+                          0.0,
+                          16.0,
+                          0.0,
+                        ),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                        ),
+                        color: Colors.white,
+                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          font: GoogleFonts.interTight(
+                            fontWeight:
+                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                            fontStyle:
+                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                          ),
+                          color: const Color(0xFF252627),
+                          letterSpacing: 0.0,
+                          fontWeight:
+                              FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                        ),
+                        elevation: 0.0,
+                        borderSide: const BorderSide(
+                          color: Color(0xFFE5E6E6),
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  ),
                 Builder(
                   builder:
                       (context) => FFButtonWidget(
@@ -1518,7 +1570,20 @@ class _PgDashboardWidgetState extends State<PgDashboardWidget>
                               FutureBuilder<ApiCallResponse>(
                                 future:
                                     SupabaseEdgeGroup.totalDeUserEEmpresasCall
-                                        .call(),
+                                        .call(
+                                  dataInicio: dateTimeFormat(
+                                    'yyyy-MM-dd',
+                                    _model.dataInicio,
+                                    locale:
+                                        FFLocalizations.of(context).languageCode,
+                                  ),
+                                  dataFim: dateTimeFormat(
+                                    'yyyy-MM-dd',
+                                    _model.dataFim,
+                                    locale:
+                                        FFLocalizations.of(context).languageCode,
+                                  ),
+                                ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {

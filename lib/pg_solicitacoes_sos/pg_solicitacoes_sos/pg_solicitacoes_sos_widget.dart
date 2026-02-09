@@ -265,7 +265,8 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                       child: FutureBuilder<
                                         List<ViewSosCompletoRow>
                                       >(
-                                        key: ValueKey(_model.textoBusca),
+                                        key: ValueKey(
+                                            '${_model.textoBusca}_${_model.refreshKey}'),
                                         future: ViewSosCompletoTable()
                                             .queryRows(
                                               queryFn: (q) {
@@ -440,7 +441,10 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                           }
                                           List<ViewSosCompletoRow>
                                           gridViewViewSosCompletoRowList =
-                                              snapshot.data!;
+                                              snapshot.data!
+                                                  .where((row) =>
+                                                      row.resolvida != true)
+                                                  .toList();
 
                                           if (gridViewViewSosCompletoRowList
                                               .isEmpty) {
@@ -733,10 +737,12 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Text(
-                                                                                valueOrDefault<
+                                                                                  valueOrDefault<
                                                                                   String
                                                                                 >(
-                                                                                  'Viagem: ${gridViewViewSosCompletoRow.viagemId?.toString()}',
+                                                                                  gridViewViewSosCompletoRow.viagemId != null
+                                                                                      ? 'Viagem: ${gridViewViewSosCompletoRow.viagemId}'
+                                                                                      : 'Sem viagem',
                                                                                   'Nome piloto',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(
@@ -837,7 +843,8 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                                                               ),
                                                                             ],
                                                                           ),
-                                                                          Builder(
+                                                                          if (gridViewViewSosCompletoRow.viagemId != null)
+                                                                            Builder(
                                                                             builder:
                                                                                 (
                                                                                   context,
@@ -872,6 +879,15 @@ class _PgSolicitacoesSosWidgetState extends State<PgSolicitacoesSosWidget> {
                                                                                                   gridViewViewSosCompletoRow.sosId!,
                                                                                               tipoSos:
                                                                                                   gridViewViewSosCompletoRow.tipo!,
+                                                                                              onResolved:
+                                                                                                  () {
+                                                                                                safeSetState(
+                                                                                                    () {
+                                                                                                  _model.refreshKey++;
+                                                                                                });
+                                                                                                Navigator.pop(
+                                                                                                    context);
+                                                                                              },
                                                                                             ),
                                                                                           ),
                                                                                         );

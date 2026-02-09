@@ -223,12 +223,6 @@ class _PpDownloadRelatorioWidgetState extends State<PpDownloadRelatorioWidget> {
                             setState(() => _model.taxaInadimplencia = value!),
                       ),
                       _buildCheckbox(
-                        'Ticket médio por empresa',
-                        _model.ticketMedioEmpresa,
-                        (value) =>
-                            setState(() => _model.ticketMedioEmpresa = value!),
-                      ),
-                      _buildCheckbox(
                         'Número de assinaturas por plano',
                         _model.numeroAssinaturasPlano,
                         (value) => setState(
@@ -246,13 +240,6 @@ class _PpDownloadRelatorioWidgetState extends State<PpDownloadRelatorioWidget> {
                         _model.empresasCadastradas,
                         (value) =>
                             setState(() => _model.empresasCadastradas = value!),
-                      ),
-                      _buildCheckbox(
-                        'Número de usuários por tipo',
-                        _model.numeroUsuariosPorTipo,
-                        (value) => setState(
-                          () => _model.numeroUsuariosPorTipo = value!,
-                        ),
                       ),
                       _buildCheckbox(
                         'Total de viagens realizadas',
@@ -280,26 +267,6 @@ class _PpDownloadRelatorioWidgetState extends State<PpDownloadRelatorioWidget> {
                         _model.mediaEmbarcacoesPorPiloto,
                         (value) => setState(
                           () => _model.mediaEmbarcacoesPorPiloto = value!,
-                        ),
-                      ),
-                      _buildCheckbox(
-                        'SOS emitidos por tipo',
-                        _model.sosEmitidosPorTipo,
-                        (value) =>
-                            setState(() => _model.sosEmitidosPorTipo = value!),
-                      ),
-                      _buildCheckbox(
-                        'Alertas emitidos por tipo',
-                        _model.alertasEmitidosPorTipo,
-                        (value) => setState(
-                          () => _model.alertasEmitidosPorTipo = value!,
-                        ),
-                      ),
-                      _buildCheckbox(
-                        'Planejamento de viagens por tipo',
-                        _model.planejamentoViagensPorTipo,
-                        (value) => setState(
-                          () => _model.planejamentoViagensPorTipo = value!,
                         ),
                       ),
                     ],

@@ -180,7 +180,9 @@ class _PpResolverSosWidgetState extends State<PpResolverSosWidget> {
                         matchingRows:
                             (rows) => rows.eqOrNull('id', widget.idSos),
                       );
-                      Navigator.pop(context);
+                      if (context.mounted) {
+                        Navigator.pop(context, true);
+                      }
                     },
                     text: 'Sim, resolver solicitação',
                     options: FFButtonOptions(

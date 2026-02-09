@@ -1266,18 +1266,19 @@ class _PpDetalheViagemWidgetState extends State<PpDetalheViagemWidget>
                                   ),
                                   Flexible(
                                     child: FutureBuilder<List<AlertasRow>>(
-                                      future: AlertasTable().queryRows(
-                                        queryFn:
-                                            (q) => q
-                                                .eqOrNull(
-                                                  'viagem_id',
-                                                  widget.idViagem,
-                                                )
-                                                .order(
-                                                  'created_at',
-                                                  ascending: false,
-                                                ),
-                                      ),
+                                      future: widget.idViagem == null
+                                          ? Future.value(<AlertasRow>[])
+                                          : AlertasTable().queryRows(
+                                              queryFn: (q) => q
+                                                  .eq(
+                                                    'viagem_id',
+                                                    widget.idViagem!,
+                                                  )
+                                                  .order(
+                                                    'created_at',
+                                                    ascending: false,
+                                                  ),
+                                            ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {

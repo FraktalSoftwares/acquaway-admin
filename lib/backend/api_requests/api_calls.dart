@@ -139,15 +139,21 @@ class TotalDeUsersPorTipoCall {
 }
 
 class TotalDeUserEEmpresasCall {
-  Future<ApiCallResponse> call() async {
+  Future<ApiCallResponse> call({
+    String? dataInicio = '',
+    String? dataFim = '',
+  }) async {
     final baseUrl = SupabaseEdgeGroup.getBaseUrl();
+    final params = <String, String>{};
+    if (dataInicio != null && dataInicio.isNotEmpty) params['dataInicio'] = dataInicio;
+    if (dataFim != null && dataFim.isNotEmpty) params['dataFim'] = dataFim;
 
     return ApiManager.instance.makeApiCall(
       callName: 'Total de user e empresas',
       apiUrl: '${baseUrl}get-general-stats',
       callType: ApiCallType.GET,
       headers: SupabaseEdgeGroup.getDefaultHeaders(),
-      params: {},
+      params: params,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

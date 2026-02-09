@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html show window;
+import 'redefinir_senha_redirect_stub.dart'
+    if (dart.library.html) 'redefinir_senha_redirect_web.dart' as redirect;
 import 'redefinir_senha_model.dart';
 export 'redefinir_senha_model.dart';
 
@@ -154,10 +154,8 @@ class _RedefinirSenhaWidgetState extends State<RedefinirSenhaWidget> {
         // O Supabase irá processar o token e redirecionar de volta
         // com o token no hash fragment
         if (kIsWeb) {
-          html.window.location.href = verifyUrl;
+          redirect.redirectToUrl(verifyUrl);
         } else {
-          // Em outras plataformas, usar url_launcher se necessário
-          // Por enquanto, apenas logar o erro
           debugPrint('Redirecionamento não suportado nesta plataforma');
         }
 

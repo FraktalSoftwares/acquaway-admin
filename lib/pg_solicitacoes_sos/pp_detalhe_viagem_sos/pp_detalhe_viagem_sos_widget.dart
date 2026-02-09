@@ -17,11 +17,14 @@ class PpDetalheViagemSosWidget extends StatefulWidget {
     required this.idViagem,
     required this.idSos,
     required this.tipoSos,
+    this.onResolved,
   });
 
   final int? idViagem;
   final int? idSos;
   final String? tipoSos;
+
+  final VoidCallback? onResolved;
 
   @override
   State<PpDetalheViagemSosWidget> createState() =>
@@ -875,8 +878,8 @@ class _PpDetalheViagemSosWidgetState extends State<PpDetalheViagemSosWidget>
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                Navigator.pop(context);
-                                                await showDialog(
+                                                final resolved =
+                                                    await showDialog<bool>(
                                                   context: context,
                                                   builder: (dialogContext) {
                                                     return Dialog(
@@ -904,6 +907,10 @@ class _PpDetalheViagemSosWidgetState extends State<PpDetalheViagemSosWidget>
                                                     );
                                                   },
                                                 );
+                                                if (resolved == true &&
+                                                    context.mounted) {
+                                                  widget.onResolved?.call();
+                                                }
                                               },
                                               child: Text(
                                                 'Marcar como resolvida',
@@ -1401,13 +1408,19 @@ class _PpDetalheViagemSosWidgetState extends State<PpDetalheViagemSosWidget>
                                   ),
                                   Flexible(
                                     child: FutureBuilder<List<AlertasRow>>(
-                                      future: AlertasTable().queryRows(
-                                        queryFn:
-                                            (q) => q.eqOrNull(
-                                              'viagem_id',
-                                              widget.idViagem,
+                                      future: widget.idViagem == null
+                                          ? Future.value(<AlertasRow>[])
+                                          : AlertasTable().queryRows(
+                                              queryFn: (q) => q
+                                                  .eq(
+                                                    'viagem_id',
+                                                    widget.idViagem!,
+                                                  )
+                                                  .order(
+                                                    'created_at',
+                                                    ascending: false,
+                                                  ),
                                             ),
-                                      ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -1430,6 +1443,40 @@ class _PpDetalheViagemSosWidgetState extends State<PpDetalheViagemSosWidget>
                                         }
                                         List<AlertasRow>
                                         listViewAlertasRowList = snapshot.data!;
+
+                                        if (listViewAlertasRowList.isEmpty) {
+                                          return Center(
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(
+                                                24.0,
+                                              ),
+                                              child: Text(
+                                                'Nenhum alerta emitido nesta viagem',
+                                                style: FlutterFlowTheme.of(
+                                                  context,
+                                                ).bodyMedium.override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                          context,
+                                                        ).bodyMedium.fontStyle,
+                                                  ),
+                                                  color: const Color(
+                                                    0xFF7D8082,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                        context,
+                                                      ).bodyMedium.fontStyle,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
 
                                         return ListView.separated(
                                           padding: EdgeInsets.zero,

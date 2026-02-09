@@ -330,13 +330,36 @@ class _PgAcompanhamentoWidgetState extends State<PgAcompanhamentoWidget> {
                                         true,
                                       );
 
-                                      // Converter para lista e filtrar nulls
+                                      // Converter para lista, filtrar nulls e ordenar por data de criação (mais recentes primeiro)
                                       final listaViagens =
                                           (viagensRaw is List
                                                   ? viagensRaw
                                                   : <dynamic>[])
                                               .where((e) => e != null)
-                                              .toList();
+                                              .toList()
+                                            ..sort((a, b) {
+                                              final createdA = getJsonField(
+                                                a,
+                                                r'''$.created_at''',
+                                              );
+                                              final createdB = getJsonField(
+                                                b,
+                                                r'''$.created_at''',
+                                              );
+                                              if (createdA == null &&
+                                                  createdB == null) return 0;
+                                              if (createdA == null) return 1;
+                                              if (createdB == null) return -1;
+                                              final dateA = DateTime.tryParse(
+                                                    createdA.toString(),
+                                                  ) ??
+                                                  DateTime(0);
+                                              final dateB = DateTime.tryParse(
+                                                    createdB.toString(),
+                                                  ) ??
+                                                  DateTime(0);
+                                              return dateB.compareTo(dateA);
+                                            });
 
                                       // Verificar se a lista está vazia
                                       if (listaViagens.isEmpty) {

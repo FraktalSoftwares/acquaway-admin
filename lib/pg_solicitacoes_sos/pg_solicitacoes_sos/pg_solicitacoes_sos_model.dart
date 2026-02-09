@@ -11,6 +11,8 @@ class PgSolicitacoesSosModel extends FlutterFlowModel<PgSolicitacoesSosWidget> {
 
   String textoBusca = '';
 
+  int refreshKey = 0;
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for txBuscaEmpresa widget.
