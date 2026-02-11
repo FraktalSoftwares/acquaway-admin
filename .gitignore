@@ -7,11 +7,8 @@
 .pub/
 # build/ - COMENTADO: precisamos da pasta build/web para deploy
 # Mas ignoramos outras pastas de build
-build/android/
-build/ios/
-build/linux/
-build/macos/
-build/windows/
+build/*
+!build/web/
 ios/
 android/
 test/

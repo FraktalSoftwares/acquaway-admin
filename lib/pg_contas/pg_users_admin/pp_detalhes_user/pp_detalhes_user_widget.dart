@@ -701,6 +701,8 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                     controller: _model.txNomeTextController,
                                     focusNode: _model.txNomeFocusNode,
                                     autofocus: false,
+                                    readOnly: true,
+                                    enabled: false,
                                     decoration: InputDecoration(
                                       isDense: true,
                                       labelStyle: FlutterFlowTheme.of(
@@ -851,6 +853,8 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                     controller: _model.txEmailTextController,
                                     focusNode: _model.txEmailFocusNode,
                                     autofocus: false,
+                                    readOnly: true,
+                                    enabled: false,
                                     decoration: InputDecoration(
                                       isDense: true,
                                       labelStyle: FlutterFlowTheme.of(
@@ -1006,10 +1010,8 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                                     'Administrador',
                                     'Moderador',
                                   ],
-                                  onChanged:
-                                      (val) => safeSetState(
-                                        () => _model.ddNivelAcessoValue = val,
-                                      ),
+                                  onChanged: null,
+                                  disabled: true,
                                   width: double.infinity,
                                   height: 44.0,
                                   textStyle: FlutterFlowTheme.of(
@@ -1219,126 +1221,6 @@ class _PpDetalhesUserWidgetState extends State<PpDetalhesUserWidget>
                               ),
                             ),
                             const SizedBox(height: 24.0),
-                            // Botão Salvar alterações
-                            Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  // Validações
-                                  if (_model
-                                          .txNomeTextController
-                                          ?.text
-                                          .isEmpty ??
-                                      true) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                          'Por favor, preencha o nome',
-                                        ),
-                                        backgroundColor: Colors.red,
-                                      ),
-                                    );
-                                    return;
-                                  }
-
-                                  final emailError = _model
-                                      .txEmailTextControllerValidator
-                                      ?.call(
-                                        context,
-                                        _model.txEmailTextController!.text,
-                                      );
-                                  if (emailError != null &&
-                                      emailError.isNotEmpty) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(emailError),
-                                        backgroundColor: Colors.red,
-                                      ),
-                                    );
-                                    return;
-                                  }
-
-                                  try {
-                                    // Atualizar na tabela users
-                                    await UsersTable().update(
-                                      data: {
-                                        'nome':
-                                            _model.txNomeTextController!.text,
-                                        'email':
-                                            _model.txEmailTextController!.text,
-                                        'tipo_user': _model.ddNivelAcessoValue,
-                                      },
-                                      matchingRows:
-                                          (rows) =>
-                                              rows.eq('id', widget.user.id),
-                                    );
-
-                                    Navigator.pop(context);
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                          'Alterações salvas com sucesso!',
-                                        ),
-                                        backgroundColor: Color(0xFF90C74F),
-                                      ),
-                                    );
-                                  } catch (e) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Erro ao salvar alterações: ${e.toString()}',
-                                        ),
-                                        backgroundColor: Colors.red,
-                                      ),
-                                    );
-                                  }
-                                },
-                                text: 'Salvar alterações',
-                                options: FFButtonOptions(
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0,
-                                    0.0,
-                                    16.0,
-                                    0.0,
-                                  ),
-                                  iconPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                        0.0,
-                                      ),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(
-                                    context,
-                                  ).titleSmall.override(
-                                    font: GoogleFonts.interTight(
-                                      fontWeight:
-                                          FlutterFlowTheme.of(
-                                            context,
-                                          ).titleSmall.fontWeight,
-                                      fontStyle:
-                                          FlutterFlowTheme.of(
-                                            context,
-                                          ).titleSmall.fontStyle,
-                                    ),
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                    fontWeight:
-                                        FlutterFlowTheme.of(
-                                          context,
-                                        ).titleSmall.fontWeight,
-                                    fontStyle:
-                                        FlutterFlowTheme.of(
-                                          context,
-                                        ).titleSmall.fontStyle,
-                                  ),
-                                  elevation: 0.0,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),

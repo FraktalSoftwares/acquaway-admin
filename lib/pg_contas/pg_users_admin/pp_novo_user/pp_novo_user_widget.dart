@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/core/validators/validators.dart';
+import '/pages/redefinir_senha/redefinir_senha_widget.dart';
 import '/pg_contas/pg_users_admin/pp_sucesso_novo_user/pp_sucesso_novo_user_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -602,11 +603,21 @@ class _PpNovoUserWidgetState extends State<PpNovoUserWidget> {
                                 'onboard': false,
                               });
 
-                              // Enviar email de reset de senha para o usuário definir sua própria senha
+                              // Enviar email de redefinição de senha (mesmo da tela de login)
+                              // para o usuário definir sua própria senha
+                              final currentOrigin = Uri.base.origin;
+                              final baseUrl =
+                                  currentOrigin.startsWith('http')
+                                      ? currentOrigin
+                                      : 'https://$currentOrigin';
+                              final redirectUrl =
+                                  '$baseUrl${RedefinirSenhaWidget.routePath}';
+
                               await authManager.resetPassword(
                                 email:
                                     _model.txEmailTextController!.text.trim(),
                                 context: context,
+                                redirectTo: redirectUrl,
                               );
 
                               // Fechar dialog atual e mostrar dialog de sucesso
