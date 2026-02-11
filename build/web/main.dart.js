@@ -8457,7 +8457,7 @@ Y2:function Y2(){},
 u3:function u3(){},
 a6k:function a6k(){},
 adI:function adI(){},
-X2(a){var s=0,r=A.u(t.z),q,p,o,n,m,l,k,j,i
+X2(a){var s=0,r=A.u(t.z),q,p,o,n,m,l,k,j,i,h
 var $async$X2=A.p(function(b,c){if(b===1)return A.q(c,r)
 for(;;)switch(s){case 0:s=$.BK==null||A.Ib().length===0?3:4
 break
@@ -8471,7 +8471,7 @@ if(J.hR(p)){s=1
 break}o=A.aC3(p)
 n=o==null
 if(n)m=null
-else{l=o.P("tipo_user",t.N)
+else{l=o.O("tipo_user",t.N)
 m=l==null?null:B.e.dA(l)}s=!(m!=null&&B.c.n(B.zh,m))?7:8
 break
 case 7:k=A.nT(a)
@@ -8489,9 +8489,10 @@ new A.bjN(a).$0()
 s=1
 break
 case 8:l=$.bE()
-j=n?null:o.P("nome",t.N)
-i=n?null:o.P("email",t.N)
-j=new A.oy(j,i,null,null,n?null:o.P("tipo_user",t.N))
+j=n?null:o.O("nome",t.N)
+i=n?null:o.O("email",t.N)
+h=n?null:o.O("tipo_user",t.N)
+j=new A.oy(j,i,n?null:o.O("foto",t.N),null,h)
 l.b=j
 l=l.a
 l===$&&A.c()
@@ -13144,7 +13145,7 @@ break $label0$0}if(B.l5===s){r=r.gag()
 break $label0$0}if(B.l6===s){r=r.gai()
 break $label0$0}if(B.l7===s){r=r.gab()
 break $label0$0}if(B.pn===s){r=r.gF()
-break $label0$0}if(B.po===s){r=r.gO()
+break $label0$0}if(B.po===s){r=r.gP()
 break $label0$0}if(B.l8===s){r=r.ga4()
 break $label0$0}if(B.pp===s||B.wh===s||B.pq===s){r=""
 break $label0$0}r=null}return r},
@@ -14814,7 +14815,7 @@ case 4:s=s.gb1().toUpperCase()
 break
 case 5:s=s.gF()
 break
-case 6:s=s.gO()
+case 6:s=s.gP()
 break
 case 7:s=s.ga4()
 break
@@ -59369,7 +59370,7 @@ p=o.e
 return B.a5_.hw(0,[n,s,r,q,p==null?"":p])}}
 A.asg.prototype={}
 A.fR.prototype={
-P(a,b){var s=A.f5(J.ao(this.a,a),b)
+O(a,b){var s=A.f5(J.ao(this.a,a),b)
 return s==null?null:s},
 k(a){var s=this.gi9().gfS(),r=this.a,q=J.aB(r),p=q.gc3(r)?"\n":""
 r=q.ghJ(r)
@@ -60001,7 +60002,7 @@ n=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 h=A.F(8)
 g=A.bd(B.y,1)
 f=r==null
-if((f?a3:r.P(a4,t.i))!=null){e=r.P(a4,t.i)
+if((f?a3:r.O(a4,t.i))!=null){e=r.O(a4,t.i)
 e.toString
 e=B.k.aM(e,2)+" km"}else e="0.00 km"
 e=A.a1(e,"0.00 km")
@@ -60036,7 +60037,7 @@ n=A.n("Nome da embarca\xe7\xe3o",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSiz
 a1=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 g=A.F(8)
 b=A.bd(B.y,1)
-h=A.a1(f?a3:r.P("nome_barco",t.N),"Nome Barco")
+h=A.a1(f?a3:r.O("nome_barco",t.N),"Nome Barco")
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 d=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 d=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,d)
@@ -60046,7 +60047,7 @@ b=A.n("Nome do piloto",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSize$fontWeig
 c=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 d=A.F(8)
 e=A.bd(B.y,1)
-n=A.a1(f?a3:r.P("nome_piloto",t.N),"N\xe3o informado")
+n=A.a1(f?a3:r.O("nome_piloto",t.N),"N\xe3o informado")
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 a0=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a0=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a0)
@@ -60056,7 +60057,7 @@ e=A.n("Origem",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSize$fontWeight(A.a()
 a1=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 a0=A.F(8)
 h=A.bd(B.y,1)
-o=A.a1(f?a3:r.P("origem_local",t.N),"N\xe3o h\xe1 Origem")
+o=A.a1(f?a3:r.O("origem_local",t.N),"N\xe3o h\xe1 Origem")
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 m=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,m)
@@ -60067,7 +60068,7 @@ k=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 m=A.F(8)
 n=A.bd(B.y,1)
 if(f)o=a3
-else{o=r.P("hora_inicio",t.Lu)
+else{o=r.O("hora_inicio",t.Lu)
 o=o==null?a3:o.a}g=t.O
 e=A.c0(a6,B.aj,g)
 e.toString
@@ -60081,7 +60082,7 @@ n=A.n("Destino",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSize$fontWeight(A.a(
 b=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 c=A.F(8)
 o=A.bd(B.y,1)
-k=A.a1(f?a3:r.P("destino_local",t.N),"N\xe3o h\xe1 Destino")
+k=A.a1(f?a3:r.O("destino_local",t.N),"N\xe3o h\xe1 Destino")
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 e=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,e)
@@ -60092,7 +60093,7 @@ a0=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 e=A.F(8)
 h=A.bd(B.y,1)
 if(f)n=a3
-else{n=r.P("hora_fim",t.Lu)
+else{n=r.O("hora_fim",t.Lu)
 n=n==null?a3:n.a}g=A.c0(a6,B.aj,g)
 g.toString
 g=A.a1(A.d7("Hm",n,g.a.cw("_")),"N\xe3o finalizada")
@@ -60144,7 +60145,7 @@ for(;;)switch(s){case 0:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.bb7.prototype={
-$0(){var s,r,q=this.a,p=q==null?null:q.P("duracao_minutos",t.S)
+$0(){var s,r,q=this.a,p=q==null?null:q.O("duracao_minutos",t.S)
 if(p==null)p=0
 if(p>0){s=B.o.dh(p,60)
 r=B.o.av(p,60)
@@ -60152,9 +60153,9 @@ if(s>0)return""+s+"h "+r+"min"
 return""+r+"min"}return"0min"},
 $S:49}
 A.bb8.prototype={
-$0(){var s,r=this.a,q=r==null,p=q?null:r.P("km_totais",t.i)
+$0(){var s,r=this.a,q=r==null,p=q?null:r.O("km_totais",t.i)
 if(p==null)p=0
-s=q?null:r.P("duracao_minutos",t.S)
+s=q?null:r.O("duracao_minutos",t.S)
 if(s==null)s=0
 if(s>0&&p>0)return B.k.aM(p*60/s,2)+" km/h"
 return"0.00 km/h"},
@@ -60173,24 +60174,24 @@ A.bb1.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.bb0.prototype={
-$2(a,b){var s,r,q,p=null,o=J.ao(this.a,b),n=A.x(p,p,B.h,p,p,new A.a6(A.a().gbn(0),p,p,p,p,p,p,B.cB),10,p,p,10),m=t.N,l=A.a1(o.P("tipo_alerta",m),"N/A"),k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
+$2(a,b){var s,r,q,p=null,o=J.ao(this.a,b),n=A.x(p,p,B.h,p,p,new A.a6(A.a().gbn(0),p,p,p,p,p,p,B.cB),10,p,p,10),m=t.N,l=A.a1(o.O("tipo_alerta",m),"N/A"),k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 j=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,j)
 s=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 s=A.n(l,p,p,p,p,p,p,p,A.j(k,p,j,p,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,s,0),p,p,p,p)
-j=o.P("lat",m)
-m=o.P("long",m)
+j=o.O("lat",m)
+m=o.O("long",m)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 l=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,l)
 r=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 r=A.n("Localiza\xe7\xe3o: "+A.o(j)+" "+A.o(m),p,p,p,p,p,p,p,A.j(k,B.hr,l,p,p,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,r,0),p,p,p,p)
-l=o.P("created_at",t.e)
+l=o.O("created_at",t.e)
 l.toString
 k=t.O
 m=A.c0(a,B.aj,k)
 m.toString
 m=A.o(A.a1(A.d7("d/M/y",l,m.a.cw("_")),"N/A"))
-l=o.P("hora",t.Lu)
+l=o.O("hora",t.Lu)
 l=l==null?p:l.a
 k=A.c0(a,B.aj,k)
 k.toString
@@ -61738,7 +61739,7 @@ if(g.e!=null)g.a3(t.J).f.dO(B.aE2)
 s=1
 break
 case 10:k=A.aC3(m)
-l=k==null?null:k.P("tipo_user",t.N)
+l=k==null?null:k.O("tipo_user",t.N)
 s=!J.i(l,"Admin")&&!J.i(l,"Moderador")?12:13
 break
 case 12:k=$.cz
@@ -63014,8 +63015,8 @@ o=p.a.c
 o=o==null?l:B.o.k(o)
 o=A.uE(!1,'<html lang="pt-BR"><head>  <meta charset="utf-8" />  <meta name="viewport" content="width=device-width,initial-scale=1" />  <title>Mapa (JS desativado)</title><style> html,body{margin:0;height:100%} iframe{width:100%;height:100%;border:0} </style></head><body>  <iframe    src="https://fraktalsistemas.com.br:8006/acompanhamento?viagem_id='+A.o(o)+'"loading="lazy"    allowfullscreen>  </iframe></body></html>',A.bZ(a,B.bH,t.l).w.a.b*0.83,!1,!0,!1,l)
 n=r==null
-m=n?l:r.P("destino_lat",t.N)
-return A.fh(k,A.x(l,A.ex(B.aD,A.d([new A.Z(B.os,l,l,o,l),new A.Z(B.ot,l,l,new A.v(B.pJ,new A.cj(A.bph(m,n?l:r.P("destino_long",t.N)),new A.b9y(p),l,t.uS),l),l),new A.Z(B.Ro,l,l,A.fH(8,40,A.a().gbr(),A.cP(B.du,A.a().gabo(),l,24),new A.b9z(a)),l)],t.p),B.G,B.aF,l),B.h,l,l,new A.a6(s,l,l,q,l,l,l,B.t),1/0,l,l,1/0),B.az)},
+m=n?l:r.O("destino_lat",t.N)
+return A.fh(k,A.x(l,A.ex(B.aD,A.d([new A.Z(B.os,l,l,o,l),new A.Z(B.ot,l,l,new A.v(B.pJ,new A.cj(A.bph(m,n?l:r.O("destino_long",t.N)),new A.b9y(p),l,t.uS),l),l),new A.Z(B.Ro,l,l,A.fH(8,40,A.a().gbr(),A.cP(B.du,A.a().gabo(),l,24),new A.b9z(a)),l)],t.p),B.G,B.aF,l),B.h,l,l,new A.a6(s,l,l,q,l,l,l,B.t),1/0,l,l,1/0),B.az)},
 $S:538}
 A.b9y.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l,k,j,i=null,h="$.resumo_hoje.condicao_geral",g=b.b
@@ -63320,20 +63321,20 @@ A.b2W.prototype={
 $2(a,b){return new A.cg(new A.b2S(J.ao(this.a,b)),null)},
 $S:57}
 A.b2S.prototype={
-$1(a){var s,r,q,p,o,n,m,l=null,k=this.a,j=k.P("id",t.S)
+$1(a){var s,r,q,p,o,n,m,l=null,k=this.a,j=k.O("id",t.S)
 j.toString
 j=A.x(l,A.P(A.M(A.d([new A.Z(B.q,l,l,new A.v(B.z,A.n(A.a1(B.o.k(j),"0000"),l,l,l,l,l,l,l,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),l,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),l,l,l,l),l),l)],t.xv),B.bo),B.n,B.a1,B.I),B.h,l,l,B.r,48,l,l,100)
 s=t.N
-r=A.x(l,new A.Z(B.q,l,l,new A.v(B.z,A.n(A.a1(k.P("aviso",s),"Aviso"),l,l,1,B.bz,l,l,l,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),l,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),l,l,l,l),l),l),B.h,l,l,B.r,48,l,l,300)
-q=k.P("created_at",t.e)
+r=A.x(l,new A.Z(B.q,l,l,new A.v(B.z,A.n(A.a1(k.O("aviso",s),"Aviso"),l,l,1,B.bz,l,l,l,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),l,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),l,l,l,l),l),l),B.h,l,l,B.r,48,l,l,300)
+q=k.O("created_at",t.e)
 q.toString
 p=A.c0(a,B.aj,t.O)
 p.toString
 p=A.x(l,new A.Z(B.q,l,l,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",q,p.a.cw("_")),"00/00/0000"),l,l,l,l,l,l,l,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),l,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),l,l,l,l),l),l),B.h,l,l,B.r,48,l,l,200)
-q=k.P("duracao",t.i)
+q=k.O("duracao",t.i)
 q=A.x(l,new A.Z(B.q,l,l,new A.v(B.z,A.n(A.a1(q==null?l:B.k.k(q),"00"),l,l,l,l,l,l,l,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),l,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),l,l,l,l),l),l),B.h,l,l,B.r,48,l,l,200)
-o=A.x(l,new A.Z(B.q,l,l,new A.v(B.z,A.n(A.o(k.P("lat",s))+" "+A.o(k.P("lon",s)),l,l,l,l,l,l,l,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),l,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),l,l,l,l),l),l),B.h,l,l,B.r,48,l,l,200)
-s=A.a1(k.P("status",s),"Status")
+o=A.x(l,new A.Z(B.q,l,l,new A.v(B.z,A.n(A.o(k.O("lat",s))+" "+A.o(k.O("lon",s)),l,l,l,l,l,l,l,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),l,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),l,l,l,l),l),l),B.h,l,l,B.r,48,l,l,200)
+s=A.a1(k.O("status",s),"Status")
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 m=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.m)
 return A.bJ(!1,l,!0,A.P(A.M(A.d([A.a3(A.M(A.d([j,r,p,q,o,A.x(l,new A.Z(B.q,l,l,new A.v(B.z,A.n(s,l,l,l,l,l,l,l,A.j(n,A.a1(new A.b2P(k,a).$0(),A.a().gh()),m,l,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.m,0),l,l,l,l),l),l),B.h,l,l,B.r,48,l,l,200)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),l,!0,B.i,l,B.i,B.i,l,l,l,l,new A.b2Q(a,k),l,B.i,l,l)},
@@ -63348,15 +63349,15 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b2N.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.zl(r,null),null),0,B.Y)},
 $S:15}
 A.b2P.prototype={
 $0(){var s="status",r=this.a,q=t.N
-if(r.P(s,q)==="Ativo")return B.e9
-else if(r.P(s,q)==="Cancelado")return B.bK
-else if(r.P(s,q)==="Finalizado")return B.ad
+if(r.O(s,q)==="Ativo")return B.e9
+else if(r.O(s,q)==="Cancelado")return B.bK
+else if(r.O(s,q)==="Finalizado")return B.ad
 else return A.a().gh()},
 $S:550}
 A.zh.prototype={
@@ -63695,7 +63696,7 @@ o=A.F(8)
 l=A.bd(B.y,1)
 k=r==null
 if(k)j=a0
-else{j=r.P("id",t.S)
+else{j=r.O("id",t.S)
 j.toString
 j=B.o.k(j)}j=A.a1(j,a1)
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
@@ -63707,7 +63708,7 @@ o=A.aX(A.P(A.M(A.d([n,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(j,a0,a0,a0,a0,a0,
 l=A.n("Status",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 g=A.F(8)
 h=A.bd(B.y,1)
-n=A.a1(k?a0:r.P("status",t.N),a1)
+n=A.a1(k?a0:r.O("status",t.N),a1)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 i=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,i)
@@ -63717,7 +63718,7 @@ g=A.a3(A.M(A.d([o,A.aX(A.P(A.M(A.d([l,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(n
 h=A.n("T\xedtulo do aviso",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 e=A.F(8)
 i=A.bd(B.y,1)
-o=A.a1(k?a0:r.P("titulo_aviso",t.N),a1)
+o=A.a1(k?a0:r.O("titulo_aviso",t.N),a1)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 l=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,l)
@@ -63726,7 +63727,7 @@ e=A.P(A.M(A.d([h,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(o,a0,a0,a0,a0,a0,a0,a0
 i=A.n("Descri\xe7\xe3o",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 j=A.F(8)
 l=A.bd(B.y,1)
-o=A.a1(k?a0:r.P("aviso",t.N),a1)
+o=A.a1(k?a0:r.O("aviso",t.N),a1)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 h=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,h)
@@ -63736,7 +63737,7 @@ l=A.n("Dura\xe7\xe3o",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeigh
 c=A.F(8)
 h=A.bd(B.y,1)
 if(k)o=a0
-else{o=r.P("duracao",t.i)
+else{o=r.O("duracao",t.i)
 o=o==null?a0:B.k.k(o)}o=A.a1(o,"00000000")
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -63747,7 +63748,7 @@ h=A.n("Emitido em",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A
 b=A.F(8)
 i=A.bd(B.y,1)
 if(k)o=a0
-else{o=r.P("created_at",t.e)
+else{o=r.O("created_at",t.e)
 o.toString}n=A.c0(a3,B.aj,t.O)
 n.toString
 n=A.a1(A.d7("dd/MM/yyyy",o,n.a.cw("_")),"00/00/0000")
@@ -63759,8 +63760,8 @@ d=A.a3(A.M(A.d([c,A.aX(A.P(A.M(A.d([h,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(n
 b=A.n("Coordenadas",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 i=A.F(8)
 a=A.bd(B.y,1)
-o=k?a0:r.P("lat",t.N)
-n=k?a0:r.P("lon",t.N)
+o=k?a0:r.O("lat",t.N)
+n=k?a0:r.O("lon",t.N)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k)
@@ -64142,12 +64143,12 @@ A.b3k.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b3j.prototype={
-$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.a,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.P("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,12,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,407),k=o.P("created_at",t.e)
+$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.a,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.O("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,12,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,407),k=o.O("created_at",t.e)
 k.toString
 s=A.c0(a,B.aj,t.O)
 s.toString
 r=t.p
-return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",k,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.l,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b3g(a,o),q,B.i,q,q)},
+return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",k,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.l,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b3g(a,o),q,B.i,q,q)},
 $S:65}
 A.b3g.prototype={
 $0(){var s=0,r=A.u(t.H),q=this,p
@@ -64200,17 +64201,17 @@ r=A.Qc(0,2,q)
 r.am(0,new A.bby(q))
 s.r=r
 r=q.d
-if(r.x==null){s=q.a.c.P("nome",t.N)
+if(r.x==null){s=q.a.c.O("nome",t.N)
 if(s==null)s=""
 r.x=new A.dd(new A.dS(s,B.dB,B.bQ),$.ag())}s=q.d
 if(s.w==null)s.w=A.cu(!0,p,!0,!0,p,p,!1)
 if(s.y==null)s.y=new A.bbz()
-if(s.Q==null){r=q.a.c.P("email",t.N)
+if(s.Q==null){r=q.a.c.O("email",t.N)
 if(r==null)r=""
 s.Q=new A.dd(new A.dS(r,B.dB,B.bQ),$.ag())}s=q.d
 if(s.z==null)s.z=A.cu(!0,p,!0,!0,p,p,!1)
 if(s.as==null)s.as=new A.bbA()
-r=q.a.c.P("tipo_user",t.N)
+r=q.a.c.O("tipo_user",t.N)
 s.at=r==null?"Moderador":r
 s=q.d
 if(s.ax==null){r=s.at
@@ -64240,7 +64241,7 @@ a1===$&&A.c()
 a1=a1.r
 a0=A.Q8(a1,B.b6,2,!0,B.hp,B.U,a,f,B.aas,B.hp,a0)
 a=t.N
-s=A.bV(A.x(f,A.hW(A.a1(g.a.c.P("foto",a),"https://picsum.photos/seed/779/600"),B.bh,f,f),B.az,f,f,B.fm,120,f,f,120),f,f)
+s=A.bV(A.x(f,A.hW(A.a1(g.a.c.O("foto",a),"https://picsum.photos/seed/779/600"),B.bh,f,f),B.az,f,f,B.fm,120,f,f,120),f,f)
 r=A.a3(A.d([A.n("Nome",f,f,f,f,f,f,f,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),B.aO,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),f,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),f,f,f,f),B.fi,B.ij],c),B.n,B.l,B.I,0)
 q=g.d
 p=q.x
@@ -64331,7 +64332,7 @@ g.c.toString
 m=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f)
 g.c.toString
 m=A.n("E-mail enviado",h,h,h,h,h,h,h,A.j(n,B.aO,m,h,20,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),B.bf,h,h,h)
-n=g.a.c.P("email",t.N)
+n=g.a.c.O("email",t.N)
 if(n==null)n="nome@email.com"
 g.c.toString
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
@@ -64463,12 +64464,12 @@ case 1:return A.q(p.at(-1),r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.bbl.prototype={
-$1(a){var s=this.a.a.c.P("id",t.N)
+$1(a){var s=this.a.a.c.O("id",t.N)
 s.toString
 return a.cX("id",s)},
 $S:10}
 A.bbm.prototype={
-$1(a){var s=this.a.a.c.P("id",t.N)
+$1(a){var s=this.a.a.c.O("id",t.N)
 s.toString
 return a.cX("id",s)},
 $S:10}
@@ -64484,7 +64485,7 @@ $0(){var s=0,r=A.u(t.H),q,p=2,o=[],n=this,m,l,k,j,i,h,g,f,e
 var $async$$0=A.p(function(a,b){if(a===1){o.push(b)
 s=p}for(;;)switch(s){case 0:g=n.a
 f=t.N
-if(g.a.c.P("email",f)==null||g.a.c.P("email",f).length===0){n.b.a3(t.J).f.dO(B.aDP)
+if(g.a.c.O("email",f)==null||g.a.c.O("email",f).length===0){n.b.a3(t.J).f.dO(B.aDP)
 s=1
 break}j=n.b
 A.eV(!1,new A.bbr(),j,t.z)
@@ -64493,7 +64494,7 @@ i=$.cz
 if(i==null){i=$.dP().b
 i===$&&A.c()
 i=$.cz=new A.eI(i)}i=i.a.geB()
-f=g.a.c.P("email",f)
+f=g.a.c.O("email",f)
 f.toString
 s=7
 return A.D(i.aVn(B.e.dA(f)),$async$$0)
@@ -66273,24 +66274,24 @@ A.b4x.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b4w.prototype={
-$2(a,b){var s,r,q,p,o,n,m=null,l=J.ao(this.b,b),k=l.P("id",t.S)
+$2(a,b){var s,r,q,p,o,n,m=null,l=J.ao(this.b,b),k=l.O("id",t.S)
 k.toString
 s=t.xv
 k=A.x(m,A.P(A.M(A.d([new A.Z(B.q,m,m,new A.v(B.z,A.n(A.a1(B.o.k(k),"0000"),m,m,m,m,m,m,m,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),m,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),m,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),m,m,m,m),m),m)],s),B.bo),B.n,B.a1,B.I),B.h,m,m,B.r,48,m,m,100)
 r=t.N
-s=A.x(m,A.P(A.M(A.d([new A.Z(B.q,m,m,new A.v(B.z,A.n(A.a1(l.P("nome_embarcacoes",r),"Nome"),m,m,m,m,m,m,m,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),m,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),m,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),m,m,m,m),m),m)],s),B.bo),B.n,B.a1,B.I),B.h,m,m,B.r,48,m,m,300)
-r=A.x(m,new A.Z(B.q,m,m,new A.v(B.z,A.n(A.a1(l.P("tie_tiem",r),"00000"),m,m,m,m,m,m,m,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),m,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),m,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),m,m,m,m),m),m),B.h,m,m,B.r,48,m,m,200)
+s=A.x(m,A.P(A.M(A.d([new A.Z(B.q,m,m,new A.v(B.z,A.n(A.a1(l.O("nome_embarcacoes",r),"Nome"),m,m,m,m,m,m,m,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),m,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),m,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),m,m,m,m),m),m)],s),B.bo),B.n,B.a1,B.I),B.h,m,m,B.r,48,m,m,300)
+r=A.x(m,new A.Z(B.q,m,m,new A.v(B.z,A.n(A.a1(l.O("tie_tiem",r),"00000"),m,m,m,m,m,m,m,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),m,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),m,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),m,m,m,m),m),m),B.h,m,m,B.r,48,m,m,200)
 q=t.y
-p=l.P("ativo",q)
+p=l.O("ativo",q)
 p.toString
 p=p?"Embarca\xe7\xe3o ativa":"Embarca\xe7\xe3o inativa"
 o=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 n=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f)
-q=l.P("ativo",q)
+q=l.O("ativo",q)
 q.toString
 q=q?B.e9:B.bK
 n=A.x(m,new A.Z(B.q,m,m,new A.v(B.z,A.n(p,m,m,m,m,m,m,m,A.j(o,q,n,m,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),m,m,m,m),m),m),B.h,m,m,B.r,48,m,m,200)
-q=l.P("created_at",t.e)
+q=l.O("created_at",t.e)
 q.toString
 o=A.c0(a,B.aj,t.O)
 o.toString
@@ -66305,7 +66306,7 @@ var $async$$0=A.p(function(a,b){if(a===1)return A.q(b,r)
 for(;;)switch(s){case 0:o=q.a
 n=o.d
 n===$&&A.c()
-p=q.b.P("id",t.S)
+p=q.b.O("id",t.S)
 p.toString
 n.r=p
 if(o.c!=null)o.H(new A.b4h())
@@ -66382,7 +66383,7 @@ k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.n("Membro desde",b,b,b,b,b,b,b,A.j(m,b,l,b,12,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k,0),b,b,b,b)
 m=r==null
 if(m)l=b
-else{l=r.P("created_at",t.e)
+else{l=r.O("created_at",t.e)
 l.toString}j=A.c0(a5,B.aj,t.O)
 j.toString
 j=A.a1(A.d7(a0,l,j.a.cw("_")),a0)
@@ -66397,7 +66398,7 @@ o=A.x(b,b,B.h,b,b,B.r,b,b,b,b)
 q=A.F(8)
 h=A.bd(B.y,1)
 if(m)n=b
-else{n=r.P("id",t.S)
+else{n=r.O("id",t.S)
 n.toString
 n=B.o.k(n)}n=A.a1(n,a1)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
@@ -66410,7 +66411,7 @@ h=A.n("Nome",b,b,b,b,b,b,b,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,
 j=A.x(b,b,B.h,b,b,B.r,b,b,b,b)
 k=A.F(8)
 l=A.bd(B.y,1)
-p=A.a1(m?b:r.P("nome_embarcacoes",t.N),a2)
+p=A.a1(m?b:r.O("nome_embarcacoes",t.N),a2)
 o=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 n=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,n)
@@ -66420,7 +66421,7 @@ k=A.a3(A.M(A.d([q,A.aX(A.P(A.M(A.d([h,j,A.x(b,new A.Z(B.q,b,b,new A.v(B.U,A.n(p,
 l=A.n(a3,b,b,b,b,b,b,b,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),b,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),b,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),b,b,b,b)
 f=A.F(8)
 n=A.bd(B.y,1)
-q=A.a1(m?b:r.P("tie_tiem",t.N),a3)
+q=A.a1(m?b:r.O("tie_tiem",t.N),a3)
 p=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 o=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 o=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,o)
@@ -66431,7 +66432,7 @@ j=A.x(b,b,B.h,b,b,B.r,b,b,b,b)
 o=A.F(8)
 p=A.bd(B.y,1)
 if(m)q=b
-else{q=r.P("largura",t.S)
+else{q=r.O("largura",t.S)
 q=q==null?b:B.o.k(q)}q=A.a1(q,a1)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -66443,7 +66444,7 @@ d=A.x(b,b,B.h,b,b,B.r,b,b,b,b)
 h=A.F(8)
 l=A.bd(B.y,1)
 if(m)q=b
-else{q=r.P("calado",t.i)
+else{q=r.O("calado",t.i)
 q=q==null?b:B.k.k(q)}q=A.a1(q,a1)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -66455,7 +66456,7 @@ c=A.x(b,b,B.h,b,b,B.r,b,b,b,b)
 j=A.F(8)
 n=A.bd(B.y,1)
 if(m)q=b
-else{q=r.P("comprimento",t.i)
+else{q=r.O("comprimento",t.i)
 q=q==null?b:B.k.k(q)}q=A.a1(q,a2)
 p=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -66560,14 +66561,14 @@ A.b4n.prototype={
 $2(a,b){return new A.cg(new A.b4i(J.ao(this.a,b)),null)},
 $S:57}
 A.b4i.prototype={
-$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.P("id_viagem",m),k=t.xv
+$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.O("id_viagem",m),k=t.xv
 l=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(l==null?o:B.o.k(l),"0000"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,100)
-k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_barco",t.N),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
-s=n.P("km_totais",t.i)
+k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_barco",t.N),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
+s=n.O("km_totais",t.i)
 s=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(s==null?o:B.k.k(s),"00Km"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,100)
-m=n.P("duracao_minutos",m)
+m=n.O("duracao_minutos",m)
 m=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(m==null?o:B.o.k(m),"00h"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,100)
-r=n.P("data_viagem",t.e)
+r=n.O("data_viagem",t.e)
 q=A.c0(a,B.aj,t.O)
 q.toString
 p=t.p
@@ -66583,7 +66584,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b4d.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id_viagem",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id_viagem",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.mV(r,null),null),0,B.Y)},
 $S:15}
@@ -66840,18 +66841,18 @@ A.b5P.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b5O.prototype={
-$2(a,b){var s,r,q,p,o,n=null,m=J.ao(this.b,b),l=m.P("id",t.S)
+$2(a,b){var s,r,q,p,o,n=null,m=J.ao(this.b,b),l=m.O("id",t.S)
 l.toString
 s=t.xv
 l=A.x(n,A.P(A.M(A.d([new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(B.o.k(l),"0000"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n)],s),B.bo),B.n,B.a1,B.I),B.h,n,n,B.r,48,n,n,100)
 r=t.N
-s=A.x(n,A.P(A.M(A.d([new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.P("nome",r),"Nome"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n)],s),B.bo),B.n,B.a1,B.I),B.h,n,n,B.r,48,n,n,300)
-q=A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.P("cnpj",r),"12.345.678/0001-10"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)
-p=m.P("created_at",t.e)
+s=A.x(n,A.P(A.M(A.d([new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.O("nome",r),"Nome"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n)],s),B.bo),B.n,B.a1,B.I),B.h,n,n,B.r,48,n,n,300)
+q=A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.O("cnpj",r),"12.345.678/0001-10"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)
+p=m.O("created_at",t.e)
 p.toString
 o=A.c0(a,B.aj,t.O)
 o.toString
-return A.bJ(!1,n,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,s,q,A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",p,o.a.cw("_")),"00/00/0000"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200),A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.P("email",r),"N/A"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),n,!0,B.i,n,B.i,B.i,n,n,n,n,new A.b5m(this.a,m),n,B.i,n,n)},
+return A.bJ(!1,n,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,s,q,A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",p,o.a.cw("_")),"00/00/0000"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200),A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.O("email",r),"N/A"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),n,!0,B.i,n,B.i,B.i,n,n,n,n,new A.b5m(this.a,m),n,B.i,n,n)},
 $S:65}
 A.b5m.prototype={
 $0(){var s=0,r=A.u(t.H),q=this,p,o,n
@@ -66859,7 +66860,7 @@ var $async$$0=A.p(function(a,b){if(a===1)return A.q(b,r)
 for(;;)switch(s){case 0:o=q.a
 n=o.d
 n===$&&A.c()
-p=q.b.P("id",t.S)
+p=q.b.O("id",t.S)
 p.toString
 n.r=p
 if(o.c!=null)o.H(new A.b52())
@@ -66925,7 +66926,7 @@ g=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 g=A.n("Membro desde",a5,a5,a5,a5,a5,a5,a5,A.j(i,a5,h,a5,12,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,g,0),a5,a5,a5,a5)
 i=r==null
 if(i)h=a5
-else{h=r.P("created_at",t.e)
+else{h=r.O("created_at",t.e)
 h.toString}f=A.c0(b5,B.aj,t.O)
 f.toString
 f=A.a1(A.d7(a8,h,f.a.cw("_")),a8)
@@ -66939,7 +66940,7 @@ k=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 m=A.F(8)
 d=A.bd(B.y,1)
 if(i)j=a5
-else{j=r.P("id",t.S)
+else{j=r.O("id",t.S)
 j.toString
 j=B.o.k(j)}j=A.a1(j,"0000")
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
@@ -66951,7 +66952,7 @@ d=A.n(a9,a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),
 f=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 g=A.F(8)
 h=A.bd(B.y,1)
-l=A.a1(i?a5:r.P("nome",t.N),"Marine Transportes")
+l=A.a1(i?a5:r.O("nome",t.N),"Marine Transportes")
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 j=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,j)
@@ -66961,7 +66962,7 @@ g=A.a3(A.M(A.d([m,A.aX(A.P(A.M(A.d([d,f,A.x(a5,new A.Z(B.q,a5,a5,new A.v(B.U,A.n
 h=A.n(a9,a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a5,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a5,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a5,a5,a5,a5)
 e=A.F(8)
 j=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("nome",t.N),a9)
+m=A.a1(i?a5:r.O("nome",t.N),a9)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k)
@@ -66970,7 +66971,7 @@ e=A.P(A.M(A.d([h,A.x(a5,new A.Z(B.q,a5,a5,new A.v(B.U,A.n(m,a5,a5,a5,a5,a5,a5,a5
 j=A.n("CNPJ",a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a5,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a5,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a5,a5,a5,a5)
 f=A.F(8)
 k=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("cnpj",t.N),"12.345.678/0001-10")
+m=A.a1(i?a5:r.O("cnpj",t.N),"12.345.678/0001-10")
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 h=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,h)
@@ -66980,7 +66981,7 @@ k=A.n("E-mail",a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a()
 d=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 h=A.F(8)
 l=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("email",t.N),b0)
+m=A.a1(i?a5:r.O("email",t.N),b0)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 b=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 b=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,b)
@@ -66990,7 +66991,7 @@ l=A.n(b1,a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),
 a=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 b=A.F(8)
 j=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("telefone",t.N),"(00) 0 0000-0000")
+m=A.a1(i?a5:r.O("telefone",t.N),"(00) 0 0000-0000")
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 d=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 d=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,d)
@@ -67001,7 +67002,7 @@ a0=A.n("CEP",a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a().g
 d=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 k=A.F(8)
 m=A.bd(B.y,1)
-l=A.a1(i?a5:r.P("cep",t.N),"00000-000")
+l=A.a1(i?a5:r.O("cep",t.N),"00000-000")
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 a=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a)
@@ -67011,7 +67012,7 @@ m=A.n(b2,a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),
 a1=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 a=A.F(8)
 h=A.bd(B.y,1)
-l=A.a1(i?a5:r.P("endereco",t.N),b0)
+l=A.a1(i?a5:r.O("endereco",t.N),b0)
 d=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 a0=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a0=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a0)
@@ -67021,7 +67022,7 @@ h=A.n("N\xfamero",a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.
 a2=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 a0=A.F(8)
 d=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("numero",t.N),"0000")
+m=A.a1(i?a5:r.O("numero",t.N),"0000")
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k)
@@ -67031,7 +67032,7 @@ d=A.n("Bairro",a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a()
 a1=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 k=A.F(8)
 l=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("bairro",t.N),b0)
+m=A.a1(i?a5:r.O("bairro",t.N),b0)
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 a2=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a2=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a2)
@@ -67041,7 +67042,7 @@ l=A.n("Cidade",a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a()
 a3=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 a2=A.F(8)
 h=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("cidade",t.N),b0)
+m=A.a1(i?a5:r.O("cidade",t.N),b0)
 d=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 a0=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a0=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a0)
@@ -67051,7 +67052,7 @@ h=A.n("Estado",a5,a5,a5,a5,a5,a5,a5,A.j(A.b().$3$color$fontSize$fontWeight(A.a()
 a1=A.x(a5,a5,B.h,a5,a5,B.r,a5,a5,a5,a5)
 a0=A.F(8)
 d=A.bd(B.y,1)
-m=A.a1(i?a5:r.P("estado",t.N),b0)
+m=A.a1(i?a5:r.O("estado",t.N),b0)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 a3=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a3=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a3)
@@ -67063,8 +67064,8 @@ d=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 d=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,d)
 a4=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a4=A.d([g,e,f,b,new A.v(B.aA,j,a5),a,k,c,s,A.n(u.C,a5,a5,a5,a5,a5,a5,a5,A.j(a0,a5,d,a5,a5,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a4,0),a5,a5,a5,a5)],p)
-if((i?a5:r.P("ativo",t.y))===!1)a4.push(new A.cg(new A.b5B(b4,r),a5))
-if((i?a5:r.P("ativo",t.y))===!0)a4.push(new A.cg(new A.b5C(b4,r),a5))
+if((i?a5:r.O("ativo",t.y))===!1)a4.push(new A.cg(new A.b5B(b4,r),a5))
+if((i?a5:r.O("ativo",t.y))===!0)a4.push(new A.cg(new A.b5C(b4,r),a5))
 q.push(new A.v(B.ca,A.x(a5,A.x(a5,A.a3(A.M(A.d([n,A.aX(A.P(A.M(a4,B.R),B.w,B.l,B.j),1)],p),B.aw),B.w,B.l,B.j,0),B.h,a5,a5,B.r,a5,a5,a5,a5),B.h,a5,a5,new A.a6(a5,a5,a5,o,a5,a5,a5,B.t),a5,a5,a5,a5),a5))}s=b4.d
 if(s.w===a6){o=A.F(8)
 n=s.ay
@@ -67213,7 +67214,7 @@ if(o.c!=null)o.H(new A.b51())}return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.b50.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.vk(r,null),null),0,B.Y)},
 $S:15}
@@ -67241,7 +67242,7 @@ if(o.c!=null)o.H(new A.b5a())}return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.b59.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.vl(r,null),null),0,B.Y)},
 $S:15}
@@ -67280,14 +67281,14 @@ A.b5v.prototype={
 $2(a,b){return new A.cg(new A.b57(J.ao(this.a,b)),null)},
 $S:57}
 A.b57.prototype={
-$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.P("id_viagem",m),k=t.xv
+$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.O("id_viagem",m),k=t.xv
 l=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(l==null?o:B.o.k(l),"0000"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,100)
-k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_barco",t.N),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
-s=n.P("km_totais",t.i)
+k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_barco",t.N),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
+s=n.O("km_totais",t.i)
 s=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(s==null?o:B.k.k(s),"00Km"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,100)
-m=n.P("duracao_minutos",m)
+m=n.O("duracao_minutos",m)
 m=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(m==null?o:B.o.k(m),"00h"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,100)
-r=n.P("data_viagem",t.e)
+r=n.O("data_viagem",t.e)
 q=A.c0(a,B.aj,t.O)
 q.toString
 p=t.p
@@ -67303,7 +67304,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b4V.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id_viagem",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id_viagem",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.mV(r,null),null),0,B.Y)},
 $S:15}
@@ -67322,39 +67323,39 @@ A.b5u.prototype={
 $2(a,b){return new A.cg(new A.b56(J.ao(this.a,b)),null)},
 $S:57}
 A.b56.prototype={
-$1(a){var s,r,q,p,o,n,m,l,k,j=null,i="ativo",h=this.a,g=A.F(12),f=A.F(12),e=A.F(12),d=A.bd(B.y,1),c=t.y,b=h.P(i,c)
+$1(a){var s,r,q,p,o,n,m,l,k,j=null,i="ativo",h=this.a,g=A.F(12),f=A.F(12),e=A.F(12),d=A.bd(B.y,1),c=t.y,b=h.O(i,c)
 b.toString
 s=A.x(j,j,B.h,j,j,new A.a6(A.a1(b?B.e9:B.bK,B.bK),j,j,j,j,j,j,B.t),j,j,j,12)
 r=t.N
-q=A.n(A.a1(h.P("nome_embarcacoes",r),"Barco Acquaway"),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)
-p=h.P("id",t.S)
+q=A.n(A.a1(h.O("nome_embarcacoes",r),"Barco Acquaway"),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)
+p=h.O("id",t.S)
 p.toString
 o=t.p
 p=A.a3(A.d([q,A.n("#"+B.o.k(p),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)],o),B.n,B.V,B.j,0)
-r=A.o(A.a1(h.P("tie_tiem",r),"403M000000012944"))
+r=A.o(A.a1(h.O("tie_tiem",r),"403M000000012944"))
 q=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 n=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,n)
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 m=A.n("TIE: "+r,j,j,j,j,j,j,j,A.j(q,j,n,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,m,0),j,j,j,j)
 n=t.i
-q=h.P("comprimento",n)
+q=h.O("comprimento",n)
 b=q==null?j:B.k.k(q)
-r=h.P("boca",n)
+r=h.O("boca",n)
 r=r==null?j:B.k.k(r)
-n=h.P("calado",n)
+n=h.O("calado",n)
 q=n==null?j:B.k.k(n)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 l=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,l)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.P(A.d([m,A.n("Dimens\xf5es: "+A.o(b)+"x"+A.o(r)+"x"+A.o(q),j,j,j,j,j,j,j,A.j(n,j,l,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k,0),j,j,j,j)],o),B.w,B.l,B.j)
-b=h.P(i,c)
+b=h.O(i,c)
 b.toString
 b=b?"Ativo":"Inativa"
 r=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 q=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f)
-c=h.P(i,c)
+c=h.O(i,c)
 c.toString
 return A.bJ(!1,j,!0,A.fx(!1,B.ac,!0,j,A.fh(f,A.x(j,A.a3(A.d([s,A.aX(A.a3(A.d([A.aX(new A.v(B.ap,A.P(A.d([p,k,A.n("Embarca\xe7\xe3o "+b,j,j,j,j,j,j,j,A.j(r,A.a1(c?B.e9:B.bK,B.bK),q,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)],o),B.w,B.V,B.j),j),1)],o),B.n,B.l,B.j,0),1)],o),B.iW,B.l,B.j,0),B.h,j,j,new A.a6(B.aQ,j,d,e,j,j,j,B.t),j,j,j,j),B.az),B.h,B.i,1,j,j,new A.dm(g,B.M),j,j,B.bM),j,!0,B.i,j,B.i,B.i,j,j,j,j,new A.b4W(a,h),j,B.i,j,j)},
 $S:42}
@@ -67368,7 +67369,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b4U.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.vm(r,null),null),0,B.Y)},
 $S:15}
@@ -67408,13 +67409,13 @@ A.b5s.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b5r.prototype={
-$2(a,b){var s,r,q,p,o=null,n=J.ao(this.a,b),m=t.N,l=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome",m),"Nome"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],t.xv),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,250),k=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("telefone",m),"N/A"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200),j=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("email",m),"N/A"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,250)
-m=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("tipo_user",m),"N/A"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
+$2(a,b){var s,r,q,p,o=null,n=J.ao(this.a,b),m=t.N,l=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome",m),"Nome"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],t.xv),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,250),k=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("telefone",m),"N/A"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200),j=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("email",m),"N/A"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,250)
+m=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("tipo_user",m),"N/A"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
 s=t.y
-r=A.a1(n.P("ativo",s)===!0?"Ativo":"Inativo","-")
+r=A.a1(n.O("ativo",s)===!0?"Ativo":"Inativo","-")
 q=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 p=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f)
-return A.bJ(!1,o,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,k,j,m,A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(r,o,o,o,o,o,o,o,A.j(q,A.a1(n.P("ativo",s)===!0?B.e9:B.bK,B.bK),p,o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,150)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),o,!0,B.i,o,B.i,B.i,o,o,o,o,o,o,B.i,o,o)},
+return A.bJ(!1,o,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,k,j,m,A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(r,o,o,o,o,o,o,o,A.j(q,A.a1(n.O("ativo",s)===!0?B.e9:B.bK,B.bK),p,o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,150)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),o,!0,B.i,o,B.i,B.i,o,o,o,o,o,o,B.i,o,o)},
 $S:65}
 A.b6c.prototype={
 $0(){var s=0,r=A.u(t.H),q=this,p,o
@@ -67459,18 +67460,18 @@ A.b5T.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b5K.prototype={
-$2(a,b){var s,r,q,p,o,n=null,m=J.ao(this.b,b),l=m.P("id",t.S)
+$2(a,b){var s,r,q,p,o,n=null,m=J.ao(this.b,b),l=m.O("id",t.S)
 l.toString
 s=t.xv
 l=A.x(n,A.P(A.M(A.d([new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(B.o.k(l),"0000"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n)],s),B.bo),B.n,B.a1,B.I),B.h,n,n,B.r,48,n,n,100)
 r=t.N
-s=A.x(n,A.P(A.M(A.d([new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.P("nome",r),"Nome"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n)],s),B.bo),B.n,B.a1,B.I),B.h,n,n,B.r,48,n,n,300)
-q=A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.P("cnpj",r),"12.345.678/0001-10"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)
-p=m.P("created_at",t.e)
+s=A.x(n,A.P(A.M(A.d([new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.O("nome",r),"Nome"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n)],s),B.bo),B.n,B.a1,B.I),B.h,n,n,B.r,48,n,n,300)
+q=A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.O("cnpj",r),"12.345.678/0001-10"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)
+p=m.O("created_at",t.e)
 p.toString
 o=A.c0(a,B.aj,t.O)
 o.toString
-return A.bJ(!1,n,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,s,q,A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",p,o.a.cw("_")),"00/00/0000"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200),A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.P("email",r),"N/A"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),n,!0,B.i,n,B.i,B.i,n,n,n,n,new A.b5o(this.a,m),n,B.i,n,n)},
+return A.bJ(!1,n,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,s,q,A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",p,o.a.cw("_")),"00/00/0000"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200),A.x(n,new A.Z(B.q,n,n,new A.v(B.z,A.n(A.a1(m.O("email",r),"N/A"),n,n,n,n,n,n,n,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),n,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),n,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),n,n,n,n),n),n),B.h,n,n,B.r,48,n,n,200)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),n,!0,B.i,n,B.i,B.i,n,n,n,n,new A.b5o(this.a,m),n,B.i,n,n)},
 $S:65}
 A.b5o.prototype={
 $0(){var s=0,r=A.u(t.H),q=this,p,o,n
@@ -67478,7 +67479,7 @@ var $async$$0=A.p(function(a,b){if(a===1)return A.q(b,r)
 for(;;)switch(s){case 0:o=q.a
 n=o.d
 n===$&&A.c()
-p=q.b.P("id",t.S)
+p=q.b.O("id",t.S)
 p.toString
 n.y=p
 if(o.c!=null)o.H(new A.b54())
@@ -67518,7 +67519,7 @@ f=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 f=A.n("Membro desde",a,a,a,a,a,a,a,A.j(h,a,g,a,12,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,f,0),a,a,a,a)
 h=r==null
 if(h)g=a
-else{g=r.P("created_at",t.e)
+else{g=r.O("created_at",t.e)
 g.toString}e=A.c0(a3,B.aj,t.O)
 e.toString
 e=A.a1(A.d7(a1,g,e.a.cw("_")),a1)
@@ -67530,7 +67531,7 @@ m=A.fx(!1,B.ac,!0,a,A.x(a,new A.v(B.ap,A.P(A.d([i,new A.v(B.aA,f,a),A.n(e,a,a,a,
 k=A.n("Telefone do respons\xe1vel",a,a,a,a,a,a,a,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a,a,a,a)
 j=A.F(8)
 l=A.bd(B.y,1)
-i=A.a1(h?a:r.P("telefone",t.N),"(00) 0 0000-0000")
+i=A.a1(h?a:r.O("telefone",t.N),"(00) 0 0000-0000")
 g=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 f=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 f=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,f)
@@ -67539,7 +67540,7 @@ j=A.P(A.M(A.d([k,A.x(a,new A.Z(B.q,a,a,new A.v(B.U,A.n(i,a,a,a,a,a,a,a,A.j(g,a,f
 l=A.n("CNPJ da empresa",a,a,a,a,a,a,a,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a,a,a,a)
 e=A.F(8)
 f=A.bd(B.y,1)
-k=A.a1(h?a:r.P("cnpj",t.N),"12.345.678/0001-10")
+k=A.a1(h?a:r.O("cnpj",t.N),"12.345.678/0001-10")
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 g=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 g=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,g)
@@ -67548,7 +67549,7 @@ e=A.P(A.M(A.d([l,A.x(a,new A.Z(B.q,a,a,new A.v(B.U,A.n(k,a,a,a,a,a,a,a,A.j(i,a,g
 f=A.n("Qual a sua \xe1rea de opera\xe7\xe3o?",a,a,a,a,a,a,a,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a,a,a,a)
 d=A.F(8)
 g=A.bd(B.y,1)
-l=A.a1(h?a:r.P("area_atuacao",t.N),"N/A")
+l=A.a1(h?a:r.O("area_atuacao",t.N),"N/A")
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 i=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,i)
@@ -67557,7 +67558,7 @@ d=A.P(A.M(A.d([f,A.x(a,new A.Z(B.aD,a,a,new A.v(B.dr,A.n(l,a,a,a,a,a,a,a,A.j(k,a
 g=A.n("Qual a atividade da sua empresa?",a,a,a,a,a,a,a,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a,a,a,a)
 c=A.F(8)
 i=A.bd(B.y,1)
-l=A.a1(h?a:r.P("atividade_empresa",t.N),"N/A")
+l=A.a1(h?a:r.O("atividade_empresa",t.N),"N/A")
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 f=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 f=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,f)
@@ -67569,8 +67570,8 @@ b=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 b=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,b)
 f=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 f=A.d([j,e,d,s,c,A.n(u.C,a,a,a,a,a,a,a,A.j(i,a,b,a,a,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,f,0),a,a,a,a)],p)
-if((h?a:r.P("ativo",t.y))===!1)f.push(new A.cg(new A.b5y(a2,r),a))
-if((h?a:r.P("ativo",t.y))===!0)f.push(new A.cg(new A.b5z(a2,r),a))
+if((h?a:r.O("ativo",t.y))===!1)f.push(new A.cg(new A.b5y(a2,r),a))
+if((h?a:r.O("ativo",t.y))===!0)f.push(new A.cg(new A.b5z(a2,r),a))
 return A.x(a,new A.v(B.ap,A.i_(A.P(A.M(A.d([q,new A.v(B.j0,o,a),new A.v(B.ca,A.x(a,A.x(a,A.a3(A.M(A.d([m,A.aX(A.P(A.M(f,B.R),B.w,B.l,B.j),1)],p),B.aw),B.w,B.l,B.j,0),B.h,a,a,B.r,a,a,a,a),B.h,a,a,new A.a6(a,a,a,n,a,a,a,B.t),a,a,a,a),a)],p),B.R),B.w,B.l,B.j),a,B.a4,a,a,a,B.a2),a),B.h,a,a,B.cA,1/0,a,a,1/0)},
 $S:92}
 A.b5x.prototype={
@@ -67608,7 +67609,7 @@ if(o.c!=null)o.H(new A.b53())}return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.b5_.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.vk(r,null),null),0,B.Y)},
 $S:15}
@@ -67636,7 +67637,7 @@ if(o.c!=null)o.H(new A.b4Z())}return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.b4Y.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.vl(r,null),null),0,B.Y)},
 $S:15}
@@ -67912,12 +67913,12 @@ A.b6n.prototype={
 $2(a,b){return new A.cg(new A.b6l(J.ao(this.a,b)),null)},
 $S:57}
 A.b6l.prototype={
-$1(a){var s,r,q,p=null,o="descricao",n=this.a,m=n.P("id",t.S)
+$1(a){var s,r,q,p=null,o="descricao",n=this.a,m=n.O("id",t.S)
 m.toString
 s=t.xv
 m=A.x(p,A.P(A.M(A.d([new A.Z(B.q,p,p,new A.v(B.z,A.n(A.a1(B.o.k(m),"0000"),p,p,p,p,p,p,p,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),p,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),p,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),p,p,p,p),p),p)],s),B.bo),B.n,B.a1,B.I),B.h,p,p,B.r,48,p,p,300)
-s=A.x(p,A.P(A.M(A.d([new A.Z(B.q,p,p,new A.v(B.z,A.n(A.a1(n.P(o,t.N),o),p,p,p,p,p,p,p,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),p,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),p,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),p,p,p,p),p),p)],s),B.bo),B.n,B.a1,B.I),B.h,p,B.uY,B.r,48,p,p,1/0)
-r=n.P("created_at",t.e)
+s=A.x(p,A.P(A.M(A.d([new A.Z(B.q,p,p,new A.v(B.z,A.n(A.a1(n.O(o,t.N),o),p,p,p,p,p,p,p,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),p,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),p,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),p,p,p,p),p),p)],s),B.bo),B.n,B.a1,B.I),B.h,p,B.uY,B.r,48,p,p,1/0)
+r=n.O("created_at",t.e)
 r.toString
 q=A.c0(a,B.aj,t.O)
 q.toString
@@ -67933,7 +67934,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b6j.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.zo(r,null),null),0,B.Y)},
 $S:15}
@@ -67994,12 +67995,12 @@ n=A.a()
 k=n.x2
 p=A.bd(k===$?n.x2=B.y:k,1)
 n=r==null
-j=A.a1(n?c:r.P("titulo",t.N),"NA")
+j=A.a1(n?c:r.O("titulo",t.N),"NA")
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),16,B.b)
 h=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),16,B.b).x,B.m)
 h=A.n(j,c,c,c,c,c,c,c,A.j(i,A.a().gh(),h,c,c,A.b().$3$color$fontSize$fontWeight(A.a().gh(),16,B.b).x,B.m,0),c,c,c,c)
 if(n)j=c
-else{j=r.P("created_at",t.e)
+else{j=r.O("created_at",t.e)
 j.toString}i=A.c0(a,B.aj,t.O)
 i.toString
 i=A.a1(A.d7("dd MMMM yyyy',' H:mm",j,i.a.cw("_")),"10 Janeiro 2024, 08:50")
@@ -68009,7 +68010,7 @@ g=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),12
 f=A.a().gE()
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),12,B.b).w
 e=A.P(A.M(A.d([h,A.n(i,c,c,c,c,c,c,c,A.j(j,f,g,c,c,A.b().$3$color$fontSize$fontWeight(A.a().gh(),12,B.b).x,e,0),c,c,c,c)],t.LT),B.E),B.w,B.l,B.j)
-j=A.a1(n?c:r.P("descricao",t.N),"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at libero blandit, dictum quam ut, sagittis nunc. Etiam augue nisl, volutpat ut purus sit amet, rhoncus suscipit ex. Integer vel erat felis.")
+j=A.a1(n?c:r.O("descricao",t.N),"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at libero blandit, dictum quam ut, sagittis nunc. Etiam augue nisl, volutpat ut purus sit amet, rhoncus suscipit ex. Integer vel erat felis.")
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 h=A.E().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,h)
@@ -68178,7 +68179,7 @@ s=A.an(s,s.$ti.i("B.E"))
 return s},
 $S:680}
 A.b6I.prototype={
-$1(a){var s=a.P("tipo",t.N),r=s==null?null:s.toLowerCase()
+$1(a){var s=a.O("tipo",t.N),r=s==null?null:s.toLowerCase()
 if(r==null)r=""
 return B.e.n(r,this.a)},
 $S:212}
@@ -68208,7 +68209,7 @@ n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 return A.bV(new A.v(B.Z2,A.P(A.d([s,B.bw,r,B.E,A.n("Tente ajustar os termos de busca",k,k,k,k,k,k,k,A.j(q,o,p,k,k,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,n,0),k,k,k,k)],t.p),B.n,B.l,B.I),k),k,k)}return A.a3u(new A.b6H(this.a,l))},
 $S:700}
 A.b6G.prototype={
-$1(a){return a.P("resolvida",t.y)!==!0},
+$1(a){return a.O("resolvida",t.y)!==!0},
 $S:212}
 A.b6H.prototype={
 $2(a,b){var s,r,q=b.b
@@ -68220,31 +68221,31 @@ q=this.b
 return A.azX(new A.PI(s,12,12,r),new A.b6E(this.a,q),q.length,B.Y,null,B.a2,!0)},
 $S:704}
 A.b6E.prototype={
-$2(a,a0){var s,r,q,p,o,n,m,l,k,j=null,i="viagem_id",h="Nome piloto",g=this.b[a0],f=A.F(12),e=A.F(12),d=A.F(12),c=A.bd(B.y,1),b=g.P("resolvida",t.y)
+$2(a,a0){var s,r,q,p,o,n,m,l,k,j=null,i="viagem_id",h="Nome piloto",g=this.b[a0],f=A.F(12),e=A.F(12),d=A.F(12),c=A.bd(B.y,1),b=g.O("resolvida",t.y)
 b.toString
 s=A.x(j,j,B.h,j,j,new A.a6(A.a1(b?B.e9:B.bK,B.bK),j,j,j,j,j,j,B.t),1/0,j,j,12)
 r=t.N
-q=A.n(A.a1(g.P("tipo",r),"Tipo"),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)
-p=g.P("lat",r)
+q=A.n(A.a1(g.O("tipo",r),"Tipo"),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)
+p=g.O("lat",r)
 p.toString
-o=g.P("long",r)
+o=g.O("long",r)
 o.toString
 n=t.p
 o=A.a3(A.d([q,A.n(A.a1(A.bXc(p,o),"0\xb0 0' 0.00\" S 0\xb0 0' 0.00\" W"),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)],n),B.n,B.V,B.j,0)
 b=t.S
-q=A.a1(g.P(i,b)!=null?"Viagem: "+A.o(g.P(i,b)):"Sem viagem",h)
+q=A.a1(g.O(i,b)!=null?"Viagem: "+A.o(g.O(i,b)):"Sem viagem",h)
 p=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 m=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,m)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 l=A.n(q,j,j,j,j,j,j,j,A.j(p,j,m,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,l,0),j,j,j,j)
-r=A.a1("Piloto: "+A.o(g.P("nome_piloto",r)),h)
+r=A.a1("Piloto: "+A.o(g.O("nome_piloto",r)),h)
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 p=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 p=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,p)
 q=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 q=A.n(r,j,j,j,j,j,j,j,A.j(m,j,p,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,q,0),j,j,j,j)
-p=g.P("created_at",t.e)
+p=g.O("created_at",t.e)
 m=A.c0(a,B.aj,t.O)
 m.toString
 m=A.a1(A.d7("dd MMM'.' yyyy h:mm",p,m.a.cw("_")),"00/00/0000")
@@ -68253,7 +68254,7 @@ r=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 r=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,r)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.d([o,A.P(A.d([l,q,A.n(m,j,j,j,j,j,j,j,A.j(p,j,r,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k,0),j,j,j,j)],n),B.w,B.l,B.j)],n)
-if(g.P(i,b)!=null)k.push(new A.cg(new A.b6D(this.a,g),j))
+if(g.O(i,b)!=null)k.push(new A.cg(new A.b6D(this.a,g),j))
 return A.fx(!1,B.ac,!0,j,A.fh(e,A.x(j,A.a3(A.d([s,A.aX(A.a3(A.d([A.aX(new A.v(B.pK,A.P(k,B.w,B.V,B.j),j),1)],n),B.n,B.l,B.j,0),1)],n),B.n,B.l,B.j,0),B.h,j,j,new A.a6(B.aQ,j,c,d,j,j,j,B.t),100,j,j,100),B.az),B.h,B.i,1,j,j,new A.dm(f,B.M),j,j,B.bM)},
 $S:705}
 A.b6D.prototype={
@@ -68273,11 +68274,11 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.b6B.prototype={
-$1(a){var s=this.b,r=B.a9.a8(s.a3(t.I).w),q=this.c,p=t.S,o=q.P("viagem_id",p)
+$1(a){var s=this.b,r=B.a9.a8(s.a3(t.I).w),q=this.c,p=t.S,o=q.O("viagem_id",p)
 o.toString
-p=q.P("sos_id",p)
+p=q.O("sos_id",p)
 p.toString
-q=q.P("tipo",t.N)
+q=q.O("tipo",t.N)
 q.toString
 return A.eY(r,B.i,new A.dM(new A.zr(o,p,q,new A.b6A(this.a,s),null),null),0,B.Y)},
 $S:15}
@@ -68380,7 +68381,7 @@ h=A.F(8)
 g=A.bd(B.y,1)
 f=r==null
 if(f)e=a3
-else{e=r.P("km_totais",t.i)
+else{e=r.O("km_totais",t.i)
 e=e==null?a3:B.k.k(e)}e=A.a1(e,"000")
 d=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 c=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -68393,7 +68394,7 @@ b=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 c=A.F(8)
 d=A.bd(B.y,1)
 if(f)n=a3
-else{n=r.P("duracao_minutos",t.S)
+else{n=r.O("duracao_minutos",t.S)
 n=n==null?a3:B.o.k(n)}n=A.a1(n,"000")
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -68415,7 +68416,7 @@ m=A.n("Nome da embarca\xe7\xe3o",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSiz
 a1=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 g=A.F(8)
 b=A.bd(B.y,1)
-n=A.a1(f?a3:r.P("nome_barco",t.N),"Nome Barco")
+n=A.a1(f?a3:r.O("nome_barco",t.N),"Nome Barco")
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 d=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 d=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,d)
@@ -68425,7 +68426,7 @@ b=A.n("Nome do piloto",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSize$fontWeig
 c=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 d=A.F(8)
 h=A.bd(B.y,1)
-n=A.a1(f?a3:r.P("nome_piloto",t.N),"Nome Piloto")
+n=A.a1(f?a3:r.O("nome_piloto",t.N),"Nome Piloto")
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 a0=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 a0=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,a0)
@@ -68435,7 +68436,7 @@ h=A.n("Origem",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSize$fontWeight(A.a()
 a1=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 a0=A.F(8)
 m=A.bd(B.y,1)
-o=A.a1(f?a3:r.P("origem_local",t.N),"N\xe3o h\xe1 Origem")
+o=A.a1(f?a3:r.O("origem_local",t.N),"N\xe3o h\xe1 Origem")
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k)
@@ -68446,7 +68447,7 @@ g=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 k=A.F(8)
 n=A.bd(B.y,1)
 if(f)o=a3
-else{o=r.P("hora_inicio",t.Lu)
+else{o=r.O("hora_inicio",t.Lu)
 o=o==null?a3:o.a}h=t.O
 e=A.c0(a5,B.aj,h)
 e.toString
@@ -68460,7 +68461,7 @@ n=A.n("Destino",a3,a3,a3,a3,a3,a3,a3,A.j(A.b().$3$color$fontSize$fontWeight(A.a(
 b=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 c=A.F(8)
 o=A.bd(B.y,1)
-m=A.a1(f?a3:r.P("destino_local",t.N),"N\xe3o h\xe1 Destino")
+m=A.a1(f?a3:r.O("destino_local",t.N),"N\xe3o h\xe1 Destino")
 g=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 e=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,e)
@@ -68471,7 +68472,7 @@ a0=A.x(a3,a3,B.h,a3,a3,B.r,a3,a3,a3,a3)
 e=A.F(8)
 g=A.bd(B.y,1)
 if(f)n=a3
-else{n=r.P("hora_fim",t.Lu)
+else{n=r.O("hora_fim",t.Lu)
 n=n==null?a3:n.a}h=A.c0(a5,B.aj,h)
 h.toString
 h=A.a1(A.d7("Hm",n,h.a.cw("_")),"N\xe3o finalizada")
@@ -68523,9 +68524,9 @@ for(;;)switch(s){case 0:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:2}
 A.baP.prototype={
-$0(){var s,r=this.a,q=r==null,p=q?null:r.P("km_totais",t.i)
+$0(){var s,r=this.a,q=r==null,p=q?null:r.O("km_totais",t.i)
 if(p==null)p=0
-s=q?null:r.P("duracao_minutos",t.S)
+s=q?null:r.O("duracao_minutos",t.S)
 if(s==null)s=0
 if(s>0&&p>0)return B.k.aM(p*60/s,2)+" km/h"
 return"0.00 km/h"},
@@ -68579,18 +68580,18 @@ A.baH.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.baG.prototype={
-$2(a,b){var s,r,q=null,p=J.ao(this.a,b),o=A.x(q,q,B.h,q,q,new A.a6(A.a().gbn(0),q,q,q,q,q,q,B.cB),10,q,q,10),n=t.N,m=A.a1(p.P("tipo_alerta",n),"N/A"),l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
+$2(a,b){var s,r,q=null,p=J.ao(this.a,b),o=A.x(q,q,B.h,q,q,new A.a6(A.a().gbn(0),q,q,q,q,q,q,B.cB),10,q,q,10),n=t.N,m=A.a1(p.O("tipo_alerta",n),"N/A"),l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k)
 s=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 s=A.n(m,q,q,q,q,q,q,q,A.j(l,q,k,q,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,s,0),q,q,q,q)
-k=p.P("lat",n)
-n=p.P("long",n)
+k=p.O("lat",n)
+n=p.O("long",n)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 m=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,m)
 r=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 r=A.n("Localiza\xe7\xe3o: "+A.o(k)+" "+A.o(n),q,q,q,q,q,q,q,A.j(l,B.hr,m,q,q,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,r,0),q,q,q,q)
-m=p.P("hora",t.Lu)
+m=p.O("hora",t.Lu)
 n=m==null?q:m.a
 m=A.c0(a,B.aj,t.O)
 m.toString
@@ -69108,12 +69109,12 @@ A.b7O.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b7N.prototype={
-$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.b,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.P("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,350),k=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,220),j=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("telefone",n),"(00) 0 0000-0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,150),i=o.P("created_at",t.e)
+$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.b,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.O("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,350),k=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,220),j=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("telefone",n),"(00) 0 0000-0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,150),i=o.O("created_at",t.e)
 i.toString
 s=A.c0(a,B.aj,t.O)
 s.toString
 r=t.p
-return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,k,j,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",i,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,115),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.V,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b7q(this.a,o),q,B.i,q,q)},
+return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,k,j,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",i,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,115),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.V,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b7q(this.a,o),q,B.i,q,q)},
 $S:65}
 A.b7q.prototype={
 $0(){var s=0,r=A.u(t.H),q=this,p,o,n,m
@@ -69126,10 +69127,10 @@ new A.b72().$0()
 m.f.$0()
 m=n.d
 p=q.b
-o=p.P("id",t.N)
+o=p.O("id",t.N)
 o.toString
 m.r=o
-n.d.x=p.P("companies_id",t.S)
+n.d.x=p.O("companies_id",t.S)
 p=n.d
 new A.b73().$0()
 p.f.$0()
@@ -69208,12 +69209,12 @@ A.b7K.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b7J.prototype={
-$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.b,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.P("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,407),k=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,220),j=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("telefone",n),"(00) 0 0000-0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,150),i=o.P("created_at",t.e)
+$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.b,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.O("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,407),k=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,220),j=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("telefone",n),"(00) 0 0000-0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,150),i=o.O("created_at",t.e)
 i.toString
 s=A.c0(a,B.aj,t.O)
 s.toString
 r=t.p
-return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,k,j,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",i,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,115),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.V,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b7o(this.a,o),q,B.i,q,q)},
+return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,k,j,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",i,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,115),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.V,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b7o(this.a,o),q,B.i,q,q)},
 $S:65}
 A.b7o.prototype={
 $0(){var s=0,r=A.u(t.H),q=this,p,o,n,m
@@ -69226,10 +69227,10 @@ new A.b7d().$0()
 m.f.$0()
 m=n.d
 p=q.b
-o=p.P("id",t.N)
+o=p.O("id",t.N)
 o.toString
 m.r=o
-n.d.x=p.P("companies_id",t.S)
+n.d.x=p.O("companies_id",t.S)
 p=n.d
 new A.b7e().$0()
 p.f.$0()
@@ -69308,12 +69309,12 @@ A.b7G.prototype={
 $2(a,b){return B.ar},
 $S:25}
 A.b7F.prototype={
-$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.b,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.P("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,407),k=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,220),j=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("telefone",n),"(00) 0 0000-0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,150),i=o.P("created_at",t.e)
+$2(a,b){var s,r,q=null,p="https://picsum.photos/seed/779/600",o=J.ao(this.b,b),n=t.N,m=A.x(q,A.hW(A.a1(A.a1(o.O("foto",n),p),p),B.bh,q,q),B.az,q,q,B.fm,50,q,q,50),l=A.x(q,A.P(A.M(A.d([new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("nome",n),"Nome"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q)],t.xv),B.bo),B.n,B.a1,B.I),B.h,q,q,B.r,48,q,q,407),k=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("email",n),"email@email.com"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,220),j=A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("telefone",n),"(00) 0 0000-0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,150),i=o.O("created_at",t.e)
 i.toString
 s=A.c0(a,B.aj,t.O)
 s.toString
 r=t.p
-return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,k,j,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",i,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,115),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.P("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.V,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b7m(this.a,o),q,B.i,q,q)},
+return A.bJ(!1,q,!0,A.P(A.M(A.d([A.a3(A.d([m,l,k,j,A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",i,s.a.cw("_")),"00/00/0000"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,115),A.x(q,new A.Z(B.q,q,q,new A.v(B.z,A.n(A.a1(o.O("tipo_user",n),"N\xedvel"),q,q,q,q,q,q,q,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),q,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),q,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),q,q,q,q),q),q),B.h,q,q,B.r,48,q,q,280)],r),B.n,B.V,B.j,0),B.bV],r),B.ar),B.n,B.l,B.j),q,!0,B.i,q,B.i,B.i,q,q,q,q,new A.b7m(this.a,o),q,B.i,q,q)},
 $S:65}
 A.b7m.prototype={
 $0(){var s=0,r=A.u(t.H),q=this,p,o,n,m
@@ -69326,10 +69327,10 @@ new A.b78().$0()
 m.f.$0()
 m=n.d
 p=q.b
-o=p.P("id",t.N)
+o=p.O("id",t.N)
 o.toString
 m.r=o
-n.d.x=p.P("companies_id",t.S)
+n.d.x=p.O("companies_id",t.S)
 p=n.d
 new A.b79().$0()
 p.f.$0()
@@ -69440,14 +69441,14 @@ q=A.a().gkv()
 p=A.F(16)
 o=A.bd(B.y,1)
 n=r==null
-m=A.x(c,A.hW(A.a1(A.a1(n?c:r.P("foto",t.N),"https://picsum.photos/seed/779/600"),"https://picsum.photos/seed/648/600"),B.bh,c,c),B.az,c,c,B.fm,100,c,c,100)
+m=A.x(c,A.hW(A.a1(A.a1(n?c:r.O("foto",t.N),"https://picsum.photos/seed/779/600"),"https://picsum.photos/seed/648/600"),B.bh,c,c),B.az,c,c,B.fm,100,c,c,100)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 j=A.n("Membro desde",c,c,c,c,c,c,c,A.j(l,c,k,c,12,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,j,0),c,c,c,c)
 if(n)l=c
-else{l=r.P("created_at",t.e)
+else{l=r.O("created_at",t.e)
 l.toString}k=A.c0(a4,B.aj,t.O)
 k.toString
 k=A.a1(A.d7(b,l,k.a.cw("_")),b)
@@ -69460,7 +69461,7 @@ s=A.fx(!1,B.ac,!0,c,A.x(c,new A.v(B.ap,A.P(A.d([m,new A.v(B.aA,j,c),A.n(k,c,c,c,
 p=A.n("Nome",c,c,c,c,c,c,c,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),c,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),c,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),c,c,c,c)
 o=A.F(8)
 q=A.bd(B.y,1)
-m=A.a1(n?c:r.P("nome",t.N),"Nome")
+m=A.a1(n?c:r.O("nome",t.N),"Nome")
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k)
@@ -69471,7 +69472,7 @@ q=A.n("E-mail",c,c,c,c,c,c,c,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),1
 j=A.x(c,c,B.h,c,c,B.r,c,c,c,c)
 k=A.F(8)
 l=A.bd(B.y,1)
-p=A.a1(n?c:r.P("email",t.N),"E-mail")
+p=A.a1(n?c:r.O("email",t.N),"E-mail")
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 h=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,h)
@@ -69481,39 +69482,39 @@ l=A.n("Tefone",c,c,c,c,c,c,c,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),1
 f=A.x(c,c,B.h,c,c,B.r,c,c,c,c)
 h=A.F(8)
 m=A.bd(B.y,1)
-q=A.a1(n?c:r.P("telefone",t.N),"(00) 0 0000-0000")
+q=A.a1(n?c:r.O("telefone",t.N),"(00) 0 0000-0000")
 p=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 j=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,j)
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 d=t.i_
 h=A.d([o,k,A.a3(A.M(A.d([A.aX(A.P(A.M(A.d([l,f,A.x(c,new A.Z(B.q,c,c,new A.v(B.U,A.n(q,c,c,c,c,c,c,c,A.j(p,c,j,c,c,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,e,0),c,c,c,c),c),c),B.h,c,c,new A.a6(B.y,c,m,h,c,c,c,B.t),44,c,c,c)],i),B.E),B.w,B.l,B.j),1)],d),B.aw),B.n,B.l,B.j,0),A.bnv(A.a().gHe(),c,1)],g)
-if((n?c:r.P(a,t.N))==="Admin Empresa")q=(n?c:r.P("companies_id",t.S))!=null
+if((n?c:r.O(a,t.N))==="Admin Empresa")q=(n?c:r.O("companies_id",t.S))!=null
 else q=!1
 if(q)h.push(new A.cj(new A.mr().mv(new A.b7w(r)),new A.b7x(r),c,t.uw))
 else{q=A.n("Tipo de usu\xe1rio",c,c,c,c,c,c,c,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),c,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),c,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),c,c,c,c)
 p=A.x(c,c,B.h,c,c,B.r,c,c,c,c)
 o=A.F(8)
 m=A.bd(B.y,1)
-l=A.a1(n?c:r.P(a,t.N),"Tipo")
+l=A.a1(n?c:r.O(a,t.N),"Tipo")
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 j=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,j)
 f=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 h.push(A.a3(A.M(A.d([A.aX(A.P(A.M(A.d([q,p,A.x(c,new A.Z(B.q,c,c,new A.v(B.U,A.n(l,c,c,c,c,c,c,c,A.j(k,c,j,c,c,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,f,0),c,c,c,c),c),c),B.h,c,c,new A.a6(B.y,c,m,o,c,c,c,B.t),44,c,c,c)],i),B.E),B.w,B.l,B.j),1)],d),B.aw),B.n,B.l,B.j,0))}h.push(A.bnv(A.a().gHe(),c,1))
-q=A.a1(n?c:r.P(a0,t.y),!0)?a1:a2
+q=A.a1(n?c:r.O(a0,t.y),!0)?a1:a2
 q=A.n(q,c,c,c,c,c,c,c,A.j(A.E().$3$color$fontSize$fontWeight(A.a().gh(),24,B.m),c,A.b().$2$fontStyle$fontWeight(A.E().$3$color$fontSize$fontWeight(A.a().gh(),24,B.m).x,B.m),c,20,A.E().$3$color$fontSize$fontWeight(A.a().gh(),24,B.m).x,B.m,0),c,c,c,c)
-p=A.a1(n?c:r.P(a0,t.y),!0)?"Ao inativar este usu\xe1rio, ele perder\xe1 o acesso ao sistema imediatamente. Os dados e hist\xf3ricos vinculados a ele ser\xe3o mantidos e poder\xe3o ser consultados posteriormente.":"Ao ativar este usu\xe1rio, ele recuperar\xe1 o acesso ao sistema imediatamente. Todos os dados e hist\xf3ricos vinculados a ele permanecer\xe3o dispon\xedveis."
+p=A.a1(n?c:r.O(a0,t.y),!0)?"Ao inativar este usu\xe1rio, ele perder\xe1 o acesso ao sistema imediatamente. Os dados e hist\xf3ricos vinculados a ele ser\xe3o mantidos e poder\xe3o ser consultados posteriormente.":"Ao ativar este usu\xe1rio, ele recuperar\xe1 o acesso ao sistema imediatamente. Todos os dados e hist\xf3ricos vinculados a ele permanecer\xe3o dispon\xedveis."
 p=A.n(p,c,c,c,c,c,c,c,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),c,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),c,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),c,c,c,c)
-o=A.a1(n?c:r.P(a0,t.y),!0)?a1:a2
-n=A.a1(n?c:r.P(a0,t.y),!0)?B.pa:B.b6
+o=A.a1(n?c:r.O(a0,t.y),!0)?a1:a2
+n=A.a1(n?c:r.O(a0,t.y),!0)?B.pa:B.b6
 m=A.j(A.E().$3$color$fontSize$fontWeight(A.a().gh(),16,B.m),B.x,A.E().$2$fontStyle$fontWeight(A.E().$3$color$fontSize$fontWeight(A.a().gh(),16,B.m).x,B.m),c,16,A.E().$3$color$fontSize$fontWeight(A.a().gh(),16,B.m).x,B.m,0)
 h.push(A.P(A.d([q,new A.v(B.pG,p,c),new A.Z(B.q,c,c,A.ci(c,new A.b7y(this.a,r),A.ch(A.F(8),B.bS,n,0,48,c,c,B.a_,B.U,m,200),o),c)],g),B.w,B.l,B.j))
 return A.x(c,A.x(c,A.a3(A.M(A.d([s,A.aX(A.P(A.M(h,B.R),B.w,B.l,B.j),1)],g),B.aw),B.w,B.l,B.j,0),B.h,c,c,B.r,c,c,c,c),B.h,c,c,new A.a6(c,c,c,a3,c,c,c,B.t),c,c,c,c)},
 $S:76}
 A.b7w.prototype={
 $1(a){var s=this.a
-s=s==null?null:s.P("companies_id",t.S)
+s=s==null?null:s.O("companies_id",t.S)
 return s!=null?a.cX("id",s):a},
 $S:10}
 A.b7x.prototype={
@@ -69523,7 +69524,7 @@ s=A.x(h,h,B.h,h,h,B.r,h,h,h,h)
 r=A.F(8)
 q=A.bd(B.y,1)
 p=this.a
-p=A.a1(p==null?h:p.P(f,t.N),"Tipo")
+p=A.a1(p==null?h:p.O(f,t.N),"Tipo")
 o=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 n=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,n)
@@ -69534,7 +69535,7 @@ e=A.n("Empresa",h,h,h,h,h,h,h,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),
 s=A.x(h,h,B.h,h,h,B.r,h,h,h,h)
 r=A.F(8)
 q=A.bd(B.y,1)
-p=A.a1(l==null?h:l.P("nome",t.N),"Empresa")
+p=A.a1(l==null?h:l.O("nome",t.N),"Empresa")
 o=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 n=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,n)
@@ -69546,7 +69547,7 @@ m=A.x(h,h,B.h,h,h,B.r,h,h,h,h)
 n=A.F(8)
 o=A.bd(B.y,1)
 p=this.a
-e=A.a1(p==null?h:p.P(f,t.N),"Tipo")
+e=A.a1(p==null?h:p.O(f,t.N),"Tipo")
 s=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 j=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,j)
@@ -69558,7 +69559,7 @@ $0(){var s=0,r=A.u(t.H),q=this,p,o
 var $async$$0=A.p(function(a,b){if(a===1)return A.q(b,r)
 for(;;)switch(s){case 0:p=$.bE()
 o=q.a
-p.e=o==null?null:o.P("companies_id",t.S)
+p.e=o==null?null:o.O("companies_id",t.S)
 p=$.bE()
 p.c="Empresas"
 p=p.a
@@ -69579,7 +69580,7 @@ if(s.c!=null)s.H(new A.b7k(s,this.b))},
 $S:17}
 A.b7k.prototype={
 $0(){var s,r=this.b
-r=A.a1(r==null?null:r.P("ativo",t.y),!0)
+r=A.a1(r==null?null:r.O("ativo",t.y),!0)
 s=this.a.d
 if(r){s===$&&A.c()
 s.z=!0}else{s===$&&A.c()
@@ -69649,7 +69650,7 @@ $0(){},
 $S:17}
 A.b7u.prototype={
 $1(a){var s=this.a
-s=s==null?null:s.P("companies_id",t.S)
+s=s==null?null:s.O("companies_id",t.S)
 return s!=null?a.cX("companie_id",s):a},
 $S:10}
 A.b7v.prototype={
@@ -69664,14 +69665,14 @@ A.b7g.prototype={
 $2(a,b){return new A.cg(new A.b6Y(J.ao(this.a,b)),null)},
 $S:57}
 A.b6Y.prototype={
-$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.P("id_viagem",m),k=t.xv
+$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.O("id_viagem",m),k=t.xv
 l=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(l==null?o:B.o.k(l),"0000"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,100)
-k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_barco",t.N),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
-s=n.P("km_totais",t.i)
+k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_barco",t.N),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
+s=n.O("km_totais",t.i)
 s=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(s==null?o:B.k.k(s),"00Km"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,100)
-m=n.P("duracao_minutos",m)
+m=n.O("duracao_minutos",m)
 m=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(m==null?o:B.o.k(m),"00h"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,100)
-r=n.P("data_viagem",t.e)
+r=n.O("data_viagem",t.e)
 q=A.c0(a,B.aj,t.O)
 q.toString
 p=t.p
@@ -69687,7 +69688,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b6U.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id_viagem",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id_viagem",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.mV(r,null),null),0,B.Y)},
 $S:15}
@@ -69706,39 +69707,39 @@ A.b7Y.prototype={
 $2(a,b){return new A.cg(new A.b7f(J.ao(this.a,b)),null)},
 $S:57}
 A.b7f.prototype={
-$1(a){var s,r,q,p,o,n,m,l,k,j=null,i="ativo",h=this.a,g=A.F(12),f=A.F(12),e=A.F(12),d=A.bd(B.y,1),c=t.y,b=h.P(i,c)
+$1(a){var s,r,q,p,o,n,m,l,k,j=null,i="ativo",h=this.a,g=A.F(12),f=A.F(12),e=A.F(12),d=A.bd(B.y,1),c=t.y,b=h.O(i,c)
 b.toString
 s=A.x(j,j,B.h,j,j,new A.a6(A.a1(b?B.e9:B.bK,B.bK),j,j,j,j,j,j,B.t),1/0,j,j,12)
 r=t.N
-q=A.n(A.a1(h.P("nome_embarcacoes",r),"Barco Acquaway"),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)
-p=h.P("id",t.S)
+q=A.n(A.a1(h.O("nome_embarcacoes",r),"Barco Acquaway"),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)
+p=h.O("id",t.S)
 p.toString
 o=t.p
 p=A.a3(A.d([q,A.n("#"+B.o.k(p),j,j,j,j,j,j,j,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),j,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),j,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)],o),B.n,B.V,B.j,0)
-r=A.o(A.a1(h.P("tie_tiem",r),"403M000000012944"))
+r=A.o(A.a1(h.O("tie_tiem",r),"403M000000012944"))
 q=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 n=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,n)
 m=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 m=A.n("TIE: "+r,j,j,j,j,j,j,j,A.j(q,j,n,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,m,0),j,j,j,j)
 n=t.i
-q=h.P("comprimento",n)
+q=h.O("comprimento",n)
 b=q==null?j:B.k.k(q)
-r=h.P("boca",n)
+r=h.O("boca",n)
 r=r==null?j:B.k.k(r)
-n=h.P("calado",n)
+n=h.O("calado",n)
 q=n==null?j:B.k.k(n)
 n=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 l=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,l)
 k=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 k=A.P(A.d([m,A.n("Dimens\xf5es: "+A.o(b)+"x"+A.o(r)+"x"+A.o(q),j,j,j,j,j,j,j,A.j(n,j,l,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,k,0),j,j,j,j)],o),B.w,B.l,B.j)
-b=h.P(i,c)
+b=h.O(i,c)
 b.toString
 b=b?"Ativo":"Inativa"
 r=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 q=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f)
-c=h.P(i,c)
+c=h.O(i,c)
 c.toString
 return A.bJ(!1,j,!0,A.fx(!1,B.ac,!0,j,A.fh(f,A.x(j,A.a3(A.d([s,A.aX(A.a3(A.d([A.aX(new A.v(B.ap,A.P(A.d([p,k,A.n("Embarca\xe7\xe3o "+b,j,j,j,j,j,j,j,A.j(r,A.a1(c?B.e9:B.bK,B.bK),q,j,j,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),j,j,j,j)],o),B.w,B.V,B.j),j),1)],o),B.n,B.l,B.j,0),1)],o),B.n,B.l,B.j,0),B.h,j,j,new A.a6(B.aQ,j,d,e,j,j,j,B.t),100,j,j,100),B.az),B.h,B.i,1,j,j,new A.dm(g,B.M),j,j,B.bM),j,!0,B.i,j,B.i,B.i,j,j,j,j,new A.b6X(a,h),j,B.i,j,j)},
 $S:42}
@@ -69752,7 +69753,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b6V.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.vm(r,null),null),0,B.Y)},
 $S:15}
@@ -69921,7 +69922,7 @@ o=A.F(8)
 l=A.bd(B.y,1)
 k=r==null
 if(k)j=a0
-else{j=r.P("id",t.S)
+else{j=r.O("id",t.S)
 j.toString
 j=B.o.k(j)}j=A.a1(j,"0000")
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
@@ -69933,7 +69934,7 @@ o=A.P(A.M(A.d([n,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(j,a0,a0,a0,a0,a0,a0,a0
 l=A.n("Nome da embarca\xe7\xe3o",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 g=A.F(8)
 h=A.bd(B.y,1)
-n=A.a1(k?a0:r.P("nome_embarcacoes",t.N),"Nome")
+n=A.a1(k?a0:r.O("nome_embarcacoes",t.N),"Nome")
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 i=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,i)
@@ -69942,7 +69943,7 @@ g=A.P(A.M(A.d([l,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(n,a0,a0,a0,a0,a0,a0,a0
 h=A.n("TIE/TIEM",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 e=A.F(8)
 i=A.bd(B.y,1)
-n=A.a1(k?a0:r.P("tie_tiem",t.N),"00000000")
+n=A.a1(k?a0:r.O("tie_tiem",t.N),"00000000")
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 j=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
 j=A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,j)
@@ -69951,7 +69952,7 @@ e=A.aX(A.P(A.M(A.d([h,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(n,a0,a0,a0,a0,a0,
 i=A.n("Status da embarca\xe7\xe3o",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 d=A.F(8)
 j=A.bd(B.y,1)
-n=r.P("ativo",t.y)
+n=r.O("ativo",t.y)
 n.toString
 n=n?"Ativo":"Inativo"
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
@@ -69968,7 +69969,7 @@ h=A.n("Comprimento",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(
 j=A.F(8)
 l=A.bd(B.y,1)
 n=t.i
-i=r.P("comprimento",n)
+i=r.O("comprimento",n)
 i=A.a1(i==null?a0:B.k.k(i),"000")
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 c=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -69978,7 +69979,7 @@ j=A.P(A.M(A.d([h,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(i,a0,a0,a0,a0,a0,a0,a0
 l=A.n("Boca",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 b=A.F(8)
 c=A.bd(B.y,1)
-e=r.P("boca",n)
+e=r.O("boca",n)
 i=A.a1(e==null?a0:B.k.k(e),"000")
 h=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 e=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -69988,7 +69989,7 @@ b=A.P(A.M(A.d([l,A.x(a0,new A.Z(B.q,a0,a0,new A.v(B.U,A.n(i,a0,a0,a0,a0,a0,a0,a0
 c=A.n("Calado",a0,a0,a0,a0,a0,a0,a0,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),a0,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f),a0,16,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.f,0),a0,a0,a0,a0)
 a=A.F(8)
 e=A.bd(B.y,1)
-n=r.P("calado",n)
+n=r.O("calado",n)
 n=A.a1(n==null?a0:B.k.k(n),"000")
 l=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b)
 i=A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).w
@@ -70247,15 +70248,15 @@ A.b8P.prototype={
 $2(a,b){return new A.cg(new A.b8K(J.ao(this.a,b)),null)},
 $S:57}
 A.b8K.prototype={
-$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.P("id_viagem",m),k=t.xv
+$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.O("id_viagem",m),k=t.xv
 l=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(l==null?o:B.o.k(l),"0000"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,100)
 s=t.N
-k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_empresa",s),"Nome empresa"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
-r=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_barco",s),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
-s=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_piloto",s),"Nome piloto"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
-m=n.P("duracao_minutos",m)
+k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_empresa",s),"Nome empresa"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
+r=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_barco",s),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
+s=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_piloto",s),"Nome piloto"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
+m=n.O("duracao_minutos",m)
 m=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(m==null?o:B.o.k(m),"00"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
-q=n.P("data_viagem",t.e)
+q=n.O("data_viagem",t.e)
 p=A.c0(a,B.aj,t.O)
 p.toString
 return A.bJ(!1,o,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,k,r,s,m,A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",q,p.a.cw("_")),"00/00/0000"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),o,!0,B.i,o,B.i,B.i,o,o,o,o,new A.b8H(a,n),o,B.i,o,o)},
@@ -70270,7 +70271,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b8E.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id_viagem",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id_viagem",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.mV(r,null),null),0,B.Y)},
 $S:15}
@@ -70297,15 +70298,15 @@ A.b8N.prototype={
 $2(a,b){return new A.cg(new A.b8J(J.ao(this.a,b)),null)},
 $S:57}
 A.b8J.prototype={
-$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.P("id_viagem",m),k=t.xv
+$1(a){var s,r,q,p,o=null,n=this.a,m=t.S,l=n.O("id_viagem",m),k=t.xv
 l=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(l==null?o:B.o.k(l),"0000"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,100)
 s=t.N
-k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_empresa",s),"Nome empresa"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
-r=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_barco",s),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
-s=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.P("nome_piloto",s),"Nome piloto"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
-m=n.P("duracao_minutos",m)
+k=A.x(o,A.P(A.M(A.d([new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_empresa",s),"Nome empresa"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o)],k),B.bo),B.n,B.a1,B.I),B.h,o,o,B.r,48,o,o,300)
+r=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_barco",s),"Nome Barco"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
+s=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(n.O("nome_piloto",s),"Nome piloto"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
+m=n.O("duracao_minutos",m)
 m=A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(m==null?o:B.o.k(m),"00"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)
-q=n.P("data_viagem",t.e)
+q=n.O("data_viagem",t.e)
 p=A.c0(a,B.aj,t.O)
 p.toString
 return A.bJ(!1,o,!0,A.P(A.M(A.d([A.a3(A.M(A.d([l,k,r,s,m,A.x(o,new A.Z(B.q,o,o,new A.v(B.z,A.n(A.a1(A.d7("dd/MM/yyyy",q,p.a.cw("_")),"00/00/0000"),o,o,o,o,o,o,o,A.j(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b),o,A.b().$2$fontStyle$fontWeight(A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b),o,14,A.b().$3$color$fontSize$fontWeight(A.a().gh(),14,B.b).x,B.b,0),o,o,o,o),o),o),B.h,o,o,B.r,48,o,o,200)],t.zp),B.aa),B.n,B.l,B.j,0),B.bV],t.p),B.ar),B.n,B.l,B.j),o,!0,B.i,o,B.i,B.i,o,o,o,o,new A.b8G(a,n),o,B.i,o,o)},
@@ -70320,7 +70321,7 @@ case 2:return A.r(null,r)}})
 return A.t($async$$0,r)},
 $S:3}
 A.b8D.prototype={
-$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.P("id_viagem",t.S)
+$1(a){var s=B.a9.a8(this.a.a3(t.I).w),r=this.b.O("id_viagem",t.S)
 r.toString
 return A.eY(s,B.i,new A.dM(new A.mV(r,null),null),0,B.Y)},
 $S:15}
@@ -76589,7 +76590,7 @@ gag(){return"Copy"},
 gai(){return"Paste"},
 gab(){return"Select All"},
 gF(){return"Look Up"},
-gO(){return"Search Web"},
+gP(){return"Search Web"},
 ga4(){return"Share..."},
 $iaL:1}
 A.Ka.prototype={
@@ -85526,7 +85527,7 @@ gaY(){return"Scan text"},
 gai(){return"Paste"},
 gab(){return"Select all"},
 gF(){return"Look Up"},
-gO(){return"Search Web"},
+gP(){return"Search Web"},
 ga4(){return"Share"},
 gaV(){return"Dismiss"},
 gbs(){return B.a3},
@@ -111230,7 +111231,7 @@ oY(a){return!1},
 k(a){return"DefaultWidgetsLocalizations.delegate(en_US)"}}
 A.a0U.prototype={
 gF(){return"Look Up"},
-gO(){return"Search Web"},
+gP(){return"Search Web"},
 gci(){return B.A},
 $iaQ:1}
 A.Tu.prototype={
@@ -119149,7 +119150,7 @@ rR(a,b){var s=b.gF()
 return new A.a2O(s)},
 gjS(){return null}}
 A.a2V.prototype={
-rR(a,b){var s=b.gO()
+rR(a,b){var s=b.gP()
 return new A.a2Q(s)},
 gjS(){return null}}
 A.a2S.prototype={
@@ -121641,7 +121642,7 @@ gag(){return"Kopieer"},
 gah(){return"Knip"},
 gF(){return"Kyk op"},
 gai(){return"Plak"},
-gO(){return"Deursoek web"},
+gP(){return"Deursoek web"},
 gab(){return"Kies alles"},
 ga4(){return"Deel \u2026"}}
 A.ZP.prototype={
@@ -121649,7 +121650,7 @@ gag(){return"\u1245\u12f3"},
 gah(){return"\u1241\u1228\u1325"},
 gF(){return"\u12ed\u1218\u120d\u12a8\u1271"},
 gai(){return"\u1208\u1325\u134d"},
-gO(){return"\u12f5\u122d\u1295 \u1348\u120d\u130d"},
+gP(){return"\u12f5\u122d\u1295 \u1348\u120d\u130d"},
 gab(){return"\u1201\u1209\u1295\u121d \u121d\u1228\u1325"},
 ga4(){return"\u12a0\u130b\u122b..."}}
 A.ZQ.prototype={
@@ -121657,7 +121658,7 @@ gag(){return"\u0646\u0633\u062e"},
 gah(){return"\u0642\u0635"},
 gF(){return"\u0628\u062d\u062b \u0639\u0627\u0645"},
 gai(){return"\u0644\u0635\u0642"},
-gO(){return"\u0627\u0644\u0628\u062d\u062b \u0639\u0644\u0649 \u0627\u0644\u0648\u064a\u0628"},
+gP(){return"\u0627\u0644\u0628\u062d\u062b \u0639\u0644\u0649 \u0627\u0644\u0648\u064a\u0628"},
 gab(){return"\u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u0643\u0644"},
 ga4(){return"\u0645\u0634\u0627\u0631\u0643\u0629\u2026"}}
 A.ZR.prototype={
@@ -121665,7 +121666,7 @@ gag(){return"\u09aa\u09cd\u09f0\u09a4\u09bf\u09b2\u09bf\u09aa\u09bf \u0995\u09f0
 gah(){return"\u0995\u09be\u099f \u0995\u09f0\u0995"},
 gF(){return"\u0993\u09aa\u09f0\u09b2\u09c8 \u099a\u09be\u0993\u0995"},
 gai(){return"\u09aa\u09c7'\u09b7\u09cd\u099f \u0995\u09f0\u0995"},
-gO(){return"\u09f1\u09c7\u09ac\u09a4 \u09b8\u09a8\u09cd\u09a7\u09be\u09a8 \u0995\u09f0\u0995"},
+gP(){return"\u09f1\u09c7\u09ac\u09a4 \u09b8\u09a8\u09cd\u09a7\u09be\u09a8 \u0995\u09f0\u0995"},
 gab(){return"\u0986\u099f\u09be\u0987\u09ac\u09cb\u09f0 \u09ac\u09be\u099b\u09a8\u09bf \u0995\u09f0\u0995"},
 ga4(){return"\u09b6\u09cd\u09ac\u09c7\u09df\u09be\u09f0 \u0995\u09f0\u0995\u2026"}}
 A.ZS.prototype={
@@ -121673,7 +121674,7 @@ gag(){return"Kopyalay\u0131n"},
 gah(){return"K\u0259sin"},
 gF(){return"Axtar\u0131n"},
 gai(){return"Yerl\u0259\u015fdirin"},
-gO(){return"Vebd\u0259 axtar\u0131n"},
+gP(){return"Vebd\u0259 axtar\u0131n"},
 gab(){return"Ham\u0131s\u0131n\u0131 se\xe7in"},
 ga4(){return"Payla\u015f\u0131n..."}}
 A.ZT.prototype={
@@ -121681,7 +121682,7 @@ gag(){return"\u041a\u0430\u043f\u0456\u0440\u0430\u0432\u0430\u0446\u044c"},
 gah(){return"\u0412\u044b\u0440\u0430\u0437\u0430\u0446\u044c"},
 gF(){return"\u0417\u043d\u0430\u0439\u0441\u0446\u0456"},
 gai(){return"\u0423\u0441\u0442\u0430\u0432\u0456\u0446\u044c"},
-gO(){return"\u041f\u043e\u0448\u0443\u043a \u0443 \u0441\u0435\u0442\u0446\u044b"},
+gP(){return"\u041f\u043e\u0448\u0443\u043a \u0443 \u0441\u0435\u0442\u0446\u044b"},
 gab(){return"\u0412\u044b\u0431\u0440\u0430\u0446\u044c \u0443\u0441\u0435"},
 ga4(){return"\u0410\u0431\u0430\u0433\u0443\u043b\u0456\u0446\u044c..."}}
 A.ZU.prototype={
@@ -121689,7 +121690,7 @@ gag(){return"\u041a\u043e\u043f\u0438\u0440\u0430\u043d\u0435"},
 gah(){return"\u0418\u0437\u0440\u044f\u0437\u0432\u0430\u043d\u0435"},
 gF(){return"Look Up"},
 gai(){return"\u041f\u043e\u0441\u0442\u0430\u0432\u044f\u043d\u0435"},
-gO(){return"\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u0432 \u043c\u0440\u0435\u0436\u0430\u0442\u0430"},
+gP(){return"\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u0432 \u043c\u0440\u0435\u0436\u0430\u0442\u0430"},
 gab(){return"\u0418\u0437\u0431\u0438\u0440\u0430\u043d\u0435 \u043d\u0430 \u0432\u0441\u0438\u0447\u043a\u0438"},
 ga4(){return"\u0421\u043f\u043e\u0434\u0435\u043b\u044f\u043d\u0435..."}}
 A.ZV.prototype={
@@ -121697,7 +121698,7 @@ gag(){return"\u0995\u09aa\u09bf \u0995\u09b0\u09c1\u09a8"},
 gah(){return"\u0995\u09be\u099f \u0995\u09b0\u09c1\u09a8"},
 gF(){return"\u09b2\u09c1\u0995-\u0986\u09aa"},
 gai(){return"\u09aa\u09c7\u09b8\u09cd\u099f \u0995\u09b0\u09c1\u09a8"},
-gO(){return"\u0993\u09df\u09c7\u09ac\u09c7 \u09b8\u09be\u09b0\u09cd\u099a \u0995\u09b0\u09c1\u09a8"},
+gP(){return"\u0993\u09df\u09c7\u09ac\u09c7 \u09b8\u09be\u09b0\u09cd\u099a \u0995\u09b0\u09c1\u09a8"},
 gab(){return"\u09b8\u09ac \u09ac\u09c7\u099b\u09c7 \u09a8\u09bf\u09a8"},
 ga4(){return"\u09b6\u09c7\u09df\u09be\u09b0 \u0995\u09b0\u09c1\u09a8..."}}
 A.ZW.prototype={
@@ -121705,7 +121706,7 @@ gag(){return"\u0f56\u0f64\u0f74\u0f66\u0f0d"},
 gah(){return"\u0f42\u0f45\u0f7c\u0f51\u0f0d"},
 gF(){return"\u0f60\u0f5a\u0f7c\u0f63\u0f0b\u0f56\u0f0d"},
 gai(){return"\u0f60\u0f55\u0f7c\u0f66\u0f0b\u0f54\u0f0d"},
-gO(){return"\u0f51\u0fb2\u0f0b\u0f50\u0f7c\u0f42\u0f0b\u0f60\u0f5a\u0f7c\u0f63\u0f0b\u0f56\u0f64\u0f7a\u0f62\u0f0d"},
+gP(){return"\u0f51\u0fb2\u0f0b\u0f50\u0f7c\u0f42\u0f0b\u0f60\u0f5a\u0f7c\u0f63\u0f0b\u0f56\u0f64\u0f7a\u0f62\u0f0d"},
 gab(){return"\u0f5a\u0f44\u0f0b\u0f60\u0f51\u0f7a\u0f58\u0f66\u0f0d"},
 ga4(){return"\u0f58\u0f49\u0f58\u0f0b\u0f66\u0fa4\u0fb1\u0f7c\u0f51\u0f0d\u2026"}}
 A.ZX.prototype={
@@ -121713,7 +121714,7 @@ gag(){return"Kopiraj"},
 gah(){return"Izre\u017ei"},
 gF(){return"Pogled nagore"},
 gai(){return"Zalijepi"},
-gO(){return"Pretra\u017ei Web"},
+gP(){return"Pretra\u017ei Web"},
 gab(){return"Odaberi sve"},
 ga4(){return"Dijeli..."}}
 A.ZY.prototype={
@@ -121721,7 +121722,7 @@ gag(){return"Copia"},
 gah(){return"Retalla"},
 gF(){return"Mira amunt"},
 gai(){return"Enganxa"},
-gO(){return"Cerca al web"},
+gP(){return"Cerca al web"},
 gab(){return"Seleccionar-ho tot"},
 ga4(){return"Comparteix..."}}
 A.ZZ.prototype={
@@ -121729,7 +121730,7 @@ gag(){return"Kop\xedrovat"},
 gah(){return"Vyjmout"},
 gF(){return"Vyhledat"},
 gai(){return"Vlo\u017eit"},
-gO(){return"Vyhled\xe1vat na webu"},
+gP(){return"Vyhled\xe1vat na webu"},
 gab(){return"Vybrat v\u0161e"},
 ga4(){return"Sd\xedlet\u2026"}}
 A.a__.prototype={
@@ -121737,7 +121738,7 @@ gag(){return"Cop\xefo"},
 gah(){return"Torri"},
 gF(){return"Chwilio"},
 gai(){return"Gludo"},
-gO(){return"Chwilio'r We"},
+gP(){return"Chwilio'r We"},
 gab(){return"Dewis y Cyfan"},
 ga4(){return"Rhannu..."}}
 A.a_0.prototype={
@@ -121745,7 +121746,7 @@ gag(){return"Kopi\xe9r"},
 gah(){return"Klip"},
 gF(){return"Sl\xe5 op"},
 gai(){return"Inds\xe6t"},
-gO(){return"S\xf8g p\xe5 nettet"},
+gP(){return"S\xf8g p\xe5 nettet"},
 gab(){return"V\xe6lg alt"},
 ga4(){return"Del\u2026"}}
 A.K1.prototype={
@@ -121753,7 +121754,7 @@ gag(){return"Kopieren"},
 gah(){return"Ausschneiden"},
 gF(){return"Nachschlagen"},
 gai(){return"Einsetzen"},
-gO(){return"Im Web suchen"},
+gP(){return"Im Web suchen"},
 gab(){return"Alle ausw\xe4hlen"},
 ga4(){return"Teilen\u2026"}}
 A.a_1.prototype={
@@ -121763,7 +121764,7 @@ gag(){return"\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae"},
 gah(){return"\u0391\u03c0\u03bf\u03ba\u03bf\u03c0\u03ae"},
 gF(){return"Look Up"},
 gai(){return"\u0395\u03c0\u03b9\u03ba\u03cc\u03bb\u03bb\u03b7\u03c3\u03b7"},
-gO(){return"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03c3\u03c4\u03bf\u03bd \u03b9\u03c3\u03c4\u03cc"},
+gP(){return"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03c3\u03c4\u03bf\u03bd \u03b9\u03c3\u03c4\u03cc"},
 gab(){return"\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03cc\u03bb\u03c9\u03bd"},
 ga4(){return"\u039a\u03bf\u03b9\u03bd\u03bf\u03c0\u03bf\u03af\u03b7\u03c3\u03b7\u2026"}}
 A.K2.prototype={
@@ -121771,7 +121772,7 @@ gag(){return"Copy"},
 gah(){return"Cut"},
 gF(){return"Look Up"},
 gai(){return"Paste"},
-gO(){return"Search Web"},
+gP(){return"Search Web"},
 gab(){return"Select All"},
 ga4(){return"Share..."}}
 A.a_3.prototype={
@@ -121802,7 +121803,7 @@ gag(){return"Copiar"},
 gah(){return"Cortar"},
 gF(){return"Buscador visual"},
 gai(){return"Pegar"},
-gO(){return"Buscar en la Web"},
+gP(){return"Buscar en la Web"},
 gab(){return"Seleccionar todo"},
 ga4(){return"Compartir..."}}
 A.a_b.prototype={
@@ -121870,7 +121871,7 @@ gag(){return"Kopeeri"},
 gah(){return"L\xf5ika"},
 gF(){return"Look Up"},
 gai(){return"Kleebi"},
-gO(){return"Otsi veebist"},
+gP(){return"Otsi veebist"},
 gab(){return"Vali k\xf5ik"},
 ga4(){return"Jaga \u2026"}}
 A.a_w.prototype={
@@ -121878,7 +121879,7 @@ gag(){return"Kopiatu"},
 gah(){return"Ebaki"},
 gF(){return"Bilatu"},
 gai(){return"Itsatsi"},
-gO(){return"Bilatu sarean"},
+gP(){return"Bilatu sarean"},
 gab(){return"Hautatu dena"},
 ga4(){return"Partekatu..."}}
 A.a_x.prototype={
@@ -121886,7 +121887,7 @@ gag(){return"\u06a9\u067e\u06cc"},
 gah(){return"\u0628\u0631\u0634"},
 gF(){return"\u062c\u0633\u062a\u062c\u0648"},
 gai(){return"\u062c\u0627\u06cc\u200c\u06af\u0630\u0627\u0631\u06cc"},
-gO(){return"\u062c\u0633\u062a\u062c\u0648 \u062f\u0631 \u0648\u0628"},
+gP(){return"\u062c\u0633\u062a\u062c\u0648 \u062f\u0631 \u0648\u0628"},
 gab(){return"\u0627\u0646\u062a\u062e\u0627\u0628 \u0647\u0645\u0647"},
 ga4(){return"\u0647\u0645\u200c\u0631\u0633\u0627\u0646\u06cc\u2026"}}
 A.a_y.prototype={
@@ -121894,7 +121895,7 @@ gag(){return"Kopioi"},
 gah(){return"Leikkaa"},
 gF(){return"Hae"},
 gai(){return"Liit\xe4"},
-gO(){return"Hae verkosta"},
+gP(){return"Hae verkosta"},
 gab(){return"Valitse kaikki"},
 ga4(){return"Jaa\u2026"}}
 A.a_z.prototype={
@@ -121902,7 +121903,7 @@ gag(){return"Kopyahin"},
 gah(){return"I-cut"},
 gF(){return"Tumingin sa Itaas"},
 gai(){return"I-paste"},
-gO(){return"Maghanap sa Web"},
+gP(){return"Maghanap sa Web"},
 gab(){return"Piliin Lahat"},
 ga4(){return"Ibahagi..."}}
 A.K4.prototype={
@@ -121910,7 +121911,7 @@ gag(){return"Copier"},
 gah(){return"Couper"},
 gF(){return"Recherche visuelle"},
 gai(){return"Coller"},
-gO(){return"Rechercher sur le Web"},
+gP(){return"Rechercher sur le Web"},
 gab(){return"Tout s\xe9lectionner"},
 ga4(){return"Partager\u2026"}}
 A.a_A.prototype={
@@ -121920,7 +121921,7 @@ gag(){return"C\xf3ipe\xe1il"},
 gah(){return"Gearr"},
 gF(){return"Cuardaigh"},
 gai(){return"Greamaigh"},
-gO(){return"Cuardaigh an Gr\xe9as\xe1n"},
+gP(){return"Cuardaigh an Gr\xe9as\xe1n"},
 gab(){return"Roghnaigh Gach Rud"},
 ga4(){return"Comhroinn..."}}
 A.a_C.prototype={
@@ -121928,7 +121929,7 @@ gag(){return"Copiar"},
 gah(){return"Cortar"},
 gF(){return"Mirar cara arriba"},
 gai(){return"Pegar"},
-gO(){return"Buscar na Web"},
+gP(){return"Buscar na Web"},
 gab(){return"Seleccionar todo"},
 ga4(){return"Compartir\u2026"}}
 A.a_D.prototype={
@@ -121936,7 +121937,7 @@ gag(){return"Kopieren"},
 gah(){return"Ausschneiden"},
 gF(){return"Nachschlagen"},
 gai(){return"Einsetzen"},
-gO(){return"Im Web suchen"},
+gP(){return"Im Web suchen"},
 gab(){return"Alle ausw\xe4hlen"},
 ga4(){return"Teilen\u2026"}}
 A.a_E.prototype={
@@ -121944,7 +121945,7 @@ gag(){return"\u0a95\u0ac9\u0aaa\u0abf \u0a95\u0ab0\u0acb"},
 gah(){return"\u0a95\u0abe\u0aaa\u0acb"},
 gF(){return"\u0ab6\u0acb\u0aa7\u0acb"},
 gai(){return"\u0aaa\u0ac7\u0ab8\u0acd\u0a9f \u0a95\u0ab0\u0acb"},
-gO(){return"\u0ab5\u0ac7\u0aac \u0aaa\u0ab0 \u0ab6\u0acb\u0aa7\u0acb"},
+gP(){return"\u0ab5\u0ac7\u0aac \u0aaa\u0ab0 \u0ab6\u0acb\u0aa7\u0acb"},
 gab(){return"\u0aac\u0aa7\u0abe \u0aaa\u0ab8\u0a82\u0aa6 \u0a95\u0ab0\u0acb"},
 ga4(){return"\u0ab6\u0ac7\u0ab0 \u0a95\u0ab0\u0acb\u2026"}}
 A.a_F.prototype={
@@ -121952,7 +121953,7 @@ gag(){return"\u05d4\u05e2\u05ea\u05e7\u05d4"},
 gah(){return"\u05d2\u05d6\u05d9\u05e8\u05d4"},
 gF(){return"\u05d7\u05d9\u05e4\u05d5\u05e9"},
 gai(){return"\u05d4\u05d3\u05d1\u05e7\u05d4"},
-gO(){return"\u05d7\u05d9\u05e4\u05d5\u05e9 \u05d1\u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8"},
+gP(){return"\u05d7\u05d9\u05e4\u05d5\u05e9 \u05d1\u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8"},
 gab(){return"\u05d1\u05d7\u05d9\u05e8\u05ea \u05d4\u05db\u05d5\u05dc"},
 ga4(){return"\u05e9\u05d9\u05ea\u05d5\u05e3\u2026"}}
 A.a_G.prototype={
@@ -121960,7 +121961,7 @@ gag(){return"\u0915\u0949\u092a\u0940 \u0915\u0930\u0947\u0902"},
 gah(){return"\u0915\u093e\u091f\u0947\u0902"},
 gF(){return"\u0932\u0941\u0915 \u0905\u092a \u092c\u091f\u0928"},
 gai(){return"\u091a\u093f\u092a\u0915\u093e\u090f\u0902"},
-gO(){return"\u0935\u0947\u092c \u092a\u0930 \u0916\u094b\u091c\u0947\u0902"},
+gP(){return"\u0935\u0947\u092c \u092a\u0930 \u0916\u094b\u091c\u0947\u0902"},
 gab(){return"\u0938\u092d\u0940 \u091a\u0941\u0928\u0947\u0902"},
 ga4(){return"\u0936\u0947\u092f\u0930 \u0915\u0930\u0947\u0902\u2026"}}
 A.a_H.prototype={
@@ -121968,7 +121969,7 @@ gag(){return"Kopiraj"},
 gah(){return"Izre\u017ei"},
 gF(){return"Pogled prema gore"},
 gai(){return"Zalijepi"},
-gO(){return"Pretra\u017ei web"},
+gP(){return"Pretra\u017ei web"},
 gab(){return"Odaberi sve"},
 ga4(){return"Dijeli..."}}
 A.a_I.prototype={
@@ -121976,7 +121977,7 @@ gag(){return"M\xe1sol\xe1s"},
 gah(){return"Kiv\xe1g\xe1s"},
 gF(){return"Felfel\xe9 n\xe9z\xe9s"},
 gai(){return"Beilleszt\xe9s"},
-gO(){return"Keres\xe9s az interneten"},
+gP(){return"Keres\xe9s az interneten"},
 gab(){return"\xd6sszes kijel\xf6l\xe9se"},
 ga4(){return"Megoszt\xe1s\u2026"}}
 A.a_J.prototype={
@@ -121984,7 +121985,7 @@ gag(){return"\u054a\u0561\u057f\u0573\u0565\u0576\u0565\u056c"},
 gah(){return"\u053f\u057f\u0580\u0565\u056c"},
 gF(){return"\u0553\u0576\u057f\u0580\u0565\u056c"},
 gai(){return"\u054f\u0565\u0572\u0561\u0564\u0580\u0565\u056c"},
-gO(){return"\u0548\u0580\u0578\u0576\u0565\u056c \u0570\u0561\u0574\u0561\u0581\u0561\u0576\u0581\u0578\u0582\u0574"},
+gP(){return"\u0548\u0580\u0578\u0576\u0565\u056c \u0570\u0561\u0574\u0561\u0581\u0561\u0576\u0581\u0578\u0582\u0574"},
 gab(){return"\u0546\u0577\u0565\u056c \u0562\u0578\u056c\u0578\u0580\u0568"},
 ga4(){return"\u053f\u056b\u057d\u057e\u0565\u056c..."}}
 A.a_K.prototype={
@@ -121992,7 +121993,7 @@ gag(){return"Salin"},
 gah(){return"Potong"},
 gF(){return"Cari"},
 gai(){return"Tempel"},
-gO(){return"Telusuri di Web"},
+gP(){return"Telusuri di Web"},
 gab(){return"Pilih Semua"},
 ga4(){return"Bagikan..."}}
 A.a_L.prototype={
@@ -122000,7 +122001,7 @@ gag(){return"Afrita"},
 gah(){return"Klippa"},
 gF(){return"Look Up"},
 gai(){return"L\xedma"},
-gO(){return"Leita \xe1 vefnum"},
+gP(){return"Leita \xe1 vefnum"},
 gab(){return"Velja allt"},
 ga4(){return"Deila..."}}
 A.a_M.prototype={
@@ -122008,7 +122009,7 @@ gag(){return"Copia"},
 gah(){return"Taglia"},
 gF(){return"Cerca"},
 gai(){return"Incolla"},
-gO(){return"Cerca sul web"},
+gP(){return"Cerca sul web"},
 gab(){return"Seleziona tutto"},
 ga4(){return"Condividi\u2026"}}
 A.a_N.prototype={
@@ -122016,7 +122017,7 @@ gag(){return"\u30b3\u30d4\u30fc"},
 gah(){return"\u5207\u308a\u53d6\u308a"},
 gF(){return"\u8abf\u3079\u308b"},
 gai(){return"\u8cbc\u308a\u4ed8\u3051"},
-gO(){return"\u30a6\u30a7\u30d6\u3092\u691c\u7d22"},
+gP(){return"\u30a6\u30a7\u30d6\u3092\u691c\u7d22"},
 gab(){return"\u3059\u3079\u3066\u3092\u9078\u629e"},
 ga4(){return"\u5171\u6709..."}}
 A.a_O.prototype={
@@ -122024,7 +122025,7 @@ gag(){return"\u10d9\u10dd\u10de\u10d8\u10e0\u10d4\u10d1\u10d0"},
 gah(){return"\u10d0\u10db\u10dd\u10ed\u10e0\u10d0"},
 gF(){return"\u10d0\u10d8\u10ee\u10d4\u10d3\u10d4\u10d7 \u10d6\u10d4\u10db\u10dd\u10d7"},
 gai(){return"\u10e9\u10d0\u10e1\u10db\u10d0"},
-gO(){return"\u10d5\u10d4\u10d1\u10e8\u10d8 \u10eb\u10d8\u10d4\u10d1\u10d0"},
+gP(){return"\u10d5\u10d4\u10d1\u10e8\u10d8 \u10eb\u10d8\u10d4\u10d1\u10d0"},
 gab(){return"\u10e7\u10d5\u10d4\u10da\u10d0\u10e1 \u10d0\u10e0\u10e9\u10d4\u10d5\u10d0"},
 ga4(){return"\u10d2\u10d0\u10d6\u10d8\u10d0\u10e0\u10d4\u10d1\u10d0..."}}
 A.a_P.prototype={
@@ -122032,7 +122033,7 @@ gag(){return"\u041a\u04e9\u0448\u0456\u0440\u0443"},
 gah(){return"\u049a\u0438\u044e"},
 gF(){return"\u0406\u0437\u0434\u0435\u0443"},
 gai(){return"\u049a\u043e\u044e"},
-gO(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0456\u0437\u0434\u0435\u0443"},
+gP(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0456\u0437\u0434\u0435\u0443"},
 gab(){return"\u0411\u0430\u0440\u043b\u044b\u0493\u044b\u043d \u0442\u0430\u04a3\u0434\u0430\u0443"},
 ga4(){return"\u0411\u04e9\u043b\u0456\u0441\u0443\u2026"}}
 A.a_Q.prototype={
@@ -122040,7 +122041,7 @@ gag(){return"\u1785\u1798\u17d2\u179b\u1784"},
 gah(){return"\u1780\u17b6\u178f\u17cb"},
 gF(){return"\u179a\u1780\u1798\u17be\u179b"},
 gai(){return"\u178a\u17b6\u1780\u17cb\u200b\u1785\u17bc\u179b"},
-gO(){return"\u179f\u17d2\u179c\u17c2\u1784\u179a\u1780\u200b\u179b\u17be\u1794\u178e\u17d2\u178a\u17b6\u1789"},
+gP(){return"\u179f\u17d2\u179c\u17c2\u1784\u179a\u1780\u200b\u179b\u17be\u1794\u178e\u17d2\u178a\u17b6\u1789"},
 gab(){return"\u1787\u17d2\u179a\u17be\u179f\u179a\u17be\u179f\u200b\u1791\u17b6\u17c6\u1784\u17a2\u179f\u17cb"},
 ga4(){return"\u1785\u17c2\u1780\u179a\u17c6\u179b\u17c2\u1780..."}}
 A.a_R.prototype={
@@ -122048,7 +122049,7 @@ gag(){return"\u0c95\u0cbe\u0caa\u0cbf \u0cae\u0cbe\u0ca1\u0cbf"},
 gah(){return"\u0c95\u0ca4\u0ccd\u0ca4\u0cb0\u0cbf\u0cb8\u0cbf"},
 gF(){return"\u0cae\u0cc7\u0cb2\u0cc6 \u0ca8\u0ccb\u0ca1\u0cbf"},
 gai(){return"\u0c85\u0c82\u0c9f\u0cbf\u0cb8\u0cbf"},
-gO(){return"\u0cb5\u0cc6\u0cac\u0ccd\u200c\u0ca8\u0cb2\u0ccd\u0cb2\u0cbf \u0cb9\u0cc1\u0ca1\u0cc1\u0c95\u0cbf"},
+gP(){return"\u0cb5\u0cc6\u0cac\u0ccd\u200c\u0ca8\u0cb2\u0ccd\u0cb2\u0cbf \u0cb9\u0cc1\u0ca1\u0cc1\u0c95\u0cbf"},
 gab(){return"\u0c8e\u0cb2\u0ccd\u0cb2\u0cb5\u0ca8\u0ccd\u0ca8\u0cc2 \u0c86\u0caf\u0ccd\u0c95\u0cc6\u0cae\u0cbe\u0ca1\u0cbf"},
 ga4(){return"\u0cb9\u0c82\u0c9a\u0cbf\u0c95\u0cca\u0cb3\u0ccd\u0cb3\u0cbf..."}}
 A.a_S.prototype={
@@ -122056,7 +122057,7 @@ gag(){return"\ubcf5\uc0ac"},
 gah(){return"\uc798\ub77c\ub0b4\uae30"},
 gF(){return"\ucc3e\uae30"},
 gai(){return"\ubd99\uc5ec\ub123\uae30"},
-gO(){return"\uc6f9 \uac80\uc0c9"},
+gP(){return"\uc6f9 \uac80\uc0c9"},
 gab(){return"\uc804\uccb4 \uc120\ud0dd"},
 ga4(){return"\uacf5\uc720..."}}
 A.a_T.prototype={
@@ -122064,7 +122065,7 @@ gag(){return"\u041a\u04e9\u0447\u04af\u0440\u04af\u04af"},
 gah(){return"\u041a\u0435\u0441\u04af\u04af"},
 gF(){return"\u0418\u0437\u0434\u04e9\u04e9"},
 gai(){return"\u0427\u0430\u043f\u0442\u043e\u043e"},
-gO(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0438\u0437\u0434\u04e9\u04e9"},
+gP(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0438\u0437\u0434\u04e9\u04e9"},
 gab(){return"\u0411\u0430\u0430\u0440\u044b\u043d \u0442\u0430\u043d\u0434\u043e\u043e"},
 ga4(){return"\u0411\u04e9\u043b\u04af\u0448\u04af\u04af\u2026"}}
 A.a_U.prototype={
@@ -122072,7 +122073,7 @@ gag(){return"\u0eaa\u0eb3\u0ec0\u0e99\u0ebb\u0eb2"},
 gah(){return"\u0e95\u0eb1\u0e94"},
 gF(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0e82\u0ecd\u0ec9\u0ea1\u0eb9\u0e99"},
 gai(){return"\u0ea7\u0eb2\u0e87"},
-gO(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0ea2\u0eb9\u0ec8\u0ead\u0eb4\u0e99\u0ec0\u0e95\u0eb5\u0ec0\u0e99\u0eb1\u0e94"},
+gP(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0ea2\u0eb9\u0ec8\u0ead\u0eb4\u0e99\u0ec0\u0e95\u0eb5\u0ec0\u0e99\u0eb1\u0e94"},
 gab(){return"\u0ec0\u0ea5\u0eb7\u0ead\u0e81\u0e97\u0eb1\u0e87\u0edd\u0ebb\u0e94"},
 ga4(){return"\u0ec1\u0e9a\u0ec8\u0e87\u0e9b\u0eb1\u0e99..."}}
 A.a_V.prototype={
@@ -122080,7 +122081,7 @@ gag(){return"Kopijuoti"},
 gah(){return"I\u0161kirpti"},
 gF(){return"Ie\u0161koti"},
 gai(){return"\u012eklijuoti"},
-gO(){return"Ie\u0161koti \u017einiatinklyje"},
+gP(){return"Ie\u0161koti \u017einiatinklyje"},
 gab(){return"Pasirinkti visk\u0105"},
 ga4(){return"Bendrinti..."}}
 A.a_W.prototype={
@@ -122088,7 +122089,7 @@ gag(){return"Kop\u0113t"},
 gah(){return"Izgriezt"},
 gF(){return"Mekl\u0113t"},
 gai(){return"Iel\u012bm\u0113t"},
-gO(){return"Mekl\u0113t t\u012bmekl\u012b"},
+gP(){return"Mekl\u0113t t\u012bmekl\u012b"},
 gab(){return"Atlas\u012bt visu"},
 ga4(){return"Kop\u012bgot\u2026"}}
 A.a_X.prototype={
@@ -122096,7 +122097,7 @@ gag(){return"\u041a\u043e\u043f\u0438\u0440\u0430\u0458"},
 gah(){return"\u0418\u0441\u0435\u0447\u0438"},
 gF(){return"\u041f\u043e\u0433\u043b\u0435\u0434\u043d\u0435\u0442\u0435 \u043d\u0430\u0433\u043e\u0440\u0435"},
 gai(){return"\u0417\u0430\u043b\u0435\u043f\u0438"},
-gO(){return"\u041f\u0440\u0435\u0431\u0430\u0440\u0430\u0458\u0442\u0435 \u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442"},
+gP(){return"\u041f\u0440\u0435\u0431\u0430\u0440\u0430\u0458\u0442\u0435 \u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442"},
 gab(){return"\u0418\u0437\u0431\u0435\u0440\u0438 \u0433\u0438 \u0441\u0438\u0442\u0435"},
 ga4(){return"\u0421\u043f\u043e\u0434\u0435\u043b\u0435\u0442\u0435..."}}
 A.a_Y.prototype={
@@ -122104,7 +122105,7 @@ gag(){return"\u0d2a\u0d15\u0d7c\u0d24\u0d4d\u0d24\u0d41\u0d15"},
 gah(){return"\u0d2e\u0d41\u0d31\u0d3f\u0d15\u0d4d\u0d15\u0d41\u0d15"},
 gF(){return"\u0d2e\u0d41\u0d15\u0d33\u0d3f\u0d32\u0d47\u0d15\u0d4d\u0d15\u0d4d \u0d28\u0d4b\u0d15\u0d4d\u0d15\u0d41\u0d15"},
 gai(){return"\u0d12\u0d1f\u0d4d\u0d1f\u0d3f\u0d15\u0d4d\u0d15\u0d41\u0d15"},
-gO(){return"\u0d35\u0d46\u0d2c\u0d3f\u0d7d \u0d24\u0d3f\u0d30\u0d2f\u0d41\u0d15"},
+gP(){return"\u0d35\u0d46\u0d2c\u0d3f\u0d7d \u0d24\u0d3f\u0d30\u0d2f\u0d41\u0d15"},
 gab(){return"\u0d0e\u0d32\u0d4d\u0d32\u0d3e\u0d02 \u0d24\u0d3f\u0d30\u0d1e\u0d4d\u0d1e\u0d46\u0d1f\u0d41\u0d15\u0d4d\u0d15\u0d41\u0d15"},
 ga4(){return"\u0d2a\u0d19\u0d4d\u0d15\u0d3f\u0d1f\u0d41\u0d15..."}}
 A.a_Z.prototype={
@@ -122112,7 +122113,7 @@ gag(){return"\u0425\u0443\u0443\u043b\u0430\u0445"},
 gah(){return"\u0422\u0430\u0441\u043b\u0430\u0445"},
 gF(){return"\u0414\u044d\u044d\u0448\u044d\u044d \u0445\u0430\u0440\u0430\u0445"},
 gai(){return"\u0411\u0443\u0443\u043b\u0433\u0430\u0445"},
-gO(){return"\u0412\u0435\u0431\u044d\u044d\u0441 \u0445\u0430\u0439\u0445"},
+gP(){return"\u0412\u0435\u0431\u044d\u044d\u0441 \u0445\u0430\u0439\u0445"},
 gab(){return"\u0411\u04af\u0433\u0434\u0438\u0439\u0433 \u0441\u043e\u043d\u0433\u043e\u0445"},
 ga4(){return"\u0425\u0443\u0432\u0430\u0430\u043b\u0446\u0430\u0445..."}}
 A.a0_.prototype={
@@ -122120,7 +122121,7 @@ gag(){return"\u0915\u0949\u092a\u0940 \u0915\u0930\u093e"},
 gah(){return"\u0915\u091f \u0915\u0930\u093e"},
 gF(){return"\u0936\u094b\u0927 \u0918\u094d\u092f\u093e"},
 gai(){return"\u092a\u0947\u0938\u094d\u091f \u0915\u0930\u093e"},
-gO(){return"\u0935\u0947\u092c\u0935\u0930 \u0936\u094b\u0927\u093e"},
+gP(){return"\u0935\u0947\u092c\u0935\u0930 \u0936\u094b\u0927\u093e"},
 gab(){return"\u0938\u0930\u094d\u0935 \u0928\u093f\u0935\u0921\u093e"},
 ga4(){return"\u0936\u0947\u0905\u0930 \u0915\u0930\u093e..."}}
 A.a00.prototype={
@@ -122128,7 +122129,7 @@ gag(){return"Salin"},
 gah(){return"Potong"},
 gF(){return"Lihat ke Atas"},
 gai(){return"Tampal"},
-gO(){return"Buat carian pada Web"},
+gP(){return"Buat carian pada Web"},
 gab(){return"Pilih Semua"},
 ga4(){return"Kongsi..."}}
 A.a01.prototype={
@@ -122136,7 +122137,7 @@ gag(){return"\u1019\u102d\u1010\u1039\u1010\u1030\u1000\u1030\u1038\u101b\u1014\
 gah(){return"\u1016\u103c\u1010\u103a\u101a\u1030\u101b\u1014\u103a"},
 gF(){return"\u1021\u1015\u1031\u102b\u103a\u1000\u103c\u100a\u103a\u1037\u101b\u1014\u103a"},
 gai(){return"\u1000\u1030\u1038\u1011\u100a\u1037\u103a\u101b\u1014\u103a"},
-gO(){return"\u101d\u1018\u103a\u1010\u103d\u1004\u103a\u101b\u103e\u102c\u101b\u1014\u103a"},
+gP(){return"\u101d\u1018\u103a\u1010\u103d\u1004\u103a\u101b\u103e\u102c\u101b\u1014\u103a"},
 gab(){return"\u1021\u102c\u1038\u101c\u102f\u1036\u1038 \u101b\u103d\u1031\u1038\u101b\u1014\u103a"},
 ga4(){return"\u1019\u103b\u103e\u101d\u1031\u101b\u1014\u103a..."}}
 A.a02.prototype={
@@ -122144,7 +122145,7 @@ gag(){return"Kopi\xe9r"},
 gah(){return"Klipp ut"},
 gF(){return"Sl\xe5 opp"},
 gai(){return"Lim inn"},
-gO(){return"S\xf8k p\xe5 nettet"},
+gP(){return"S\xf8k p\xe5 nettet"},
 gab(){return"Velg alle"},
 ga4(){return"Del\u2026"}}
 A.a03.prototype={
@@ -122152,7 +122153,7 @@ gag(){return"\u0915\u092a\u0940 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938
 gah(){return"\u0915\u093e\u091f\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 gF(){return"\u092e\u093e\u0925\u093f\u0924\u093f\u0930 \u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 gai(){return"\u091f\u093e\u0901\u0938\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
-gO(){return"\u0935\u0947\u092c\u092e\u093e \u0916\u094b\u091c\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
+gP(){return"\u0935\u0947\u092c\u092e\u093e \u0916\u094b\u091c\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 gab(){return"\u0938\u092c\u0948 \u091a\u092f\u0928 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 ga4(){return"\u0938\u0947\u092f\u0930 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d..."}}
 A.a04.prototype={
@@ -122160,7 +122161,7 @@ gag(){return"Kopi\xebren"},
 gah(){return"Knippen"},
 gF(){return"Opzoeken"},
 gai(){return"Plakken"},
-gO(){return"Op internet zoeken"},
+gP(){return"Op internet zoeken"},
 gab(){return"Alles selecteren"},
 ga4(){return"Delen..."}}
 A.a05.prototype={
@@ -122168,7 +122169,7 @@ gag(){return"Kopi\xe9r"},
 gah(){return"Klipp ut"},
 gF(){return"Sl\xe5 opp"},
 gai(){return"Lim inn"},
-gO(){return"S\xf8k p\xe5 nettet"},
+gP(){return"S\xf8k p\xe5 nettet"},
 gab(){return"Velg alle"},
 ga4(){return"Del\u2026"}}
 A.a06.prototype={
@@ -122176,7 +122177,7 @@ gag(){return"\u0b15\u0b2a\u0b3f \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 gah(){return"\u0b15\u0b1f \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 gF(){return"\u0b09\u0b2a\u0b30\u0b15\u0b41 \u0b26\u0b47\u0b16\u0b28\u0b4d\u0b24\u0b41"},
 gai(){return"\u0b2a\u0b47\u0b37\u0b4d\u0b1f \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
-gO(){return"\u0b71\u0b47\u0b2c \u0b38\u0b30\u0b4d\u0b1a\u0b4d\u0b1a \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
+gP(){return"\u0b71\u0b47\u0b2c \u0b38\u0b30\u0b4d\u0b1a\u0b4d\u0b1a \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 gab(){return"\u0b38\u0b2c\u0b41 \u0b1a\u0b5f\u0b28 \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 ga4(){return"\u0b38\u0b47\u0b5f\u0b3e\u0b30 \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41..."}}
 A.a07.prototype={
@@ -122184,7 +122185,7 @@ gag(){return"\u0a15\u0a3e\u0a2a\u0a40 \u0a15\u0a30\u0a4b"},
 gah(){return"\u0a15\u0a71\u0a1f \u0a15\u0a30\u0a4b"},
 gF(){return"\u0a16\u0a4b\u0a1c\u0a4b"},
 gai(){return"\u0a2a\u0a47\u0a38\u0a1f \u0a15\u0a30\u0a4b"},
-gO(){return"\u0a35\u0a48\u0a71\u0a2c '\u0a24\u0a47 \u0a16\u0a4b\u0a1c\u0a4b"},
+gP(){return"\u0a35\u0a48\u0a71\u0a2c '\u0a24\u0a47 \u0a16\u0a4b\u0a1c\u0a4b"},
 gab(){return"\u0a38\u0a2d \u0a1a\u0a41\u0a23\u0a4b"},
 ga4(){return"\u0a38\u0a3e\u0a02\u0a1d\u0a3e \u0a15\u0a30\u0a4b..."}}
 A.a08.prototype={
@@ -122192,7 +122193,7 @@ gag(){return"Kopiuj"},
 gah(){return"Wytnij"},
 gF(){return"Sprawd\u017a"},
 gai(){return"Wklej"},
-gO(){return"Szukaj w\xa0internecie"},
+gP(){return"Szukaj w\xa0internecie"},
 gab(){return"Wybierz wszystkie"},
 ga4(){return"Udost\u0119pnij\u2026"}}
 A.K5.prototype={
@@ -122200,7 +122201,7 @@ gag(){return"Copiar"},
 gah(){return"Cortar"},
 gF(){return"Pesquisar"},
 gai(){return"Colar"},
-gO(){return"Pesquisar na Web"},
+gP(){return"Pesquisar na Web"},
 gab(){return"Selecionar tudo"},
 ga4(){return"Compartilhar\u2026"}}
 A.a09.prototype={
@@ -122211,7 +122212,7 @@ gag(){return"Copia\u021bi"},
 gah(){return"Decupa\u021bi"},
 gF(){return"Privire \xeen sus"},
 gai(){return"Insera\u021bi"},
-gO(){return"C\u0103uta\u021bi pe web"},
+gP(){return"C\u0103uta\u021bi pe web"},
 gab(){return"Selecteaz\u0103 tot"},
 ga4(){return"Trimite\u021bi\u2026"}}
 A.a0b.prototype={
@@ -122219,7 +122220,7 @@ gag(){return"\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c"},
 gah(){return"\u0412\u044b\u0440\u0435\u0437\u0430\u0442\u044c"},
 gF(){return"\u041d\u0430\u0439\u0442\u0438"},
 gai(){return"\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044c"},
-gO(){return"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435"},
+gP(){return"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435"},
 gab(){return"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u0432\u0441\u0435"},
 ga4(){return"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f"}}
 A.a0c.prototype={
@@ -122227,7 +122228,7 @@ gag(){return"\u0db4\u0dd2\u0da7\u0db4\u0dad\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1
 gah(){return"\u0d9a\u0db4\u0db1\u0dca\u0db1"},
 gF(){return"\u0d8b\u0da9 \u0db6\u0dbd\u0db1\u0dca\u0db1"},
 gai(){return"\u0d85\u0dbd\u0dc0\u0db1\u0dca\u0db1"},
-gO(){return"\u0dc0\u0dd9\u0db6\u0dba \u0dc3\u0ddc\u0dba\u0db1\u0dca\u0db1"},
+gP(){return"\u0dc0\u0dd9\u0db6\u0dba \u0dc3\u0ddc\u0dba\u0db1\u0dca\u0db1"},
 gab(){return"\u0dc3\u0dd2\u0dba\u0dbd\u0dca\u0dbd \u0dad\u0ddd\u0dbb\u0db1\u0dca\u0db1"},
 ga4(){return"\u0db6\u0dd9\u0daf\u0dcf \u0d9c\u0db1\u0dca\u0db1..."}}
 A.a0d.prototype={
@@ -122235,7 +122236,7 @@ gag(){return"Kop\xedrova\u0165"},
 gah(){return"Vystrihn\xfa\u0165"},
 gF(){return"Poh\u013ead nahor"},
 gai(){return"Prilepi\u0165"},
-gO(){return"H\u013eada\u0165 na webe"},
+gP(){return"H\u013eada\u0165 na webe"},
 gab(){return"Ozna\u010di\u0165 v\u0161etko"},
 ga4(){return"Zdie\u013ea\u0165\u2026"}}
 A.a0e.prototype={
@@ -122243,7 +122244,7 @@ gag(){return"Kopiraj"},
 gah(){return"Izre\u017ei"},
 gF(){return"Pogled gor"},
 gai(){return"Prilepi"},
-gO(){return"Iskanje v spletu"},
+gP(){return"Iskanje v spletu"},
 gab(){return"Izberi vse"},
 ga4(){return"Deli \u2026"}}
 A.a0f.prototype={
@@ -122251,7 +122252,7 @@ gag(){return"Kopjo"},
 gah(){return"Prit"},
 gF(){return"K\xebrko"},
 gai(){return"Ngjit"},
-gO(){return"K\xebrko n\xeb ueb"},
+gP(){return"K\xebrko n\xeb ueb"},
 gab(){return"Zgjidhi t\xeb gjitha"},
 ga4(){return"Ndaj..."}}
 A.K6.prototype={
@@ -122259,7 +122260,7 @@ gag(){return"\u041a\u043e\u043f\u0438\u0440\u0430\u0458"},
 gah(){return"\u0418\u0441\u0435\u0446\u0438"},
 gF(){return"\u041f\u043e\u0433\u043b\u0435\u0434 \u043d\u0430\u0433\u043e\u0440\u0435"},
 gai(){return"\u041d\u0430\u043b\u0435\u043f\u0438"},
-gO(){return"\u041f\u0440\u0435\u0442\u0440\u0430\u0436\u0438 \u0432\u0435\u0431"},
+gP(){return"\u041f\u0440\u0435\u0442\u0440\u0430\u0436\u0438 \u0432\u0435\u0431"},
 gab(){return"\u0418\u0437\u0430\u0431\u0435\u0440\u0438 \u0441\u0432\u0435"},
 ga4(){return"\u0414\u0435\u043b\u0438\u2026"}}
 A.a0g.prototype={}
@@ -122268,7 +122269,7 @@ gag(){return"Kopiraj"},
 gah(){return"Iseci"},
 gF(){return"Pogled nagore"},
 gai(){return"Nalepi"},
-gO(){return"Pretra\u017ei veb"},
+gP(){return"Pretra\u017ei veb"},
 gab(){return"Izaberi sve"},
 ga4(){return"Deli\u2026"}}
 A.a0i.prototype={
@@ -122276,7 +122277,7 @@ gag(){return"Kopiera"},
 gah(){return"Klipp ut"},
 gF(){return"Titta upp"},
 gai(){return"Klistra in"},
-gO(){return"S\xf6k p\xe5 webben"},
+gP(){return"S\xf6k p\xe5 webben"},
 gab(){return"Markera allt"},
 ga4(){return"Dela \u2026"}}
 A.a0j.prototype={
@@ -122284,7 +122285,7 @@ gag(){return"Nakili"},
 gah(){return"Kata"},
 gF(){return"Tafuta"},
 gai(){return"Bandika"},
-gO(){return"Tafuta kwenye Wavuti"},
+gP(){return"Tafuta kwenye Wavuti"},
 gab(){return"Teua Zote"},
 ga4(){return"Shiriki..."}}
 A.a0k.prototype={
@@ -122292,7 +122293,7 @@ gag(){return"\u0ba8\u0b95\u0bb2\u0bc6\u0b9f\u0bc1"},
 gah(){return"\u0bb5\u0bc6\u0b9f\u0bcd\u0b9f\u0bc1"},
 gF(){return"\u0ba4\u0bc7\u0b9f\u0bc1"},
 gai(){return"\u0b92\u0b9f\u0bcd\u0b9f\u0bc1"},
-gO(){return"\u0b87\u0ba3\u0bc8\u0baf\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0ba4\u0bc7\u0b9f\u0bc1"},
+gP(){return"\u0b87\u0ba3\u0bc8\u0baf\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0ba4\u0bc7\u0b9f\u0bc1"},
 gab(){return"\u0b8e\u0bb2\u0bcd\u0bb2\u0bbe\u0bae\u0bcd \u0ba4\u0bc7\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4\u0bc6\u0b9f\u0bc1"},
 ga4(){return"\u0baa\u0b95\u0bbf\u0bb0\u0bcd..."}}
 A.a0l.prototype={
@@ -122300,7 +122301,7 @@ gag(){return"\u0c15\u0c3e\u0c2a\u0c40 \u0c1a\u0c47\u0c2f\u0c3f"},
 gah(){return"\u0c15\u0c24\u0c4d\u0c24\u0c3f\u0c30\u0c3f\u0c02\u0c1a\u0c02\u0c21\u0c3f"},
 gF(){return"\u0c35\u0c46\u0c24\u0c15\u0c02\u0c21\u0c3f"},
 gai(){return"\u0c2a\u0c47\u0c38\u0c4d\u0c1f\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"},
-gO(){return"\u0c35\u0c46\u0c2c\u0c4d\u200c\u0c32\u0c4b \u0c38\u0c46\u0c30\u0c4d\u0c1a\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"},
+gP(){return"\u0c35\u0c46\u0c2c\u0c4d\u200c\u0c32\u0c4b \u0c38\u0c46\u0c30\u0c4d\u0c1a\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"},
 gab(){return"\u0c05\u0c28\u0c4d\u0c28\u0c3f\u0c02\u0c1f\u0c3f\u0c28\u0c40 \u0c0e\u0c02\u0c1a\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f"},
 ga4(){return"\u0c37\u0c47\u0c30\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f..."}}
 A.a0m.prototype={
@@ -122308,7 +122309,7 @@ gag(){return"\u0e04\u0e31\u0e14\u0e25\u0e2d\u0e01"},
 gah(){return"\u0e15\u0e31\u0e14"},
 gF(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32"},
 gai(){return"\u0e27\u0e32\u0e07"},
-gO(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e1a\u0e19\u0e2d\u0e34\u0e19\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e47\u0e15"},
+gP(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e1a\u0e19\u0e2d\u0e34\u0e19\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e47\u0e15"},
 gab(){return"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14"},
 ga4(){return"\u0e41\u0e0a\u0e23\u0e4c..."}}
 A.a0n.prototype={
@@ -122316,7 +122317,7 @@ gag(){return"Kopyahin"},
 gah(){return"I-cut"},
 gF(){return"Tumingin sa Itaas"},
 gai(){return"I-paste"},
-gO(){return"Maghanap sa Web"},
+gP(){return"Maghanap sa Web"},
 gab(){return"Piliin Lahat"},
 ga4(){return"Ibahagi..."}}
 A.a0o.prototype={
@@ -122324,7 +122325,7 @@ gag(){return"Kopyala"},
 gah(){return"Kes"},
 gF(){return"Ara"},
 gai(){return"Yap\u0131\u015ft\u0131r"},
-gO(){return"Web'de Ara"},
+gP(){return"Web'de Ara"},
 gab(){return"T\xfcm\xfcn\xfc Se\xe7"},
 ga4(){return"Payla\u015f..."}}
 A.a0p.prototype={
@@ -122332,7 +122333,7 @@ gag(){return"\u0643\u06c6\u0686\u06c8\u0631\u06c8\u0634"},
 gah(){return"\u0643\u06d0\u0633\u0649\u0634"},
 gF(){return"\u0626\u0649\u0632\u062f\u06d5\u0634"},
 gai(){return"\u0686\u0627\u067e\u0644\u0627\u0634"},
-gO(){return"\u062a\u0648\u0631\u062f\u0627 \u0626\u0649\u0632\u062f\u06d5\u0634"},
+gP(){return"\u062a\u0648\u0631\u062f\u0627 \u0626\u0649\u0632\u062f\u06d5\u0634"},
 gab(){return"\u06be\u06d5\u0645\u0645\u0649\u0646\u0649 \u062a\u0627\u0644\u0644\u0627\u0634"},
 ga4(){return"\u06be\u06d5\u0645\u0628\u06d5\u06be\u0631\u0644\u06d5\u0634..."}}
 A.a0q.prototype={
@@ -122340,7 +122341,7 @@ gag(){return"\u041a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438"},
 gah(){return"\u0412\u0438\u0440\u0456\u0437\u0430\u0442\u0438"},
 gF(){return"\u0428\u0443\u043a\u0430\u0442\u0438"},
 gai(){return"\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u0438"},
-gO(){return"\u041f\u043e\u0448\u0443\u043a \u0432 \u0406\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0456"},
+gP(){return"\u041f\u043e\u0448\u0443\u043a \u0432 \u0406\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0456"},
 gab(){return"\u0412\u0438\u0431\u0440\u0430\u0442\u0438 \u0432\u0441\u0435"},
 ga4(){return"\u041f\u043e\u0434\u0456\u043b\u0438\u0442\u0438\u0441\u044f\u2026"}}
 A.a0r.prototype={
@@ -122348,7 +122349,7 @@ gag(){return"\u06a9\u0627\u067e\u06cc \u06a9\u0631\u06cc\u06ba"},
 gah(){return"\u06a9\u0679 \u06a9\u0631\u06cc\u06ba"},
 gF(){return"\u062a\u0641\u0635\u06cc\u0644 \u062f\u06cc\u06a9\u06be\u06cc\u06ba"},
 gai(){return"\u067e\u06cc\u0633\u0679 \u06a9\u0631\u06cc\u06ba"},
-gO(){return"\u0648\u06cc\u0628 \u062a\u0644\u0627\u0634 \u06a9\u0631\u06cc\u06ba"},
+gP(){return"\u0648\u06cc\u0628 \u062a\u0644\u0627\u0634 \u06a9\u0631\u06cc\u06ba"},
 gab(){return"\u0633\u0628\u06be\u06cc \u0645\u0646\u062a\u062e\u0628 \u06a9\u0631\u06cc\u06ba"},
 ga4(){return"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06a9\u0631\u06cc\u06ba..."}}
 A.a0s.prototype={
@@ -122356,7 +122357,7 @@ gag(){return"Nusxa olish"},
 gah(){return"Kesib olish"},
 gF(){return"Tepaga qarang"},
 gai(){return"Joylash"},
-gO(){return"Internetdan qidirish"},
+gP(){return"Internetdan qidirish"},
 gab(){return"Barchasini tanlash"},
 ga4(){return"Ulashish\u2026"}}
 A.a0t.prototype={
@@ -122364,7 +122365,7 @@ gag(){return"Sao ch\xe9p"},
 gah(){return"C\u1eaft"},
 gF(){return"Tra c\u1ee9u"},
 gai(){return"D\xe1n"},
-gO(){return"T\xecm ki\u1ebfm tr\xean web"},
+gP(){return"T\xecm ki\u1ebfm tr\xean web"},
 gab(){return"Ch\u1ecdn t\u1ea5t c\u1ea3"},
 ga4(){return"Chia s\u1ebb..."}}
 A.K7.prototype={
@@ -122372,7 +122373,7 @@ gag(){return"\u590d\u5236"},
 gah(){return"\u526a\u5207"},
 gF(){return"\u67e5\u8be2"},
 gai(){return"\u7c98\u8d34"},
-gO(){return"\u641c\u7d22"},
+gP(){return"\u641c\u7d22"},
 gab(){return"\u5168\u9009"},
 ga4(){return"\u5171\u4eab\u2026"}}
 A.a0u.prototype={}
@@ -122381,7 +122382,7 @@ gag(){return"\u8907\u88fd"},
 gah(){return"\u526a\u4e0b"},
 gF(){return"\u67e5\u8a62"},
 gai(){return"\u8cbc\u4e0a"},
-gO(){return"\u641c\u5c0b"},
+gP(){return"\u641c\u5c0b"},
 gab(){return"\u5168\u9078"},
 ga4(){return"\u5206\u4eab\u2026"}}
 A.a0v.prototype={}
@@ -122391,7 +122392,7 @@ gag(){return"Kopisha"},
 gah(){return"Sika"},
 gF(){return"Bheka Phezulu"},
 gai(){return"Namathisela"},
-gO(){return"Sesha Iwebhu"},
+gP(){return"Sesha Iwebhu"},
 gab(){return"Khetha konke"},
 ga4(){return"Yabelana..."}}
 A.a4_.prototype={
@@ -122409,7 +122410,7 @@ gbd(){return"Opspringkieslys"},
 gbo(){return"Herlaai"},
 gaY(){return"Skandeer teks"},
 gbs(){return B.a3},
-gO(){return"Deursoek web"},
+gP(){return"Deursoek web"},
 gab(){return"Kies alles"},
 ga4(){return"Deel"}}
 A.a40.prototype={
@@ -122427,7 +122428,7 @@ gbd(){return"\u12e8\u1265\u1245-\u1263\u12ed \u121d\u1293\u120c"},
 gbo(){return"\u12a0\u12f5\u1235"},
 gaY(){return"\u133d\u1201\u134d\u1295 \u1243\u129d"},
 gbs(){return B.a3},
-gO(){return"\u12f5\u122d\u1295 \u1348\u120d\u130d"},
+gP(){return"\u12f5\u122d\u1295 \u1348\u120d\u130d"},
 gab(){return"\u1201\u1209\u1295\u121d \u121d\u1228\u1325"},
 ga4(){return"\u12a0\u130b\u122b"}}
 A.a41.prototype={
@@ -122445,7 +122446,7 @@ gbd(){return"\u0642\u0627\u0626\u0645\u0629 \u0645\u0646\u0628\u062b\u0642\u0629
 gbo(){return"\u0625\u0639\u0627\u062f\u0629 \u062a\u062d\u0645\u064a\u0644"},
 gaY(){return"\u0645\u0633\u062d \u0627\u0644\u0646\u0635 \u0636\u0648\u0626\u064a\u064b\u0627"},
 gbs(){return B.cv},
-gO(){return"\u0627\u0644\u0628\u062d\u062b \u0639\u0644\u0649 \u0627\u0644\u0648\u064a\u0628"},
+gP(){return"\u0627\u0644\u0628\u062d\u062b \u0639\u0644\u0649 \u0627\u0644\u0648\u064a\u0628"},
 gab(){return"\u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u0643\u0644"},
 ga4(){return"\u0645\u0634\u0627\u0631\u0643\u0629"}}
 A.a42.prototype={
@@ -122463,7 +122464,7 @@ gbd(){return"\u09aa\u09aa\u0986\u09aa \u09ae\u09c7\u09a8\u09c1"},
 gbo(){return"\u09f0\u09bf\u09ab\u09cd\u09f0\u09c7\u09b6\u09cd\u09ac \u0995\u09f0\u0995"},
 gaY(){return"\u09aa\u09be\u09a0 \u09b8\u09cd\u0995\u09c7\u09a8 \u0995\u09f0\u0995"},
 gbs(){return B.a3},
-gO(){return"\u09f1\u09c7\u09ac\u09a4 \u09b8\u09a8\u09cd\u09a7\u09be\u09a8 \u0995\u09f0\u0995"},
+gP(){return"\u09f1\u09c7\u09ac\u09a4 \u09b8\u09a8\u09cd\u09a7\u09be\u09a8 \u0995\u09f0\u0995"},
 gab(){return"\u0986\u099f\u09be\u0987\u09ac\u09cb\u09f0 \u09ac\u09be\u099b\u09a8\u09bf \u0995\u09f0\u0995"},
 ga4(){return"\u09b6\u09cd\u09ac\u09c7\u09df\u09be\u09f0 \u0995\u09f0\u0995"}}
 A.a43.prototype={
@@ -122481,7 +122482,7 @@ gbd(){return"Popap menyusu"},
 gbo(){return"Yenil\u0259yin"},
 gaY(){return"M\u0259tni skan edin"},
 gbs(){return B.a3},
-gO(){return"Vebd\u0259 axtar\u0131n"},
+gP(){return"Vebd\u0259 axtar\u0131n"},
 gab(){return"Ham\u0131s\u0131n\u0131 se\xe7in"},
 ga4(){return"Payla\u015f\u0131n"}}
 A.a44.prototype={
@@ -122499,7 +122500,7 @@ gbd(){return"\u041c\u0435\u043d\u044e \u045e\u0441\u043f\u043b\u044b\u0432\u0430
 gbo(){return"\u0410\u0431\u043d\u0430\u0432\u0456\u0446\u044c"},
 gaY(){return"\u0421\u043a\u0430\u043d\u0456\u0440\u0430\u0432\u0430\u0446\u044c \u0442\u044d\u043a\u0441\u0442"},
 gbs(){return B.a3},
-gO(){return"\u041f\u043e\u0448\u0443\u043a \u0443 \u0441\u0435\u0442\u0446\u044b"},
+gP(){return"\u041f\u043e\u0448\u0443\u043a \u0443 \u0441\u0435\u0442\u0446\u044b"},
 gab(){return"\u0412\u044b\u0431\u0440\u0430\u0446\u044c \u0443\u0441\u0435"},
 ga4(){return"\u0410\u0431\u0430\u0433\u0443\u043b\u0456\u0446\u044c"}}
 A.a45.prototype={
@@ -122517,7 +122518,7 @@ gbd(){return"\u0418\u0437\u0441\u043a\u0430\u0447\u0430\u0449\u043e \u043c\u0435
 gbo(){return"\u041e\u043f\u0440\u0435\u0441\u043d\u044f\u0432\u0430\u043d\u0435"},
 gaY(){return"\u0421\u043a\u0430\u043d\u0438\u0440\u0430\u0439\u0442\u0435 \u0442\u0435\u043a\u0441\u0442"},
 gbs(){return B.a3},
-gO(){return"\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u0432 \u043c\u0440\u0435\u0436\u0430\u0442\u0430"},
+gP(){return"\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u0432 \u043c\u0440\u0435\u0436\u0430\u0442\u0430"},
 gab(){return"\u0418\u0437\u0431\u0438\u0440\u0430\u043d\u0435 \u043d\u0430 \u0432\u0441\u0438\u0447\u043a\u0438"},
 ga4(){return"\u0421\u043f\u043e\u0434\u0435\u043b\u044f\u043d\u0435"}}
 A.a46.prototype={
@@ -122535,7 +122536,7 @@ gbd(){return"\u09aa\u09aa-\u0986\u09aa \u09ae\u09c7\u09a8\u09c1"},
 gbo(){return"\u09b0\u09bf\u09ab\u09cd\u09b0\u09c7\u09b6 \u0995\u09b0\u09c1\u09a8"},
 gaY(){return"\u099f\u09c7\u0995\u09cd\u09b8\u099f \u09b8\u09cd\u0995\u09cd\u09af\u09be\u09a8 \u0995\u09b0\u09c1\u09a8"},
 gbs(){return B.cv},
-gO(){return"\u0993\u09df\u09c7\u09ac\u09c7 \u09b8\u09be\u09b0\u09cd\u099a \u0995\u09b0\u09c1\u09a8"},
+gP(){return"\u0993\u09df\u09c7\u09ac\u09c7 \u09b8\u09be\u09b0\u09cd\u099a \u0995\u09b0\u09c1\u09a8"},
 gab(){return"\u09b8\u09ac \u09ac\u09c7\u099b\u09c7 \u09a8\u09bf\u09a8"},
 ga4(){return"\u09b6\u09c7\u09df\u09be\u09b0 \u0995\u09b0\u09c1\u09a8"}}
 A.a47.prototype={
@@ -122553,7 +122554,7 @@ gbd(){return"\u0f56\u0f66\u0f90\u0f74\u0f44\u0f0b\u0f66\u0f9f\u0f7c\u0f53\u0f0b\
 gbo(){return"\u0f56\u0f66\u0f90\u0fb1\u0f62\u0f0b\u0f42\u0f66\u0f7c\u0f0d"},
 gaY(){return"\u0f61\u0f72\u0f0b\u0f42\u0f7a\u0f0b\u0f56\u0f64\u0f7a\u0f62\u0f0b\u0f60\u0f56\u0f7a\u0f56\u0f66\u0f0d"},
 gbs(){return B.ff},
-gO(){return"\u0f51\u0fb2\u0f0b\u0f50\u0f7c\u0f42\u0f0b\u0f60\u0f5a\u0f7c\u0f63\u0f0b\u0f56\u0f64\u0f7a\u0f62\u0f0d"},
+gP(){return"\u0f51\u0fb2\u0f0b\u0f50\u0f7c\u0f42\u0f0b\u0f60\u0f5a\u0f7c\u0f63\u0f0b\u0f56\u0f64\u0f7a\u0f62\u0f0d"},
 gab(){return"\u0f5a\u0f44\u0f0b\u0f60\u0f51\u0f7a\u0f58\u0f66\u0f0d"},
 ga4(){return"\u0f58\u0f49\u0f58\u0f0b\u0f66\u0fa4\u0fb1\u0f7c\u0f51\u0f0d"}}
 A.a48.prototype={
@@ -122571,7 +122572,7 @@ gbd(){return"Sko\u010dni meni"},
 gbo(){return"Osvje\u017ei"},
 gaY(){return"Skeniraj tekst"},
 gbs(){return B.a3},
-gO(){return"Pretra\u017ei Web"},
+gP(){return"Pretra\u017ei Web"},
 gab(){return"Odaberi sve"},
 ga4(){return"Dijeli"}}
 A.a49.prototype={
@@ -122589,7 +122590,7 @@ gbd(){return"Men\xfa emergent"},
 gbo(){return"Actualitza"},
 gaY(){return"Escaneja text"},
 gbs(){return B.a3},
-gO(){return"Cerca al web"},
+gP(){return"Cerca al web"},
 gab(){return"Selecciona-ho tot"},
 ga4(){return"Comparteix"}}
 A.a4a.prototype={
@@ -122607,7 +122608,7 @@ gbd(){return"Vyskakovac\xed nab\xeddka"},
 gbo(){return"Obnovit"},
 gaY(){return"Naskenovat text"},
 gbs(){return B.a3},
-gO(){return"Vyhled\xe1vat na webu"},
+gP(){return"Vyhled\xe1vat na webu"},
 gab(){return"Vybrat v\u0161e"},
 ga4(){return"Sd\xedlet"}}
 A.a4b.prototype={
@@ -122625,7 +122626,7 @@ gbd(){return"Dewislen ffenestr naid"},
 gbo(){return"Ail-lwytho"},
 gaY(){return"Sganio testun"},
 gbs(){return B.a3},
-gO(){return"Chwilio'r We"},
+gP(){return"Chwilio'r We"},
 gab(){return"Dewis y cyfan"},
 ga4(){return"Rhannu"}}
 A.a4c.prototype={
@@ -122643,7 +122644,7 @@ gbd(){return"Pop op-menu"},
 gbo(){return"Opdater"},
 gaY(){return"Scan tekst"},
 gbs(){return B.a3},
-gO(){return"S\xf8g p\xe5 nettet"},
+gP(){return"S\xf8g p\xe5 nettet"},
 gab(){return"Mark\xe9r alt"},
 ga4(){return"Del"}}
 A.MJ.prototype={
@@ -122661,7 +122662,7 @@ gbd(){return"Pop-up-Men\xfc"},
 gbo(){return"Aktualisieren"},
 gaY(){return"Text scannen"},
 gbs(){return B.a3},
-gO(){return"Im Web suchen"},
+gP(){return"Im Web suchen"},
 gab(){return"Alle ausw\xe4hlen"},
 ga4(){return"Teilen"}}
 A.a4d.prototype={
@@ -122682,7 +122683,7 @@ gbd(){return"\u0391\u03bd\u03b1\u03b4\u03c5\u03cc\u03bc\u03b5\u03bd\u03bf \u03bc
 gbo(){return"\u0391\u03bd\u03b1\u03bd\u03ad\u03c9\u03c3\u03b7"},
 gaY(){return"\u03a3\u03ac\u03c1\u03c9\u03c3\u03b7 \u03ba\u03b5\u03b9\u03bc\u03ad\u03bd\u03bf\u03c5"},
 gbs(){return B.a3},
-gO(){return"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03c3\u03c4\u03bf\u03bd \u03b9\u03c3\u03c4\u03cc"},
+gP(){return"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03c3\u03c4\u03bf\u03bd \u03b9\u03c3\u03c4\u03cc"},
 gab(){return"\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03cc\u03bb\u03c9\u03bd"},
 ga4(){return"\u039a\u03bf\u03b9\u03bd\u03ae \u03c7\u03c1\u03ae\u03c3\u03b7"}}
 A.MK.prototype={
@@ -122700,7 +122701,7 @@ gbd(){return"Popup menu"},
 gbo(){return"Refresh"},
 gaY(){return"Scan text"},
 gbs(){return B.a3},
-gO(){return"Search Web"},
+gP(){return"Search Web"},
 gab(){return"Select all"},
 ga4(){return"Share"}}
 A.a4f.prototype={
@@ -122740,7 +122741,7 @@ gbd(){return"Men\xfa emergente"},
 gbo(){return"Actualizar"},
 gaY(){return"Escanear texto"},
 gbs(){return B.a3},
-gO(){return"Buscar en la Web"},
+gP(){return"Buscar en la Web"},
 gab(){return"Seleccionar todo"},
 ga4(){return"Compartir"}}
 A.a4n.prototype={
@@ -122878,7 +122879,7 @@ gbd(){return"H\xfcpikmen\xfc\xfc"},
 gbo(){return"V\xe4rskendamine"},
 gaY(){return"Skanni tekst"},
 gbs(){return B.a3},
-gO(){return"Otsi veebist"},
+gP(){return"Otsi veebist"},
 gab(){return"Vali k\xf5ik"},
 ga4(){return"Jagamine"}}
 A.a4I.prototype={
@@ -122896,7 +122897,7 @@ gbd(){return"Menu gainerakorra"},
 gbo(){return"Freskatu"},
 gaY(){return"Eskaneatu testua"},
 gbs(){return B.a3},
-gO(){return"Bilatu sarean"},
+gP(){return"Bilatu sarean"},
 gab(){return"Hautatu guztiak"},
 ga4(){return"Partekatu"}}
 A.a4J.prototype={
@@ -122914,7 +122915,7 @@ gbd(){return"\u0645\u0646\u0648\u06cc \u0628\u0627\u0632\u0634\u0648"},
 gbo(){return"\u0628\u0627\u0632\u0622\u0648\u0631\u06cc"},
 gaY(){return"\u0627\u0633\u06a9\u0646 \u06a9\u0631\u062f\u0646 \u0646\u0648\u0634\u062a\u0627\u0631"},
 gbs(){return B.cv},
-gO(){return"\u062c\u0633\u062a\u062c\u0648 \u062f\u0631 \u0648\u0628"},
+gP(){return"\u062c\u0633\u062a\u062c\u0648 \u062f\u0631 \u0648\u0628"},
 gab(){return"\u0627\u0646\u062a\u062e\u0627\u0628 \u0647\u0645\u0647"},
 ga4(){return"\u0647\u0645\u200c\u0631\u0633\u0627\u0646\u06cc \u06a9\u0631\u062f\u0646"}}
 A.a4K.prototype={
@@ -122932,7 +122933,7 @@ gbd(){return"Ponnahdusvalikko"},
 gbo(){return"P\xe4ivitys"},
 gaY(){return"Skannaa teksti\xe4"},
 gbs(){return B.a3},
-gO(){return"Hae verkosta"},
+gP(){return"Hae verkosta"},
 gab(){return"Valitse kaikki"},
 ga4(){return"Jaa"}}
 A.a4L.prototype={
@@ -122950,7 +122951,7 @@ gbd(){return"Popup na menu"},
 gbo(){return"Nagre-refresh"},
 gaY(){return"I-scan ang text"},
 gbs(){return B.a3},
-gO(){return"Maghanap sa Web"},
+gP(){return"Maghanap sa Web"},
 gab(){return"Piliin lahat"},
 ga4(){return"I-share"}}
 A.MM.prototype={
@@ -122968,7 +122969,7 @@ gbd(){return"Menu contextuel"},
 gbo(){return"Actualiser"},
 gaY(){return"Scanner du texte"},
 gbs(){return B.a3},
-gO(){return"Rechercher sur le Web"},
+gP(){return"Rechercher sur le Web"},
 gab(){return"Tout s\xe9lectionner"},
 ga4(){return"Partager"}}
 A.a4M.prototype={
@@ -122989,7 +122990,7 @@ gbd(){return"Roghchl\xe1r an\xedos"},
 gbo(){return"Athnuaigh"},
 gaY(){return"Scan t\xe9acs"},
 gbs(){return B.a3},
-gO(){return"Cuardaigh an Gr\xe9as\xe1n"},
+gP(){return"Cuardaigh an Gr\xe9as\xe1n"},
 gab(){return"Roghnaigh gach rud"},
 ga4(){return"Comhroinn"}}
 A.a4O.prototype={
@@ -123007,7 +123008,7 @@ gbd(){return"Men\xfa emerxente"},
 gbo(){return"Actualizar"},
 gaY(){return"Escanear texto"},
 gbs(){return B.a3},
-gO(){return"Buscar na Web"},
+gP(){return"Buscar na Web"},
 gab(){return"Seleccionar todo"},
 ga4(){return"Compartir"}}
 A.a4P.prototype={
@@ -123025,7 +123026,7 @@ gbd(){return"Pop-up-Men\xfc"},
 gbo(){return"Aktualisieren"},
 gaY(){return"Text scannen"},
 gbs(){return B.a3},
-gO(){return"Im Web suchen"},
+gP(){return"Im Web suchen"},
 gab(){return"Alle ausw\xe4hlen"},
 ga4(){return"Teilen"}}
 A.a4Q.prototype={
@@ -123043,7 +123044,7 @@ gbd(){return"\u0aaa\u0ac9\u0aaa\u0a85\u0aaa \u0aae\u0ac7\u0aa8\u0ac2"},
 gbo(){return"\u0ab0\u0abf\u0aab\u0acd\u0ab0\u0ac7\u0ab6 \u0a95\u0ab0\u0acb"},
 gaY(){return"\u0a9f\u0ac7\u0a95\u0acd\u0ab8\u0acd\u0a9f \u0ab8\u0acd\u0a95\u0ac5\u0aa8 \u0a95\u0ab0\u0acb"},
 gbs(){return B.cv},
-gO(){return"\u0ab5\u0ac7\u0aac \u0aaa\u0ab0 \u0ab6\u0acb\u0aa7\u0acb"},
+gP(){return"\u0ab5\u0ac7\u0aac \u0aaa\u0ab0 \u0ab6\u0acb\u0aa7\u0acb"},
 gab(){return"\u0aac\u0aa7\u0abe \u0aaa\u0ab8\u0a82\u0aa6 \u0a95\u0ab0\u0acb"},
 ga4(){return"\u0ab6\u0ac7\u0ab0 \u0a95\u0ab0\u0acb"}}
 A.a4R.prototype={
@@ -123061,7 +123062,7 @@ gbd(){return"\u05ea\u05e4\u05e8\u05d9\u05d8 \u05e7\u05d5\u05e4\u05e5"},
 gbo(){return"\u05e8\u05e2\u05e0\u05d5\u05df"},
 gaY(){return"\u05e1\u05e8\u05d9\u05e7\u05ea \u05d8\u05e7\u05e1\u05d8"},
 gbs(){return B.a3},
-gO(){return"\u05d7\u05d9\u05e4\u05d5\u05e9 \u05d1\u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8"},
+gP(){return"\u05d7\u05d9\u05e4\u05d5\u05e9 \u05d1\u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8"},
 gab(){return"\u05d1\u05d7\u05d9\u05e8\u05ea \u05d4\u05db\u05d5\u05dc"},
 ga4(){return"\u05e9\u05d9\u05ea\u05d5\u05e3"}}
 A.a4S.prototype={
@@ -123079,7 +123080,7 @@ gbd(){return"\u092a\u0949\u092a\u0905\u092a \u092e\u0947\u0928\u094d\u092f\u0942
 gbo(){return"\u0930\u0940\u092b\u093c\u094d\u0930\u0947\u0936 \u0915\u0930\u0947\u0902"},
 gaY(){return"\u091f\u0947\u0915\u094d\u0938\u094d\u091f \u0938\u094d\u0915\u0948\u0928 \u0915\u0930\u0947\u0902"},
 gbs(){return B.ff},
-gO(){return"\u0935\u0947\u092c \u092a\u0930 \u0916\u094b\u091c\u0947\u0902"},
+gP(){return"\u0935\u0947\u092c \u092a\u0930 \u0916\u094b\u091c\u0947\u0902"},
 gab(){return"\u0938\u092d\u0940 \u0915\u094b \u091a\u0941\u0928\u0947\u0902"},
 ga4(){return"\u0936\u0947\u092f\u0930 \u0915\u0930\u0947\u0902"}}
 A.a4T.prototype={
@@ -123097,7 +123098,7 @@ gbd(){return"Sko\u010dni izbornik"},
 gbo(){return"Osvje\u017ei"},
 gaY(){return"Skeniranje teksta"},
 gbs(){return B.a3},
-gO(){return"Pretra\u017ei web"},
+gP(){return"Pretra\u017ei web"},
 gab(){return"Odaberi sve"},
 ga4(){return"Dijeli"}}
 A.a4U.prototype={
@@ -123115,7 +123116,7 @@ gbd(){return"El\u0151ugr\xf3 men\xfc"},
 gbo(){return"Friss\xedt\xe9s"},
 gaY(){return"Sz\xf6veg beolvas\xe1sa"},
 gbs(){return B.a3},
-gO(){return"Keres\xe9s az interneten"},
+gP(){return"Keres\xe9s az interneten"},
 gab(){return"\xd6sszes kijel\xf6l\xe9se"},
 ga4(){return"Megoszt\xe1s"}}
 A.a4V.prototype={
@@ -123133,7 +123134,7 @@ gbd(){return"\u0535\u056c\u0576\u0578\u0572 \u0568\u0576\u057f\u0580\u0561\u0581
 gbo(){return"\u0539\u0561\u0580\u0574\u0561\u0581\u0576\u0565\u056c"},
 gaY(){return"\u054d\u056f\u0561\u0576\u0561\u057e\u0578\u0580\u0565\u056c \u057f\u0565\u0584\u057d\u057f"},
 gbs(){return B.a3},
-gO(){return"\u0548\u0580\u0578\u0576\u0565\u056c \u0570\u0561\u0574\u0561\u0581\u0561\u0576\u0581\u0578\u0582\u0574"},
+gP(){return"\u0548\u0580\u0578\u0576\u0565\u056c \u0570\u0561\u0574\u0561\u0581\u0561\u0576\u0581\u0578\u0582\u0574"},
 gab(){return"\u0546\u0577\u0565\u056c \u0562\u0578\u056c\u0578\u0580\u0568"},
 ga4(){return"\u053f\u056b\u057d\u057e\u0565\u056c"}}
 A.a4W.prototype={
@@ -123151,7 +123152,7 @@ gbd(){return"Menu pop-up"},
 gbo(){return"Memuat ulang"},
 gaY(){return"Pindai teks"},
 gbs(){return B.a3},
-gO(){return"Telusuri di Web"},
+gP(){return"Telusuri di Web"},
 gab(){return"Pilih semua"},
 ga4(){return"Bagikan"}}
 A.a4X.prototype={
@@ -123169,7 +123170,7 @@ gbd(){return"Sprettivalmynd"},
 gbo(){return"Endurn\xfdja"},
 gaY(){return"Skanna texta"},
 gbs(){return B.a3},
-gO(){return"Leita \xe1 vefnum"},
+gP(){return"Leita \xe1 vefnum"},
 gab(){return"Velja allt"},
 ga4(){return"Deila"}}
 A.a4Y.prototype={
@@ -123187,7 +123188,7 @@ gbd(){return"Menu popup"},
 gbo(){return"Aggiorna"},
 gaY(){return"Scansiona testo"},
 gbs(){return B.a3},
-gO(){return"Cerca sul web"},
+gP(){return"Cerca sul web"},
 gab(){return"Seleziona tutto"},
 ga4(){return"Condividi"}}
 A.a4Z.prototype={
@@ -123205,7 +123206,7 @@ gbd(){return"\u30dd\u30c3\u30d7\u30a2\u30c3\u30d7 \u30e1\u30cb\u30e5\u30fc"},
 gbo(){return"\u66f4\u65b0"},
 gaY(){return"\u30c6\u30ad\u30b9\u30c8\u3092\u30b9\u30ad\u30e3\u30f3"},
 gbs(){return B.ff},
-gO(){return"\u30a6\u30a7\u30d6\u3092\u691c\u7d22"},
+gP(){return"\u30a6\u30a7\u30d6\u3092\u691c\u7d22"},
 gab(){return"\u3059\u3079\u3066\u3092\u9078\u629e"},
 ga4(){return"\u5171\u6709"}}
 A.a5_.prototype={
@@ -123223,7 +123224,7 @@ gbd(){return"\u10d0\u10db\u10dd\u10db\u10ee\u10e2\u10d0\u10e0\u10d8 \u10db\u10d4
 gbo(){return"\u10d2\u10d0\u10dc\u10d0\u10ee\u10da\u10d4\u10d1\u10d0"},
 gaY(){return"\u10e2\u10d4\u10e5\u10e1\u10e2\u10d8\u10e1 \u10e1\u10d9\u10d0\u10dc\u10d8\u10e0\u10d4\u10d1\u10d0"},
 gbs(){return B.a3},
-gO(){return"\u10d5\u10d4\u10d1\u10e8\u10d8 \u10eb\u10d8\u10d4\u10d1\u10d0"},
+gP(){return"\u10d5\u10d4\u10d1\u10e8\u10d8 \u10eb\u10d8\u10d4\u10d1\u10d0"},
 gab(){return"\u10e7\u10d5\u10d4\u10da\u10d0\u10e1 \u10d0\u10e0\u10e9\u10d4\u10d5\u10d0"},
 ga4(){return"\u10d2\u10d0\u10d6\u10d8\u10d0\u10e0\u10d4\u10d1\u10d0"}}
 A.a50.prototype={
@@ -123241,7 +123242,7 @@ gbd(){return"\u049a\u0430\u043b\u049b\u044b\u043c\u0430\u043b\u044b \u0442\u0435
 gbo(){return"\u0416\u0430\u04a3\u0430\u0440\u0442\u0443"},
 gaY(){return"\u041c\u04d9\u0442\u0456\u043d\u0434\u0456 \u0441\u043a\u0430\u043d\u0435\u0440\u043b\u0435\u0443"},
 gbs(){return B.a3},
-gO(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0456\u0437\u0434\u0435\u0443"},
+gP(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0456\u0437\u0434\u0435\u0443"},
 gab(){return"\u0411\u0430\u0440\u043b\u044b\u0493\u044b\u043d \u0442\u0430\u04a3\u0434\u0430\u0443"},
 ga4(){return"\u0411\u04e9\u043b\u0456\u0441\u0443"}}
 A.a51.prototype={
@@ -123259,7 +123260,7 @@ gbd(){return"\u200b\u1798\u17c9\u17ba\u1793\u17bb\u1799\u200b\u179b\u17c4\u178f\
 gbo(){return"\u1795\u17d2\u1791\u17bb\u1780\u17a1\u17be\u1784\u179c\u17b7\u1789"},
 gaY(){return"\u179f\u17d2\u1780\u17c1\u1793\u200b\u17a2\u1780\u17d2\u179f\u179a"},
 gbs(){return B.ff},
-gO(){return"\u179f\u17d2\u179c\u17c2\u1784\u179a\u1780\u200b\u179b\u17be\u1794\u178e\u17d2\u178a\u17b6\u1789"},
+gP(){return"\u179f\u17d2\u179c\u17c2\u1784\u179a\u1780\u200b\u179b\u17be\u1794\u178e\u17d2\u178a\u17b6\u1789"},
 gab(){return"\u1787\u17d2\u179a\u17be\u179f\u179a\u17be\u179f\u200b\u1791\u17b6\u17c6\u1784\u17a2\u179f\u17cb"},
 ga4(){return"\u1785\u17c2\u1780\u179a\u17c6\u179b\u17c2\u1780"}}
 A.a52.prototype={
@@ -123277,7 +123278,7 @@ gbd(){return"\u0caa\u0cbe\u0caa\u0ccd\u0c85\u0caa\u0ccd \u0cae\u0cc6\u0ca8\u0cc1
 gbo(){return"\u0cb0\u0cbf\u0cab\u0ccd\u0cb0\u0cc6\u0cb6\u0ccd \u0cae\u0cbe\u0ca1\u0cbf"},
 gaY(){return"\u0caa\u0ca0\u0ccd\u0caf\u0cb5\u0ca8\u0ccd\u0ca8\u0cc1 \u0cb8\u0ccd\u0c95\u0ccd\u0caf\u0cbe\u0ca8\u0ccd \u0cae\u0cbe\u0ca1\u0cbf"},
 gbs(){return B.cv},
-gO(){return"\u0cb5\u0cc6\u0cac\u0ccd\u200c\u0ca8\u0cb2\u0ccd\u0cb2\u0cbf \u0cb9\u0cc1\u0ca1\u0cc1\u0c95\u0cbf"},
+gP(){return"\u0cb5\u0cc6\u0cac\u0ccd\u200c\u0ca8\u0cb2\u0ccd\u0cb2\u0cbf \u0cb9\u0cc1\u0ca1\u0cc1\u0c95\u0cbf"},
 gab(){return"\u0c8e\u0cb2\u0ccd\u0cb2\u0cb5\u0ca8\u0ccd\u0ca8\u0cc2 \u0c86\u0caf\u0ccd\u0c95\u0cc6 \u0cae\u0cbe\u0ca1\u0cbf"},
 ga4(){return"\u0cb9\u0c82\u0c9a\u0cbf\u0c95\u0cca\u0cb3\u0ccd\u0cb3\u0cbf"}}
 A.a53.prototype={
@@ -123295,7 +123296,7 @@ gbd(){return"\ud31d\uc5c5 \uba54\ub274"},
 gbo(){return"\uc0c8\ub85c\uace0\uce68"},
 gaY(){return"\ud14d\uc2a4\ud2b8 \uc2a4\uce94"},
 gbs(){return B.ff},
-gO(){return"\uc6f9 \uac80\uc0c9"},
+gP(){return"\uc6f9 \uac80\uc0c9"},
 gab(){return"\uc804\uccb4 \uc120\ud0dd"},
 ga4(){return"\uacf5\uc720"}}
 A.a54.prototype={
@@ -123313,7 +123314,7 @@ gbd(){return"\u041a\u0430\u043b\u043a\u044b\u043f \u0447\u044b\u0433\u0443\u0443
 gbo(){return"\u0416\u0430\u04a3\u044b\u0440\u0442\u0443\u0443"},
 gaY(){return"\u0422\u0435\u043a\u0441\u0442\u0442\u0438 \u0441\u043a\u0430\u043d\u0434\u043e\u043e"},
 gbs(){return B.a3},
-gO(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0438\u0437\u0434\u04e9\u04e9"},
+gP(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0438\u0437\u0434\u04e9\u04e9"},
 gab(){return"\u0411\u0430\u0430\u0440\u044b\u043d \u0442\u0430\u043d\u0434\u043e\u043e"},
 ga4(){return"\u0411\u04e9\u043b\u04af\u0448\u04af\u04af"}}
 A.a55.prototype={
@@ -123331,7 +123332,7 @@ gbd(){return"\u0ec0\u0ea1\u0e99\u0eb9\u0e9b\u0eb1\u0ead\u0e9a\u0ead\u0eb1\u0e9a"
 gbo(){return"\u0ec2\u0eab\u0ebc\u0e94\u0e84\u0eb7\u0e99\u0ec3\u0edd\u0ec8"},
 gaY(){return"\u0eaa\u0eb0\u0ec1\u0e81\u0e99\u0e82\u0ecd\u0ec9\u0e84\u0ea7\u0eb2\u0ea1"},
 gbs(){return B.cv},
-gO(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0ea2\u0eb9\u0ec8\u0ead\u0eb4\u0e99\u0ec0\u0e95\u0eb5\u0ec0\u0e99\u0eb1\u0e94"},
+gP(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0ea2\u0eb9\u0ec8\u0ead\u0eb4\u0e99\u0ec0\u0e95\u0eb5\u0ec0\u0e99\u0eb1\u0e94"},
 gab(){return"\u0ec0\u0ea5\u0eb7\u0ead\u0e81\u0e97\u0eb1\u0e87\u0edd\u0ebb\u0e94"},
 ga4(){return"\u0ec1\u0e9a\u0ec8\u0e87\u0e9b\u0eb1\u0e99"}}
 A.a56.prototype={
@@ -123349,7 +123350,7 @@ gbd(){return"I\u0161\u0161okantysis meniu"},
 gbo(){return"Atnaujinti"},
 gaY(){return"Nuskaityti tekst\u0105"},
 gbs(){return B.a3},
-gO(){return"Ie\u0161koti \u017einiatinklyje"},
+gP(){return"Ie\u0161koti \u017einiatinklyje"},
 gab(){return"Pasirinkti visk\u0105"},
 ga4(){return"Bendrinti"}}
 A.a57.prototype={
@@ -123367,7 +123368,7 @@ gbd(){return"Uznirsto\u0161\u0101 izv\u0113lne"},
 gbo(){return"Atsvaidzin\u0101t"},
 gaY(){return"Sken\u0113t tekstu"},
 gbs(){return B.a3},
-gO(){return"Mekl\u0113t t\u012bmekl\u012b"},
+gP(){return"Mekl\u0113t t\u012bmekl\u012b"},
 gab(){return"Atlas\u012bt visu"},
 ga4(){return"Kop\u012bgot"}}
 A.a58.prototype={
@@ -123385,7 +123386,7 @@ gbd(){return"\u0421\u043a\u043e\u043a\u0430\u0447\u043a\u043e \u043c\u0435\u043d
 gbo(){return"\u041e\u0441\u0432\u0435\u0436\u0438"},
 gaY(){return"\u0421\u043a\u0435\u043d\u0438\u0440\u0430\u0458\u0442\u0435 \u0433\u043e \u0442\u0435\u043a\u0441\u0442\u043e\u0442"},
 gbs(){return B.a3},
-gO(){return"\u041f\u0440\u0435\u0431\u0430\u0440\u0430\u0458\u0442\u0435 \u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442"},
+gP(){return"\u041f\u0440\u0435\u0431\u0430\u0440\u0430\u0458\u0442\u0435 \u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442"},
 gab(){return"\u0418\u0437\u0431\u0435\u0440\u0438 \u0433\u0438 \u0441\u0438\u0442\u0435"},
 ga4(){return"\u0421\u043f\u043e\u0434\u0435\u043b\u0438"}}
 A.a59.prototype={
@@ -123403,7 +123404,7 @@ gbd(){return"\u0d2a\u0d4b\u0d2a\u0d4d\u0d2a\u0d4d \u0d05\u0d2a\u0d4d\u0d2a\u0d4d
 gbo(){return"\u0d31\u0d40\u0d2b\u0d4d\u0d30\u0d37\u0d4d \u0d1a\u0d46\u0d2f\u0d4d\u0d2f\u0d41\u0d15"},
 gaY(){return"\u0d1f\u0d46\u0d15\u0d4d\u0d38\u0d4d\u0d31\u0d4d\u0d31\u0d4d \u0d38\u0d4d\u200c\u0d15\u0d3e\u0d7b \u0d1a\u0d46\u0d2f\u0d4d\u0d2f\u0d41\u0d15"},
 gbs(){return B.cv},
-gO(){return"\u0d35\u0d46\u0d2c\u0d3f\u0d7d \u0d24\u0d3f\u0d30\u0d2f\u0d41\u0d15"},
+gP(){return"\u0d35\u0d46\u0d2c\u0d3f\u0d7d \u0d24\u0d3f\u0d30\u0d2f\u0d41\u0d15"},
 gab(){return"\u0d0e\u0d32\u0d4d\u0d32\u0d3e\u0d02 \u0d24\u0d3f\u0d30\u0d1e\u0d4d\u0d1e\u0d46\u0d1f\u0d41\u0d15\u0d4d\u0d15\u0d41\u0d15"},
 ga4(){return"\u0d2a\u0d19\u0d4d\u0d15\u0d3f\u0d1f\u0d41\u0d15"}}
 A.a5a.prototype={
@@ -123421,7 +123422,7 @@ gbd(){return"\u041f\u043e\u043f\u0430\u043f \u0446\u044d\u0441"},
 gbo(){return"\u0421\u044d\u0440\u0433\u044d\u044d\u0445"},
 gaY(){return"\u0422\u0435\u043a\u0441\u0442\u0438\u0439\u0433 \u0441\u043a\u0430\u043d \u0445\u0438\u0439\u0445"},
 gbs(){return B.a3},
-gO(){return"\u0412\u0435\u0431\u044d\u044d\u0441 \u0445\u0430\u0439\u0445"},
+gP(){return"\u0412\u0435\u0431\u044d\u044d\u0441 \u0445\u0430\u0439\u0445"},
 gab(){return"\u0411\u04af\u0433\u0434\u0438\u0439\u0433 \u0441\u043e\u043d\u0433\u043e\u0445"},
 ga4(){return"\u0425\u0443\u0432\u0430\u0430\u043b\u0446\u0430\u0445"}}
 A.a5b.prototype={
@@ -123439,7 +123440,7 @@ gbd(){return"\u092a\u0949\u092a\u0905\u092a \u092e\u0947\u0928\u0942"},
 gbo(){return"\u0930\u093f\u092b\u094d\u0930\u0947\u0936 \u0915\u0930\u093e"},
 gaY(){return"\u092e\u091c\u0915\u0942\u0930 \u0938\u094d\u0915\u0945\u0928 \u0915\u0930\u093e"},
 gbs(){return B.ff},
-gO(){return"\u0935\u0947\u092c\u0935\u0930 \u0936\u094b\u0927\u093e"},
+gP(){return"\u0935\u0947\u092c\u0935\u0930 \u0936\u094b\u0927\u093e"},
 gab(){return"\u0938\u0930\u094d\u0935 \u0928\u093f\u0935\u0921\u093e"},
 ga4(){return"\u0936\u0947\u0905\u0930 \u0915\u0930\u093e"}}
 A.a5c.prototype={
@@ -123457,7 +123458,7 @@ gbd(){return"Menu pop timbul"},
 gbo(){return"Muat semula"},
 gaY(){return"Imbas teks"},
 gbs(){return B.a3},
-gO(){return"Buat carian pada Web"},
+gP(){return"Buat carian pada Web"},
 gab(){return"Pilih semua"},
 ga4(){return"Kongsi"}}
 A.a5d.prototype={
@@ -123475,7 +123476,7 @@ gbd(){return"\u1015\u1031\u102b\u1037\u1015\u103a\u1021\u1015\u103a\u1019\u102e\
 gbo(){return"\u1015\u103c\u1014\u103a\u101c\u100a\u103a\u1005\u1010\u1004\u103a\u101b\u1014\u103a"},
 gaY(){return"\u1005\u102c\u101e\u102c\u1038 \u1005\u1000\u1004\u103a\u1016\u1010\u103a\u101b\u1014\u103a"},
 gbs(){return B.cv},
-gO(){return"\u101d\u1018\u103a\u1010\u103d\u1004\u103a\u101b\u103e\u102c\u101b\u1014\u103a"},
+gP(){return"\u101d\u1018\u103a\u1010\u103d\u1004\u103a\u101b\u103e\u102c\u101b\u1014\u103a"},
 gab(){return"\u1021\u102c\u1038\u101c\u102f\u1036\u1038 \u101b\u103d\u1031\u1038\u101b\u1014\u103a"},
 ga4(){return"\u1019\u103b\u103e\u101d\u1031\u101b\u1014\u103a"}}
 A.a5e.prototype={
@@ -123493,7 +123494,7 @@ gbd(){return"Forgrunnsmeny"},
 gbo(){return"Laster inn p\xe5 nytt"},
 gaY(){return"Skann tekst"},
 gbs(){return B.a3},
-gO(){return"S\xf8k p\xe5 nettet"},
+gP(){return"S\xf8k p\xe5 nettet"},
 gab(){return"Velg alle"},
 ga4(){return"Del"}}
 A.a5f.prototype={
@@ -123511,7 +123512,7 @@ gbd(){return"\u092a\u092a\u0905\u092a \u092e\u0947\u0928\u0941"},
 gbo(){return"\u092a\u0941\u0928\u0903 \u0924\u093e\u091c\u093e \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 gaY(){return"\u091f\u0947\u0915\u094d\u0938\u094d\u091f \u0938\u094d\u0915\u094d\u092f\u093e\u0928 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 gbs(){return B.cv},
-gO(){return"\u0935\u0947\u092c\u092e\u093e \u0916\u094b\u091c\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
+gP(){return"\u0935\u0947\u092c\u092e\u093e \u0916\u094b\u091c\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 gab(){return"\u0938\u092c\u0948 \u092c\u091f\u0928\u0939\u0930\u0942 \u091a\u092f\u0928 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
 ga4(){return"\u0938\u0947\u092f\u0930 \u0917\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d"}}
 A.a5g.prototype={
@@ -123529,7 +123530,7 @@ gbd(){return"Pop-upmenu"},
 gbo(){return"Vernieuwen"},
 gaY(){return"Tekst scannen"},
 gbs(){return B.a3},
-gO(){return"Op internet zoeken"},
+gP(){return"Op internet zoeken"},
 gab(){return"Alles selecteren"},
 ga4(){return"Delen"}}
 A.a5h.prototype={
@@ -123547,7 +123548,7 @@ gbd(){return"Forgrunnsmeny"},
 gbo(){return"Laster inn p\xe5 nytt"},
 gaY(){return"Skann tekst"},
 gbs(){return B.a3},
-gO(){return"S\xf8k p\xe5 nettet"},
+gP(){return"S\xf8k p\xe5 nettet"},
 gab(){return"Velg alle"},
 ga4(){return"Del"}}
 A.a5i.prototype={
@@ -123565,7 +123566,7 @@ gbd(){return"\u0b2a\u0b2a\u0b05\u0b2a \u0b2e\u0b47\u0b28\u0b41"},
 gbo(){return"\u0b30\u0b3f\u0b2b\u0b4d\u0b30\u0b47\u0b38 \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 gaY(){return"\u0b1f\u0b47\u0b15\u0b4d\u0b38\u0b1f \u0b38\u0b4d\u0b15\u0b3e\u0b28 \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 gbs(){return B.cv},
-gO(){return"\u0b71\u0b47\u0b2c \u0b38\u0b30\u0b4d\u0b1a\u0b4d\u0b1a \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
+gP(){return"\u0b71\u0b47\u0b2c \u0b38\u0b30\u0b4d\u0b1a\u0b4d\u0b1a \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 gab(){return"\u0b38\u0b2c\u0b41 \u0b1a\u0b5f\u0b28 \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"},
 ga4(){return"\u0b38\u0b47\u0b5f\u0b3e\u0b30 \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"}}
 A.a5j.prototype={
@@ -123583,7 +123584,7 @@ gbd(){return"\u0a2a\u0a4c\u0a2a\u0a05\u0a71\u0a2a \u0a2e\u0a40\u0a28\u0a42"},
 gbo(){return"\u0a30\u0a3f\u0a2b\u0a4d\u0a30\u0a48\u0a36 \u0a15\u0a30\u0a4b"},
 gaY(){return"\u0a32\u0a3f\u0a16\u0a24 \u0a28\u0a42\u0a70 \u0a38\u0a15\u0a48\u0a28 \u0a15\u0a30\u0a4b"},
 gbs(){return B.cv},
-gO(){return"\u0a35\u0a48\u0a71\u0a2c '\u0a24\u0a47 \u0a16\u0a4b\u0a1c\u0a4b"},
+gP(){return"\u0a35\u0a48\u0a71\u0a2c '\u0a24\u0a47 \u0a16\u0a4b\u0a1c\u0a4b"},
 gab(){return"\u0a38\u0a2d \u0a1a\u0a41\u0a23\u0a4b"},
 ga4(){return"\u0a38\u0a3e\u0a02\u0a1d\u0a3e \u0a15\u0a30\u0a4b"}}
 A.a5k.prototype={
@@ -123601,7 +123602,7 @@ gbd(){return"Menu kontekstowe"},
 gbo(){return"Od\u015bwie\u017c"},
 gaY(){return"Skanuj tekst"},
 gbs(){return B.a3},
-gO(){return"Szukaj w\xa0internecie"},
+gP(){return"Szukaj w\xa0internecie"},
 gab(){return"Zaznacz wszystko"},
 ga4(){return"Udost\u0119pnij"}}
 A.a5l.prototype={
@@ -123619,7 +123620,7 @@ gbd(){return"\u062f \u067e\u0627\u067e \u0627\u067e \u0645\u06cc\u0646\u0648"},
 gbo(){return"Refresh"},
 gaY(){return"\u0645\u062a\u0646 \u0633\u06a9\u06cc\u0646 \u06a9\u0693\u0626"},
 gbs(){return B.cv},
-gO(){return"Search Web"},
+gP(){return"Search Web"},
 gab(){return"\u063a\u0648\u0631\u0647 \u06a9\u0693\u0626"},
 ga4(){return"Share..."}}
 A.MN.prototype={
@@ -123637,7 +123638,7 @@ gbd(){return"Menu pop-up"},
 gbo(){return"Atualizar"},
 gaY(){return"Digitalizar texto"},
 gbs(){return B.a3},
-gO(){return"Pesquisar na Web"},
+gP(){return"Pesquisar na Web"},
 gab(){return"Selecionar tudo"},
 ga4(){return"Compartilhar"}}
 A.a5m.prototype={
@@ -123660,7 +123661,7 @@ gbd(){return"Meniu pop-up"},
 gbo(){return"Actualiza\u021bi"},
 gaY(){return"Scana\u021bi textul"},
 gbs(){return B.a3},
-gO(){return"C\u0103uta\u021bi pe web"},
+gP(){return"C\u0103uta\u021bi pe web"},
 gab(){return"Selecta\u021bi tot"},
 ga4(){return"Trimite\u021bi"}}
 A.a5o.prototype={
@@ -123678,7 +123679,7 @@ gbd(){return"\u0412\u0441\u043f\u043b\u044b\u0432\u0430\u044e\u0449\u0435\u0435 
 gbo(){return"\u041e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435"},
 gaY(){return"\u0421\u043a\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0442\u0435\u043a\u0441\u0442"},
 gbs(){return B.a3},
-gO(){return"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435"},
+gP(){return"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435"},
 gab(){return"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u0432\u0441\u0435"},
 ga4(){return"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f"}}
 A.a5p.prototype={
@@ -123696,7 +123697,7 @@ gbd(){return"\u0d8b\u0dad\u0dca\u0db4\u0dad\u0db1 \u0db8\u0dd9\u0db1\u0dd4\u0dc0
 gbo(){return"\u0db1\u0dd0\u0dc0\u0dd4\u0db8\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1"},
 gaY(){return"\u0db4\u0dd9\u0dc5 \u0dc3\u0dca\u0d9a\u0dd1\u0db1\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1"},
 gbs(){return B.a3},
-gO(){return"\u0dc0\u0dd9\u0db6\u0dba \u0dc3\u0ddc\u0dba\u0db1\u0dca\u0db1"},
+gP(){return"\u0dc0\u0dd9\u0db6\u0dba \u0dc3\u0ddc\u0dba\u0db1\u0dca\u0db1"},
 gab(){return"\u0dc3\u0dd2\u0dba\u0dbd\u0dca\u0dbd \u0dad\u0ddd\u0dbb\u0db1\u0dca\u0db1"},
 ga4(){return"\u0db6\u0dd9\u0daf\u0dcf \u0d9c\u0db1\u0dca\u0db1"}}
 A.a5q.prototype={
@@ -123714,7 +123715,7 @@ gbd(){return"Kontextov\xe1 ponuka"},
 gbo(){return"Obnovi\u0165"},
 gaY(){return"Naskenova\u0165 text"},
 gbs(){return B.a3},
-gO(){return"H\u013eada\u0165 na webe"},
+gP(){return"H\u013eada\u0165 na webe"},
 gab(){return"Vybra\u0165 v\u0161etko"},
 ga4(){return"Zdie\u013ea\u0165"}}
 A.a5r.prototype={
@@ -123732,7 +123733,7 @@ gbd(){return"Pojavni meni"},
 gbo(){return"Osve\u017ei"},
 gaY(){return"Opti\u010dno preberite besedilo"},
 gbs(){return B.a3},
-gO(){return"Iskanje v spletu"},
+gP(){return"Iskanje v spletu"},
 gab(){return"Izberi vse"},
 ga4(){return"Deli"}}
 A.a5s.prototype={
@@ -123750,7 +123751,7 @@ gbd(){return"Menyja k\xebrcyese"},
 gbo(){return"Rifresko"},
 gaY(){return"Skano tekstin"},
 gbs(){return B.a3},
-gO(){return"K\xebrko n\xeb ueb"},
+gP(){return"K\xebrko n\xeb ueb"},
 gab(){return"Zgjidh t\xeb gjitha"},
 ga4(){return"Ndaj"}}
 A.MO.prototype={
@@ -123768,7 +123769,7 @@ gbd(){return"\u0418\u0441\u043a\u0430\u0447\u0443\u045b\u0438 \u043c\u0435\u043d
 gbo(){return"\u041e\u0441\u0432\u0435\u0436\u0438"},
 gaY(){return"\u0421\u043a\u0435\u043d\u0438\u0440\u0430\u0458 \u0442\u0435\u043a\u0441\u0442"},
 gbs(){return B.a3},
-gO(){return"\u041f\u0440\u0435\u0442\u0440\u0430\u0436\u0438 \u0432\u0435\u0431"},
+gP(){return"\u041f\u0440\u0435\u0442\u0440\u0430\u0436\u0438 \u0432\u0435\u0431"},
 gab(){return"\u0418\u0437\u0430\u0431\u0435\u0440\u0438 \u0441\u0432\u0435"},
 ga4(){return"\u0414\u0435\u043b\u0438"}}
 A.a5t.prototype={}
@@ -123786,7 +123787,7 @@ gai(){return"Nalepi"},
 gbd(){return"Iska\u010duc\u0301i meni"},
 gbo(){return"Osve\u017ei"},
 gaY(){return"Skeniraj tekst"},
-gO(){return"Pretra\u017ei veb"},
+gP(){return"Pretra\u017ei veb"},
 gab(){return"Izaberi sve"},
 ga4(){return"Deli"}}
 A.a5v.prototype={
@@ -123804,7 +123805,7 @@ gbd(){return"Popup-meny"},
 gbo(){return"Uppdatera"},
 gaY(){return"Skanna text"},
 gbs(){return B.a3},
-gO(){return"S\xf6k p\xe5 webben"},
+gP(){return"S\xf6k p\xe5 webben"},
 gab(){return"Markera allt"},
 ga4(){return"Dela"}}
 A.a5w.prototype={
@@ -123822,7 +123823,7 @@ gbd(){return"Menyu ibukizi"},
 gbo(){return"Onyesha upya"},
 gaY(){return"Changanua maandishi"},
 gbs(){return B.a3},
-gO(){return"Tafuta kwenye Wavuti"},
+gP(){return"Tafuta kwenye Wavuti"},
 gab(){return"Chagua vyote"},
 ga4(){return"Tuma"}}
 A.a5x.prototype={
@@ -123840,7 +123841,7 @@ gbd(){return"\u0baa\u0bbe\u0baa\u0bcd-\u0b85\u0baa\u0bcd \u0bae\u0bc6\u0ba9\u0bc
 gbo(){return"\u0bb0\u0bc6\u0b83\u0baa\u0bcd\u0bb0\u0bc6\u0bb7\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0bae\u0bcd"},
 gaY(){return"\u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8\u0b95\u0bb3\u0bc8 \u0bb8\u0bcd\u0b95\u0bc7\u0ba9\u0bcd \u0b9a\u0bc6\u0baf\u0bcd"},
 gbs(){return B.ff},
-gO(){return"\u0b87\u0ba3\u0bc8\u0baf\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0ba4\u0bc7\u0b9f\u0bc1"},
+gP(){return"\u0b87\u0ba3\u0bc8\u0baf\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0ba4\u0bc7\u0b9f\u0bc1"},
 gab(){return"\u0b85\u0ba9\u0bc8\u0ba4\u0bcd\u0ba4\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0ba4\u0bc7\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4\u0bc6\u0b9f\u0bc1"},
 ga4(){return"\u0baa\u0b95\u0bbf\u0bb0\u0bcd"}}
 A.a5y.prototype={
@@ -123858,7 +123859,7 @@ gbd(){return"\u0c2a\u0c3e\u0c2a\u0c4d\u200c\u0c05\u0c2a\u0c4d \u0c2e\u0c46\u0c28
 gbo(){return"\u0c30\u0c3f\u0c2b\u0c4d\u0c30\u0c46\u0c37\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"},
 gaY(){return"\u0c1f\u0c46\u0c15\u0c4d\u0c38\u0c4d\u0c1f\u0c4d\u200c\u0c28\u0c41 \u0c38\u0c4d\u0c15\u0c3e\u0c28\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"},
 gbs(){return B.cv},
-gO(){return"\u0c35\u0c46\u0c2c\u0c4d\u200c\u0c32\u0c4b \u0c38\u0c46\u0c30\u0c4d\u0c1a\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"},
+gP(){return"\u0c35\u0c46\u0c2c\u0c4d\u200c\u0c32\u0c4b \u0c38\u0c46\u0c30\u0c4d\u0c1a\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"},
 gab(){return"\u0c05\u0c28\u0c4d\u0c28\u0c3f\u0c02\u0c1f\u0c3f\u0c28\u0c40 \u0c0e\u0c02\u0c1a\u0c41\u0c15\u0c4b\u0c02\u0c21\u0c3f"},
 ga4(){return"\u0c37\u0c47\u0c30\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"}}
 A.a5z.prototype={
@@ -123876,7 +123877,7 @@ gbd(){return"\u0e40\u0e21\u0e19\u0e39\u0e1b\u0e4a\u0e2d\u0e1b\u0e2d\u0e31\u0e1b"
 gbo(){return"\u0e23\u0e35\u0e40\u0e1f\u0e23\u0e0a"},
 gaY(){return"\u0e2a\u0e41\u0e01\u0e19\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21"},
 gbs(){return B.cv},
-gO(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e1a\u0e19\u0e2d\u0e34\u0e19\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e47\u0e15"},
+gP(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e1a\u0e19\u0e2d\u0e34\u0e19\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e47\u0e15"},
 gab(){return"\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e17\u0e31\u0e49\u0e07\u0e2b\u0e21\u0e14"},
 ga4(){return"\u0e41\u0e0a\u0e23\u0e4c"}}
 A.a5A.prototype={
@@ -123894,7 +123895,7 @@ gbd(){return"Popup na menu"},
 gbo(){return"Nagre-refresh"},
 gaY(){return"I-scan ang text"},
 gbs(){return B.a3},
-gO(){return"Maghanap sa Web"},
+gP(){return"Maghanap sa Web"},
 gab(){return"Piliin lahat"},
 ga4(){return"I-share"}}
 A.a5B.prototype={
@@ -123912,7 +123913,7 @@ gbd(){return"Popup men\xfc"},
 gbo(){return"Yenile"},
 gaY(){return"Metin tara"},
 gbs(){return B.a3},
-gO(){return"Web'de Ara"},
+gP(){return"Web'de Ara"},
 gab(){return"T\xfcm\xfcn\xfc se\xe7"},
 ga4(){return"Payla\u015f"}}
 A.a5C.prototype={
@@ -123930,7 +123931,7 @@ gbd(){return"\u0633\u06d5\u0643\u0631\u0649\u0645\u06d5 \u062a\u0649\u0632\u0649
 gbo(){return"\u064a\u06d0\u06ad\u0649\u0644\u0627\u0634"},
 gaY(){return"\u062a\u06d0\u0643\u0649\u0633\u062a\u0646\u0649 \u0633\u0627\u064a\u0649\u0644\u06d5\u0634"},
 gbs(){return B.cv},
-gO(){return"\u062a\u0648\u0631\u062f\u0627 \u0626\u0649\u0632\u062f\u06d5\u0634"},
+gP(){return"\u062a\u0648\u0631\u062f\u0627 \u0626\u0649\u0632\u062f\u06d5\u0634"},
 gab(){return"\u06be\u06d5\u0645\u0645\u0649\u0646\u0649 \u062a\u0627\u0644\u0644\u0627\u0634"},
 ga4(){return"\u06be\u06d5\u0645\u0628\u06d5\u06be\u0631\u0644\u06d5\u0634"}}
 A.a5D.prototype={
@@ -123948,7 +123949,7 @@ gbd(){return"\u0421\u043f\u043b\u0438\u0432\u0430\u044e\u0447\u0435 \u043c\u0435
 gbo(){return"\u041e\u043d\u043e\u0432\u0438\u0442\u0438"},
 gaY(){return"\u0412\u0456\u0434\u0441\u043a\u0430\u043d\u0443\u0432\u0430\u0442\u0438 \u0442\u0435\u043a\u0441\u0442"},
 gbs(){return B.a3},
-gO(){return"\u041f\u043e\u0448\u0443\u043a \u0432 \u0406\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0456"},
+gP(){return"\u041f\u043e\u0448\u0443\u043a \u0432 \u0406\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0456"},
 gab(){return"\u0412\u0438\u0431\u0440\u0430\u0442\u0438 \u0432\u0441\u0456"},
 ga4(){return"\u041f\u043e\u0434\u0456\u043b\u0438\u0442\u0438\u0441\u044f"}}
 A.a5E.prototype={
@@ -123966,7 +123967,7 @@ gbd(){return"\u067e\u0627\u067e \u0627\u067e \u0645\u06cc\u0646\u06cc\u0648"},
 gbo(){return"\u0631\u06cc\u0641\u0631\u06cc\u0634 \u06a9\u0631\u06cc\u06ba"},
 gaY(){return"\u0679\u06cc\u06a9\u0633\u0679 \u0627\u0633\u06a9\u06cc\u0646 \u06a9\u0631\u06cc\u06ba"},
 gbs(){return B.cv},
-gO(){return"\u0648\u06cc\u0628 \u062a\u0644\u0627\u0634 \u06a9\u0631\u06cc\u06ba"},
+gP(){return"\u0648\u06cc\u0628 \u062a\u0644\u0627\u0634 \u06a9\u0631\u06cc\u06ba"},
 gab(){return"\u0633\u0628\u06be\u06cc \u06a9\u0648 \u0645\u0646\u062a\u062e\u0628 \u06a9\u0631\u06cc\u06ba"},
 ga4(){return"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06a9\u0631\u06cc\u06ba"}}
 A.a5F.prototype={
@@ -123984,7 +123985,7 @@ gbd(){return"Pop-ap menyusi"},
 gbo(){return"Yangilash"},
 gaY(){return"Matnni skanerlash"},
 gbs(){return B.a3},
-gO(){return"Internetdan qidirish"},
+gP(){return"Internetdan qidirish"},
 gab(){return"Hammasi"},
 ga4(){return"Ulashish"}}
 A.a5G.prototype={
@@ -124002,7 +124003,7 @@ gbd(){return"Menu b\u1eadt l\xean"},
 gbo(){return"L\xe0m m\u1edbi"},
 gaY(){return"Qu\xe9t v\u0103n b\u1ea3n"},
 gbs(){return B.a3},
-gO(){return"T\xecm ki\u1ebfm tr\xean web"},
+gP(){return"T\xecm ki\u1ebfm tr\xean web"},
 gab(){return"Ch\u1ecdn t\u1ea5t c\u1ea3"},
 ga4(){return"Chia s\u1ebb"}}
 A.MP.prototype={
@@ -124020,7 +124021,7 @@ gbd(){return"\u5f39\u51fa\u83dc\u5355"},
 gbo(){return"\u5237\u65b0"},
 gaY(){return"\u626b\u63cf\u6587\u5b57"},
 gbs(){return B.ff},
-gO(){return"\u641c\u7d22"},
+gP(){return"\u641c\u7d22"},
 gab(){return"\u5168\u9009"},
 ga4(){return"\u5206\u4eab"}}
 A.a5H.prototype={}
@@ -124036,7 +124037,7 @@ gai(){return"\u8cbc\u4e0a"},
 gbd(){return"\u5f48\u51fa\u5f0f\u9078\u55ae"},
 gbo(){return"\u91cd\u65b0\u6574\u7406"},
 gaY(){return"\u6383\u7784\u6587\u5b57"},
-gO(){return"\u641c\u5c0b"},
+gP(){return"\u641c\u5c0b"},
 gab(){return"\u5168\u9078"}}
 A.a5I.prototype={}
 A.a5J.prototype={
@@ -124057,58 +124058,58 @@ gbd(){return"Imenyu ye-popup"},
 gbo(){return"Vuselela"},
 gaY(){return"Skena umbhalo"},
 gbs(){return B.a3},
-gO(){return"Sesha Iwebhu"},
+gP(){return"Sesha Iwebhu"},
 gab(){return"Khetha konke"},
 ga4(){return"Yabelana"}}
 A.abb.prototype={
 gF(){return"Kyk op"},
-gO(){return"Deursoek web"}}
+gP(){return"Deursoek web"}}
 A.abc.prototype={
 gF(){return"\u12ed\u1218\u120d\u12a8\u1271"},
-gO(){return"\u12f5\u122d\u1295 \u1348\u120d\u130d"}}
+gP(){return"\u12f5\u122d\u1295 \u1348\u120d\u130d"}}
 A.abd.prototype={
 gF(){return"\u0628\u062d\u062b \u0639\u0627\u0645"},
-gO(){return"\u0627\u0644\u0628\u062d\u062b \u0639\u0644\u0649 \u0627\u0644\u0648\u064a\u0628"}}
+gP(){return"\u0627\u0644\u0628\u062d\u062b \u0639\u0644\u0649 \u0627\u0644\u0648\u064a\u0628"}}
 A.abe.prototype={
 gF(){return"\u0993\u09aa\u09f0\u09b2\u09c8 \u099a\u09be\u0993\u0995"},
-gO(){return"\u09f1\u09c7\u09ac\u09a4 \u09b8\u09a8\u09cd\u09a7\u09be\u09a8 \u0995\u09f0\u0995"}}
+gP(){return"\u09f1\u09c7\u09ac\u09a4 \u09b8\u09a8\u09cd\u09a7\u09be\u09a8 \u0995\u09f0\u0995"}}
 A.abf.prototype={
 gF(){return"Axtar\u0131n"},
-gO(){return"Vebd\u0259 axtar\u0131n"}}
+gP(){return"Vebd\u0259 axtar\u0131n"}}
 A.abg.prototype={
 gF(){return"\u0417\u043d\u0430\u0439\u0441\u0446\u0456"},
-gO(){return"\u041f\u043e\u0448\u0443\u043a \u0443 \u0441\u0435\u0442\u0446\u044b"}}
+gP(){return"\u041f\u043e\u0448\u0443\u043a \u0443 \u0441\u0435\u0442\u0446\u044b"}}
 A.abh.prototype={
 gF(){return"Look Up"},
-gO(){return"\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u0432 \u043c\u0440\u0435\u0436\u0430\u0442\u0430"}}
+gP(){return"\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u0432 \u043c\u0440\u0435\u0436\u0430\u0442\u0430"}}
 A.abi.prototype={
 gF(){return"\u09b2\u09c1\u0995-\u0986\u09aa"},
-gO(){return"\u0993\u09df\u09c7\u09ac\u09c7 \u09b8\u09be\u09b0\u09cd\u099a \u0995\u09b0\u09c1\u09a8"}}
+gP(){return"\u0993\u09df\u09c7\u09ac\u09c7 \u09b8\u09be\u09b0\u09cd\u099a \u0995\u09b0\u09c1\u09a8"}}
 A.abj.prototype={
 gF(){return"Pogled nagore"},
-gO(){return"Pretra\u017ei Web"}}
+gP(){return"Pretra\u017ei Web"}}
 A.abk.prototype={
 gF(){return"Mira amunt"},
-gO(){return"Cerca al web"}}
+gP(){return"Cerca al web"}}
 A.abl.prototype={
 gF(){return"Vyhledat"},
-gO(){return"Vyhled\xe1vat na webu"}}
+gP(){return"Vyhled\xe1vat na webu"}}
 A.abm.prototype={
 gF(){return"Chwilio"},
-gO(){return"Chwilio'r We"}}
+gP(){return"Chwilio'r We"}}
 A.abn.prototype={
 gF(){return"Sl\xe5 op"},
-gO(){return"S\xf8g p\xe5 nettet"}}
+gP(){return"S\xf8g p\xe5 nettet"}}
 A.Rj.prototype={
 gF(){return"Nachschlagen"},
-gO(){return"Im Web suchen"}}
+gP(){return"Im Web suchen"}}
 A.abo.prototype={}
 A.abp.prototype={
 gF(){return"Look Up"},
-gO(){return"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03c3\u03c4\u03bf\u03bd \u03b9\u03c3\u03c4\u03cc"}}
+gP(){return"\u0391\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7 \u03c3\u03c4\u03bf\u03bd \u03b9\u03c3\u03c4\u03cc"}}
 A.Rk.prototype={
 gF(){return"Look Up"},
-gO(){return"Search Web"}}
+gP(){return"Search Web"}}
 A.abq.prototype={
 gF(){return"Look up"}}
 A.abr.prototype={}
@@ -124126,7 +124127,7 @@ A.abx.prototype={
 gF(){return"Look up"}}
 A.Rl.prototype={
 gF(){return"Buscador visual"},
-gO(){return"Buscar en la Web"}}
+gP(){return"Buscar en la Web"}}
 A.aby.prototype={
 gF(){return"Mirar hacia arriba"}}
 A.abz.prototype={
@@ -124169,204 +124170,204 @@ A.abR.prototype={
 gF(){return"Mirar hacia arriba"}}
 A.abS.prototype={
 gF(){return"Look Up"},
-gO(){return"Otsi veebist"}}
+gP(){return"Otsi veebist"}}
 A.abT.prototype={
 gF(){return"Bilatu"},
-gO(){return"Bilatu sarean"}}
+gP(){return"Bilatu sarean"}}
 A.abU.prototype={
 gF(){return"\u062c\u0633\u062a\u062c\u0648"},
-gO(){return"\u062c\u0633\u062a\u062c\u0648 \u062f\u0631 \u0648\u0628"}}
+gP(){return"\u062c\u0633\u062a\u062c\u0648 \u062f\u0631 \u0648\u0628"}}
 A.abV.prototype={
 gF(){return"Hae"},
-gO(){return"Hae verkosta"}}
+gP(){return"Hae verkosta"}}
 A.abW.prototype={
 gF(){return"Tumingin sa Itaas"},
-gO(){return"Maghanap sa Web"}}
+gP(){return"Maghanap sa Web"}}
 A.Rm.prototype={
 gF(){return"Recherche visuelle"},
-gO(){return"Rechercher sur le Web"}}
+gP(){return"Rechercher sur le Web"}}
 A.abX.prototype={
 gF(){return"Regarder en haut"}}
 A.abY.prototype={
 gF(){return"Mirar cara arriba"},
-gO(){return"Buscar na Web"}}
+gP(){return"Buscar na Web"}}
 A.abZ.prototype={
 gF(){return"Nachschlagen"},
-gO(){return"Im Web suchen"}}
+gP(){return"Im Web suchen"}}
 A.ac_.prototype={
 gF(){return"\u0ab6\u0acb\u0aa7\u0acb"},
-gO(){return"\u0ab5\u0ac7\u0aac \u0aaa\u0ab0 \u0ab6\u0acb\u0aa7\u0acb"}}
+gP(){return"\u0ab5\u0ac7\u0aac \u0aaa\u0ab0 \u0ab6\u0acb\u0aa7\u0acb"}}
 A.ac0.prototype={
 gF(){return"\u05d7\u05d9\u05e4\u05d5\u05e9"},
-gO(){return"\u05d7\u05d9\u05e4\u05d5\u05e9 \u05d1\u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8"}}
+gP(){return"\u05d7\u05d9\u05e4\u05d5\u05e9 \u05d1\u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8"}}
 A.ac1.prototype={
 gF(){return"\u0932\u0941\u0915 \u0905\u092a \u092c\u091f\u0928"},
-gO(){return"\u0935\u0947\u092c \u092a\u0930 \u0916\u094b\u091c\u0947\u0902"}}
+gP(){return"\u0935\u0947\u092c \u092a\u0930 \u0916\u094b\u091c\u0947\u0902"}}
 A.ac2.prototype={
 gF(){return"Pogled prema gore"},
-gO(){return"Pretra\u017ei web"}}
+gP(){return"Pretra\u017ei web"}}
 A.ac3.prototype={
 gF(){return"Felfel\xe9 n\xe9z\xe9s"},
-gO(){return"Keres\xe9s az interneten"}}
+gP(){return"Keres\xe9s az interneten"}}
 A.ac4.prototype={
 gF(){return"\u0553\u0576\u057f\u0580\u0565\u056c"},
-gO(){return"\u0548\u0580\u0578\u0576\u0565\u056c \u0570\u0561\u0574\u0561\u0581\u0561\u0576\u0581\u0578\u0582\u0574"}}
+gP(){return"\u0548\u0580\u0578\u0576\u0565\u056c \u0570\u0561\u0574\u0561\u0581\u0561\u0576\u0581\u0578\u0582\u0574"}}
 A.ac5.prototype={
 gF(){return"Cari"},
-gO(){return"Telusuri di Web"}}
+gP(){return"Telusuri di Web"}}
 A.ac6.prototype={
 gF(){return"Look Up"},
-gO(){return"Leita \xe1 vefnum"}}
+gP(){return"Leita \xe1 vefnum"}}
 A.ac7.prototype={
 gF(){return"Cerca"},
-gO(){return"Cerca sul web"}}
+gP(){return"Cerca sul web"}}
 A.ac8.prototype={
 gF(){return"\u8abf\u3079\u308b"},
-gO(){return"\u30a6\u30a7\u30d6\u3092\u691c\u7d22"}}
+gP(){return"\u30a6\u30a7\u30d6\u3092\u691c\u7d22"}}
 A.ac9.prototype={
 gF(){return"\u10d0\u10d8\u10ee\u10d4\u10d3\u10d4\u10d7 \u10d6\u10d4\u10db\u10dd\u10d7"},
-gO(){return"\u10d5\u10d4\u10d1\u10e8\u10d8 \u10eb\u10d8\u10d4\u10d1\u10d0"}}
+gP(){return"\u10d5\u10d4\u10d1\u10e8\u10d8 \u10eb\u10d8\u10d4\u10d1\u10d0"}}
 A.aca.prototype={
 gF(){return"\u0406\u0437\u0434\u0435\u0443"},
-gO(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0456\u0437\u0434\u0435\u0443"}}
+gP(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0456\u0437\u0434\u0435\u0443"}}
 A.acb.prototype={
 gF(){return"\u179a\u1780\u1798\u17be\u179b"},
-gO(){return"\u179f\u17d2\u179c\u17c2\u1784\u179a\u1780\u200b\u179b\u17be\u1794\u178e\u17d2\u178a\u17b6\u1789"}}
+gP(){return"\u179f\u17d2\u179c\u17c2\u1784\u179a\u1780\u200b\u179b\u17be\u1794\u178e\u17d2\u178a\u17b6\u1789"}}
 A.acc.prototype={
 gF(){return"\u0cae\u0cc7\u0cb2\u0cc6 \u0ca8\u0ccb\u0ca1\u0cbf"},
-gO(){return"\u0cb5\u0cc6\u0cac\u0ccd\u200c\u0ca8\u0cb2\u0ccd\u0cb2\u0cbf \u0cb9\u0cc1\u0ca1\u0cc1\u0c95\u0cbf"}}
+gP(){return"\u0cb5\u0cc6\u0cac\u0ccd\u200c\u0ca8\u0cb2\u0ccd\u0cb2\u0cbf \u0cb9\u0cc1\u0ca1\u0cc1\u0c95\u0cbf"}}
 A.acd.prototype={
 gF(){return"\ucc3e\uae30"},
-gO(){return"\uc6f9 \uac80\uc0c9"}}
+gP(){return"\uc6f9 \uac80\uc0c9"}}
 A.ace.prototype={
 gF(){return"\u0418\u0437\u0434\u04e9\u04e9"},
-gO(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0438\u0437\u0434\u04e9\u04e9"}}
+gP(){return"\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0442\u0435\u043d \u0438\u0437\u0434\u04e9\u04e9"}}
 A.acf.prototype={
 gF(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0e82\u0ecd\u0ec9\u0ea1\u0eb9\u0e99"},
-gO(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0ea2\u0eb9\u0ec8\u0ead\u0eb4\u0e99\u0ec0\u0e95\u0eb5\u0ec0\u0e99\u0eb1\u0e94"}}
+gP(){return"\u0e8a\u0ead\u0e81\u0eab\u0eb2\u0ea2\u0eb9\u0ec8\u0ead\u0eb4\u0e99\u0ec0\u0e95\u0eb5\u0ec0\u0e99\u0eb1\u0e94"}}
 A.acg.prototype={
 gF(){return"Ie\u0161koti"},
-gO(){return"Ie\u0161koti \u017einiatinklyje"}}
+gP(){return"Ie\u0161koti \u017einiatinklyje"}}
 A.ach.prototype={
 gF(){return"Mekl\u0113t"},
-gO(){return"Mekl\u0113t t\u012bmekl\u012b"}}
+gP(){return"Mekl\u0113t t\u012bmekl\u012b"}}
 A.aci.prototype={
 gF(){return"\u041f\u043e\u0433\u043b\u0435\u0434\u043d\u0435\u0442\u0435 \u043d\u0430\u0433\u043e\u0440\u0435"},
-gO(){return"\u041f\u0440\u0435\u0431\u0430\u0440\u0430\u0458\u0442\u0435 \u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442"}}
+gP(){return"\u041f\u0440\u0435\u0431\u0430\u0440\u0430\u0458\u0442\u0435 \u043d\u0430 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442"}}
 A.acj.prototype={
 gF(){return"\u0d2e\u0d41\u0d15\u0d33\u0d3f\u0d32\u0d47\u0d15\u0d4d\u0d15\u0d4d \u0d28\u0d4b\u0d15\u0d4d\u0d15\u0d41\u0d15"},
-gO(){return"\u0d35\u0d46\u0d2c\u0d3f\u0d7d \u0d24\u0d3f\u0d30\u0d2f\u0d41\u0d15"}}
+gP(){return"\u0d35\u0d46\u0d2c\u0d3f\u0d7d \u0d24\u0d3f\u0d30\u0d2f\u0d41\u0d15"}}
 A.ack.prototype={
 gF(){return"\u0414\u044d\u044d\u0448\u044d\u044d \u0445\u0430\u0440\u0430\u0445"},
-gO(){return"\u0412\u0435\u0431\u044d\u044d\u0441 \u0445\u0430\u0439\u0445"}}
+gP(){return"\u0412\u0435\u0431\u044d\u044d\u0441 \u0445\u0430\u0439\u0445"}}
 A.acl.prototype={
 gF(){return"\u0936\u094b\u0927 \u0918\u094d\u092f\u093e"},
-gO(){return"\u0935\u0947\u092c\u0935\u0930 \u0936\u094b\u0927\u093e"}}
+gP(){return"\u0935\u0947\u092c\u0935\u0930 \u0936\u094b\u0927\u093e"}}
 A.acm.prototype={
 gF(){return"Lihat ke Atas"},
-gO(){return"Buat carian pada Web"}}
+gP(){return"Buat carian pada Web"}}
 A.acn.prototype={
 gF(){return"\u1021\u1015\u1031\u102b\u103a\u1000\u103c\u100a\u103a\u1037\u101b\u1014\u103a"},
-gO(){return"\u101d\u1018\u103a\u1010\u103d\u1004\u103a\u101b\u103e\u102c\u101b\u1014\u103a"}}
+gP(){return"\u101d\u1018\u103a\u1010\u103d\u1004\u103a\u101b\u103e\u102c\u101b\u1014\u103a"}}
 A.aco.prototype={
 gF(){return"Sl\xe5 opp"},
-gO(){return"S\xf8k p\xe5 nettet"}}
+gP(){return"S\xf8k p\xe5 nettet"}}
 A.acp.prototype={
 gF(){return"\u092e\u093e\u0925\u093f\u0924\u093f\u0930 \u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d"},
-gO(){return"\u0935\u0947\u092c\u092e\u093e \u0916\u094b\u091c\u094d\u0928\u0941\u0939\u094b\u0938\u094d"}}
+gP(){return"\u0935\u0947\u092c\u092e\u093e \u0916\u094b\u091c\u094d\u0928\u0941\u0939\u094b\u0938\u094d"}}
 A.acq.prototype={
 gF(){return"Opzoeken"},
-gO(){return"Op internet zoeken"}}
+gP(){return"Op internet zoeken"}}
 A.acr.prototype={
 gF(){return"Sl\xe5 opp"},
-gO(){return"S\xf8k p\xe5 nettet"}}
+gP(){return"S\xf8k p\xe5 nettet"}}
 A.acs.prototype={
 gF(){return"\u0b09\u0b2a\u0b30\u0b15\u0b41 \u0b26\u0b47\u0b16\u0b28\u0b4d\u0b24\u0b41"},
-gO(){return"\u0b71\u0b47\u0b2c \u0b38\u0b30\u0b4d\u0b1a\u0b4d\u0b1a \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"}}
+gP(){return"\u0b71\u0b47\u0b2c \u0b38\u0b30\u0b4d\u0b1a\u0b4d\u0b1a \u0b15\u0b30\u0b28\u0b4d\u0b24\u0b41"}}
 A.act.prototype={
 gF(){return"\u0a16\u0a4b\u0a1c\u0a4b"},
-gO(){return"\u0a35\u0a48\u0a71\u0a2c '\u0a24\u0a47 \u0a16\u0a4b\u0a1c\u0a4b"}}
+gP(){return"\u0a35\u0a48\u0a71\u0a2c '\u0a24\u0a47 \u0a16\u0a4b\u0a1c\u0a4b"}}
 A.acu.prototype={
 gF(){return"Sprawd\u017a"},
-gO(){return"Szukaj w\xa0internecie"}}
+gP(){return"Szukaj w\xa0internecie"}}
 A.acv.prototype={
 gF(){return"Look Up"},
-gO(){return"Search Web"}}
+gP(){return"Search Web"}}
 A.Rn.prototype={
 gF(){return"Pesquisar"},
-gO(){return"Pesquisar na Web"}}
+gP(){return"Pesquisar na Web"}}
 A.acw.prototype={
 gF(){return"Procurar"}}
 A.acx.prototype={
 gF(){return"Privire \xeen sus"},
-gO(){return"C\u0103uta\u021bi pe web"}}
+gP(){return"C\u0103uta\u021bi pe web"}}
 A.acy.prototype={
 gF(){return"\u041d\u0430\u0439\u0442\u0438"},
-gO(){return"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435"}}
+gP(){return"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435"}}
 A.acz.prototype={
 gF(){return"\u0d8b\u0da9 \u0db6\u0dbd\u0db1\u0dca\u0db1"},
-gO(){return"\u0dc0\u0dd9\u0db6\u0dba \u0dc3\u0ddc\u0dba\u0db1\u0dca\u0db1"}}
+gP(){return"\u0dc0\u0dd9\u0db6\u0dba \u0dc3\u0ddc\u0dba\u0db1\u0dca\u0db1"}}
 A.acA.prototype={
 gF(){return"Poh\u013ead nahor"},
-gO(){return"H\u013eada\u0165 na webe"}}
+gP(){return"H\u013eada\u0165 na webe"}}
 A.acB.prototype={
 gF(){return"Pogled gor"},
-gO(){return"Iskanje v spletu"}}
+gP(){return"Iskanje v spletu"}}
 A.acC.prototype={
 gF(){return"K\xebrko"},
-gO(){return"K\xebrko n\xeb ueb"}}
+gP(){return"K\xebrko n\xeb ueb"}}
 A.Ro.prototype={
 gF(){return"\u041f\u043e\u0433\u043b\u0435\u0434 \u043d\u0430\u0433\u043e\u0440\u0435"},
-gO(){return"\u041f\u0440\u0435\u0442\u0440\u0430\u0436\u0438 \u0432\u0435\u0431"}}
+gP(){return"\u041f\u0440\u0435\u0442\u0440\u0430\u0436\u0438 \u0432\u0435\u0431"}}
 A.acD.prototype={}
 A.acE.prototype={
 gF(){return"Pogled nagore"},
-gO(){return"Pretra\u017ei veb"}}
+gP(){return"Pretra\u017ei veb"}}
 A.acF.prototype={
 gF(){return"Titta upp"},
-gO(){return"S\xf6k p\xe5 webben"}}
+gP(){return"S\xf6k p\xe5 webben"}}
 A.acG.prototype={
 gF(){return"Tafuta"},
-gO(){return"Tafuta kwenye Wavuti"}}
+gP(){return"Tafuta kwenye Wavuti"}}
 A.acH.prototype={
 gF(){return"\u0ba4\u0bc7\u0b9f\u0bc1"},
-gO(){return"\u0b87\u0ba3\u0bc8\u0baf\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0ba4\u0bc7\u0b9f\u0bc1"}}
+gP(){return"\u0b87\u0ba3\u0bc8\u0baf\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0ba4\u0bc7\u0b9f\u0bc1"}}
 A.acI.prototype={
 gF(){return"\u0c35\u0c46\u0c24\u0c15\u0c02\u0c21\u0c3f"},
-gO(){return"\u0c35\u0c46\u0c2c\u0c4d\u200c\u0c32\u0c4b \u0c38\u0c46\u0c30\u0c4d\u0c1a\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"}}
+gP(){return"\u0c35\u0c46\u0c2c\u0c4d\u200c\u0c32\u0c4b \u0c38\u0c46\u0c30\u0c4d\u0c1a\u0c4d \u0c1a\u0c47\u0c2f\u0c02\u0c21\u0c3f"}}
 A.acJ.prototype={
 gF(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32"},
-gO(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e1a\u0e19\u0e2d\u0e34\u0e19\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e47\u0e15"}}
+gP(){return"\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e1a\u0e19\u0e2d\u0e34\u0e19\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e40\u0e19\u0e47\u0e15"}}
 A.acK.prototype={
 gF(){return"Tumingin sa Itaas"},
-gO(){return"Maghanap sa Web"}}
+gP(){return"Maghanap sa Web"}}
 A.acL.prototype={
 gF(){return"Ara"},
-gO(){return"Web'de Ara"}}
+gP(){return"Web'de Ara"}}
 A.acM.prototype={
 gF(){return"\u0428\u0443\u043a\u0430\u0442\u0438"},
-gO(){return"\u041f\u043e\u0448\u0443\u043a \u0432 \u0406\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0456"}}
+gP(){return"\u041f\u043e\u0448\u0443\u043a \u0432 \u0406\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0456"}}
 A.acN.prototype={
 gF(){return"\u062a\u0641\u0635\u06cc\u0644 \u062f\u06cc\u06a9\u06be\u06cc\u06ba"},
-gO(){return"\u0648\u06cc\u0628 \u062a\u0644\u0627\u0634 \u06a9\u0631\u06cc\u06ba"}}
+gP(){return"\u0648\u06cc\u0628 \u062a\u0644\u0627\u0634 \u06a9\u0631\u06cc\u06ba"}}
 A.acO.prototype={
 gF(){return"Tepaga qarang"},
-gO(){return"Internetdan qidirish"}}
+gP(){return"Internetdan qidirish"}}
 A.acP.prototype={
 gF(){return"Tra c\u1ee9u"},
-gO(){return"T\xecm ki\u1ebfm tr\xean web"}}
+gP(){return"T\xecm ki\u1ebfm tr\xean web"}}
 A.Rp.prototype={
 gF(){return"\u67e5\u8be2"},
-gO(){return"\u641c\u7d22"}}
+gP(){return"\u641c\u7d22"}}
 A.acQ.prototype={}
 A.Rq.prototype={
 gF(){return"\u67e5\u8a62"},
-gO(){return"\u641c\u5c0b"}}
+gP(){return"\u641c\u5c0b"}}
 A.acR.prototype={}
 A.acS.prototype={}
 A.acT.prototype={
 gF(){return"Bheka Phezulu"},
-gO(){return"Sesha Iwebhu"}}
+gP(){return"Sesha Iwebhu"}}
 A.a2o.prototype={$iaJ:1}
 A.ahD.prototype={
 pO(a){return $.bs8().n(0,a.gfN(0))},

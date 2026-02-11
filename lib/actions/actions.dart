@@ -57,6 +57,7 @@ Future auth(BuildContext context) async {
     nome: userRow?.nome,
     email: userRow?.email,
     tipoUser: userRow?.tipoUser,
+    fotoPerfil: userRow?.foto,
   );
   FFAppState().update(() {});
   FFAppState().nada = 'nada';
