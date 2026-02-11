@@ -9,7 +9,6 @@ import '/pg_avisos/pp_criar_novo_aviso/pp_criar_novo_aviso_widget.dart';
 import '/pg_avisos/pp_detalhe_aviso/pp_detalhe_aviso_widget.dart';
 import '/pg_viagens/calendar_wid/calendar_wid_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';

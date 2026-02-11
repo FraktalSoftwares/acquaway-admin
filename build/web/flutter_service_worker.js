@@ -49,7 +49,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "c5f5967c4b3f1feaf31b1550ae1cdca1
 "index.html": "238b2ef44bba91376697c4844f2850a3",
 "/": "238b2ef44bba91376697c4844f2850a3",
 "Logo_(3).png": "8d0d13435b2a6ecf104e437517d720bd",
-"main.dart.js": "aeeba32d8897ed462ae792af47b23137",
+"main.dart.js": "fc18f40c2adb5f761b1d5861ae681e1b",
 "vercel.json": "4855b878fc88e35dfc1c771704b60b8d",
 "version.json": "b64455d9e4fb44d1c6ea107311448f5a"};
 // The application shell files that are downloaded before a service worker can

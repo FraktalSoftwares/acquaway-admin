@@ -347,14 +347,18 @@ class _PgAcompanhamentoWidgetState extends State<PgAcompanhamentoWidget> {
                                                 r'''$.created_at''',
                                               );
                                               if (createdA == null &&
-                                                  createdB == null) return 0;
+                                                  createdB == null) {
+                                                return 0;
+                                              }
                                               if (createdA == null) return 1;
                                               if (createdB == null) return -1;
-                                              final dateA = DateTime.tryParse(
+                                              final dateA =
+                                                  DateTime.tryParse(
                                                     createdA.toString(),
                                                   ) ??
                                                   DateTime(0);
-                                              final dateB = DateTime.tryParse(
+                                              final dateB =
+                                                  DateTime.tryParse(
                                                     createdB.toString(),
                                                   ) ??
                                                   DateTime(0);

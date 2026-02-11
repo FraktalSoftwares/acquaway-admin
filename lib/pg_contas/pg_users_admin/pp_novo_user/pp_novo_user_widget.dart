@@ -560,11 +560,18 @@ class _PpNovoUserWidgetState extends State<PpNovoUserWidget> {
                               return;
                             }
 
+                            // Salvar a sessão do admin atual antes de criar o novo usuário,
+                            // pois o signUp do Supabase automaticamente loga com o novo user.
+                            final adminRefreshToken =
+                                SupaFlow.client.auth.currentSession
+                                    ?.refreshToken;
+
                             try {
                               // Gerar senha temporária aleatória
                               final tempPassword = _generateTempPassword();
 
                               // Criar conta no Supabase Auth
+                              // NOTA: signUp troca a sessão para o novo usuário
                               final authResponse = await SupaFlow.client.auth
                                   .signUp(
                                     email:
@@ -573,6 +580,13 @@ class _PpNovoUserWidgetState extends State<PpNovoUserWidget> {
                                     password: tempPassword,
                                     emailRedirectTo: null,
                                   );
+
+                              // Restaurar imediatamente a sessão do admin
+                              if (adminRefreshToken != null) {
+                                await SupaFlow.client.auth.setSession(
+                                  adminRefreshToken,
+                                );
+                              }
 
                               if (authResponse.user == null) {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -589,6 +603,7 @@ class _PpNovoUserWidgetState extends State<PpNovoUserWidget> {
                               final userId = authResponse.user!.id;
 
                               // Criar registro na tabela users
+                              // (agora com a sessão do admin restaurada)
                               await UsersTable().insert({
                                 'id': userId,
                                 'nome':
@@ -640,6 +655,17 @@ class _PpNovoUserWidgetState extends State<PpNovoUserWidget> {
                                 },
                               );
                             } catch (e) {
+                              // Restaurar a sessão do admin mesmo em caso de erro
+                              if (adminRefreshToken != null) {
+                                try {
+                                  await SupaFlow.client.auth.setSession(
+                                    adminRefreshToken,
+                                  );
+                                } catch (_) {
+                                  // Silenciar erro de restauração de sessão
+                                }
+                              }
+
                               String errorMessage =
                                   'Erro ao criar usuário. Tente novamente.';
                               if (e.toString().contains(

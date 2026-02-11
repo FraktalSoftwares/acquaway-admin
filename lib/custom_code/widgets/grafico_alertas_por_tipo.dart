@@ -132,8 +132,9 @@ class _GraficoAlertasPorTipoState extends State<GraficoAlertasPorTipo> {
           final pointIndex = args.pointIndex;
           if (pointIndex == null ||
               pointIndex < 0 ||
-              pointIndex >= chartData.length)
+              pointIndex >= chartData.length) {
             return;
+          }
           setState(() {
             final String itemName = chartData[pointIndex].x;
             if (_hiddenItems.contains(itemName)) {
