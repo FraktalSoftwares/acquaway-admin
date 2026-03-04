@@ -2459,10 +2459,14 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                       FFButtonWidget(
                                         onPressed: () async {
                                           await actions.exportViagensExcel(
-                                            functions.noventaDiasAtras(
-                                              getCurrentTimestamp,
-                                            ),
-                                            getCurrentTimestamp,
+                                            _model.dataInicio ??
+                                                functions.noventaDiasAtras(
+                                                  getCurrentTimestamp,
+                                                ),
+                                            _model.dataFim ??
+                                                getCurrentTimestamp,
+                                            idEmbarcacao:
+                                                _model.embarcacaoSelecionada,
                                           );
                                         },
                                         text: 'Baixar relatório',
@@ -2740,17 +2744,24 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                             Container(
                               decoration: const BoxDecoration(),
                               child: FutureBuilder<List<VwViagensResumoRow>>(
+                                key: ValueKey(
+                                  'historico_${_model.embarcacaoSelecionada}_${_model.txBuscaEmpresaTextController.text}_${_model.dataInicio}_${_model.dataFim}',
+                                ),
                                 future: VwViagensResumoTable().queryRows(
                                   queryFn:
                                       (q) {
+                                    final searchText = _model
+                                        .txBuscaEmpresaTextController
+                                        .text;
                                     var query = q.eqOrNull(
                                       'id_embarcacao',
                                       _model.embarcacaoSelecionada,
                                     );
-                                    if (_model.txBuscaEmbarcacoesTextController.text.isNotEmpty) {
-                                      query = query.ilike(
-                                        'nome_barco',
-                                        '%${_model.txBuscaEmbarcacoesTextController.text}%',
+                                    if (searchText.isNotEmpty) {
+                                      query = query.or(
+                                        'nome_piloto.ilike.%$searchText%,'
+                                        'origem_local.ilike.%$searchText%,'
+                                        'destino_local.ilike.%$searchText%',
                                       );
                                     }
                                     if (_model.dataInicio != null) {
@@ -2769,7 +2780,7 @@ class _PgEmbarcacoesWidgetState extends State<PgEmbarcacoesWidget> {
                                         ),
                                       );
                                     }
-                                    return query;
+                                    return query.order('id_viagem');
                                   },
                                 ),
                                 builder: (context, snapshot) {

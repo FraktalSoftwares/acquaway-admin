@@ -13,6 +13,10 @@ class PgViagensModel extends FlutterFlowModel<PgViagensWidget> {
 
   DateTime? dataFim;
 
+  int paginaAtual = 0;
+  static const int itensPorPagina = 20;
+  int totalItens = 0;
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for txBuscaEmpresa widget.

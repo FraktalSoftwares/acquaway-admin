@@ -3808,12 +3808,28 @@ class _PgEmpresasWidgetState extends State<PgEmpresasWidget> {
                                     child: FutureBuilder<
                                       List<VwViagensResumoRow>
                                     >(
+                                      key: ValueKey(
+                                        'historico_${_model.empresaSelecionada}_${_model.txBuscaAdminEmpresaTextController.text}',
+                                      ),
                                       future: VwViagensResumoTable().queryRows(
-                                        queryFn:
-                                            (q) => q.eqOrNull(
-                                              'companie_id',
-                                              _model.empresaSelecionada,
-                                            ),
+                                        queryFn: (q) {
+                                          final searchText = _model
+                                              .txBuscaAdminEmpresaTextController
+                                              .text;
+                                          var query = q.eqOrNull(
+                                            'companie_id',
+                                            _model.empresaSelecionada,
+                                          );
+                                          if (searchText.isNotEmpty) {
+                                            query = query.or(
+                                              'nome_barco.ilike.%$searchText%,'
+                                              'nome_piloto.ilike.%$searchText%,'
+                                              'origem_local.ilike.%$searchText%,'
+                                              'destino_local.ilike.%$searchText%',
+                                            );
+                                          }
+                                          return query.order('id_viagem');
+                                        },
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.

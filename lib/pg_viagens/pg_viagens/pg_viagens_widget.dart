@@ -57,6 +57,88 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
     super.dispose();
   }
 
+  Widget _buildPaginationControls() {
+    final totalPaginas =
+        (_model.totalItens / PgViagensModel.itensPorPagina).ceil();
+    if (totalPaginas <= 1) return const SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(
+            icon: const Icon(Icons.first_page),
+            onPressed: _model.paginaAtual > 0
+                ? () {
+                    _model.paginaAtual = 0;
+                    safeSetState(() {});
+                  }
+                : null,
+          ),
+          IconButton(
+            icon: const Icon(Icons.chevron_left),
+            onPressed: _model.paginaAtual > 0
+                ? () {
+                    _model.paginaAtual--;
+                    safeSetState(() {});
+                  }
+                : null,
+          ),
+          const SizedBox(width: 12.0),
+          Text(
+            '${_model.paginaAtual + 1} de $totalPaginas',
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  font: GoogleFonts.inter(
+                    fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
+                  fontSize: 14.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
+                  fontStyle:
+                      FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                ),
+          ),
+          const SizedBox(width: 12.0),
+          IconButton(
+            icon: const Icon(Icons.chevron_right),
+            onPressed: _model.paginaAtual < totalPaginas - 1
+                ? () {
+                    _model.paginaAtual++;
+                    safeSetState(() {});
+                  }
+                : null,
+          ),
+          IconButton(
+            icon: const Icon(Icons.last_page),
+            onPressed: _model.paginaAtual < totalPaginas - 1
+                ? () {
+                    _model.paginaAtual = totalPaginas - 1;
+                    safeSetState(() {});
+                  }
+                : null,
+          ),
+          const SizedBox(width: 24.0),
+          Text(
+            '${_model.totalItens} registro${_model.totalItens != 1 ? 's' : ''}',
+            style: FlutterFlowTheme.of(context).bodySmall.override(
+                  font: GoogleFonts.inter(
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                  ),
+                  color: FlutterFlowTheme.of(context).secondaryText,
+                  letterSpacing: 0.0,
+                  fontStyle:
+                      FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -113,7 +195,10 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                                 (_) => EasyDebounce.debounce(
                                   '_model.txBuscaEmpresaTextController',
                                   const Duration(milliseconds: 500),
-                                  () => safeSetState(() {}),
+                                  () {
+                                    _model.paginaAtual = 0;
+                                    safeSetState(() {});
+                                  },
                                 ),
                             autofocus: false,
                             enabled: true,
@@ -284,6 +369,7 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                                     onPressed: () async {
                                       _model.dataInicio = null;
                                       _model.dataFim = null;
+                                      _model.paginaAtual = 0;
                                       safeSetState(() {});
                                     },
                                   ),
@@ -324,6 +410,7 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                                                   _model.dataInicio =
                                                       dataInicio;
                                                   _model.dataFim = dataFim;
+                                                  _model.paginaAtual = 0;
                                                   safeSetState(() {});
                                                 },
                                               ),
@@ -391,10 +478,12 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                             FFButtonWidget(
                               onPressed: () async {
                                 await actions.exportViagensExcel(
-                                  functions.trintaDiasAtras(
-                                    getCurrentTimestamp,
-                                  ),
-                                  getCurrentTimestamp,
+                                  _model.dataInicio ??
+                                      functions.trintaDiasAtras(
+                                        getCurrentTimestamp,
+                                      ),
+                                  _model.dataFim ??
+                                      getCurrentTimestamp,
                                 );
                               },
                               text: 'Baixar relatório',
@@ -723,17 +812,27 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                               child: Container(
                                 decoration: const BoxDecoration(),
                                 child: FutureBuilder<List<VwViagensResumoRow>>(
-                                  future: VwViagensResumoTable().queryRows(
-                                    queryFn:
-                                        (q) => q
-                                            .ilike(
-                                              'nome_empresa',
-                                              '%${_model.txBuscaEmpresaTextController.text}%',
-                                            )
-                                            .order('id_viagem'),
-                                  ),
+                                  key: ValueKey('viagens_sem_data_page_${_model.paginaAtual}_${_model.txBuscaEmpresaTextController.text}'),
+                                  future: () async {
+                                    final searchText = _model.txBuscaEmpresaTextController.text;
+                                    final from = _model.paginaAtual * PgViagensModel.itensPorPagina;
+                                    final to = from + PgViagensModel.itensPorPagina - 1;
+
+                                    final countResult = await SupaFlow.client
+                                        .from('vw_viagens_resumo')
+                                        .select('id_viagem')
+                                        .ilike('nome_empresa', '%$searchText%')
+                                        .count(CountOption.exact);
+                                    _model.totalItens = countResult.count;
+
+                                    return VwViagensResumoTable().queryRows(
+                                      queryFn: (q) => q
+                                          .ilike('nome_empresa', '%$searchText%')
+                                          .order('id_viagem')
+                                          .range(from, to),
+                                    );
+                                  }(),
                                   builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
@@ -754,7 +853,9 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                                     lvHistoricoVwViagensResumoRowList =
                                         snapshot.data!;
 
-                                    return ListView.separated(
+                                    return Column(
+                                      children: [
+                                        Expanded(child: ListView.separated(
                                       padding: const EdgeInsets.fromLTRB(
                                         0,
                                         0,
@@ -1206,6 +1307,9 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                                               ),
                                         );
                                       },
+                                    )),
+                                        _buildPaginationControls(),
+                                      ],
                                     );
                                   },
                                 ),
@@ -1483,29 +1587,37 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                               child: Container(
                                 decoration: const BoxDecoration(),
                                 child: FutureBuilder<List<VwViagensResumoRow>>(
-                                  future: VwViagensResumoTable().queryRows(
-                                    queryFn:
-                                        (q) => q
-                                            .ilike(
-                                              'nome_empresa',
-                                              '%${_model.txBuscaEmpresaTextController.text}%',
-                                            )
-                                            .gteOrNull(
-                                              'data_viagem',
-                                              supaSerialize<DateTime>(
-                                                _model.dataInicio,
-                                              ),
-                                            )
-                                            .lteOrNull(
-                                              'data_viagem',
-                                              supaSerialize<DateTime>(
-                                                _model.dataFim,
-                                              ),
-                                            )
-                                            .order('id_viagem'),
-                                  ),
+                                  key: ValueKey('viagens_com_data_page_${_model.paginaAtual}_${_model.txBuscaEmpresaTextController.text}_${_model.dataInicio}_${_model.dataFim}'),
+                                  future: () async {
+                                    final searchText = _model.txBuscaEmpresaTextController.text;
+                                    final from = _model.paginaAtual * PgViagensModel.itensPorPagina;
+                                    final to = from + PgViagensModel.itensPorPagina - 1;
+                                    final strInicio = supaSerialize<DateTime>(_model.dataInicio);
+                                    final strFim = supaSerialize<DateTime>(_model.dataFim);
+
+                                    var countQuery = SupaFlow.client
+                                        .from('vw_viagens_resumo')
+                                        .select('id_viagem')
+                                        .ilike('nome_empresa', '%$searchText%');
+                                    if (strInicio != null) {
+                                      countQuery = countQuery.gte('data_viagem', strInicio);
+                                    }
+                                    if (strFim != null) {
+                                      countQuery = countQuery.lte('data_viagem', strFim);
+                                    }
+                                    final countResult = await countQuery.count(CountOption.exact);
+                                    _model.totalItens = countResult.count;
+
+                                    return VwViagensResumoTable().queryRows(
+                                      queryFn: (q) => q
+                                          .ilike('nome_empresa', '%$searchText%')
+                                          .gteOrNull('data_viagem', strInicio)
+                                          .lteOrNull('data_viagem', strFim)
+                                          .order('id_viagem')
+                                          .range(from, to),
+                                    );
+                                  }(),
                                   builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
@@ -1526,7 +1638,9 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                                     lvHistoricoVwViagensResumoRowList =
                                         snapshot.data!;
 
-                                    return ListView.separated(
+                                    return Column(
+                                      children: [
+                                        Expanded(child: ListView.separated(
                                       padding: const EdgeInsets.fromLTRB(
                                         0,
                                         0,
@@ -1978,6 +2092,9 @@ class _PgViagensWidgetState extends State<PgViagensWidget> {
                                               ),
                                         );
                                       },
+                                    )),
+                                        _buildPaginationControls(),
+                                      ],
                                     );
                                   },
                                 ),

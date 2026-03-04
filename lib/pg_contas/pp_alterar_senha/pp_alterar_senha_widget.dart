@@ -1114,8 +1114,6 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         return;
                       }
 
-                      // Verificar senha atual tentando fazer login
-                      // No Supabase, fazer signIn com o mesmo usuário apenas atualiza a sessão
                       try {
                         final user = await authManager.signInWithEmail(
                           context,
@@ -1124,24 +1122,16 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                         );
 
                         if (user == null) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                'Senha atual incorreta. Por favor, verifique.',
-                              ),
-                              backgroundColor: Colors.red,
-                            ),
-                          );
                           return;
                         }
 
-                        // Se chegou aqui, a senha está correta, então atualiza
                         await authManager.updatePassword(
                           newPassword: _model.txNovaSenhaTextController!.text,
                           context: context,
                         );
 
                         Navigator.pop(context);
+                        ScaffoldMessenger.of(context).clearSnackBars();
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text('Senha alterada com sucesso!'),
@@ -1149,23 +1139,7 @@ class _PpAlterarSenhaWidgetState extends State<PpAlterarSenhaWidget> {
                           ),
                         );
                       } catch (e) {
-                        // Captura erros de autenticação
-                        String errorMessage =
-                            'Erro ao alterar senha. Tente novamente.';
-                        if (e.toString().contains(
-                              'Invalid login credentials',
-                            ) ||
-                            e.toString().contains('Email not confirmed') ||
-                            e.toString().contains('Invalid password')) {
-                          errorMessage =
-                              'Senha atual incorreta. Por favor, verifique.';
-                        }
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(errorMessage),
-                            backgroundColor: Colors.red,
-                          ),
-                        );
+                        return;
                       }
                     },
                     text: 'Confirmar',

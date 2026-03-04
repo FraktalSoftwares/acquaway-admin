@@ -11,34 +11,41 @@ import 'package:download/download.dart';
 import 'package:intl/intl.dart';
 import '/core/utils/logger.dart';
 
-Future exportViagensExcel(DateTime dataInicio, DateTime dataFim) async {
+Future exportViagensExcel(
+  DateTime dataInicio,
+  DateTime dataFim, {
+  int? idEmbarcacao,
+}) async {
   try {
     AppLogger.i('=== INÍCIO DA EXPORTAÇÃO ACQUAWAY ===');
 
-    // Formatação das datas para o filtro do Supabase (YYYY-MM-DD)
     final DateFormat formatter = DateFormat('yyyy-MM-dd');
     String strInicio = formatter.format(dataInicio);
     String strFim = formatter.format(dataFim);
 
-    // Lista para armazenar todos os dados da View
     List<Map<String, dynamic>> allData = [];
 
-    // Configuração da paginação para não travar o app
     int batchSize = 1000;
     int offset = 0;
     bool hasMoreData = true;
 
     AppLogger.i(
-      'Buscando dados na vw_viagens_resumo entre $strInicio e $strFim...',
+      'Buscando dados na vw_viagens_resumo entre $strInicio e $strFim'
+      '${idEmbarcacao != null ? ' para embarcação $idEmbarcacao' : ''}...',
     );
 
-    // Loop para buscar os dados em lotes
     while (hasMoreData) {
-      final response = await SupaFlow.client
+      var query = SupaFlow.client
           .from('vw_viagens_resumo')
           .select()
           .gte('data_viagem', strInicio)
-          .lte('data_viagem', strFim)
+          .lte('data_viagem', strFim);
+
+      if (idEmbarcacao != null) {
+        query = query.eq('id_embarcacao', idEmbarcacao);
+      }
+
+      final response = await query
           .range(offset, offset + batchSize - 1);
 
       if (response.isNotEmpty) {

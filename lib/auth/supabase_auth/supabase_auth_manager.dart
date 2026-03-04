@@ -66,13 +66,8 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
       await currentUser?.updatePassword(newPassword);
     } catch (e, stackTrace) {
       ErrorHandler.showErrorFromException(context, e, stackTrace);
-      return;
+      rethrow;
     }
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-          content:
-              Text('E-mail de confirmação de alteração de e-mail enviado!')),
-    );
   }
 
   @override
